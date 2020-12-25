@@ -1,53 +1,82 @@
---if you didnt stop the script and closed the lua console, ill clean up your mess
+--if you didnt stop the script properly and closed the lua console, ill clean up your mess
 gui.clearImageCache()
-os.remove('.\\map.png')
-
-
-
-local function byterange_decode(values, size, big_endian, signed)
-  -- Error handling
-  if type(values) ~= "table" then print("Insert correct memory.byterange table!") ; return end
-  if not size or size < 1 or size > 6 then print("Insert correct size value! Can accept values between 1 and 6.") ; return end
-  if size > #values+1 then print("Size is bigger than the memory.byterange table!") ; return end -- +1 due table 0 indexed
-  
-  local output = {}
-  
-  for i = 0, (math.floor((#values+1)/3)*3-1), size do
-    
-    local out_value = 0
-    
-    -- Loop to correctly calculate the number based on the endianess
-    for j = 0, size-1 do
-      if big_endian then
-        out_value = out_value + values[i+j]*(0x100^(size-1-j))   -- {AA, BB} -> AA00 + BB = AABB
-      else
-        out_value = out_value + values[i+j]*(0x100^j) -- {AA, BB} -> AA + BB00 = BBAA
-      end
-    end
-    
-    -- Check signedness
-    if signed then
-      local maxval = (0x100^size)/2
-      if out_value >= maxval then out_value = out_value - 2*maxval end
-    end
-    
-    output[i/size] = out_value
-  end
-  
-  if (#values+1)%size ~= 0 then print(string.format("%d byte(s) left, due to the selected size or memory.byterange size!", (#values+1)%size)) end -- +1 due table 0 indexed
-
-  return output
+os.remove('.\\NitM\map.png')
+os.remove('.\\NitM\familiar.png')
+os.remove('.\\NitM\relic.png')
+os.remove('.\\NitM\timeattack.png')
+os.remove('.\\NitM\gear.png')
+--if u dont have osd off, its required, ill put it back to on IF you turn off the script properly
+client_osd = client.getconfig().ScreenshotCaptureOsd
+if client_osd == true then
+client.setscreenshotosd(false)
 end
 
---syntax: raw = memory.readbyterange(); data = raw:byterange_decode(4);
+module_extra = loadfile("NitM\\extra.lua");
+if (module_extra == nil) then
+    console.writeline("failed to interpret NitM\\extra.lua");
+    return false;
+end
+module_extra();
+
+module_data = loadfile("NitM\\data.lua");
+if (module_data == nil) then
+    console.writeline("failed to interpret NitM\\data.lua");
+    return false;
+end
+module_data();
+
+module_ram = loadfile("NitM\\ram.lua");
+if (module_ram == nil) then
+    console.writeline("failed to interpret NitM\\ram.lua");
+    return false;
+end
+module_ram();
+
+module_init = loadfile("NitM\\init.lua");
+if (module_init == nil) then
+    console.writeline("failed to interpret NitM\\init.lua");
+    return false;
+end
+module_init();
+
+module_functions = loadfile("NitM\\functions.lua");
+if (module_functions == nil) then
+    console.writeline("failed to interpret NitM\\functions.lua");
+    return false;
+end
+module_functions();
+
+module_loop = loadfile("NitM\\loop.lua");
+if (module_loop == nil) then
+    console.writeline("failed to interpret NitM\\loop.lua");
+    return false;
+end
+module_loop();
+
+-- module_files = { "extra", "data", "ram" }
+
+-- for i = 1,3,1 do
+-- module_extra = loadfile("NitM\\"..module_files[i]..".lua");
+-- end
+-- for i = 1,3,1 do
+-- if ("NitM\\"..module_files[i]..".lua" == nil) then
+    -- console.writeline("failed to interpret NitM\\"..module_files[i]..".lua");
+    -- return false;
+-- end
+-- end
+-- module_extra();
+
+
+--require "NitM\\extra"
+--require "NitM\\data"
+--require "NitM\\ram"
+--require "NitM\\init"--todo
+--require "NitM\\functions"--todo
+--require "NitM\\loop"--todo
 
 
 
-
---im storing all my hardcoded junk in this seperate lua file
-require "NitM\\data"
-require "NitM\\ram"
-
+---crapzone
 
 --[[
 0x05CA62 looks like a flag for wich castle you are in, yet the game doesnt care about it if u poke, 
@@ -59,7 +88,6 @@ castle_flag = (memory.readbyte(0x05CA62))
 
 
 
-state_rng = (memory.read_u32_be(0x0482b8))
 
 state_menu = (memory.readbyte(0x048211))
 
@@ -68,138 +96,17 @@ Not the player but everything else hitboxes/effects whatever graphics objects
 ]]
 draw_object_ram_start = 0x099F20
 
-
-
-
-
-
-
-
-
-player_character_ID = (memory.readbyte(0x05c6d2))
-player_subweapon = (memory.readbyte(0x05c99E))
-player_action_ID = (memory.readbyte(0x099824))
-player_morph = (memory.readbyte(0x05C99A))
-player_morph_timer = (memory.readbyte(0x0C850A))
-player_orientation = mainmemory.readbyte(0x099810)--1 is left, 0 is right
-
 player_ground = mainmemory.readbyte(0x05C166)
 
-player_X_position_relative = mainmemory.read_u16_le(0x0997fc)
-player_Y_position_relative = mainmemory.read_u16_le(0x099800)
-player_X_position_absolute = (memory.read_u16_le(0x05cd5a))
-player_Y_position_absolute = (memory.read_u16_le(0x05c5b6))
-player_X_scroll = (memory.read_u16_le(0x0860b6))
-player_Y_scroll = (memory.read_u16_le(0x0860ba))
-player_X_speed = (memory.read_s8(0x099804))--exprimed in pixel per frame
-player_Y_speed = (memory.read_s8(0x099808))--exprimed in pixel per frame
-player_X_subpixel = (memory.readbyte(0x0997FF))
-player_Y_subpixel = (memory.readbyte(0x099803))
+----
 
-player_X_hitbox_offset = memory.read_s8(0x09980C)
-player_Y_hitbox_offset = memory.read_s8(0x09980E)
-player_X_hitbox_radius = memory.readbyte(0x09983D)
-player_Y_hitbox_radius = memory.readbyte(0x09983C)
-
-
-
-
-
-
-
-
-
-
-
-stat_rooms = (memory.read_u16_le(0x05C5B2)) --used to check if the map changed
-
-
--- stat minus mod equation, mod is determined by the gear you put on or relics, it can be negative (duplicator for exemple)
-
---syntax: raw = memory.readbyterange(); data = raw:byterange_decode(4);
-
-raw = memory.readbyterange(0x05C942, 136, "Work Ram High")
-data = byterange_decode(raw, 2, false, true)
---print(data)
-
-stat_hp = (memory.read_u16_le(0x05C942))
-stat_hp_max = (memory.read_u16_le(0x05C946))
-stat_heart = (memory.read_u16_le(0x05C94A))
-stat_heart_max = (memory.read_u16_le(0x05C94E))
-
-stat_mp = (memory.read_u16_le(0x05C952))
-stat_mp_max = (memory.read_u16_le(0x05C956))
-
-stat_str = (memory.read_s16_le(0x05C95A))
-stat_con = (memory.read_s16_le(0x05C95E))
-stat_int = (memory.read_s16_le(0x05C962))
-stat_lck = (memory.read_s16_le(0x05C966))
-stat_str_mod = (memory.read_s16_le(0x05C96A))
-stat_con_mod = (memory.read_s16_le(0x05C96E))
-stat_int_mod = (memory.read_s16_le(0x05C972))
-stat_lck_mod = (memory.read_s16_le(0x05C976))
-
-stat_level = (memory.read_u16_le(0x05C98A))
-stat_exp = (memory.read_u16_le(0x05C98E))
-
-stat_gold = (memory.read_u16_le(0x05C992))
-stat_beat = (memory.read_u16_le(0x05C996))
-
-stat_def = (memory.read_u16_le(0x05C9CA))
 
 
 
 --[[
 ]]
 
-current_familiar = "- - - - -"
 
-
-
------------------------------------------------------------------------------------------------------------------------------------------
------------------------------------------------------------------------------------------------------------------------------------------
------------------------------------------------------------------------------------------------------------------------------------------
------------------------------------------------------------------------------------------------------------------------------------------
------------------------------------------------------------------------------------------------------------------------------------------
------------------------------------------------------------------------------------------------------------------------------------------
------------------------------------------------------------------------------------------------------------------------------------------
------------------------------------------------------------------------------------------------------------------------------------------
------------------------------------------------------------------------------------------------------------------------------------------
------------------------------------------------------------------------------------------------------------------------------------------
------------------------------------------------------------------------------------------------------------------------------------------
------------------------------------------------------------------------------------------------------------------------------------------
------------------------------------------------------------------------------------------------------------------------------------------
------------------------------------------------------------------------------------------------------------------------------------------
------------------------------------------------------------------------------------------------------------------------------------------
------------------------------------------------------------------------------------------------------------------------------------------
------------------------------------------------------------------------------------------------------------------------------------------
------------------------------------------------------------------------------------------------------------------------------------------
------------------------------------------------------------------------------------------------------------------------------------------
------------------------------------------------------------------------------------------------------------------------------------------
------------------------------------------------------------------------------------------------------------------------------------------
------------------------------------------------------------------------------------------------------------------------------------------
------------------------------------------------------------------------------------------------------------------------------------------
------------------------------------------------------------------------------------------------------------------------------------------
------------------------------------------------------------------------------------------------------------------------------------------
------------------------------------------------------------------------------------------------------------------------------------------
------------------------------------------------------------------------------------------------------------------------------------------
------------------------------------------------------------------------------------------------------------------------------------------
------------------------------------------------------------------------------------------------------------------------------------------
------------------------------------------------------------------------------------------------------------------------------------------
------------------------------------------------------------------------------------------------------------------------------------------
------------------------------------------------------------------------------------------------------------------------------------------
------------------------------------------------------------------------------------------------------------------------------------------
------------------------------------------------------------------------------------------------------------------------------------------
------------------------------------------------------------------------------------------------------------------------------------------
------------------------------------------------------------------------------------------------------------------------------------------
------------------------------------------------------------------------------------------------------------------------------------------
------------------------------------------------------------------------------------------------------------------------------------------
------------------------------------------------------------------------------------------------------------------------------------------
------------------------------------------------------------------------------------------------------------------------------------------
------------------------------------------------------------------------------------------------------------------------------------------
------------------------------------------------------------------------------------------------------------------------------------------
------------------------------------------------------------------------------------------------------------------------------------------
-----------------------------------------------------------------------------------------------------------------------------------------
 
 
 
@@ -209,6 +116,12 @@ game_is_boot = false
 game_is_load = false
 game_is_menu = false
 game_is_running = false
+
+script_room_count = 0
+
+room_grid_X = 0
+room_grid_Y = 0
+
 
 first_castle = true
 second_castle = false
@@ -237,8 +150,12 @@ script_game_box = {script_padding_game[1]+(15*script_size), script_padding_game[
 script_hitbox_box = {script_game_box[1]-40, script_padding_game[2]-40, script_game_box[3]+40, script_game_box[4]+40, script_box_line, script_box_fill}
 
 script_map = true
-script_map_refresh = 30
-script_map_box = {100, 100, 100, 100, script_box_line, script_box_fill}
+script_map_refresh = true
+script_map_refresh_sstate = true
+script_map_box = {0, 0, 275, 195, script_box_line, script_box_fill}
+script_map_mode = "ZZ"
+script_map_mode_delta = 2
+mapData = {}
 
 script_player_hitbox = true
 script_player_hitbox_refresh = 0--we probly should not use a wait on this
@@ -265,13 +182,14 @@ script_gear_box = {script_hitbox_box[3], script_relic_box[2]-110, script_hitbox_
 eGp = {script_gear_box[1]+23, script_gear_box[2]-1, "yo", script_default_text[1], script_default_text[2], script_default_text[3], script_default_text[4], script_default_text[5], script_default_text[6], script_default_text[7]}
 
 script_familiar = true
-script_familiar_refresh = 30
+script_familiar_refresh = true
 script_familiar_refresh_sstate = true
 script_familiar_box = {0, 220, 65, 399, script_box_line, script_box_fill}
 fWp = {script_familiar_box[1], script_familiar_box[2], "texthere", script_default_text[1], script_default_text[2], script_default_text[3], script_default_text[4], script_default_text[5], script_default_text[6], script_default_text[7], 24, 27, 0x9FFFFFFF}
 
 familiar_data_level = {1,1,1,1,1,1,nil,1}
-familiar_text = {"ghost","bat","demon","fairy","half","sword",nil,"nose"}
+familiar_text = {"ghost","bat","demon","fairy","sprite","sword",nil,"nose"}
+current_familiar = "- - - - -"
 
 
 script_timeattack = true
@@ -342,30 +260,58 @@ script_ramwatchC_refresh = 30
 script_ramwatchB_box = {100, 100, 100, 100, script_box_line, script_box_fill}
 
 
+script_map_cursor = true
+cursor_color_invert = false
+
+cursor_player = false
+cursor_player_color = 1
+cursor_player_speed = 2
+
+cursor_boss = false
+cursor_boss_color = 2
+cursor_boss_speed = 2
+
+cursor_relic = false
+cursor_relic_color = 3
+cursor_relic_speed = 2
+
+cursor_user = false
+cursor_user_color = 4
+map_querry_X = 0
+map_querry_Y = 0
+area_querry = "- - - - -"
+area_querry_alt = "- - - - -"
+
+theroomX = 0
+theroomY = 0
+
+cursor_trail = false
+cursor_trail_color = 1
+cursor_trail_speed = 1
+trail_data_refresh = false
+trail_data = {}
+
+script_map_info = true
+script_map_info_refresh = true
+script_map_info_box = {0, 195, 275, 220, script_box_line, script_box_fill}
+
+cursor_joker_speed = 6
+cursor_joker_color = 6
+cursor_joker_all = false
+
+area_text = "- - -" 
 
 
-script_room_count = 0
 
-
-mouse_X = input.getmouse()['X']
-mouse_Y = input.getmouse()['Y']
-mouse_B = input.getmouse()['Left']
-
-
-
+debug_Zcolor = false
 
 
 
 wait = 0	--init the wait from zero duh
 max_wait = 60	--give a max wait time, if you set a module to wait superior to this value, it will never update data
+wait_long = 0 --wait but in seconds... it increase every 60 wait
 
 
-
-tD = {}
-rD = {}
-
-
-the_frame = emu.framecount()
 
 X_but = 36
 Y_but = 12
@@ -375,29 +321,8 @@ off_png = '.\\NitM\\hud\\button_off.png'
 
 
 
-
-
-
-
-oldX = 0
-oldY = 0
-
-room_grid_X = 0
-room_grid_Y = 0
-
-stopmee = false
-revez = false
-stepz = 1
-wait = 0
 objectList = {}
 objectUnknow = {}
-zstopMap = true
-stopMap = true
-stopHitbox = true
-totalRoomsStorage = 0
-
-
-
 
 
 -- Color format: OORRGGBB(Opacity, Red, Green, Blue)
@@ -411,42 +336,14 @@ totalRoomsStorage = 0
 --------------------------------
 
 --------------------------------
-local function exit_script()
-	client.SetGameExtraPadding(0, 0, 0, 0)
-	gui.clearImageCache()
-	os.remove('.\\map.png')
-end
 --------------------------------
-local function fetchram()
-
-	the_frame = emu.framecount()
-
-	player_orientation = memory.readbyte(0x099810)
-	player_X_position_relative = memory.read_u16_le(0x0997FC)
-	player_Y_position_relative = memory.read_u16_le(0x099800)
-	player_X_hitbox_offset = memory.read_s8(0x09980C)
-	player_Y_hitbox_offset = memory.read_s8(0x09980E)
-	player_X_hitbox_radius = memory.readbyte(0x09983D)
-	player_Y_hitbox_radius = memory.readbyte(0x09983C)
 
 
-	player_motion_X = memory.readbyte(0x099807)
-	player_motion_Y = memory.readbyte(0x09980B)
+local function refresh_data()
+--ideally, this will be the exact same than ram.lua minus the comments
+--ordered from lowest ram address to highest
 
-	player_X_position_absolute = (memory.read_u16_le(0x05CD5A))
-	player_Y_position_absolute = (memory.read_u16_le(0x05C5B6))
-	player_X_scroll = (memory.read_u16_le(0x0860B6))
-	player_Y_scroll = (memory.read_u16_le(0x0860BA))
-	player_X_speed = (memory.read_s8(0x099804))
-	player_Y_speed = (memory.read_s8(0x099808))
-	player_X_subpixel = (memory.readbyte(0x0997FF))
-	player_Y_subpixel = (memory.readbyte(0x099803))
-
-	player_subweapon = (memory.readbyte(0x05c99E))
-	player_action_ID = (memory.readbyte(0x099824))
-	player_morph = (memory.readbyte(0x05C99A))
-	player_morph_timer = (memory.readbyte(0x0C850A))
-	player_character_ID = (memory.readbyte(0x05c6d2))
+---crapzone
 	castle_flag = (memory.readbyte(0x065488))--wrong too probly
 --	castle_flag = (memory.readbyte(0x05CA62))--wrong
 	state_menu = (memory.readbyte(0x048211))
@@ -459,39 +356,23 @@ local function fetchram()
 	player_use_first_hand = mainmemory.readbyte(0x05C462)
 	player_use_second_hand = mainmemory.readbyte(0x05C574)
 	player_use_third_hand = mainmemory.readbyte(0x050B03)
-
-	stat_hp = (memory.read_u16_le(0x05C942))
-	stat_hp_max = (memory.read_u16_le(0x05C946))
-	stat_mp = (memory.read_u16_le(0x05C952))
-	stat_mp_max = (memory.read_u16_le(0x05C956))
-	stat_heart = (memory.read_u16_le(0x05C94A))
-	stat_heart_max = (memory.read_u16_le(0x05C94E))
-
-	stat_level = (memory.read_u16_le(0x05C98a))
-	stat_exp = (memory.read_u16_le(0x05C98E))
-	stat_gold = (memory.read_u16_le(0x05C992))
-	stat_beat = (memory.read_u16_le(0x05C996))
-
-	stat_str = (memory.read_s16_le(0x05C95A))
-	stat_str_mod = (memory.read_s16_le(0x05C96A))
-	stat_con = (memory.read_s16_le(0x05C95E))
-	stat_con_mod = (memory.read_s16_le(0x05C96E))
-	stat_int = (memory.read_s16_le(0x05C962))
-	stat_int_mod = (memory.read_s16_le(0x05C972))
-
-	stat_lck = (memory.read_s16_le(0x05C966))
-	stat_lck_mod = (memory.read_s16_le(0x05C976))
-	stat_def = (memory.read_u16_le(0x05C9CA))
-
-	stat_rooms = (memory.read_u16_le(0x05C5B2))
-
-	player_script = memory.readbyterange(0x05CD70, 5, "Work Ram High")
+---
 
 
-	game_is_loaded = (memory.readbyte(0x05CEB2))
 
+
+	the_frame = emu.framecount()
+	mouse_X = input.getmouse()['X']
+	mouse_Y = input.getmouse()['Y']
+	mouse_B = input.getmouse()['Left']
+
+--
+if script_rng_refresh == true then
+	state_rng = (memory.read_u32_be(0x0482b8))
+end
+--
+--
 	local player_status_data = memory.readbyterange(0x05C508, 51, "Work Ram High")
-
 	player_status_poison_timer = player_status_data[0]
 	player_status_poison_mult = player_status_data[1]
 	player_status_curse_timer = player_status_data[2]
@@ -501,25 +382,268 @@ local function fetchram()
 	player_status_stoneA = player_status_data[46]
 	player_air = player_status_data[47]
 	player_status_stoneB = player_status_data[50]
-
+--
+	stat_rooms = (memory.read_u16_le(0x05C5B2)) --used to check if the map changed
+--
+	player_Y_position_absolute = memory.read_u16_le(0x05C5B6)
+--
+	player_character_ID = (memory.readbyte(0x05C6D2))
+--
+if script_relic_refresh == true then --regenerate data
+	relic_data = memory.readbyterange(0x05C6F0, 32, "Work Ram High")
+	script_relic_refresh = false
+	script_relic = true
+end
+--
+	local data_stats = memory.readbyterange(0x05C942, 138, "Work Ram High")
+	local stat_data = byterange_decode(data_stats, 2, false, true)
+	stat_hp = stat_data[0]
+	stat_hp_max = stat_data[2]
+	stat_heart = stat_data[4]
+	stat_heart_max = stat_data[6]
+	stat_mp = stat_data[8]
+	stat_mp_max = stat_data[10]
+	stat_str = stat_data[12]
+	stat_con = stat_data[14]
+	stat_int = stat_data[16]
+	stat_lck = stat_data[18]
+	stat_str_mod = stat_data[20]
+	stat_con_mod = stat_data[22]
+	stat_int_mod = stat_data[24]
+	stat_lck_mod = stat_data[26]
+	stat_level = stat_data[36]
+	stat_exp = stat_data[38]
+	stat_gold = stat_data[40]
+	stat_beat = stat_data[42]
+	stat_def = stat_data[68]
+--
+	player_morph = (memory.readbyte(0x05C99A))
+--
+	player_subweapon = (memory.readbyte(0x05C99E))
+--
+if script_gear_refresh == true then --we dont need to regenerate this data until the menu is call...
+	gear_data = memory.readbyterange(0x05C9A2, 29, "Work Ram High")
+	script_gear_refresh = false
+	script_gear = true
+end
+--
+	stat_gametime_data = memory.readbyterange(0x05C9D6, 9, "Work Ram High")
+--
+if script_familiar_refresh == true  then --regenerate data every xx frames
+	familiar_data = memory.readbyterange(0x05C9EA, 85, "Work Ram High")
+	familiar_data_level = {}
+	table.insert(familiar_data_level, 1, ""..familiar_data[0])--ghost
+	table.insert(familiar_data_level, 2, ""..familiar_data[12])--bat
+	table.insert(familiar_data_level, 3, ""..familiar_data[36])--demon
+	table.insert(familiar_data_level, 4, ""..familiar_data[24])--fairy
+	table.insert(familiar_data_level, 5, ""..familiar_data[60])--half fairy
+	table.insert(familiar_data_level, 6, ""..familiar_data[48])--sword
+	table.insert(familiar_data_level, 8, ""..familiar_data[72])--nose
+	script_familiar_refresh = false
+	script_familiar = true
+end
+--
+--	first_castle_teleporters = memory.readbyte(0x05CB20)
+--	second_castle_teleporters = memory.readbyte(0x05CB21)
+--
+	player_X_position_absolute = memory.read_u16_le(0x05CD5A)
+--
+	player_script = memory.readbyterange(0x05CD70, 5, "Work Ram High")
+--
+	game_is_loaded = (memory.readbyte(0x05CEB2))
+--
 	local room_data = memory.readbyterange(0x05CE5E, 25, "Work Ram High")
-
 	room_X_size_grid = room_data[0]
 	room_Y_size_grid = room_data[4]
 	room_X_min_grid = room_data[12]
 	room_Y_max_grid = room_data[16]
 	room_X_max_grid = room_data[20]
 	room_Y_min_grid = room_data[24]
+--
 
+
+if stat_rooms ~= script_room_count then
+	script_room_count = stat_rooms
+	script_map_refresh = true
+end
+if script_map_refresh == true then
+	map_data_A = memory.readbyterange(0x05CF10, 752, "Work Ram High")
+--  I need a reliable check to know if the player is in the inverted castle
+--	map_data_B = memory.readbyterange(0x05CF10+752+(16*64), 752, "Work Ram High")
+	script_map_refresh = false
+	script_map = true
+end
+--
 	local room_data_bis = memory.readbyterange(0x05D75E, 5, "Work Ram High")
-
 	room_X_origin_grid = room_data_bis[0]
 	room_Y_origin_grid = room_data_bis[4]
-	
-	mouse_X = input.getmouse()['X']
-	mouse_Y = input.getmouse()['Y']
-	mouse_B = input.getmouse()['Left']
+--
+if script_timeattack_refresh == true then --we dont need to regenerate this data until the menu is call...
+	time_attack_data = memory.readbyterange(0x05D830, 112, "Work Ram High")
+	script_timeattack_refresh = false
+	script_timeattack = true
+end
+--
+	player_X_scroll = (memory.read_u16_le(0x0860B6))
+	player_Y_scroll = (memory.read_u16_le(0x0860BA))
+--
+	player_X_position_relative = memory.read_u16_le(0x0997FC)
+	player_Y_position_relative = memory.read_u16_le(0x099800)
+--
+	local player_data = memory.readbyterange(0x0997FF, 63, "Work Ram High")
+	player_X_subpixel = player_data[0]
+	player_Y_subpixel = player_data[4]
+	if player_data[5] >= 128 then player_X_speed = player_data[5] - 2 * 128 else player_X_speed = player_data[5] end
+	player_X_motion = player_data[8]
+	if player_data[9] >= 128 then player_Y_speed = player_data[9] - 2 * 128 else player_Y_speed = player_data[9] end
+	player_Y_motion = player_data[12]
+	if player_data[13] >= 128 then player_X_hitbox_offset = player_data[14] - 2 * 128 else player_X_hitbox_offset = player_data[14] end
+	if player_data[15] >= 128 then player_Y_hitbox_offset = player_data[16] - 2 * 128 else player_Y_hitbox_offset = player_data[16] end
+	player_orientation = player_data[17]	
+	player_Y_hitbox_radius = player_data[61]
+	player_X_hitbox_radius = player_data[62]
+--
+	player_action_ID = memory.readbyte(0x099824)
+--
+	player_morph_timer = memory.readbyte(0x0C850A)
+--
 
+
+if game_is_boot == false and stat_level > 0 and stat_gametime_data[8] ~= 1 then
+--then we are no longer in the bios or file select... I think... but if you soft reset you will still have player data in ram
+--if u started with alucard, the timer will start after the fmv
+--if u start with richter or maria, script will kick at "now loadind" (you become level1)
+	game_is_boot = true
+end
+
+end
+--------------------------------
+function resolution_switch()
+--the following is a shit piece of code to make sure everything is proper when the game change its resolution
+
+if player_script[2] == 4 and player_script[4] == 1 then --we are in the fucking menu
+if player_script[0] == 6 or player_script[0] == 10 or player_script[0] == 11 or player_script[0] == 21 then  --its main menu, options, familiars, map
+client.SetGameExtraPadding(script_padding_menu[1], script_padding_menu[2], script_padding_menu[3], script_padding_menu[4]) --menu resize coz they did bad stuff here with resolution
+script_game_box_on = false
+script_player_hitbox = false
+script_objects_hitbox = false
+script_relic_box = {script_hitbox_box[3]+225, 210, script_hitbox_box[3]+225+115, 440, script_box_line, script_box_fill}
+X_draw_relic = script_relic_box[1]+4
+Y_draw_relic = script_relic_box[2]-5
+script_gear_box = {script_hitbox_box[3]+225, script_relic_box[2]-110, script_hitbox_box[3]+115+225, script_relic_box[2], script_box_line, script_box_fill}
+eGp = {script_gear_box[1]+20, script_gear_box[2]-1, "yo", script_default_text[1], script_default_text[2], script_default_text[3], script_default_text[4], script_default_text[5], script_default_text[6], script_default_text[7]}
+script_timeattack_box = {65, 270, script_hitbox_box[1], 450, script_box_line, script_box_fill}
+tAp = {script_timeattack_box[1]+2, script_timeattack_box[2]+56, "texthere", script_default_text[1], script_default_text[2], 8, "Ebrima",  script_default_text[5], script_default_text[6], script_default_text[7]}
+script_familiar_box = {0, 270, 65, 450, script_box_line, script_box_fill}
+fWp = {script_familiar_box[1], script_familiar_box[2], "texthere", script_default_text[1], script_default_text[2], script_default_text[3], script_default_text[4], script_default_text[5], script_default_text[6], script_default_text[7], 24, 27, 0x9FFFFFFF}
+script_rng_box = {script_hitbox_box[3]+225, 80, script_hitbox_box[3]+115+225, script_relic_box[2], script_box_line, script_box_fill}
+eRp = {script_rng_box[1]+8, script_rng_box[2]+2, "texthere", script_default_text[1], script_default_text[2], 13, "Arial",  "bold", script_default_text[6], script_default_text[7]}
+script_info_time_box = {script_hitbox_box[3]+225, 40, script_hitbox_box[3]+115+225, 80, script_box_line, script_box_fill}
+iTp = {script_info_time_box[1], script_info_time_box[2], "texthere", script_default_text[1], script_default_text[2], script_default_text[3], script_default_text[4],  script_default_text[5], script_default_text[6], script_default_text[7]}
+script_vpad_box = {script_hitbox_box[3]+225, 20, script_hitbox_box[3]+225+49, 40, script_box_line, 0xCF646464}
+padx = script_vpad_box[1]+2
+pady = script_vpad_box[2]
+else--its inventory ect... the resolution is normal
+client.SetGameExtraPadding(script_padding_game[1], script_padding_game[2], script_padding_game[3], script_padding_game[4])--see init for values
+script_game_box_on = true
+script_player_hitbox = false
+script_objects_hitbox = false
+script_relic_box = {script_hitbox_box[3], 170, script_hitbox_box[3]+115, 399, script_box_line, script_box_fill}
+X_draw_relic = script_relic_box[1]+4
+Y_draw_relic = script_relic_box[2]-5
+script_gear_box = {script_hitbox_box[3], script_relic_box[2]-110, script_hitbox_box[3]+115, script_relic_box[2], script_box_line, script_box_fill}
+eGp = {script_gear_box[1]+20, script_gear_box[2]-1, "yo", script_default_text[1], script_default_text[2], script_default_text[3], script_default_text[4], script_default_text[5], script_default_text[6], script_default_text[7]}
+script_timeattack_box = {65, 220, script_hitbox_box[1], 399, script_box_line, script_box_fill}
+tAp = {script_timeattack_box[1]+2, script_timeattack_box[2]+56, "texthere", script_default_text[1], script_default_text[2], 8, "Ebrima",  script_default_text[5], script_default_text[6], script_default_text[7]}
+script_familiar_box = {0, 220, 65, 399, script_box_line, script_box_fill}
+fWp = {script_familiar_box[1], script_familiar_box[2], "texthere", script_default_text[1], script_default_text[2], script_default_text[3], script_default_text[4], script_default_text[5], script_default_text[6], script_default_text[7], 24, 27, 0x9FFFFFFF}
+script_rng_box = {script_hitbox_box[3], 40, script_hitbox_box[3]+115, script_relic_box[2]-110, script_box_line, script_box_fill}
+eRp = {script_rng_box[1]+8, script_rng_box[2]+2, "texthere", script_default_text[1], script_default_text[2], 13, "Arial",  "bold", script_default_text[6], script_default_text[7]}
+script_info_time_box = {script_hitbox_box[3]-95, script_hitbox_box[4], script_hitbox_box[3], 399, script_box_line, script_box_fill}
+iTp = {script_info_time_box[1], script_info_time_box[2], "texthere", script_default_text[1], script_default_text[2], script_default_text[3], script_default_text[4],  script_default_text[5], script_default_text[6], script_default_text[7]}
+script_vpad_box = {script_hitbox_box[3], 20, script_hitbox_box[3]+50, 40, script_box_line, 0xCF646464}
+padx = script_vpad_box[1]+2
+pady = script_vpad_box[2]
+end
+else--its not  the menu, make sure we set everything to normal
+client.SetGameExtraPadding(script_padding_game[1], script_padding_game[2], script_padding_game[3], script_padding_game[4])--see init for values
+script_game_box_on = true
+script_player_hitbox = true
+script_objects_hitbox = true
+script_relic_box = {script_hitbox_box[3], 170, script_hitbox_box[3]+115, 399, script_box_line, script_box_fill}
+X_draw_relic = script_relic_box[1]+4
+Y_draw_relic = script_relic_box[2]-5
+script_gear_box = {script_hitbox_box[3], script_relic_box[2]-110, script_hitbox_box[3]+115, script_relic_box[2], script_box_line, script_box_fill}
+eGp = {script_gear_box[1]+20, script_gear_box[2]-1, "yo", script_default_text[1], script_default_text[2], script_default_text[3], script_default_text[4], script_default_text[5], script_default_text[6], script_default_text[7]}
+script_timeattack_box = {65, 220, script_hitbox_box[1], 399, script_box_line, script_box_fill}
+tAp = {script_timeattack_box[1]+2, script_timeattack_box[2]+56, "texthere", script_default_text[1], script_default_text[2], 8, "Ebrima",  script_default_text[5], script_default_text[6], script_default_text[7]}
+script_familiar_box = {0, 220, 65, 399, script_box_line, script_box_fill}
+fWp = {script_familiar_box[1], script_familiar_box[2], "texthere", script_default_text[1], script_default_text[2], script_default_text[3], script_default_text[4], script_default_text[5], script_default_text[6], script_default_text[7], 24, 27, 0x9FFFFFFF}
+script_rng_box = {script_hitbox_box[3], 40, script_hitbox_box[3]+115, script_relic_box[2]-110, script_box_line, script_box_fill}
+eRp = {script_rng_box[1]+8, script_rng_box[2]+2, "texthere", script_default_text[1], script_default_text[2], 13, "Arial",  "bold", script_default_text[6], script_default_text[7]}
+script_info_time_box = {script_hitbox_box[3]-95, script_hitbox_box[4], script_hitbox_box[3], 399, script_box_line, script_box_fill}
+iTp = {script_info_time_box[1], script_info_time_box[2], "texthere", script_default_text[1], script_default_text[2], script_default_text[3], script_default_text[4],  script_default_text[5], script_default_text[6], script_default_text[7]}
+script_vpad_box = {script_hitbox_box[3], 20, script_hitbox_box[3]+50, 40, script_box_line, 0xCF646464}
+padx = script_vpad_box[1]+2
+pady = script_vpad_box[2]
+end
+
+end
+--------------------------------
+function game_box()
+gui.drawBox(script_game_box[1], script_game_box[2], script_game_box[3], script_game_box[4], script_game_box[5], script_game_box[6]) --game box
+gui.drawBox(script_hitbox_box[1], script_hitbox_box[2], script_hitbox_box[3], script_hitbox_box[4], script_hitbox_box[5], script_hitbox_box[6]) --objects box limits
+end
+--------------------------------
+local function info_time()
+	gui.drawBox(script_info_time_box[1], script_info_time_box[2], script_info_time_box[3], script_info_time_box[4], script_info_time_box[5], script_info_time_box[6])
+--FRAMES/LAG/REAL TIME COUNTER/IN GAME TIME RAM WATCH
+	--if its a movie, we want to turn all the text into red when its over
+	if movie.mode() == 'PLAY' and the_frame == movie.length() then	color_frame_text = 0xCFFF0000 else color_frame_text = 0xCFFFFFFF end
+--IN GAME TIME
+	gui.drawText(iTp[1], iTp[2]+12, "Game Time:", color_frame_text, iTp[5], iTp[6], iTp[7], iTp[8], iTp[9], iTp[10])
+	stat_gametime_hours = stat_gametime_data[0]
+	if stat_gametime_hours >= 0 and stat_gametime_hours < 10  then
+	stat_gametime_hours = "0"..stat_gametime_hours
+	end
+	gui.drawText(iTp[1]+48, iTp[2]+12, ""..stat_gametime_hours, color_frame_text, iTp[5], iTp[6], iTp[7], iTp[8], iTp[9], iTp[10])
+	stat_gametime_minutes = stat_gametime_data[4]
+	if stat_gametime_minutes >= 0 and stat_gametime_minutes < 10  then
+	stat_gametime_minutes = "0"..stat_gametime_minutes
+	end
+	gui.drawText(iTp[1]+58, iTp[2]+12, ":"..stat_gametime_minutes, color_frame_text, iTp[5], iTp[6], iTp[7], iTp[8], iTp[9], iTp[10])
+	stat_gametime_seconds = stat_gametime_data[8]
+	if stat_gametime_seconds >= 0 and stat_gametime_seconds < 10  then
+	stat_gametime_seconds = "0"..stat_gametime_seconds
+	end
+	gui.drawText(iTp[1]+70, iTp[2]+12, ":"..stat_gametime_seconds, color_frame_text, iTp[5], iTp[6], iTp[7], iTp[8], iTp[9], iTp[10])
+--REAL TIME
+	local fps = 60
+	local tseconds = (the_frame / fps)
+	local secondsraw = tseconds % 60;
+	local shift = 10 ^ 2;
+	local seconds = math.floor((secondsraw * shift) + 0.5) / shift;
+	local secondsstr = string.format("%.1f", seconds)
+	if (seconds < 10) then
+		secondsstr = "0" .. secondsstr;
+	end
+	local minutes = (math.floor(tseconds / 60)) % 60;
+	local minutesstr = minutes;
+	if (minutes < 10) then
+		minutesstr = "0" .. minutesstr;
+	end
+	local hours = (math.floor(tseconds / 60 / 60)) % 24;
+	local time = minutesstr .. ":" .. secondsstr;
+		if hours >= 0 and hours < 10  then
+			time = "0" .. hours .. ":" .. time;
+			else
+			time = hours .. ":" .. time;
+		end
+	gui.drawText(iTp[1], iTp[2], "Real   Time:", color_frame_text, iTp[5], iTp[6], iTp[7], iTp[8], iTp[9], iTp[10])
+	gui.drawText(iTp[1]+48, iTp[2], time, color_frame_text, iTp[5], iTp[6], iTp[7], iTp[8], iTp[9], iTp[10])
+--FRAMES/LAG
+	gui.drawText(iTp[1], iTp[2]+24, "Frame:", color_frame_text, iTp[5], iTp[6], iTp[7], iTp[8], iTp[9], iTp[10])
+	gui.drawText(iTp[1]+30, iTp[2]+24, the_frame, color_frame_text, iTp[5], iTp[6], iTp[7], iTp[8], iTp[9], iTp[10])
 end
 --------------------------------
 function where_is_player()
@@ -534,17 +658,39 @@ else
 -- if the pos is 15, the data is 0, if its between 321 and 640 its 1, if its between 641 and 860 its 2, ect...
 -- room x size in absolute is 320, room y is 256
 -- get the current position of the player and transform it into grid data
+if player_X_position_absolute < 65000 and player_Y_position_absolute < 65000 then
 curX = player_X_position_absolute/320
 curY = player_Y_position_absolute/256
 curX = math.floor(curX)
 curY = math.floor(curY)
 room_grid_X = room_X_min_grid + curX --from min coz grid orientation is from left to right
 room_grid_Y = room_Y_max_grid + curY --from max coz we go from top0 to bottom
+else
+room_grid_X = 0 --safeguard?
+room_grid_Y = 0 --
 end
-area_ID = area_text_data[room_grid_X + room_grid_Y * 64]
+end
+area_ID = castle_A_area[room_grid_X + room_grid_Y * 64]
+if area_ID == nil then area_text = "- - -" else area_text = area_ID end
+area_text_alt = first_castle_dataB[room_grid_X + room_grid_Y * 64]
+if area_text_alt == nil then area_text_alt = "- - -" end
+if room_grid_X >= 1 and room_grid_Y >= 1 then
+theroomX = room_grid_X * 4
+theroomY = room_grid_Y * 4 -20-- 20 is the number of row ive removed to make the map shorter, 5 rows x 4 px
+end
+
+--trail data
+if cursor_trail == true then
+if trail_data[91] ~= nil then trail_data = {} end
+if room_grid_Y ~= trail_data[#trail_data] or room_grid_X ~= trail_data[#trail_data-1] and game_is_loaded == 1 then
+--print(trail_data)
+table.insert(trail_data, "trail")
+table.insert(trail_data, room_grid_X)
+table.insert(trail_data, room_grid_Y)
+end
+end
 
 end
-
 --------------------------------
 local function playerhitbox()
 -- Alucard/Richter/Maria hurtbox / colision box 
@@ -858,8 +1004,8 @@ local function position()
 	gui.drawText(pWp[1] + 205, pWp[2], "Subpixel:"..player_X_subpixel, pWp[4], pWp[5], pWp[6], pWp[7], pWp[8], pWp[9], pWp[10])
 	gui.drawText(pWp[1] + 205, pWp[2] + 9, "Subpixel:"..player_Y_subpixel, pWp[4], pWp[5], pWp[6], pWp[7], pWp[8], pWp[9], pWp[10])
 
-	gui.drawText(pWp[1] + 256, pWp[2], "Motion:"..player_motion_X, pWp[4], pWp[5], pWp[6], pWp[7], pWp[8], pWp[9], pWp[10])
-	gui.drawText(pWp[1] + 256, pWp[2] + 9, "Motion:"..player_motion_Y, pWp[4], pWp[5], pWp[6], pWp[7], pWp[8], pWp[9], pWp[10])
+	gui.drawText(pWp[1] + 256, pWp[2], "Motion:"..player_X_motion, pWp[4], pWp[5], pWp[6], pWp[7], pWp[8], pWp[9], pWp[10])
+	gui.drawText(pWp[1] + 256, pWp[2] + 9, "Motion:"..player_Y_motion, pWp[4], pWp[5], pWp[6], pWp[7], pWp[8], pWp[9], pWp[10])
 
 
 	gui.drawText(pWp[1] + 302, pWp[2], "Box "..player_X_hitbox_radius, pWp[4], pWp[5], pWp[6], pWp[7], pWp[8], pWp[9], pWp[10])
@@ -890,7 +1036,6 @@ local function position()
 
 	gui.drawBox(script_position_box[1]+365, script_position_box[2], script_position_box[3], script_position_box[4], script_position_box[5], script_position_box[6])
 
-area_text = area_text_data[room_grid_X + room_grid_Y * 64]
 
 end
 
@@ -1277,58 +1422,6 @@ local function playerstatB()
 end
 
 --------------------------------
-local function info_time()
-	gui.drawBox(script_info_time_box[1], script_info_time_box[2], script_info_time_box[3], script_info_time_box[4], script_info_time_box[5], script_info_time_box[6])
---FRAMES/LAG/REAL TIME COUNTER/IN GAME TIME RAM WATCH
-	--if its a movie, we want to turn all the text into red when its over
-	if movie.mode() == 'PLAY' and the_frame == movie.length() then	color_frame_text = 0xCFFF0000 else color_frame_text = 0xCFFFFFFF end
---IN GAME TIME
-	stat_gametime_data = memory.readbyterange(0x05C9D6, 9, "Work Ram High")
-	gui.drawText(iTp[1], iTp[2]+12, "Game Time:", color_frame_text, iTp[5], iTp[6], iTp[7], iTp[8], iTp[9], iTp[10])
-	stat_gametime_hours = stat_gametime_data[0]
-	if stat_gametime_hours >= 0 and stat_gametime_hours < 10  then
-	stat_gametime_hours = "0"..stat_gametime_hours
-	end
-	gui.drawText(iTp[1]+48, iTp[2]+12, ""..stat_gametime_hours, color_frame_text, iTp[5], iTp[6], iTp[7], iTp[8], iTp[9], iTp[10])
-	stat_gametime_minutes = stat_gametime_data[4]
-	if stat_gametime_minutes >= 0 and stat_gametime_minutes < 10  then
-	stat_gametime_minutes = "0"..stat_gametime_minutes
-	end
-	gui.drawText(iTp[1]+58, iTp[2]+12, ":"..stat_gametime_minutes, color_frame_text, iTp[5], iTp[6], iTp[7], iTp[8], iTp[9], iTp[10])
-	stat_gametime_seconds = stat_gametime_data[8]
-	if stat_gametime_seconds >= 0 and stat_gametime_seconds < 10  then
-	stat_gametime_seconds = "0"..stat_gametime_seconds
-	end
-	gui.drawText(iTp[1]+70, iTp[2]+12, ":"..stat_gametime_seconds, color_frame_text, iTp[5], iTp[6], iTp[7], iTp[8], iTp[9], iTp[10])
---REAL TIME
-	local fps = 60
-	local tseconds = (the_frame / fps)
-	local secondsraw = tseconds % 60;
-	local shift = 10 ^ 2;
-	local seconds = math.floor((secondsraw * shift) + 0.5) / shift;
-	local secondsstr = string.format("%.1f", seconds)
-	if (seconds < 10) then
-		secondsstr = "0" .. secondsstr;
-	end
-	local minutes = (math.floor(tseconds / 60)) % 60;
-	local minutesstr = minutes;
-	if (minutes < 10) then
-		minutesstr = "0" .. minutesstr;
-	end
-	local hours = (math.floor(tseconds / 60 / 60)) % 24;
-	local time = minutesstr .. ":" .. secondsstr;
-		if hours >= 0 and hours < 10  then
-			time = "0" .. hours .. ":" .. time;
-			else
-			time = hours .. ":" .. time;
-		end
-	gui.drawText(iTp[1], iTp[2], "Real   Time:", color_frame_text, iTp[5], iTp[6], iTp[7], iTp[8], iTp[9], iTp[10])
-	gui.drawText(iTp[1]+48, iTp[2], time, color_frame_text, iTp[5], iTp[6], iTp[7], iTp[8], iTp[9], iTp[10])
---FRAMES/LAG
-	gui.drawText(iTp[1], iTp[2]+24, "Frame:", color_frame_text, iTp[5], iTp[6], iTp[7], iTp[8], iTp[9], iTp[10])
-	gui.drawText(iTp[1]+30, iTp[2]+24, the_frame, color_frame_text, iTp[5], iTp[6], iTp[7], iTp[8], iTp[9], iTp[10])
-end
---------------------------------
 local function vpad()
 -- ripped from bizhawk lua, only 1P and saturn
 gui.drawBox(script_vpad_box[1], script_vpad_box[2], script_vpad_box[3], script_vpad_box[4], script_vpad_box[5], script_vpad_box[6])
@@ -1375,11 +1468,6 @@ end
 function timeattack()
 gui.drawBox(script_timeattack_box[1], script_timeattack_box[2], script_timeattack_box[3], script_timeattack_box[4], script_timeattack_box[5], script_timeattack_box[6])
 
-if emu.framecount() % script_timeattack_refresh == 0 or script_timeattack_refresh_sstate == true then --we dont need to regenerate this data until the menu is call...
-	time_attack_data = memory.readbyterange(0x05D830, 112, "Work Ram High")
-	script_timeattack_refresh_sstate = false
-end
-
 for i = 0, 108, 4 do
 	local byteA = time_attack_data[0+i]
 	local byteB = time_attack_data[1+i]
@@ -1391,7 +1479,7 @@ for i = 0, 108, 4 do
 
 	if byteA == 0 and byteB == 0 and byteC == 0 and byteD == 0 then --then the event didnt happen
 		time_attack_data_time[ln] = 999999
-		time_attack_data_time[ln+28] = "99:99:99 -------------------" --just dumouse_B way of saying didnt happen, like in game, maybe something better?
+		time_attack_data_time[ln+28] = "99:99:99 -------------------" --just dumb way of saying didnt happen, like in game, maybe something better?
 	else -- one of the byte is not 0, we have to find now what data it use, we can ignore byteB as its always 0 no matter what
 		if byteA == 0 and byteC > 0 and byteD == 0 then --this is a data with only the third byte, it can be read directly, its only seconds
 			if byteC > 100 and byteC < 200 then --its over 100 but never can be over 255, so we just truncate one zero from the time display
@@ -1475,6 +1563,17 @@ for i = 0, 108, 4 do
 	end
 end
 
+biz_size = client.getwindowsize()
+client.setwindowsize(2)
+gui.clearImageCache()
+gui.DrawFinish()
+client.screenshot('.\\NitM\\timeattack.png')
+client.setwindowsize(biz_size)
+
+script_timeattack = false
+wait = 10
+
+
 end
 --------------------------------
 local function gear()
@@ -1482,10 +1581,6 @@ local function gear()
 
 gui.drawBox(script_gear_box[1], script_gear_box[2]-5, script_gear_box[3], script_gear_box[4], script_gear_box[5], script_gear_box[6])
 
-if script_gear_refresh == true or script_gear_refresh_sstate == true then --we dont need to regenerate this data until the menu is call...
-	gear_data = memory.readbyterange(0x05C9A2, 29, "Work Ram High")
-	script_gear_refresh_sstate = false
-end
 
 	gui.drawImage(".\\NitM\\hand\\"..gear_data[0]..".png", script_gear_box[1]+7, script_gear_box[2]-3, 14, 14, true)
 	gui.drawImage(".\\NitM\\hand\\"..gear_data[4]..".png", script_gear_box[1]+7, script_gear_box[2]+11, 14, 14, true)
@@ -1507,16 +1602,21 @@ end
 	gui.drawText(eGp[1]+3, eGp[2]+81, gearID[2+(gear_data[24]*2)], eGp[4], eGp[5], eGp[6], eGp[7], eGp[8], eGp[9], eGp[10])
 	gui.drawText(eGp[1]+3, eGp[2]+95, gearID[2+(gear_data[28]*2)], eGp[4], eGp[5], eGp[6], eGp[7], eGp[8], eGp[9], eGp[10])
 
+biz_size = client.getwindowsize()
+client.setwindowsize(2)
+gui.clearImageCache()
+gui.DrawFinish()
+client.screenshot('.\\NitM\\gear.png')
+client.setwindowsize(biz_size)
+
+script_gear = false
+wait = 10
+
+
 end
 --------------------------------
 local function relic()
 	gui.drawBox(script_relic_box[1], script_relic_box[2], script_relic_box[3], script_relic_box[4], script_relic_box[5], script_relic_box[6])
---note; the bytes are inverted AGAIN, first byte 0 on right, second byte 1 on left
-
-if emu.framecount() % script_relic_refresh == 0 or script_relic_refresh_sstate == true then --regenerate data every xx frames
-	relic_data = memory.readbyterange(0x05C6F0, 32, "Work Ram High")
-	script_relic_refresh_sstate = false
-end
 
 if relic_data[32] == nil then --then the table contain only the raw relic data values, we want to align this with the string for pics
 	for i = 1, 32, 1 do table.insert(relic_data, i+31, ".\\NitM\\relic\\"..relic_text[i]..".png") end --insert the "text" data
@@ -1553,23 +1653,154 @@ for i = 0, 31, 2 do
 	end
 end
 
+biz_size = client.getwindowsize()
+client.setwindowsize(2)
+gui.clearImageCache()
+gui.DrawFinish()
+client.screenshot('.\\NitM\\relic.png')
+client.setwindowsize(biz_size)
+
+script_relic = false
+wait = 10
 end
 --------------------------------
-function familiar()
-gui.drawBox(script_familiar_box[1], script_familiar_box[2], script_familiar_box[3], script_familiar_box[4], script_familiar_box[5], script_familiar_box[6])
-
-if emu.framecount() % script_familiar_refresh == 0  or script_familiar_refresh_sstate == true then --regenerate data every xx frames
-	familiar_data = memory.readbyterange(0x05C9EA, 85, "Work Ram High")
-	familiar_data_level = {}
-	table.insert(familiar_data_level, 1, ""..familiar_data[0])--ghost
-	table.insert(familiar_data_level, 2, ""..familiar_data[12])--bat
-	table.insert(familiar_data_level, 3, ""..familiar_data[36])--demon
-	table.insert(familiar_data_level, 4, ""..familiar_data[24])--fairy
-	table.insert(familiar_data_level, 5, ""..familiar_data[60])--half fairy
-	table.insert(familiar_data_level, 6, ""..familiar_data[48])--sword
-	table.insert(familiar_data_level, 8, ""..familiar_data[72])--nose
-	script_familiar_refresh_sstate = false
+local function rng()
+	gui.drawBox(script_rng_box[1], script_rng_box[2], script_rng_box[3], script_rng_box[4]-5, script_rng_box[5], script_rng_box[6])
+	gui.drawText(eRp[1], eRp[2]-2, "RNG", eRp[4], eRp[5],  eRp[6], eRp[7], eRp[8], eRp[9], eRp[10])
+	gui.drawText(eRp[1]+30, eRp[2]-2, ""..(bizstring.hex(state_rng)), eRp[4], eRp[5],  eRp[6], eRp[7], eRp[8], eRp[9], eRp[10])
 end
+--------------------------------
+function minimap()
+local iteration = 1
+mapData = {}
+for i = 0, 751, 2 do
+	mapData[iteration] = makeMap(i)
+	iteration = iteration + 1
+end
+displayMap(mapData)
+end
+--------------------------------
+function makeMap(i)
+    local data = {}
+    data[1] = 38 + i % 16 * 16
+	data[2] = 22 + i % 16 * 16
+	data[3] = 5 + 4 * math.floor(i / 16)
+	data[4] = map_data_A[i]
+	data[5] = map_data_A[1 + i]
+	return data
+end
+--------------------------------
+function displayMap(mapData)
+--special thanks to Really_Tall, yoshi ect...
+gui.drawBox(script_map_box[1], script_map_box[2], script_map_box[3], script_map_box[4], script_map_box[5], script_map_box[6])
+gui.drawImage('.\\NitM\\hud\\map256x189.png', 10, 5, 256, 189, true) 
+gui.drawImage('.\\NitM\\hud\\button_map_on.png', 2, 1, 14, 13, true)
+
+if script_map_mode == "RG" then -- its the red/green mode
+	square_sizeX = 3
+	square_sizeY = 3
+	if script_map_mode_delta == 0 then
+		square_line_On = 0x2500FF00
+		square_line_Off = 0x25FF0000
+		gui.drawImage('.\\NitM\\hud\\button_delta_rg_0.png', 5, 27, 8, 8, true)
+	elseif script_map_mode_delta == 1 then
+		square_line_On = 0x4500FF00
+		square_line_Off = 0x45FF0000	
+		gui.drawImage('.\\NitM\\hud\\button_delta_rg_1.png', 5, 27, 8, 8, true)
+	elseif script_map_mode_delta == 2 then
+		square_line_On = 0x6500FF00
+		square_line_Off = 0x65FF0000	
+		gui.drawImage('.\\NitM\\hud\\button_delta_rg_2.png', 5, 27, 8, 8, true)
+	elseif script_map_mode_delta == 3 then
+		square_line_On = 0x9500FF00
+		square_line_Off = 0x95FF0000	
+		gui.drawImage('.\\NitM\\hud\\button_delta_rg_3.png', 5, 27, 8, 8, true)
+	end
+	gui.drawImage('.\\NitM\\hud\\button_map_RG.png', 5, 15, 8, 8, true)
+elseif script_map_mode == "GT" then -- its the grey/transparent mode
+	square_sizeX = 3
+	square_sizeY = 3
+	if script_map_mode_delta == 0 then
+		square_line_Off = 0x77646464
+		gui.drawImage('.\\NitM\\hud\\button_delta_grey_0.png', 5, 27, 8, 8, true)
+	elseif script_map_mode_delta == 1 then
+		square_line_Off = 0x97646464
+		gui.drawImage('.\\NitM\\hud\\button_delta_grey_1.png', 5, 27, 8, 8, true)
+	elseif script_map_mode_delta == 2 then
+		square_line_Off = 0xB7646464
+		gui.drawImage('.\\NitM\\hud\\button_delta_grey_2.png', 5, 27, 8, 8, true)
+	elseif script_map_mode_delta == 3 then
+		square_line_Off = 0xD7646464
+		gui.drawImage('.\\NitM\\hud\\button_delta_grey_3.png', 5, 27, 8, 8, true)
+	end
+	square_line_On = 0x00000000
+	gui.drawImage('.\\NitM\\hud\\button_map_GT.png', 5, 15, 8, 8, true)
+elseif  script_map_mode == "BT" then
+--its BT (black/transparent) so we want them a bit bigger so that it will cover the outside layer of "walls" and emulate the game
+	square_line_On = 0x00000000
+	square_line_Off = 0xFF000000
+	square_sizeX = 4
+	square_sizeY = 4
+	gui.drawImage('.\\NitM\\hud\\button_map_BT.png', 5, 15, 8, 8, true)
+elseif  script_map_mode == "ZZ" then
+--its ZZ mode we want to draw all transparent just because the user turned off progression display and want to see the map untouched
+	square_line_On = 0x00000000
+	square_line_Off = 0x00000000
+	square_sizeX = 0
+	square_sizeY = 0
+	gui.drawImage('.\\NitM\\hud\\button_map_off.png', 2, 1, 14, 13, true)
+--	gui.drawImage('.\\NitM\\hud\\button_map_ZZ.png', 5, 15, 8, 8, true)
+end
+if cursor_color_invert == true then --we want to invert color logic
+	local newval
+	newval = square_line_Off
+	square_line_Off = square_line_On
+	square_line_On = newval
+end
+local square_fill_Off = square_line_Off
+local square_fill_On = square_line_On
+--local square_line_T = 0x00000000
+--local square_fill_T = square_line_T
+for mapIndex = 1, #mapData do
+    local baseX = {[0] = mapData[mapIndex][2], [1] = mapData[mapIndex][1]}
+    local baseY = mapData[mapIndex][3]
+    local baseMapSquare = {[0] = mapData[mapIndex][5], [1] = mapData[mapIndex][4]}
+    for mapSubIndex = 7, 0, -1 do
+		bitIndex = mapSubIndex % 4
+		baseIndex = (mapSubIndex - bitIndex) / 4
+        if bit.check(baseMapSquare[baseIndex], 2 * bitIndex) then -- if the current bit(sqaure) is set ON
+            gui.drawRectangle(baseX[baseIndex] - 4 * bitIndex, baseY, square_sizeX, square_sizeY, square_line_On, square_fill_On)
+        elseif bit.check(baseMapSquare[baseIndex], 2 * bitIndex + 1) then --else if the next bit is set, and the current bit wasn't set, librarian-map-square
+            --gui.drawRectangle(baseX[baseIndex] - 4 * bitIndex, baseY, square_sizeX, square_sizeY, square_line_T, square_fill_T)
+				gui.drawRectangle(baseX[baseIndex] - 4 * bitIndex, baseY, square_sizeX, square_sizeY, square_line_Off, square_fill_Off)
+        else  -- else the bit (square) is OFF, and if in castle bounds (first_castle_data) we want to draw the whatever color we use
+			if castle_A_area[320 + ((mapIndex - 1) * 2 + baseIndex + 1) * 4 - bitIndex - 1] then
+				gui.drawRectangle(baseX[baseIndex] - 4 * bitIndex, baseY, square_sizeX, square_sizeY, square_line_Off, square_fill_Off)
+			end
+        end
+    end
+end
+--------------------------------
+
+
+
+biz_size = client.getwindowsize()
+client.setwindowsize(2)
+gui.clearImageCache()
+gui.DrawFinish()
+client.screenshot('.\\NitM\\map.png')
+client.setwindowsize(biz_size)
+
+script_map = false
+wait = 10
+
+end
+
+--------------------------------
+function familiar()
+
+
+gui.drawBox(script_familiar_box[1], script_familiar_box[2], script_familiar_box[3], script_familiar_box[4], script_familiar_box[5], script_familiar_box[6])
 
 current_familiar = "- - - - -"
 
@@ -1617,311 +1848,803 @@ end
 
 gui.drawText(fWp[1]+18, fWp[2]+165, "now "..current_familiar, fWp[4], fWp[5], fWp[6], fWp[7], fWp[8], fWp[9], fWp[10])
 
+
+
+biz_size = client.getwindowsize()
+client.setwindowsize(2)
+gui.clearImageCache()
+gui.DrawFinish()
+client.screenshot('.\\NitM\\familiar.png')
+client.setwindowsize(biz_size)
+script_familiar = false
+wait = 10
+
+
 end
---------------------------------
-local function rng()
-	gui.drawBox(script_rng_box[1], script_rng_box[2], script_rng_box[3], script_rng_box[4]-5, script_rng_box[5], script_rng_box[6])
-	if script_rng_refresh == true then
-		state_rng = (memory.read_u32_be(0x0482b8))
+
+
+function draw_map_cursor()
+
+ if theroomX >= 1 and theroomY >= 1 then
+--Zcolor[25]  Zcolor[17]
+--x265 y 185 bottom right
+--top right of the map is x265,y3 13 23 33 ....
+--top left of the map is x5,y3 13 23 33 ....
+
+if cursor_player == true then
+	if player_character_ID == 0 then
+		gui.drawImage('.\\NitM\\hud\\button_alucard_on.png', 5, 45, 8, 8, true)
+	elseif player_character_ID == 1 then
+		gui.drawImage('.\\NitM\\hud\\button_richter_on.png', 5, 45, 8, 8, true)
+	elseif player_character_ID == 2 then
+		gui.drawImage('.\\NitM\\hud\\button_maria_on.png', 5, 45, 8, 8, true)
 	end
-	gui.drawText(eRp[1], eRp[2]-2, "RNG", eRp[4], eRp[5],  eRp[6], eRp[7], eRp[8], eRp[9], eRp[10])
-	gui.drawText(eRp[1]+30, eRp[2]-2, ""..(bizstring.hex(state_rng)), eRp[4], eRp[5],  eRp[6], eRp[7], eRp[8], eRp[9], eRp[10])
+elseif cursor_player == false then
+	gui.drawImage('.\\NitM\\hud\\button_player_off.png', 5, 45, 8, 8, true)
 end
 
+if cursor_player == true and cursor_player_color == 1 then
+if cursor_player_speed == 0 then 
+CPcolor = 0xFFFF6600 
+gui.drawImage('.\\NitM\\hud\\button_speed_0.png', 5, 69, 8, 8, true)
+elseif cursor_player_speed == 1 then
+CPcolor = Zcolor[43] 
+gui.drawImage('.\\NitM\\hud\\button_speed_1.png', 5, 69, 8, 8, true)
+if wait >= 0 and wait <= 30 or wait >= 40 and wait <= 60 then
+gui.drawImage('.\\NitM\\hud\\cursor_right_orange.png',(room_X_min_grid * 4)+3 , ((room_Y_max_grid*4)-16)+((room_Y_size_grid * 4)/2)-2, 6, 6, true)
+gui.drawImage('.\\NitM\\hud\\cursor_left_orange.png',(room_X_min_grid * 4)+10+(room_X_size_grid * 4)+2 , ((room_Y_max_grid*4)-16)+((room_Y_size_grid * 4)/2) - 2, 6, 6, true)
+gui.drawImage('.\\NitM\\hud\\cursor_down_orange.png', 10 + (room_X_min_grid * 4) + ((room_X_size_grid * 4)/2) - 3 , ((room_Y_max_grid*4)-16)-6, 6, 6, true)
+gui.drawImage('.\\NitM\\hud\\cursor_up_orange.png', 10 + (room_X_min_grid * 4) + ((room_X_size_grid * 4)/2) - 3 , ((room_Y_max_grid*4)-16)+(room_Y_size_grid * 4)+2, 6, 6, true)
+else
+gui.drawImage('.\\NitM\\hud\\cursor_right_orange.png',(room_X_min_grid * 4)-2 , ((room_Y_max_grid*4)-16)+((room_Y_size_grid * 4)/2)-2, 6, 6, true)
+gui.drawImage('.\\NitM\\hud\\cursor_left_orange.png',(room_X_min_grid * 4)+10+(room_X_size_grid * 4)+7 , ((room_Y_max_grid*4)-16)+((room_Y_size_grid * 4)/2) - 2, 6, 6, true)
+gui.drawImage('.\\NitM\\hud\\cursor_down_orange.png', 10 + (room_X_min_grid * 4) + ((room_X_size_grid * 4)/2) - 3 , ((room_Y_max_grid*4)-16)-11, 6, 6, true)
+gui.drawImage('.\\NitM\\hud\\cursor_up_orange.png', 10 + (room_X_min_grid * 4) + ((room_X_size_grid * 4)/2) - 3 , ((room_Y_max_grid*4)-16)+(room_Y_size_grid * 4)+7, 6, 6, true)
+end
+elseif cursor_player_speed == 2 then
+CPcolor = Zcolor[42] 
+gui.drawImage('.\\NitM\\hud\\button_speed_2.png', 5, 69, 8, 8, true)
+if wait >= 10 and wait <= 30 or wait >= 40 and wait <= 60 then
+gui.drawImage('.\\NitM\\hud\\cursor_right_orange.png',(room_X_min_grid * 4)+3 , ((room_Y_max_grid*4)-16)+((room_Y_size_grid * 4)/2)-2, 6, 6, true)
+gui.drawImage('.\\NitM\\hud\\cursor_left_orange.png',(room_X_min_grid * 4)+10+(room_X_size_grid * 4)+2 , ((room_Y_max_grid*4)-16)+((room_Y_size_grid * 4)/2) - 2, 6, 6, true)
+gui.drawImage('.\\NitM\\hud\\cursor_down_orange.png', 10 + (room_X_min_grid * 4) + ((room_X_size_grid * 4)/2) - 3 , ((room_Y_max_grid*4)-16)-6, 6, 6, true)
+gui.drawImage('.\\NitM\\hud\\cursor_up_orange.png', 10 + (room_X_min_grid * 4) + ((room_X_size_grid * 4)/2) - 3 , ((room_Y_max_grid*4)-16)+(room_Y_size_grid * 4)+2, 6, 6, true)
+else
+gui.drawImage('.\\NitM\\hud\\cursor_right_orange.png',(room_X_min_grid * 4)-2 , ((room_Y_max_grid*4)-16)+((room_Y_size_grid * 4)/2)-2, 6, 6, true)
+gui.drawImage('.\\NitM\\hud\\cursor_left_orange.png',(room_X_min_grid * 4)+10+(room_X_size_grid * 4)+7 , ((room_Y_max_grid*4)-16)+((room_Y_size_grid * 4)/2) - 2, 6, 6, true)
+gui.drawImage('.\\NitM\\hud\\cursor_down_orange.png', 10 + (room_X_min_grid * 4) + ((room_X_size_grid * 4)/2) - 3 , ((room_Y_max_grid*4)-16)-11, 6, 6, true)
+gui.drawImage('.\\NitM\\hud\\cursor_up_orange.png', 10 + (room_X_min_grid * 4) + ((room_X_size_grid * 4)/2) - 3 , ((room_Y_max_grid*4)-16)+(room_Y_size_grid * 4)+7, 6, 6, true)
+end
+elseif cursor_player_speed == 3 then
+CPcolor = Zcolor[41] 
+gui.drawImage('.\\NitM\\hud\\button_speed_3.png', 5, 69, 8, 8, true)
+if wait >= 15 and wait <= 30 or wait >= 40 and wait <= 55 then
+gui.drawImage('.\\NitM\\hud\\cursor_right_orange.png',(room_X_min_grid * 4)+3 , ((room_Y_max_grid*4)-16)+((room_Y_size_grid * 4)/2)-2, 6, 6, true)
+gui.drawImage('.\\NitM\\hud\\cursor_left_orange.png',(room_X_min_grid * 4)+10+(room_X_size_grid * 4)+2 , ((room_Y_max_grid*4)-16)+((room_Y_size_grid * 4)/2) - 2, 6, 6, true)
+gui.drawImage('.\\NitM\\hud\\cursor_down_orange.png', 10 + (room_X_min_grid * 4) + ((room_X_size_grid * 4)/2) - 3 , ((room_Y_max_grid*4)-16)-6, 6, 6, true)
+gui.drawImage('.\\NitM\\hud\\cursor_up_orange.png', 10 + (room_X_min_grid * 4) + ((room_X_size_grid * 4)/2) - 3 , ((room_Y_max_grid*4)-16)+(room_Y_size_grid * 4)+2, 6, 6, true)
+else
+gui.drawImage('.\\NitM\\hud\\cursor_right_orange.png',(room_X_min_grid * 4)-2 , ((room_Y_max_grid*4)-16)+((room_Y_size_grid * 4)/2)-2, 6, 6, true)
+gui.drawImage('.\\NitM\\hud\\cursor_left_orange.png',(room_X_min_grid * 4)+10+(room_X_size_grid * 4)+7 , ((room_Y_max_grid*4)-16)+((room_Y_size_grid * 4)/2) - 2, 6, 6, true)
+gui.drawImage('.\\NitM\\hud\\cursor_down_orange.png', 10 + (room_X_min_grid * 4) + ((room_X_size_grid * 4)/2) - 3 , ((room_Y_max_grid*4)-16)-11, 6, 6, true)
+gui.drawImage('.\\NitM\\hud\\cursor_up_orange.png', 10 + (room_X_min_grid * 4) + ((room_X_size_grid * 4)/2) - 3 , ((room_Y_max_grid*4)-16)+(room_Y_size_grid * 4)+7, 6, 6, true)
+end
+end
+gui.drawRectangle(theroomX + 10 , theroomY + 5, 4, 4, 0xFFFF6600, CPcolor)
+gui.drawRectangle((room_X_min_grid * 4) + 10, (room_Y_max_grid * 4)-16+1, (room_X_size_grid * 4), (room_Y_size_grid * 4), CPcolor, nil)
+gui.drawImage('.\\NitM\\hud\\button_color_orange.png', 5, 57, 8, 8, true)
 
 
 
---------------------------------
+elseif cursor_player == true and cursor_player_color == 2 then
+if cursor_player_speed == 0 then 
+CPcolor = 0xFF00FFFF 
+gui.drawImage('.\\NitM\\hud\\button_speed_0.png', 5, 69, 8, 8, true)
+elseif cursor_player_speed == 1 then
+CPcolor = Zcolor[19] 
+gui.drawImage('.\\NitM\\hud\\button_speed_1.png', 5, 69, 8, 8, true)
+if wait >= 0 and wait <= 30 or wait >= 40 and wait <= 60 then
+gui.drawImage('.\\NitM\\hud\\cursor_right_cyan.png',(room_X_min_grid * 4)+3 , ((room_Y_max_grid*4)-16)+((room_Y_size_grid * 4)/2)-2, 6, 6, true)
+gui.drawImage('.\\NitM\\hud\\cursor_left_cyan.png',(room_X_min_grid * 4)+10+(room_X_size_grid * 4)+2 , ((room_Y_max_grid*4)-16)+((room_Y_size_grid * 4)/2) - 2, 6, 6, true)
+gui.drawImage('.\\NitM\\hud\\cursor_down_cyan.png', 10 + (room_X_min_grid * 4) + ((room_X_size_grid * 4)/2) - 3 , ((room_Y_max_grid*4)-16)-6, 6, 6, true)
+gui.drawImage('.\\NitM\\hud\\cursor_up_cyan.png', 10 + (room_X_min_grid * 4) + ((room_X_size_grid * 4)/2) - 3 , ((room_Y_max_grid*4)-16)+(room_Y_size_grid * 4)+2, 6, 6, true)
+else
+gui.drawImage('.\\NitM\\hud\\cursor_right_cyan.png',(room_X_min_grid * 4)-2 , ((room_Y_max_grid*4)-16)+((room_Y_size_grid * 4)/2)-2, 6, 6, true)
+gui.drawImage('.\\NitM\\hud\\cursor_left_cyan.png',(room_X_min_grid * 4)+10+(room_X_size_grid * 4)+7 , ((room_Y_max_grid*4)-16)+((room_Y_size_grid * 4)/2) - 2, 6, 6, true)
+gui.drawImage('.\\NitM\\hud\\cursor_down_cyan.png', 10 + (room_X_min_grid * 4) + ((room_X_size_grid * 4)/2) - 3 , ((room_Y_max_grid*4)-16)-11, 6, 6, true)
+gui.drawImage('.\\NitM\\hud\\cursor_up_cyan.png', 10 + (room_X_min_grid * 4) + ((room_X_size_grid * 4)/2) - 3 , ((room_Y_max_grid*4)-16)+(room_Y_size_grid * 4)+7, 6, 6, true)
+end
+elseif cursor_player_speed == 2 then
+CPcolor = Zcolor[18] 
+gui.drawImage('.\\NitM\\hud\\button_speed_2.png', 5, 69, 8, 8, true)
+if wait >= 10 and wait <= 30 or wait >= 40 and wait <= 60 then
+gui.drawImage('.\\NitM\\hud\\cursor_right_cyan.png',(room_X_min_grid * 4)+3 , ((room_Y_max_grid*4)-16)+((room_Y_size_grid * 4)/2)-2, 6, 6, true)
+gui.drawImage('.\\NitM\\hud\\cursor_left_cyan.png',(room_X_min_grid * 4)+10+(room_X_size_grid * 4)+2 , ((room_Y_max_grid*4)-16)+((room_Y_size_grid * 4)/2) - 2, 6, 6, true)
+gui.drawImage('.\\NitM\\hud\\cursor_down_cyan.png', 10 + (room_X_min_grid * 4) + ((room_X_size_grid * 4)/2) - 3 , ((room_Y_max_grid*4)-16)-6, 6, 6, true)
+gui.drawImage('.\\NitM\\hud\\cursor_up_cyan.png', 10 + (room_X_min_grid * 4) + ((room_X_size_grid * 4)/2) - 3 , ((room_Y_max_grid*4)-16)+(room_Y_size_grid * 4)+2, 6, 6, true)
+else
+gui.drawImage('.\\NitM\\hud\\cursor_right_cyan.png',(room_X_min_grid * 4)-2 , ((room_Y_max_grid*4)-16)+((room_Y_size_grid * 4)/2)-2, 6, 6, true)
+gui.drawImage('.\\NitM\\hud\\cursor_left_cyan.png',(room_X_min_grid * 4)+10+(room_X_size_grid * 4)+7 , ((room_Y_max_grid*4)-16)+((room_Y_size_grid * 4)/2) - 2, 6, 6, true)
+gui.drawImage('.\\NitM\\hud\\cursor_down_cyan.png', 10 + (room_X_min_grid * 4) + ((room_X_size_grid * 4)/2) - 3 , ((room_Y_max_grid*4)-16)-11, 6, 6, true)
+gui.drawImage('.\\NitM\\hud\\cursor_up_cyan.png', 10 + (room_X_min_grid * 4) + ((room_X_size_grid * 4)/2) - 3 , ((room_Y_max_grid*4)-16)+(room_Y_size_grid * 4)+7, 6, 6, true)
+end
+elseif cursor_player_speed == 3 then
+CPcolor = Zcolor[17] 
+gui.drawImage('.\\NitM\\hud\\button_speed_3.png', 5, 69, 8, 8, true)
+if wait >= 15 and wait <= 30 or wait >= 40 and wait <= 55 then
+gui.drawImage('.\\NitM\\hud\\cursor_right_cyan.png',(room_X_min_grid * 4)+3 , ((room_Y_max_grid*4)-16)+((room_Y_size_grid * 4)/2)-2, 6, 6, true)
+gui.drawImage('.\\NitM\\hud\\cursor_left_cyan.png',(room_X_min_grid * 4)+10+(room_X_size_grid * 4)+2 , ((room_Y_max_grid*4)-16)+((room_Y_size_grid * 4)/2) - 2, 6, 6, true)
+gui.drawImage('.\\NitM\\hud\\cursor_down_cyan.png', 10 + (room_X_min_grid * 4) + ((room_X_size_grid * 4)/2) - 3 , ((room_Y_max_grid*4)-16)-6, 6, 6, true)
+gui.drawImage('.\\NitM\\hud\\cursor_up_cyan.png', 10 + (room_X_min_grid * 4) + ((room_X_size_grid * 4)/2) - 3 , ((room_Y_max_grid*4)-16)+(room_Y_size_grid * 4)+2, 6, 6, true)
+else
+gui.drawImage('.\\NitM\\hud\\cursor_right_cyan.png',(room_X_min_grid * 4)-2 , ((room_Y_max_grid*4)-16)+((room_Y_size_grid * 4)/2)-2, 6, 6, true)
+gui.drawImage('.\\NitM\\hud\\cursor_left_cyan.png',(room_X_min_grid * 4)+10+(room_X_size_grid * 4)+7 , ((room_Y_max_grid*4)-16)+((room_Y_size_grid * 4)/2) - 2, 6, 6, true)
+gui.drawImage('.\\NitM\\hud\\cursor_down_cyan.png', 10 + (room_X_min_grid * 4) + ((room_X_size_grid * 4)/2) - 3 , ((room_Y_max_grid*4)-16)-11, 6, 6, true)
+gui.drawImage('.\\NitM\\hud\\cursor_up_cyan.png', 10 + (room_X_min_grid * 4) + ((room_X_size_grid * 4)/2) - 3 , ((room_Y_max_grid*4)-16)+(room_Y_size_grid * 4)+7, 6, 6, true)
+end
+end
+gui.drawRectangle(theroomX + 10 , theroomY + 5, 4, 4, 0xFF00FFFF, CPcolor)
+gui.drawRectangle((room_X_min_grid * 4) + 10, (room_Y_max_grid * 4)-16+1, (room_X_size_grid * 4), (room_Y_size_grid * 4), CPcolor, nil)
+gui.drawImage('.\\NitM\\hud\\button_color_cyan.png', 5, 57, 8, 8, true)
 
+elseif cursor_player == false then
 
+end
 
-local mapData = {}
+end
 
-function minimap()
-    if  emu.framecount() % 1 == 0 or #mapData == 0  then
-        local iteration = 1
-        mapData = {}
-			for i = 0, 751, 2 do  --was 2048 for "full" map
-				mapData[iteration] = makeMap(i)
-				iteration = iteration + 1
+--trail, maybe I should check player cursor is on... or not...im not sure if its a seperate feature or not... guess it is for now
+if cursor_trail == true and #trail_data ~= nil then
+
+	for i = 1, #trail_data/3, 1 do
+		if trail_data[(i*3)] ~= room_grid_Y or trail_data[(i*3)-1] ~= room_grid_X  then
+			gui.drawRectangle( 10+trail_data[(i*3)-1]*4, 5+trail_data[(i*3)]*4-20, 4, 4, Zcolor[wait+i], Zcolor[wait-i])
+		end
+	end
+	for i = 1, #trail_data/6, 1 do
+		if trail_data[(i*3)] ~= room_grid_Y and trail_data[(i*3)-1] ~= room_grid_X  then
+			gui.drawRectangle( 10+trail_data[(i*3)-1]*4, 5+trail_data[(i*3)]*4-20, 4, 4, Zcolor[i+2], Zcolor[i-1])
+		end
+	end
+	for i = 2, #trail_data/3, 2 do
+		if trail_data[(i*3)] ~= room_grid_Y and trail_data[(i*3)-1] ~= room_grid_X  then
+			gui.drawRectangle( 10+trail_data[(i*3)-1]*4, 5+trail_data[(i*3)]*4-20, 4, 4, Zcolor[wait+i], Zcolor[wait-3])
+		end
+	end
+	for i = 1, #trail_data/6, 3 do
+		if trail_data[(i*3)] ~= room_grid_Y and trail_data[(i*3)-1] ~= room_grid_X  then
+			gui.drawRectangle( 10+trail_data[(i*3)-1]*4, 5+trail_data[(i*3)]*4-20, 4, 4, Zcolor[wait+3], Zcolor[wait*i])
+		end
+	end
+	gui.drawImage('.\\NitM\\hud\\button_trail_on.png', 5, 81, 8, 8, true)
+elseif cursor_trail == false then
+	gui.drawImage('.\\NitM\\hud\\button_trail_off.png', 5, 81, 8, 8, true)
+end
+----boss, A is the color if data = 0 (player dont have the relic) B is the color if the player has the relic (1 or 3, >0)
+if cursor_boss == true then
+	if cursor_boss_color == 1 then
+		if cursor_boss_speed == 0 then CBcolorA = 0xFFFF0000 CBcolorB = 0xFF00FF00 --red false green true
+		elseif cursor_boss_speed == 1 then CBcolorA = Zcolor[4] CBcolorB = Zcolor[12] 
+		elseif cursor_boss_speed == 2 then CBcolorA = Zcolor[3] CBcolorB = Zcolor[11] 
+		elseif cursor_boss_speed == 3 then CBcolorA = Zcolor[2] CBcolorB = Zcolor[10] 
+		elseif cursor_boss_speed == 4 then CBcolorA = Zcolor[1] CBcolorB = Zcolor[9] 
+		end
+		gui.drawImage('.\\NitM\\hud\\button_color_RG.png', 5, 112, 8, 8, true)
+	elseif cursor_boss_color == 2 then --orange false cyan true
+		if cursor_boss_speed == 0 then CBcolorA = 0xFFFF6600 CBcolorB = 0xFF00FFFF 
+		elseif cursor_boss_speed == 1 then CBcolorA = Zcolor[44] CBcolorB = Zcolor[20] 
+		elseif cursor_boss_speed == 2 then CBcolorA = Zcolor[43] CBcolorB = Zcolor[19] 
+		elseif cursor_boss_speed == 3 then CBcolorA = Zcolor[42] CBcolorB = Zcolor[18]
+		elseif cursor_boss_speed == 4 then CBcolorA = Zcolor[41] CBcolorB = Zcolor[17]
+		end
+		gui.drawImage('.\\NitM\\hud\\button_color_OC.png', 5, 112, 8, 8, true)
+	elseif cursor_boss_color == 3 then --purple false yellow true
+		if cursor_boss_speed == 0 then CBcolorA = 0xFFC010F0 CBcolorB = 0xFFFFFF00
+		elseif cursor_boss_speed == 1 then CBcolorA = Zcolor[52] CBcolorB = Zcolor[28] 
+		elseif cursor_boss_speed == 2 then CBcolorA = Zcolor[51] CBcolorB = Zcolor[27] 
+		elseif cursor_boss_speed == 3 then CBcolorA = Zcolor[50] CBcolorB = Zcolor[26]
+		elseif cursor_boss_speed == 4 then CBcolorA = Zcolor[49] CBcolorB = Zcolor[25]
+		end
+		gui.drawImage('.\\NitM\\hud\\button_color_PY.png', 5, 112, 8, 8, true)
+	elseif cursor_boss_color == 4 then --blue false pink true
+		if cursor_boss_speed == 0 then CBcolorA = 0xFF0000FF CBcolorB = 0xFFFF00FF
+		elseif cursor_boss_speed == 1 then CBcolorA = Zcolor[60] CBcolorB = Zcolor[36] 
+		elseif cursor_boss_speed == 2 then CBcolorA = Zcolor[59] CBcolorB = Zcolor[35] 
+		elseif cursor_boss_speed == 3 then CBcolorA = Zcolor[58] CBcolorB = Zcolor[34]
+		elseif cursor_boss_speed == 4 then CBcolorA = Zcolor[57] CBcolorB = Zcolor[33]
+		end
+		gui.drawImage('.\\NitM\\hud\\button_color_BP.png', 5, 112, 8, 8, true)
+	elseif cursor_boss_color == 5 then --pink false cyan true
+		if cursor_boss_speed == 0 then CBcolorA = 0xFFFF00FF CBcolorB = 0xFF00FFFF
+		elseif cursor_boss_speed == 1 then CBcolorA = Zcolor[36] CBcolorB = Zcolor[20] 
+		elseif cursor_boss_speed == 2 then CBcolorA = Zcolor[35] CBcolorB = Zcolor[19] 
+		elseif cursor_boss_speed == 3 then CBcolorA = Zcolor[34] CBcolorB = Zcolor[18]
+		elseif cursor_boss_speed == 4 then CBcolorA = Zcolor[33] CBcolorB = Zcolor[17]
+		end
+		gui.drawImage('.\\NitM\\hud\\button_color_PC.png', 5, 112, 8, 8, true)
+	end
+	if cursor_boss_speed == 5 then --flash colors mode on
+		CBcolorA = Zcolor[wait/2] CBcolorB = Zcolor[wait+5] --using wait will make everything flash rapidly
+		gui.drawImage('.\\NitM\\hud\\button_color_rainbow.png', 5, 112, 8, 8, true) --change the color button to rainbow icon
+	end
+	if cursor_color_invert == true then --we want to invert color logic
+		local newval
+		newval = CBcolorB
+		CBcolorB = CBcolorA
+		CBcolorA = newval
+	end
+	for i = 0, 5, 1 do --draw the speed button
+		if cursor_boss_speed == i then
+			gui.drawImage(".\\NitM\\hud\\button_speed_"..i..".png", 5, 124, 8, 8, true)
+		end
+	end
+--table is X, Y, "text" order is the same than timeattack byte order
+	for i = 1,28,1 do --do first square of the boss
+		if time_attack_data[(4*i)-1] == 0 and time_attack_data[(4*i)-2] == 0 and time_attack_data[(4*i)-4] == 0 and first_castle_boss_dataA[(i*3)-1] > 0 then
+			gui.drawRectangle( 10+first_castle_boss_dataA[(i*3)-1]*4, 5+first_castle_boss_dataA[(i*3)]*4-20, 4, 4, CBcolorA, CBcolorA)
+		else
+			gui.drawRectangle( 10+first_castle_boss_dataA[(i*3)-1]*4, 5+first_castle_boss_dataA[(i*3)]*4-20, 4, 4, CBcolorB, CBcolorB)
+		end
+	end
+	for i = 1,28,1 do --some boss have rooms bigger than one square, for now second square is the exit (we have two tables)
+		if time_attack_data[(4*i)-1] == 0 and time_attack_data[(4*i)-2] == 0 and time_attack_data[(4*i)-4] == 0 and first_castle_boss_dataB[(i*3)-1] > 0 then
+			gui.drawRectangle( 10+first_castle_boss_dataB[(i*3)-1]*4, 5+first_castle_boss_dataB[(i*3)]*4-20, 4, 4, CBcolorA, CBcolorA)
+		else
+			gui.drawRectangle( 10+first_castle_boss_dataB[(i*3)-1]*4, 5+first_castle_boss_dataB[(i*3)]*4-20, 4, 4, CBcolorB, CBcolorB)
+		end
+	end
+	gui.drawImage('.\\NitM\\hud\\button_boss_on.png', 5, 100, 8, 8, true)
+elseif cursor_boss == false then 
+	gui.drawImage('.\\NitM\\hud\\button_boss_off.png', 5, 100, 8, 8, true)
+end
+---relic, A is the color if data = 0 (player dont have the relic) B is the color if the player has the relic (1 or 3, >0)
+if cursor_relic == true then
+	if cursor_relic_color == 1 then
+		if cursor_relic_speed == 0 then CRcolorA = 0xFFFF0000 CRcolorB = 0xFF00FF00 --red false green true
+		elseif cursor_relic_speed == 1 then CRcolorA = Zcolor[4] CRcolorB = Zcolor[12] 
+		elseif cursor_relic_speed == 2 then CRcolorA = Zcolor[3] CRcolorB = Zcolor[11] 
+		elseif cursor_relic_speed == 3 then CRcolorA = Zcolor[2] CRcolorB = Zcolor[10] 
+		elseif cursor_relic_speed == 4 then CRcolorA = Zcolor[1] CRcolorB = Zcolor[9] 
+		end
+		gui.drawImage('.\\NitM\\hud\\button_color_RG.png', 5, 153, 8, 8, true)
+	elseif cursor_relic_color == 2 then --orange false cyan true
+		if cursor_relic_speed == 0 then CRcolorA = 0xFFFF6600 CRcolorB = 0xFF00FFFF 
+		elseif cursor_relic_speed == 1 then CRcolorA = Zcolor[44] CRcolorB = Zcolor[20] 
+		elseif cursor_relic_speed == 2 then CRcolorA = Zcolor[43] CRcolorB = Zcolor[19] 
+		elseif cursor_relic_speed == 3 then CRcolorA = Zcolor[42] CRcolorB = Zcolor[18]
+		elseif cursor_relic_speed == 4 then CRcolorA = Zcolor[41] CRcolorB = Zcolor[17]
+		end
+		gui.drawImage('.\\NitM\\hud\\button_color_OC.png', 5, 153, 8, 8, true)
+	elseif cursor_relic_color == 3 then --purple false yellow true
+		if cursor_relic_speed == 0 then CRcolorA = 0xFFC010F0 CRcolorB = 0xFFFFFF00
+		elseif cursor_relic_speed == 1 then CRcolorA = Zcolor[52] CRcolorB = Zcolor[28] 
+		elseif cursor_relic_speed == 2 then CRcolorA = Zcolor[51] CRcolorB = Zcolor[27] 
+		elseif cursor_relic_speed == 3 then CRcolorA = Zcolor[50] CRcolorB = Zcolor[26]
+		elseif cursor_relic_speed == 4 then CRcolorA = Zcolor[49] CRcolorB = Zcolor[25]
+		end
+		gui.drawImage('.\\NitM\\hud\\button_color_PY.png', 5, 153, 8, 8, true)
+	elseif cursor_relic_color == 4 then --blue false pink true
+		if cursor_relic_speed == 0 then CRcolorA = 0xFF0000FF CRcolorB = 0xFFFF00FF
+		elseif cursor_relic_speed == 1 then CRcolorA = Zcolor[60] CRcolorB = Zcolor[36] 
+		elseif cursor_relic_speed == 2 then CRcolorA = Zcolor[59] CRcolorB = Zcolor[35] 
+		elseif cursor_relic_speed == 3 then CRcolorA = Zcolor[58] CRcolorB = Zcolor[34]
+		elseif cursor_relic_speed == 4 then CRcolorA = Zcolor[57] CRcolorB = Zcolor[33]
+		end
+		gui.drawImage('.\\NitM\\hud\\button_color_BP.png', 5, 153, 8, 8, true)
+	elseif cursor_relic_color == 5 then --pink false cyan true
+		if cursor_relic_speed == 0 then CRcolorA = 0xFFFF00FF CRcolorB = 0xFF00FFFF
+		elseif cursor_relic_speed == 1 then CRcolorA = Zcolor[36] CRcolorB = Zcolor[20] 
+		elseif cursor_relic_speed == 2 then CRcolorA = Zcolor[35] CRcolorB = Zcolor[19] 
+		elseif cursor_relic_speed == 3 then CRcolorA = Zcolor[34] CRcolorB = Zcolor[18]
+		elseif cursor_relic_speed == 4 then CRcolorA = Zcolor[33] CRcolorB = Zcolor[17]
+		end
+		gui.drawImage('.\\NitM\\hud\\button_color_PC.png', 5, 153, 8, 8, true)
+	end
+	if cursor_relic_speed == 5 then --flash colors mode on
+		CRcolorA = Zcolor[wait/2] CRcolorB = Zcolor[wait+5] --using wait will make everything flash rapidly
+		gui.drawImage('.\\NitM\\hud\\button_color_rainbow.png', 5, 153, 8, 8, true) --change the color button to rainbow icon
+	end
+	if cursor_color_invert == true then --we want to invert color logic
+		local newval
+		newval = CRcolorB
+		CRcolorB = CRcolorA
+		CRcolorA = newval
+	end
+	for i = 0, 5, 1 do --draw the speed button
+		if cursor_relic_speed == i then
+			gui.drawImage(".\\NitM\\hud\\button_speed_"..i..".png", 5, 165, 8, 8, true)
+		end
+	end
+--table is X, Y, "text" order is the same than relic byte order
+	for i = 1,32,1 do --do relic square false true
+		if relic_data[(i)-1] == 0 then
+			gui.drawRectangle( 10+first_castle_relic_data[(i*3)-1]*4, 5+first_castle_relic_data[(i*3)]*4-20, 4, 4, CRcolorA, CRcolorA)
+		else
+			gui.drawRectangle( 10+first_castle_relic_data[(i*3)-1]*4, 5+first_castle_relic_data[(i*3)]*4-20, 4, 4, CRcolorB, CRcolorB)
+		end
+	end
+	gui.drawImage('.\\NitM\\hud\\button_relic_on.png', 5, 141, 8, 8, true)
+elseif cursor_relic == false then 
+	gui.drawImage('.\\NitM\\hud\\button_relic_off.png', 5, 141, 8, 8, true)
+end
+------ user cursor, theres 3 cursors, one of them is just changing the size to look bigger
+if cursor_user_color == 1 then --cheap switch on/off + selection
+	gui.drawImage('.\\NitM\\hud\\button_user_gold.png', 265, 185, 8, 8, true)
+elseif cursor_user_color == 2 or cursor_user_color == 3 then
+	gui.drawImage('.\\NitM\\hud\\button_user_white.png', 265, 185, 8, 8, true)
+elseif cursor_user_color == 4 then
+	gui.drawImage('.\\NitM\\hud\\button_user_off.png', 265, 185, 8, 8, true)
+end
+if cursor_user == true and movie.mode() ~= 'PLAY' then --dont draw the user cursor when playing a movie duh...
+--print(mouse_X)
+	if (mouse_X > -279 and mouse_X < -38 and mouse_Y > -72 and mouse_Y < 115) then --then we are on the map area
+	if (mouse_X > -279 and mouse_X < -225 and mouse_Y > 95 and mouse_Y < 115)--we want to avoid borders
+	or (mouse_X > -87 and mouse_X < -38 and mouse_Y > 86 and mouse_Y < 115)
+	or (mouse_X > -53 and mouse_X < -38 and mouse_Y > 38 and mouse_Y < 115)
+	then--so we do nothing
+	map_querry_X = 0
+	map_querry_Y = 0
+	area_querry = "- - - - -"
+	area_querry_alt = "- - - - -"	
+	else
+	mouse_pos_snapped = snap_to_grid(mouse_X+297, mouse_Y+75)--magic to make the cursor and square stick to the grid
+		if cursor_user_color == 1 then
+			if wait >= 0 and wait <= 10 then
+				gui.drawImage('.\\NitM\\hud\\cursorB3.png', mouse_pos_snapped[1]-14, mouse_pos_snapped[2]-12 , 31, 31, true)
+			elseif wait >= 11 and wait <= 20 then
+				gui.drawImage('.\\NitM\\hud\\cursorB2.png', mouse_pos_snapped[1]-14, mouse_pos_snapped[2]-12 , 31, 31, true)
+			elseif wait >= 21 and wait <= 30 then 
+				gui.drawImage('.\\NitM\\hud\\cursorB1.png', mouse_pos_snapped[1]-14, mouse_pos_snapped[2]-12 , 31, 31, true)
+			elseif wait >= 31 and wait <= 40 then 
+				gui.drawImage('.\\NitM\\hud\\cursorB1.png', mouse_pos_snapped[1]-14, mouse_pos_snapped[2]-12 , 31, 31, true)
+			elseif wait >= 41 and wait <= 50 then 
+				gui.drawImage('.\\NitM\\hud\\cursorB1.png', mouse_pos_snapped[1]-14, mouse_pos_snapped[2]-12 , 31, 31, true)
+			elseif wait >= 51 and wait <= 60 then 
+				gui.drawImage('.\\NitM\\hud\\cursorB2.png', mouse_pos_snapped[1]-14, mouse_pos_snapped[2]-12 , 31, 31, true)
 			end
-	end
- displayMap(mapData)
-end
-
-function makeMap(i)
-    local data = {}
-    local rcMapStart = 0x05CF10
-
-    data[1] = 26 + i % 16 * 16
-	data[2] = 10 + i % 16 * 16
-	data[3] = 5 + 4 * math.floor(i / 16)
-	
-	data[4] = memory.readbyte(rcMapStart + i)
-	data[5] = memory.readbyte(rcMapStart + 1 + i)
-	data[6] = i
-	return data
-end
-
-function displayMap(mapData)
-	gui.drawBox(0, 0, 275, 220, 0xCF646464, nil)
-	gui.drawImage('.\\NitM\\map256x189.png', 10, 5, 256, 189, true) 
-
-    local lineColorOn = 0xFF000000
-    local fillColorOn = 0xFF000000
-    local lineColorOff = 0x90646464
-    local fillColorOff = 0x90646464
-    local lineColorT = 0x90646464
-    local fillColorT = 0x90646464
-    local sizeX = 3
-    local sizeY = 3
-
-   for mapIndex = 1, #mapData do
-        local baseX = {mapData[mapIndex][1], mapData[mapIndex][2]}
-        local baseY = mapData[mapIndex][3]
-        local baseMapSquare = {mapData[mapIndex][4], mapData[mapIndex][5]}
-			for baseIndex = 1, 2 do -- repeat for A and B
-				for bitIndex = 0, 6, 2 do -- repeat for every second bit in the value, starting with the lowest bit
-					local offset = 12 - (bitIndex *  2) -- offset goes 9, 6, 3, 0
---					if (mapIndex == 1) then console.writeline("bitIndex: "..bitIndex.." offset: "..offset.." baseIndex: "..baseIndex.." mapIndex: "..mapIndex) end
-					-- if the current bit is set, draw normal, or rather we shouldnt draw anyway
-					if bit.band(baseMapSquare[baseIndex], 2^bitIndex) == 2^bitIndex then
---						gui.drawRectangle(baseX[baseIndex] + offset, baseY, sizeX, sizeY, lineColorOn, fillColorOn)
-					-- else if the next (transparent) bit is set, and the current bit wasn't set, draw transparent, but we dont care
-					elseif bit.band(baseMapSquare[baseIndex], 2^(bitIndex + 1)) == 2^(bitIndex + 1) then
-						gui.drawRectangle(baseX[baseIndex] + offset, baseY, sizeX, sizeY, lineColorT, fillColorT)
-					else--else the bit is off, thats what we want to toy with
---						if first_castle_full_data[mapData[mapIndex]] == true then 
-						gui.drawRectangle(baseX[baseIndex] + offset, baseY, sizeX, sizeY, lineColorOff, fillColorOff)
---						end
-					end
-				end
+		elseif cursor_user_color == 2 then
+			if wait >= 0 and wait <= 10 then
+				gui.drawImage('.\\NitM\\hud\\cursorA3.png', mouse_pos_snapped[1]-14, mouse_pos_snapped[2]-12 , 31, 31, true)
+			elseif wait >= 11 and wait <= 20 then
+				gui.drawImage('.\\NitM\\hud\\cursorA2.png', mouse_pos_snapped[1]-14, mouse_pos_snapped[2]-12 , 31, 31, true)
+			elseif wait >= 21 and wait <= 30 then 
+				gui.drawImage('.\\NitM\\hud\\cursorA1.png', mouse_pos_snapped[1]-14, mouse_pos_snapped[2]-12 , 31, 31, true)
+			elseif wait >= 31 and wait <= 40 then 
+				gui.drawImage('.\\NitM\\hud\\cursorA1.png', mouse_pos_snapped[1]-14, mouse_pos_snapped[2]-12 , 31, 31, true)
+			elseif wait >= 41 and wait <= 50 then 
+				gui.drawImage('.\\NitM\\hud\\cursorA1.png', mouse_pos_snapped[1]-14, mouse_pos_snapped[2]-12 , 31, 31, true)
+			elseif wait >= 51 and wait <= 60 then 
+			gui.drawImage('.\\NitM\\hud\\cursorA2.png', mouse_pos_snapped[1]-14, mouse_pos_snapped[2]-12 , 31, 31, true)
 			end
+		elseif cursor_user_color == 3 then
+			if wait >= 0 and wait <= 10 then
+				gui.drawImage('.\\NitM\\hud\\cursorA3.png', mouse_pos_snapped[1]-6, mouse_pos_snapped[2]-4 , 15, 15, true)
+			elseif wait >= 11 and wait <= 20 then
+				gui.drawImage('.\\NitM\\hud\\cursorA2.png', mouse_pos_snapped[1]-6, mouse_pos_snapped[2]-4 , 15, 15, true)
+			elseif wait >= 21 and wait <= 30 then 
+				gui.drawImage('.\\NitM\\hud\\cursorA1.png', mouse_pos_snapped[1]-6, mouse_pos_snapped[2]-4 , 15, 15, true)
+			elseif wait >= 31 and wait <= 40 then 
+				gui.drawImage('.\\NitM\\hud\\cursorA1.png', mouse_pos_snapped[1]-6, mouse_pos_snapped[2]-4 , 15, 15, true)
+			elseif wait >= 41 and wait <= 50 then 
+				gui.drawImage('.\\NitM\\hud\\cursorA1.png', mouse_pos_snapped[1]-6, mouse_pos_snapped[2]-4 , 15, 15, true)
+			elseif wait >= 51 and wait <= 60 then 
+				gui.drawImage('.\\NitM\\hud\\cursorA2.png', mouse_pos_snapped[1]-6, mouse_pos_snapped[2]-4 , 15, 15, true)
+			end
+		end
+		gui.drawRectangle(mouse_pos_snapped[1]-1, mouse_pos_snapped[2]+1, 4, 4, nil)
+		map_info_querry_color = 0xCF646464 --grey coz the user hasnt selected yet a square
+		if (mouse_B) then --now the user request a square on the grid
+			map_querry_X = (mouse_pos_snapped[1]-1-10)/4
+			map_querry_Y = (mouse_pos_snapped[2]+1+75+15)/4
+			map_querry_X = math.floor(map_querry_X+ 0.5*1)
+			map_querry_Y = math.floor(map_querry_Y+ 0.5*1)-19
+			area_querry = castle_A_area[map_querry_X + map_querry_Y * 64] --like always, x + (y*64)
+			area_querry_alt = first_castle_dataB[map_querry_X + map_querry_Y * 64] --like always, x + (y*64)
+			if area_querry == nil then area_querry = "- - - - -" end --the square is outside the castle
+			if area_querry_alt == nil then area_querry_alt = "- - - - -" end --the square is outside the castle
+			if cursor_user_color == 1 or cursor_user_color == 2 then --draw some flashy rectangles for those cursors
+				gui.drawRectangle(mouse_pos_snapped[1]-2 , mouse_pos_snapped[2], 6, 6, Zcolor[1])
+				gui.drawRectangle(mouse_pos_snapped[1]-4 , mouse_pos_snapped[2]-2, 10, 10, Zcolor[1])
+				gui.drawRectangle(mouse_pos_snapped[1]-6 , mouse_pos_snapped[2]-4, 14, 14, Zcolor[1])
+			end
+			map_info_querry_color = 0xFF00FF00 --green coz its selected by the user
+		else
+		map_querry_X = 0
+		map_querry_Y = 0
+		area_querry = "- - - - -"
+		area_querry_alt = "- - - - -"
+		end
+	end
+	end
+end
+-------
+
+
+if cursor_color_invert == true then
+	gui.drawImage('.\\NitM\\hud\\button_revert_yes.png', 31, 185, 8, 8, true)
+elseif cursor_color_invert == false then
+	gui.drawImage('.\\NitM\\hud\\button_revert_no.png', 31, 185, 8, 8, true)
+end
+
+gui.drawImage('.\\NitM\\hud\\button_cursor_reset.png', 18, 185, 8, 8, true)
+
+
+for i = 1,6,1 do
+	if i == cursor_joker_color then
+		gui.drawImage(".\\NitM\\hud\\button_joker_"..i..".png", 43, 185, 8, 8, true)
 	end
 end
 
 
-function buttonHitbox()
-	mouse_X = input.getmouse()['X']
-	mouse_Y = input.getmouse()['Y']
-	mouse_B = input.getmouse()['Left']
+for i = 0,6,1 do
+	if i == cursor_joker_speed then
+		gui.drawImage(".\\NitM\\hud\\button_speed_"..i..".png", 53, 185, 8, 8, true)
+	end
+end
 
-if stopHitbox == false and wait > 3 then
-	if (mouse_X > -22 and mouse_X < 8 and mouse_Y > 296 and mouse_Y < 301 and mouse_B) then
-	stopHitbox = true
+
+if cursor_joker_all == true then
+	gui.drawImage('.\\NitM\\hud\\button_dude_on.png', 62, 185, 8, 8, true)
+else
+	gui.drawImage('.\\NitM\\hud\\button_dude_off.png', 62, 185, 8, 8, true)
+end
+
+
+end
+
+function minimap_buttons()
+--the 3 first button, #1 does on/off player progression, #2 does change the color of squares, #3 change opacity (delta)
+if wait > 30 then
+	if (mouse_X > -298 and mouse_X < -287 and mouse_Y > -77 and mouse_Y < -69 and mouse_B) then
+		if script_map_mode == "ZZ" then
+			script_map_mode = "RG"
+		elseif script_map_mode == "GT" or script_map_mode == "BT" or script_map_mode == "RG" then
+			script_map_mode = "ZZ"
+		end
+	script_map_refresh = true
 	wait = 0
 	end
 end
-if stopHitbox == true and wait > 3 then
-	if (mouse_X > -22 and mouse_X < 8 and mouse_Y > 296 and mouse_Y < 301 and mouse_B) then
-	stopHitbox = false
+if wait > 30 then
+	if (mouse_X > -298 and mouse_X < -287 and mouse_Y > -65 and mouse_Y < -57 and mouse_B) then
+		if script_map_mode == "BT" then
+			script_map_mode = "GT"
+		elseif script_map_mode == "GT" then
+			script_map_mode = "RG"
+		elseif script_map_mode == "RG" then
+			script_map_mode = "BT"
+		end
+	script_map_refresh = true
 	wait = 0
 	end
 end
-if stopHitbox == true then
-	gui.drawImage(off_png, 276, 373, X_but, Y_but, true)
-	gui.drawText(312, 369, "HitBox", 0x90FF0000, nil, 12, "Javanese Text", nil, nil, nil)
-else
-	gui.drawImage(on_png, 276, 373, X_but, Y_but, true)
-	gui.drawText(312, 369, "HitBox", 0x9000FF00, nil, 12, "Javanese Text", nil, nil, nil)
-end
-end
-
-function buttonMap()
---	stopMap = false
-if stopMap == false and wait > 3 then
-	if (mouse_X > -297 and mouse_X < -266 and mouse_Y > 117 and mouse_Y < 126 and mouse_B) then
-	bizsizex = client.screenwidth()
-	bizsizey = client.screenheight()
-	bizsize = client.getwindowsize()
---	print(bizsizex.."y"..bizsizey.."s"..bizsize)
-	gui.clearImageCache()
-	gui.DrawFinish()
-	client.setwindowsize(2)
-	client.screenshot('.\\map.png')
-	client.setwindowsize(bizsize)
-	stopMap = true
+if wait > 30 then
+	if (mouse_X > -298 and mouse_X < -287 and mouse_Y > -53 and mouse_Y < -45 and mouse_B) then
+		if script_map_mode_delta == 1 then script_map_mode_delta = 2 
+		elseif script_map_mode_delta == 2 then script_map_mode_delta = 3 
+		elseif script_map_mode_delta == 3 then script_map_mode_delta = 0 
+		elseif script_map_mode_delta == 0 then script_map_mode_delta = 1 
+		end
+	script_map_refresh = true
 	wait = 0
 	end
 end
-if stopMap == true and wait > 3 then
-	if (mouse_X > -297 and mouse_X < -266 and mouse_Y > 117 and mouse_Y < 126 and mouse_B) then
-	stopMap = false
+--the 4 next will do, player position on/off, the color of the cursor, the speed of the blink, trail data
+if wait > 30 then
+	if (mouse_X > -298 and mouse_X < -287 and mouse_Y > -36 and mouse_Y < -27 and mouse_B) then
+		if cursor_player == true then cursor_player = false cursor_trail = false
+		elseif cursor_player == false then cursor_player = true
+		end
+	wait = 0
+	end
+end
+if wait > 30 then
+	if (mouse_X > -298 and mouse_X < -287 and mouse_Y > -23 and mouse_Y < -15 and mouse_B) then
+		if cursor_player_color == 1 then cursor_player_color = 2 
+		elseif cursor_player_color == 2 then cursor_player_color = 1
+		-- elseif cursor_player_color == 3 then cursor_player_color = 1
+		end
+	wait = 0
+	end
+end
+if wait > 30 then
+	if (mouse_X > -298 and mouse_X < -287 and mouse_Y > -11 and mouse_Y < -3 and mouse_B) then
+		if cursor_player_speed == 1 then cursor_player_speed = 2 
+		elseif cursor_player_speed == 2 then cursor_player_speed = 3
+		elseif cursor_player_speed == 3 then cursor_player_speed = 0
+		elseif cursor_player_speed == 0 then cursor_player_speed = 1
+		end
+	wait = 0
+	end
+end
+if wait > 30 then
+	if (mouse_X > -298 and mouse_X < -287 and mouse_Y > 1 and mouse_Y < 9 and mouse_B) then
+		if cursor_trail == true then cursor_trail = false trail_data = {}
+		elseif cursor_trail == false then cursor_trail = true
+		end
+	wait = 0
+	end
+end
+--the 3 next will do, player time attack data on/off, color of the cursor, speed of the blink
+if wait > 30 then
+	if (mouse_X > -298 and mouse_X < -287 and mouse_Y > 19 and mouse_Y < 27 and mouse_B) then
+		if cursor_boss == true then cursor_boss = false 
+		elseif cursor_boss == false then cursor_boss = true
+		end
+	wait = 0
+	end
+end
+if wait > 30 then
+	if (mouse_X > -298 and mouse_X < -287 and mouse_Y > 31 and mouse_Y < 39 and mouse_B) then
+		if cursor_boss_color == 1 then cursor_boss_color = 2 
+		elseif cursor_boss_color == 2 then cursor_boss_color = 3
+		elseif cursor_boss_color == 3 then cursor_boss_color = 4
+		elseif cursor_boss_color == 4 then cursor_boss_color = 5
+		elseif cursor_boss_color == 5 then cursor_boss_color = 1
+		end
+	wait = 0
+	end
+end
+if wait > 30 then
+	if (mouse_X > -298 and mouse_X < -287 and mouse_Y > 43 and mouse_Y < 51 and mouse_B) then
+		if cursor_boss_speed == 1 then cursor_boss_speed = 2 
+		elseif cursor_boss_speed == 2 then cursor_boss_speed = 3
+		elseif cursor_boss_speed == 3 then cursor_boss_speed = 4
+		elseif cursor_boss_speed == 4 then cursor_boss_speed = 5
+		elseif cursor_boss_speed == 5 then cursor_boss_speed = 0
+		elseif cursor_boss_speed == 0 then cursor_boss_speed = 1
+		end
+	wait = 0
+	end
+end
+--the 3 next will do, player relic data on/off, color of the cursor, speed of the blink
+if wait > 30 then
+	if (mouse_X > -298 and mouse_X < -287 and mouse_Y > 61 and mouse_Y < 69 and mouse_B) then
+		if cursor_relic == true then cursor_relic = false 
+		elseif cursor_relic == false then cursor_relic = true
+		end
+	wait = 0
+	end
+end
+if wait > 30 then
+	if (mouse_X > -298 and mouse_X < -287 and mouse_Y > 73 and mouse_Y < 81 and mouse_B) then
+		if cursor_relic_color == 1 then cursor_relic_color = 2 
+		elseif cursor_relic_color == 2 then cursor_relic_color = 3
+		elseif cursor_relic_color == 3 then cursor_relic_color = 4
+		elseif cursor_relic_color == 4 then cursor_relic_color = 5
+		elseif cursor_relic_color == 5 then cursor_relic_color = 1
+		end
+	wait = 0
+	end
+end
+if wait > 30 then
+	if (mouse_X > -298 and mouse_X < -287 and mouse_Y > 85 and mouse_Y < 93 and mouse_B) then
+		if cursor_relic_speed == 1 then cursor_relic_speed = 2 
+		elseif cursor_relic_speed == 2 then cursor_relic_speed = 3
+		elseif cursor_relic_speed == 3 then cursor_relic_speed = 4
+		elseif cursor_relic_speed == 4 then cursor_relic_speed = 5
+		elseif cursor_relic_speed == 5 then cursor_relic_speed = 0
+		elseif cursor_relic_speed == 0 then cursor_relic_speed = 1
+		end
+	wait = 0
+	end
+end
+--the on /off button
+if wait > 30 then
+	if (mouse_X > -298 and mouse_X < -287 and mouse_Y > 104 and mouse_Y < 112 and mouse_B) then
+		if script_map_cursor == true then script_map_cursor = false 
+		elseif script_map_cursor == false then script_map_cursor = true
+		end
+	wait = 0
+	end
+end
+--reset to default values button
+if wait > 30 then
+	if (mouse_X > -285 and mouse_X < -274 and mouse_Y > 104 and mouse_Y < 112 and mouse_B) then
+	script_map_cursor = true
+	script_map_mode = "ZZ"
+	script_map_mode_delta = 2
+	cursor_trail = false
+	trail_data_refresh = false
+	trail_data = {}
+	cursor_user = false
+	cursor_user_color = 4
+	cursor_color_invert = false
+	cursor_player = false
+	cursor_player_color = 1
+	cursor_player_speed = 2
+	cursor_boss = false
+	cursor_boss_color = 2
+	cursor_boss_speed = 3
+	cursor_relic = false
+	cursor_relic_color = 3
+	cursor_relic_speed = 3
+	cursor_user = false
+	cursor_user_color = 4
+	cursor_joker_color = 6
+	cursor_joker_speed = 6
+	script_map_refresh = true
+	wait = 0
+	end
+end
+--revert button
+if wait > 30 then
+	if (mouse_X > -270 and mouse_X < -262 and mouse_Y > 104 and mouse_Y < 112 and mouse_B) then
+		if cursor_color_invert == true then 
+		cursor_color_invert = false 
+		script_map_refresh = true
+		elseif cursor_color_invert == false then 
+		cursor_color_invert = true 
+		script_map_refresh = true
+		end
+	wait = 0
+	end
+end
+--joker color
+if wait > 30 then
+	if (mouse_X > -258 and mouse_X < -250 and mouse_Y > 104 and mouse_Y < 112 and mouse_B) then
+		if cursor_joker_color == 1 then 
+		cursor_joker_color = 2 
+		script_map_mode = "GT"
+		script_map_mode_delta = 2
+		cursor_player_color = 1
+		cursor_boss_color = 2
+		cursor_relic_color = 2
+		elseif cursor_joker_color == 2 then 
+		cursor_joker_color = 3
+		script_map_mode = "BT"
+		script_map_mode_delta = 2
+		cursor_player_color = 2
+		cursor_boss_color = 3
+		cursor_relic_color = 3
+		elseif cursor_joker_color == 3 then 
+		cursor_joker_color = 4
+		script_map_mode = "RG"
+		script_map_mode_delta = 2
+		cursor_player_color = 2
+		cursor_boss_color = 4
+		cursor_relic_color = 4
+		elseif cursor_joker_color == 4 then 
+		cursor_joker_color = 5
+		script_map_mode = "GT"
+		script_map_mode_delta = 2
+		cursor_player_color = 2
+		cursor_boss_color = 5
+		cursor_relic_color = 5
+		elseif cursor_joker_color == 5 then 
+		cursor_joker_color = 6
+		script_map_mode = "ZZ"
+		script_map_mode_delta = 2
+		cursor_player_color = 1
+		cursor_boss_color = 2
+		cursor_relic_color = 3
+		elseif cursor_joker_color == 6 then 
+		cursor_joker_color = 1
+		script_map_mode = "RG"
+		script_map_mode_delta = 2
+		cursor_player_color = 1
+		cursor_boss_color = 1
+		cursor_relic_color = 1
+		end
+	script_map_refresh = true
+	wait = 0
+	end
+end
+--joker speed
+if wait > 30 then
+	if (mouse_X > -248 and mouse_X < -242 and mouse_Y > 104 and mouse_Y < 112 and mouse_B) then
+		if cursor_joker_speed == 1 then 
+			cursor_joker_speed = 2 
+			cursor_player_speed = 2
+			cursor_boss_speed = 2
+			cursor_relic_speed = 2
+		elseif cursor_joker_speed == 2 then 
+			cursor_joker_speed = 3
+			cursor_player_speed = 3
+			cursor_boss_speed = 3
+			cursor_relic_speed = 3		
+		elseif cursor_joker_speed == 3 then 
+			cursor_joker_speed = 4
+			cursor_player_speed = 3
+			cursor_boss_speed = 4
+			cursor_relic_speed = 4		
+		elseif cursor_joker_speed == 4 then 
+			cursor_joker_speed = 5
+			cursor_player_speed = 3
+			cursor_boss_speed = 5
+			cursor_relic_speed = 5		
+		elseif cursor_joker_speed == 5 then 
+			cursor_joker_speed = 6
+			cursor_player_speed = 2
+			cursor_boss_speed = 3
+			cursor_relic_speed = 3
+		elseif cursor_joker_speed == 6 then 
+			cursor_joker_speed = 0
+			cursor_player_speed = 0
+			cursor_boss_speed = 0
+			cursor_relic_speed = 0		
+		elseif cursor_joker_speed == 0 then 
+			cursor_joker_speed = 1
+			cursor_player_speed = 1
+			cursor_boss_speed = 1
+			cursor_relic_speed = 1
+		end
+	wait = 0
+end
+end
+--super joker, turn on and off everything
+if wait > 30 then
+	if (mouse_X > -238 and mouse_X < -232 and mouse_Y > 104 and mouse_Y < 112 and mouse_B) then
+		if cursor_joker_all == true then
+		cursor_joker_all = false
+		script_map_cursor = true
+		script_map_mode = "ZZ"
+		script_map_mode_delta = 2
+		cursor_trail = false
+		trail_data_refresh = false
+		trail_data = {}
+		cursor_player = false
+		cursor_boss = false
+		cursor_relic = false
+		script_map_refresh = true
+		elseif cursor_joker_all == false then 
+		cursor_joker_all = true
+		script_map_cursor = true
+		script_map_mode = "RG"
+		script_map_mode_delta = 2
+		cursor_trail = true
+		trail_data_refresh = true
+		trail_data = {}
+		cursor_player = true
+		cursor_boss = true
+		cursor_relic = true
+		script_map_refresh = true
+		end
+	wait = 0
+	end
+end
+--the user querry cursor (bottom right)
+if wait > 30 then
+	if (mouse_X > -38 and mouse_X < -26 and mouse_Y > 104 and mouse_Y < 112 and mouse_B) then
+		if cursor_user_color == 1 then cursor_user_color = 2 cursor_user = true
+		elseif cursor_user_color == 2 then cursor_user_color = 3 cursor_user = true
+		elseif cursor_user_color == 3 then cursor_user_color = 4 cursor_user = false
+		elseif cursor_user_color == 4 then cursor_user_color = 1 cursor_user = true
+		end
 	wait = 0
 	end
 end
 
 
-	gui.drawBox(0, 195, 79, 220, script_relic_box[5], script_relic_box[6])
-if stopMap == true then
-	
-	if bizsizex == 1584 then
-	gui.drawImageRegion('.\\map.png', 0, 0, 266, 194, 0, 0, 266, 194)
-	elseif bizsizex == 1920 then
-	gui.drawImageRegion('.\\map.png', 0, 0, 266, 194, 0, 0, 266, 194)	--665, 485 --532*0.25+532-20, 388*0.35+388+1
-	end
-	
-	gui.drawImage(off_png, 1, 196, X_but, Y_but, true)
-	gui.drawImage(off_png, 1, 208, X_but, Y_but, true)
-	gui.drawText(37, 191, "realtime", 0x90FF0000, nil, 11, "Javanese Text", nil, nil, nil)
-else
-	gui.drawImage(on_png, 1, 196, X_but, Y_but, true)
-	gui.drawImage(on_png, 1, 208, X_but, Y_but, true)
-	gui.drawText(37, 191, "realtime", 0x9000FF00, nil, 11, "Javanese Text", nil, nil, nil)
+--print(mouse_Y)
+--print(mouse_X)
 end
-
-	gui.drawBox(0, 0, 275, 220, 0xCF646464, nil)
-
-end
-
-function snap_to_grid(x, y)
-    return {
-        math.floor((x - (-289)) / 4) * 4 + (-289),
-        math.floor((y - (-72)) / 4) * 4 + (-72)
-    }
-end
-
-function drawMapCursor()
-
-colorMapGridShowA = 0xCFFFFFFF
-
-local base_colourA = 0x0000FF00 --green
-local base_colourB = 0x00FF0000 --0x00DDDDDD
-local opacity = (math.cos(the_frame*math.pi/120)+1)/2
-local opacity_alpha = math.ceil(0xFF*opacity)*0x1000000
-local cursor_colourA = base_colourA + opacity_alpha
-local cursor_colourB = base_colourB + opacity_alpha
-
-if room_grid_X >= 1 and room_grid_Y >= 1 then
-colorMapGridShowB = 0xCF646464
-theroomX = room_grid_X * 4
-theroomY = room_grid_Y * 4 -20-- 20 is the numouse_Ber of row ive removed to make the map shorter, 5 rows x 4 px
-
-if wait == 3 or wait == 6 or wait == 9  then
-if revez == true then
-stepz = stepz - 1
-if stepz == 2 then revez = false end
-else
-stepz = stepz + 1
-end
-end
-
---gui.drawLine(10 + theroomX+2, 5, 10 + theroomX+2, theroomY + 3, cursor_colourA)
---gui.drawLine(10 + theroomX+2, 193, 10 + theroomX+2, theroomY + 11, cursor_colourA)
---gui.drawLine(10, theroomY + 7, theroomX + 9, theroomY + 7, cursor_colourA)
---gui.drawLine(15 + theroomX , theroomY + 7, 265, theroomY + 7, cursor_colourA)
-gui.drawRectangle(theroomX + 10 , theroomY + 5, 4, 4, 0xFF00FFFF, nil)
-gui.drawRectangle((room_X_min_grid * 4) + 10, (room_Y_max_grid * 4)-16+1, (room_X_size_grid * 4), (room_Y_size_grid * 4), cursor_colourA, nil)
-
-if wait >= 0 and wait <= 5 then
-gui.drawImage('.\\NitM\\hud\\cursorA1.png', theroomX +5, theroomY , 15, 15, true)
-elseif wait >= 6 and wait <= 11 then
-gui.drawImage('.\\NitM\\hud\\cursorA2.png', theroomX +5, theroomY , 15, 15, true)
-elseif wait >= 12 and wait <= 17 then
-gui.drawImage('.\\NitM\\hud\\cursorA3.png', theroomX +5, theroomY , 15, 15, true)
-elseif wait >= 18 and wait <= 23 then
-gui.drawImage('.\\NitM\\hud\\cursorA4.png', theroomX +5, theroomY , 15, 15, true)
-elseif wait >= 24 and wait <= 29 then
-gui.drawImage('.\\NitM\\hud\\cursorA3.png', theroomX +5, theroomY , 15, 15, true)
-elseif wait >= 30 and wait <= 35 then
-gui.drawImage('.\\NitM\\hud\\cursorA2.png', theroomX +5, theroomY , 15, 15, true)
-elseif wait >= 36  then
-gui.drawImage('.\\NitM\\hud\\cursorA1.png', theroomX +5, theroomY , 15, 15, true)
-end
-
-
--- end
- -- or wait =< 20 then
--- end
--- if wait >= 21 or wait =< 30 then
--- gui.drawImage('.\\NitM\\hud\\cursorA3.png', theroomX +5, theroomY , 15, 15, true)
--- end
--- if wait >= 31 or wait =< 40 then
--- gui.drawImage('.\\NitM\\hud\\cursorA4.png', theroomX +5, theroomY , 15, 15, true)
--- end
--- if wait >= 41 or wait =< 50 then
--- gui.drawImage('.\\NitM\\hud\\cursorA3.png', theroomX +5, theroomY , 15, 15, true)
--- end
--- if wait >= 51 or wait =< 60 then
--- gui.drawImage('.\\NitM\\hud\\cursorA2.png', theroomX +5, theroomY , 15, 15, true)
--- end
-
-
-
-
-
-end
-
-mapquerryX = 0
-mapquerryY = 0
-area_text_querry = "- - - - -"
-
-if movie.mode() ~= 'PLAY' then
-
-if (mouse_X > -289 and mouse_X < -35 and mouse_Y > -72 and mouse_Y < 115) then
-mouse_pos_snapped = snap_to_grid(mouse_X+297, mouse_Y+75)
-gui.drawRectangle(mouse_pos_snapped[1]-1, mouse_pos_snapped[2]+1, 4, 4, nil)
--- gui.drawLine(10 + 297+mouse_X -8, 5, 10 + 297+mouse_X -8, 192 , cursor_colourB)
--- gui.drawLine(10, mouse_Y+75-1+3, 265, mouse_Y+75-1+3, cursor_colourB)
--- gui.drawRectangle(297+mouse_X , mouse_Y+75, 4, 4, nil)
-
-
-if (mouse_B) then
-mapquerryX = (mouse_pos_snapped[1]-1-10)/4
-mapquerryY = (mouse_pos_snapped[2]+1+75+15)/4
-mapquerryX = math.floor(mapquerryX+ 0.5*1)
-mapquerryY = math.floor(mapquerryY+ 0.5*1)-19
-colorMapGridShowB = 0xCFFFFFFF
-gui.drawRectangle(mouse_pos_snapped[1]-2 , mouse_pos_snapped[2], 6, 6, 0xFFFF0000)
-area_text_querry = area_text_data[mapquerryX + mapquerryY * 64]
-else
-colorMapGridShowB = 0xCF646464
-end
-
-end
-
-end
-
-if area_text == nil then area_text = "- - -" end
-
-if area_text_querry == nil then area_text_querry = "- - - - -" end
-
-
-	gui.drawBox(79, 195, 174, 220, script_relic_box[5], script_relic_box[6])
-	gui.drawImage('.\\NitM\\hud\\place.png', 80, 196, 34, 13, true)
-
-
-	gui.drawText(125, 192, "X0"..room_grid_X.."Y"..room_grid_Y, colorMapGridShowA, nil, 12, "Javanese Text", nil, nil, nil)
-	gui.drawText(80, 206, ""..area_text, colorMapGridShowA, nil, 10, "Impact", nil, nil, nil)
-	
-	gui.drawBox(174, 195, 275, 220, script_relic_box[5], script_relic_box[6])
-
-	gui.drawText(175, 192, "SELECT X"..mapquerryX.."Y"..mapquerryY, colorMapGridShowB, nil, 12, "Javanese Text", nil, nil, nil)
-	gui.drawText(175, 206, area_text_querry, colorMapGridShowB, nil, 10, "Impact", nil, nil, nil)
-
-
-
-if stepz == 10 then
-revez = true
-end
-
-end
-
 
 --------------------------------
+function map_info()
+--bigger box
+	gui.drawBox(script_map_info_box[1], script_map_info_box[2], script_map_info_box[3], script_map_info_box[4], script_map_info_box[5], script_map_info_box[6])
+--player info
+	gui.drawBox(script_map_info_box[1], script_map_info_box[2], script_map_info_box[1]+160, script_map_info_box[4], script_map_info_box[5], script_map_info_box[6])
+	gui.drawImage('.\\NitM\\hud\\place.png', 1, 196, 34, 13, true)
+	gui.drawText(110, 203, "X"..room_grid_X.."Y"..room_grid_Y, 0xCFFFFFFF, nil, 12, "Javanese Text", nil, nil, nil)
+	gui.drawText(35, 192, ""..area_text, 0xCFFFFFFF, nil, 12, "Javanese Text", nil, nil, nil)
+	gui.drawText(5, 204, ""..area_text_alt, 0xCFFFFFFF, nil, 12, "Javanese Text", nil, nil, nil)
 
+--user cursor info
+	gui.drawBox(script_map_info_box[1]+160, script_map_info_box[2], script_map_info_box[3], script_map_info_box[4], script_map_info_box[5], script_map_info_box[6])
+	gui.drawText(160, 193, ""..area_querry, 0xCFFFFFFF, nil, 10, "Impact", nil, nil, nil)
+	gui.drawText(160, 205, ""..area_querry_alt, 0xCFFFFFFF, nil, 10, "Impact", nil, nil, nil)
+	gui.drawText(240, 205, "X"..map_querry_X.."Y"..map_querry_Y, map_info_querry_color, nil, 10, "Impact", nil, nil, nil)
+end
 --------------------------------
---------------------------------
-
---------------------------------
---------------------------------
-
---------------------------------
---------------------------------
-
---------------------------------
---------------------------------
-
+function splash_png()
+	gui.drawImageRegion('.\\NitM\\map.png', 0, 0, 275, 195, 0, 0, 275, 195)
+	gui.drawImageRegion('.\\NitM\\familiar.png', 0, 220, 66, 180, 0, 220, 66, 180)
+	gui.drawImageRegion('.\\NitM\\relic.png', 676, 170, 116, 400, 676, 170, 116, 400)
+	gui.drawImageRegion('.\\NitM\\timeattack.png', 65, 220, 211, 180, 65, 220, 211, 180)
+	gui.drawImageRegion('.\\NitM\\gear.png', 676, 55, 116, 116, 676, 55, 116, 116)
+end
 --------------------------------
 --------------------------------
 
@@ -1936,151 +2659,89 @@ end
 --loop
 while script_run == true do
 event.onexit(exit_script)
-
-fetchram()
-where_is_player()
-
-
---the following is a shit piece of code to make sure everything is proper when the game change its resolution
-
-if player_script[2] == 4 and player_script[4] == 1 then --we are in the fucking menu
-if player_script[0] == 6 or player_script[0] == 10 or player_script[0] == 11 or player_script[0] == 21 then  --its main menu, options, familiars, map
-client.SetGameExtraPadding(script_padding_menu[1], script_padding_menu[2], script_padding_menu[3], script_padding_menu[4]) --menu resize coz they did bad stuff here with resolution
-script_game_box_on = false
-script_player_hitbox = false
-script_objects_hitbox = false
-script_relic_box = {script_hitbox_box[3]+225, 210, script_hitbox_box[3]+225+115, 440, script_box_line, script_box_fill}
-X_draw_relic = script_relic_box[1]+4
-Y_draw_relic = script_relic_box[2]-5
-script_gear_box = {script_hitbox_box[3]+225, script_relic_box[2]-110, script_hitbox_box[3]+115+225, script_relic_box[2], script_box_line, script_box_fill}
-eGp = {script_gear_box[1]+20, script_gear_box[2]-1, "yo", script_default_text[1], script_default_text[2], script_default_text[3], script_default_text[4], script_default_text[5], script_default_text[6], script_default_text[7]}
-script_timeattack_box = {65, 270, script_hitbox_box[1], 450, script_box_line, script_box_fill}
-tAp = {script_timeattack_box[1]+2, script_timeattack_box[2]+56, "texthere", script_default_text[1], script_default_text[2], 8, "Ebrima",  script_default_text[5], script_default_text[6], script_default_text[7]}
-script_familiar_box = {0, 270, 65, 450, script_box_line, script_box_fill}
-fWp = {script_familiar_box[1], script_familiar_box[2], "texthere", script_default_text[1], script_default_text[2], script_default_text[3], script_default_text[4], script_default_text[5], script_default_text[6], script_default_text[7], 24, 27, 0x9FFFFFFF}
-script_rng_box = {script_hitbox_box[3]+225, 80, script_hitbox_box[3]+115+225, script_relic_box[2], script_box_line, script_box_fill}
-eRp = {script_rng_box[1]+8, script_rng_box[2]+2, "texthere", script_default_text[1], script_default_text[2], 13, "Arial",  "bold", script_default_text[6], script_default_text[7]}
-script_info_time_box = {script_hitbox_box[3]+225, 40, script_hitbox_box[3]+115+225, 80, script_box_line, script_box_fill}
-iTp = {script_info_time_box[1], script_info_time_box[2], "texthere", script_default_text[1], script_default_text[2], script_default_text[3], script_default_text[4],  script_default_text[5], script_default_text[6], script_default_text[7]}
-script_vpad_box = {script_hitbox_box[3]+225, 20, script_hitbox_box[3]+225+49, 40, script_box_line, 0xCF646464}
-padx = script_vpad_box[1]+2
-pady = script_vpad_box[2]
-else--its inventory ect... the resolution is normal
-client.SetGameExtraPadding(script_padding_game[1], script_padding_game[2], script_padding_game[3], script_padding_game[4])--see init for values
-script_game_box_on = true
-script_player_hitbox = false
-script_objects_hitbox = false
-script_relic_box = {script_hitbox_box[3], 170, script_hitbox_box[3]+115, 399, script_box_line, script_box_fill}
-X_draw_relic = script_relic_box[1]+4
-Y_draw_relic = script_relic_box[2]-5
-script_gear_box = {script_hitbox_box[3], script_relic_box[2]-110, script_hitbox_box[3]+115, script_relic_box[2], script_box_line, script_box_fill}
-eGp = {script_gear_box[1]+20, script_gear_box[2]-1, "yo", script_default_text[1], script_default_text[2], script_default_text[3], script_default_text[4], script_default_text[5], script_default_text[6], script_default_text[7]}
-script_timeattack_box = {65, 220, script_hitbox_box[1], 399, script_box_line, script_box_fill}
-tAp = {script_timeattack_box[1]+2, script_timeattack_box[2]+56, "texthere", script_default_text[1], script_default_text[2], 8, "Ebrima",  script_default_text[5], script_default_text[6], script_default_text[7]}
-script_familiar_box = {0, 220, 65, 399, script_box_line, script_box_fill}
-fWp = {script_familiar_box[1], script_familiar_box[2], "texthere", script_default_text[1], script_default_text[2], script_default_text[3], script_default_text[4], script_default_text[5], script_default_text[6], script_default_text[7], 24, 27, 0x9FFFFFFF}
-script_rng_box = {script_hitbox_box[3], 40, script_hitbox_box[3]+115, script_relic_box[2]-110, script_box_line, script_box_fill}
-eRp = {script_rng_box[1]+8, script_rng_box[2]+2, "texthere", script_default_text[1], script_default_text[2], 13, "Arial",  "bold", script_default_text[6], script_default_text[7]}
-script_info_time_box = {script_hitbox_box[3]-95, script_hitbox_box[4], script_hitbox_box[3], 399, script_box_line, script_box_fill}
-iTp = {script_info_time_box[1], script_info_time_box[2], "texthere", script_default_text[1], script_default_text[2], script_default_text[3], script_default_text[4],  script_default_text[5], script_default_text[6], script_default_text[7]}
-script_vpad_box = {script_hitbox_box[3], 20, script_hitbox_box[3]+50, 40, script_box_line, 0xCF646464}
-padx = script_vpad_box[1]+2
-pady = script_vpad_box[2]
-end
-else--its not  the menu, make sure we set everything to normal
-client.SetGameExtraPadding(script_padding_game[1], script_padding_game[2], script_padding_game[3], script_padding_game[4])--see init for values
-script_game_box_on = true
-script_player_hitbox = true
-script_objects_hitbox = true
-script_relic_box = {script_hitbox_box[3], 170, script_hitbox_box[3]+115, 399, script_box_line, script_box_fill}
-X_draw_relic = script_relic_box[1]+4
-Y_draw_relic = script_relic_box[2]-5
-script_gear_box = {script_hitbox_box[3], script_relic_box[2]-110, script_hitbox_box[3]+115, script_relic_box[2], script_box_line, script_box_fill}
-eGp = {script_gear_box[1]+20, script_gear_box[2]-1, "yo", script_default_text[1], script_default_text[2], script_default_text[3], script_default_text[4], script_default_text[5], script_default_text[6], script_default_text[7]}
-script_timeattack_box = {65, 220, script_hitbox_box[1], 399, script_box_line, script_box_fill}
-tAp = {script_timeattack_box[1]+2, script_timeattack_box[2]+56, "texthere", script_default_text[1], script_default_text[2], 8, "Ebrima",  script_default_text[5], script_default_text[6], script_default_text[7]}
-script_familiar_box = {0, 220, 65, 399, script_box_line, script_box_fill}
-fWp = {script_familiar_box[1], script_familiar_box[2], "texthere", script_default_text[1], script_default_text[2], script_default_text[3], script_default_text[4], script_default_text[5], script_default_text[6], script_default_text[7], 24, 27, 0x9FFFFFFF}
-script_rng_box = {script_hitbox_box[3], 40, script_hitbox_box[3]+115, script_relic_box[2]-110, script_box_line, script_box_fill}
-eRp = {script_rng_box[1]+8, script_rng_box[2]+2, "texthere", script_default_text[1], script_default_text[2], 13, "Arial",  "bold", script_default_text[6], script_default_text[7]}
-script_info_time_box = {script_hitbox_box[3]-95, script_hitbox_box[4], script_hitbox_box[3], 399, script_box_line, script_box_fill}
-iTp = {script_info_time_box[1], script_info_time_box[2], "texthere", script_default_text[1], script_default_text[2], script_default_text[3], script_default_text[4],  script_default_text[5], script_default_text[6], script_default_text[7]}
-script_vpad_box = {script_hitbox_box[3], 20, script_hitbox_box[3]+50, 40, script_box_line, 0xCF646464}
-padx = script_vpad_box[1]+2
-pady = script_vpad_box[2]
-end
-
-
-
-if player_script[0] == 7 then --now we gotta check for new gear because the player is in inventory!
-script_gear_refresh = true
-else --super performance saver 2047 (lol)
-script_gear_refresh = false
-end
-event.onloadstate(function()--coz im nice I recheck gear when u load state
-script_gear_refresh_sstate = true 
-script_relic_refresh_sstate = true 
-script_familiar_refresh_sstate = true
-script_timeattack_refresh_sstate = true
+event.onloadstate(function()--coz im nice I recheck when u load state
+script_gear_refresh = true 
+script_relic_refresh = true 
+script_familiar_refresh = true
+script_timeattack_refresh = true
+script_map_refresh = true
+trail_data = {}
 end)
+refresh_data()
+resolution_switch()
+if script_game_box_on == true then game_box() end
+if script_info_time == true then info_time() end
+
+if game_is_boot then --lets rock
+where_is_player()
+flashy_colors()
 
 
 --one box around the game, one box around it for hitbox limits, set to false when in the menu special resolution (its pointless there)
-if script_game_box_on == true then
-gui.drawBox(script_game_box[1], script_game_box[2], script_game_box[3], script_game_box[4], script_game_box[5], script_game_box[6]) --game box
-gui.drawBox(script_hitbox_box[1], script_hitbox_box[2], script_hitbox_box[3], script_hitbox_box[4], script_hitbox_box[5], script_hitbox_box[6]) --objects box limits
-end
+
+
+
+if script_map == true then minimap() end
+
 
 
 
 if script_position == true then position() end
 if script_player_hitbox == true then playerhitbox() end
-if script_info_time == true then info_time() end
 if script_vpad == true then vpad() end
-if script_relic == true then relic() end
-if script_gear == true then gear() end
 if script_rng == true then rng() end
-if script_timeattack == true then timeattack() end
-if script_familiar == true then familiar() end
+
+if script_relic == true and wait > 11 then relic() end
+if script_gear == true and wait > 11 then gear() end
+if script_timeattack == true and wait > 11 then timeattack() end
+if script_familiar == true and wait > 11 then familiar() end
+
 if script_player_statA == true then playerstatA() end
 if script_status_box == true then status() end
 if script_player_monitor == true then playermonitor() end
 if script_player_statB == true then playerstatB() end
 
 
-if stopHitbox == false then DisplayObjectHitbox() end
-if stopMap == false then minimap() end
-if zstopMap == true then 
-minimap()
-gui.DrawFinish()
-gui.clearImageCache()
-client.screenshot('.\\map.png')
-zstopMap = false 
-stopMap = true 
+if script_map_info == true then map_info() end
+
+
+if script_relic == false and script_gear == false and script_timeattack == false and script_familiar == false then
+splash_png() --yeah we dont want to splash them if one of the module is up, but they should never be up at the point .... (and that works)
+end
+
+minimap_buttons()
+
+if script_map_cursor == true then
+draw_map_cursor()
+gui.drawImage('.\\NitM\\hud\\button_cursor_on.png', 3, 182, 12, 12, true)
+else
+gui.drawImage('.\\NitM\\hud\\button_cursor_off.png', 3, 182, 12, 12, true)
 end
 
 
-buttonMap()
-buttonHitbox()
-drawMapCursor()
+--DisplayObjectHitbox()
+--buttonMap()
+--buttonHitbox()
+
 
  toto = (collectgarbage("count"))
  gui.drawText(300, 50, toto, "white", nil, 12, "Impact", nil, nil, nil)
 
 
---collectgarbage("count")
-
-if totalRoomsStorage ~= stat_rooms then
-totalRoomsStorage = stat_rooms -- we update this after minimap so that it can read it next time
-if stopMap == true then zstopMap = true end
 end
 
+if wait < max_wait then 
+wait = wait + 1
+else
+wait_long = wait_long + 1
+wait = 0 
+end --inhouse wait super function lol
+--attempt at "optimize the ram" ... kinda (it doesnt work I think)
+if wait_long == 60 then gui.clearImageCache() end
+if wait_long == 120 then collectgarbage() end
+if wait_long == 360 then collectgarbage('restart') end
 
-if script_room_count ~= stat_rooms then
-script_room_count = stat_rooms
-end
 
-if wait < max_wait then wait = wait + 1 else wait = 0 end --inhouse wait super function lol
 event.onloadstate(function() gui.DrawFinish() end)--hmmm this mean it draw before you start emulation, nice !
 emu.frameadvance()
 end

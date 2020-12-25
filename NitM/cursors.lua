@@ -1,18 +1,24 @@
 --------------------------------
 function draw_map_cursor()
 
- if theroomX >= 1 and theroomY >= 1 then
+if castleB then --we need to offset
+offs = 28
+else --we dont need to offset...
+offs = 0
+end
+
+
 --Zcolor[25]  Zcolor[17]
 --x265 y 185 bottom right
 --top right of the map is x265,y3 13 23 33 ....
 --top left of the map is x5,y3 13 23 33 ....
 
 if cursor_player == true then
-	if player_character_ID == 0 then
+	if alucard then
 		gui.drawImage('.\\NitM\\hud\\button_alucard_on.png', 5, 45, 8, 8, true)
-	elseif player_character_ID == 1 then
+	elseif richter then
 		gui.drawImage('.\\NitM\\hud\\button_richter_on.png', 5, 45, 8, 8, true)
-	elseif player_character_ID == 2 then
+	elseif maria then
 		gui.drawImage('.\\NitM\\hud\\button_maria_on.png', 5, 45, 8, 8, true)
 	end
 elseif cursor_player == false then
@@ -27,48 +33,48 @@ elseif cursor_player_speed == 1 then
 CPcolor = Zcolor[43] 
 gui.drawImage('.\\NitM\\hud\\button_speed_1.png', 5, 69, 8, 8, true)
 if wait >= 0 and wait <= 30 or wait >= 40 and wait <= 60 then
-gui.drawImage('.\\NitM\\hud\\cursor_right_orange.png',(room_X_min_grid * 4)+3 , ((room_Y_max_grid*4)-16)+((room_Y_size_grid * 4)/2)-2, 6, 6, true)
-gui.drawImage('.\\NitM\\hud\\cursor_left_orange.png',(room_X_min_grid * 4)+10+(room_X_size_grid * 4)+2 , ((room_Y_max_grid*4)-16)+((room_Y_size_grid * 4)/2) - 2, 6, 6, true)
-gui.drawImage('.\\NitM\\hud\\cursor_down_orange.png', 10 + (room_X_min_grid * 4) + ((room_X_size_grid * 4)/2) - 3 , ((room_Y_max_grid*4)-16)-6, 6, 6, true)
-gui.drawImage('.\\NitM\\hud\\cursor_up_orange.png', 10 + (room_X_min_grid * 4) + ((room_X_size_grid * 4)/2) - 3 , ((room_Y_max_grid*4)-16)+(room_Y_size_grid * 4)+2, 6, 6, true)
+gui.drawImage('.\\NitM\\hud\\cursor_right_orange.png',(room_X_min_grid * 4)+3 , ((room_Y_max_grid*4)-16)+((room_Y_size_grid * 4)/2)-2 - offs, 6, 6, true)
+gui.drawImage('.\\NitM\\hud\\cursor_left_orange.png',(room_X_min_grid * 4)+10+(room_X_size_grid * 4)+2 , ((room_Y_max_grid*4)-16)+((room_Y_size_grid * 4)/2) - 2 - offs, 6, 6, true)
+gui.drawImage('.\\NitM\\hud\\cursor_down_orange.png', 10 + (room_X_min_grid * 4) + ((room_X_size_grid * 4)/2) - 3 , ((room_Y_max_grid*4)-16)-6 - offs, 6, 6, true)
+gui.drawImage('.\\NitM\\hud\\cursor_up_orange.png', 10 + (room_X_min_grid * 4) + ((room_X_size_grid * 4)/2) - 3 , ((room_Y_max_grid*4)-16)+(room_Y_size_grid * 4)+2 - offs, 6, 6, true)
 else
-gui.drawImage('.\\NitM\\hud\\cursor_right_orange.png',(room_X_min_grid * 4)-2 , ((room_Y_max_grid*4)-16)+((room_Y_size_grid * 4)/2)-2, 6, 6, true)
-gui.drawImage('.\\NitM\\hud\\cursor_left_orange.png',(room_X_min_grid * 4)+10+(room_X_size_grid * 4)+7 , ((room_Y_max_grid*4)-16)+((room_Y_size_grid * 4)/2) - 2, 6, 6, true)
-gui.drawImage('.\\NitM\\hud\\cursor_down_orange.png', 10 + (room_X_min_grid * 4) + ((room_X_size_grid * 4)/2) - 3 , ((room_Y_max_grid*4)-16)-11, 6, 6, true)
-gui.drawImage('.\\NitM\\hud\\cursor_up_orange.png', 10 + (room_X_min_grid * 4) + ((room_X_size_grid * 4)/2) - 3 , ((room_Y_max_grid*4)-16)+(room_Y_size_grid * 4)+7, 6, 6, true)
+gui.drawImage('.\\NitM\\hud\\cursor_right_orange.png',(room_X_min_grid * 4)-2 , ((room_Y_max_grid*4)-16)+((room_Y_size_grid * 4)/2)-2 - offs, 6, 6, true)
+gui.drawImage('.\\NitM\\hud\\cursor_left_orange.png',(room_X_min_grid * 4)+10+(room_X_size_grid * 4)+7 , ((room_Y_max_grid*4)-16)+((room_Y_size_grid * 4)/2) - 2 - offs, 6, 6, true)
+gui.drawImage('.\\NitM\\hud\\cursor_down_orange.png', 10 + (room_X_min_grid * 4) + ((room_X_size_grid * 4)/2) - 3 , ((room_Y_max_grid*4)-16)-11 - offs, 6, 6, true)
+gui.drawImage('.\\NitM\\hud\\cursor_up_orange.png', 10 + (room_X_min_grid * 4) + ((room_X_size_grid * 4)/2) - 3 , ((room_Y_max_grid*4)-16)+(room_Y_size_grid * 4)+7 - offs, 6, 6, true)
 end
 elseif cursor_player_speed == 2 then
 CPcolor = Zcolor[42] 
 gui.drawImage('.\\NitM\\hud\\button_speed_2.png', 5, 69, 8, 8, true)
 if wait >= 10 and wait <= 30 or wait >= 40 and wait <= 60 then
-gui.drawImage('.\\NitM\\hud\\cursor_right_orange.png',(room_X_min_grid * 4)+3 , ((room_Y_max_grid*4)-16)+((room_Y_size_grid * 4)/2)-2, 6, 6, true)
-gui.drawImage('.\\NitM\\hud\\cursor_left_orange.png',(room_X_min_grid * 4)+10+(room_X_size_grid * 4)+2 , ((room_Y_max_grid*4)-16)+((room_Y_size_grid * 4)/2) - 2, 6, 6, true)
-gui.drawImage('.\\NitM\\hud\\cursor_down_orange.png', 10 + (room_X_min_grid * 4) + ((room_X_size_grid * 4)/2) - 3 , ((room_Y_max_grid*4)-16)-6, 6, 6, true)
-gui.drawImage('.\\NitM\\hud\\cursor_up_orange.png', 10 + (room_X_min_grid * 4) + ((room_X_size_grid * 4)/2) - 3 , ((room_Y_max_grid*4)-16)+(room_Y_size_grid * 4)+2, 6, 6, true)
+gui.drawImage('.\\NitM\\hud\\cursor_right_orange.png',(room_X_min_grid * 4)+3 , ((room_Y_max_grid*4)-16)+((room_Y_size_grid * 4)/2)-2 - offs, 6, 6, true)
+gui.drawImage('.\\NitM\\hud\\cursor_left_orange.png',(room_X_min_grid * 4)+10+(room_X_size_grid * 4)+2 , ((room_Y_max_grid*4)-16)+((room_Y_size_grid * 4)/2) - 2 - offs, 6, 6, true)
+gui.drawImage('.\\NitM\\hud\\cursor_down_orange.png', 10 + (room_X_min_grid * 4) + ((room_X_size_grid * 4)/2) - 3 , ((room_Y_max_grid*4)-16)-6 - offs, 6, 6, true)
+gui.drawImage('.\\NitM\\hud\\cursor_up_orange.png', 10 + (room_X_min_grid * 4) + ((room_X_size_grid * 4)/2) - 3 , ((room_Y_max_grid*4)-16)+(room_Y_size_grid * 4)+2 - offs, 6, 6, true)
 else
-gui.drawImage('.\\NitM\\hud\\cursor_right_orange.png',(room_X_min_grid * 4)-2 , ((room_Y_max_grid*4)-16)+((room_Y_size_grid * 4)/2)-2, 6, 6, true)
-gui.drawImage('.\\NitM\\hud\\cursor_left_orange.png',(room_X_min_grid * 4)+10+(room_X_size_grid * 4)+7 , ((room_Y_max_grid*4)-16)+((room_Y_size_grid * 4)/2) - 2, 6, 6, true)
-gui.drawImage('.\\NitM\\hud\\cursor_down_orange.png', 10 + (room_X_min_grid * 4) + ((room_X_size_grid * 4)/2) - 3 , ((room_Y_max_grid*4)-16)-11, 6, 6, true)
-gui.drawImage('.\\NitM\\hud\\cursor_up_orange.png', 10 + (room_X_min_grid * 4) + ((room_X_size_grid * 4)/2) - 3 , ((room_Y_max_grid*4)-16)+(room_Y_size_grid * 4)+7, 6, 6, true)
+gui.drawImage('.\\NitM\\hud\\cursor_right_orange.png',(room_X_min_grid * 4)-2 , ((room_Y_max_grid*4)-16)+((room_Y_size_grid * 4)/2)-2 - offs, 6, 6, true)
+gui.drawImage('.\\NitM\\hud\\cursor_left_orange.png',(room_X_min_grid * 4)+10+(room_X_size_grid * 4)+7 , ((room_Y_max_grid*4)-16)+((room_Y_size_grid * 4)/2) - 2 - offs, 6, 6, true)
+gui.drawImage('.\\NitM\\hud\\cursor_down_orange.png', 10 + (room_X_min_grid * 4) + ((room_X_size_grid * 4)/2) - 3 , ((room_Y_max_grid*4)-16)-11 - offs, 6, 6, true)
+gui.drawImage('.\\NitM\\hud\\cursor_up_orange.png', 10 + (room_X_min_grid * 4) + ((room_X_size_grid * 4)/2) - 3 , ((room_Y_max_grid*4)-16)+(room_Y_size_grid * 4)+7 - offs, 6, 6, true)
 end
 elseif cursor_player_speed == 3 then
 CPcolor = Zcolor[41] 
 gui.drawImage('.\\NitM\\hud\\button_speed_3.png', 5, 69, 8, 8, true)
 if wait >= 15 and wait <= 30 or wait >= 40 and wait <= 55 then
-gui.drawImage('.\\NitM\\hud\\cursor_right_orange.png',(room_X_min_grid * 4)+3 , ((room_Y_max_grid*4)-16)+((room_Y_size_grid * 4)/2)-2, 6, 6, true)
-gui.drawImage('.\\NitM\\hud\\cursor_left_orange.png',(room_X_min_grid * 4)+10+(room_X_size_grid * 4)+2 , ((room_Y_max_grid*4)-16)+((room_Y_size_grid * 4)/2) - 2, 6, 6, true)
-gui.drawImage('.\\NitM\\hud\\cursor_down_orange.png', 10 + (room_X_min_grid * 4) + ((room_X_size_grid * 4)/2) - 3 , ((room_Y_max_grid*4)-16)-6, 6, 6, true)
-gui.drawImage('.\\NitM\\hud\\cursor_up_orange.png', 10 + (room_X_min_grid * 4) + ((room_X_size_grid * 4)/2) - 3 , ((room_Y_max_grid*4)-16)+(room_Y_size_grid * 4)+2, 6, 6, true)
+gui.drawImage('.\\NitM\\hud\\cursor_right_orange.png',(room_X_min_grid * 4)+3 , ((room_Y_max_grid*4)-16)+((room_Y_size_grid * 4)/2)-2 - offs, 6, 6, true)
+gui.drawImage('.\\NitM\\hud\\cursor_left_orange.png',(room_X_min_grid * 4)+10+(room_X_size_grid * 4)+2 , ((room_Y_max_grid*4)-16)+((room_Y_size_grid * 4)/2) - 2 - offs, 6, 6, true)
+gui.drawImage('.\\NitM\\hud\\cursor_down_orange.png', 10 + (room_X_min_grid * 4) + ((room_X_size_grid * 4)/2) - 3 , ((room_Y_max_grid*4)-16)-6 - offs, 6, 6, true)
+gui.drawImage('.\\NitM\\hud\\cursor_up_orange.png', 10 + (room_X_min_grid * 4) + ((room_X_size_grid * 4)/2) - 3 , ((room_Y_max_grid*4)-16)+(room_Y_size_grid * 4)+2 - offs, 6, 6, true)
 else
-gui.drawImage('.\\NitM\\hud\\cursor_right_orange.png',(room_X_min_grid * 4)-2 , ((room_Y_max_grid*4)-16)+((room_Y_size_grid * 4)/2)-2, 6, 6, true)
-gui.drawImage('.\\NitM\\hud\\cursor_left_orange.png',(room_X_min_grid * 4)+10+(room_X_size_grid * 4)+7 , ((room_Y_max_grid*4)-16)+((room_Y_size_grid * 4)/2) - 2, 6, 6, true)
-gui.drawImage('.\\NitM\\hud\\cursor_down_orange.png', 10 + (room_X_min_grid * 4) + ((room_X_size_grid * 4)/2) - 3 , ((room_Y_max_grid*4)-16)-11, 6, 6, true)
-gui.drawImage('.\\NitM\\hud\\cursor_up_orange.png', 10 + (room_X_min_grid * 4) + ((room_X_size_grid * 4)/2) - 3 , ((room_Y_max_grid*4)-16)+(room_Y_size_grid * 4)+7, 6, 6, true)
+gui.drawImage('.\\NitM\\hud\\cursor_right_orange.png',(room_X_min_grid * 4)-2 , ((room_Y_max_grid*4)-16)+((room_Y_size_grid * 4)/2)-2 - offs, 6, 6, true)
+gui.drawImage('.\\NitM\\hud\\cursor_left_orange.png',(room_X_min_grid * 4)+10+(room_X_size_grid * 4)+7 , ((room_Y_max_grid*4)-16)+((room_Y_size_grid * 4)/2) - 2 - offs, 6, 6, true)
+gui.drawImage('.\\NitM\\hud\\cursor_down_orange.png', 10 + (room_X_min_grid * 4) + ((room_X_size_grid * 4)/2) - 3 , ((room_Y_max_grid*4)-16)-11 - offs, 6, 6, true)
+gui.drawImage('.\\NitM\\hud\\cursor_up_orange.png', 10 + (room_X_min_grid * 4) + ((room_X_size_grid * 4)/2) - 3 , ((room_Y_max_grid*4)-16)+(room_Y_size_grid * 4)+7 - offs, 6, 6, true)
 end
 end
 
-gui.drawRectangle(theroomX + 10, theroomY + 5, 4, 4, 0xFFFF6600, CPcolor)
-gui.drawRectangle((room_X_min_grid * 4) + 10, (room_Y_max_grid * 4)-16+1, (room_X_size_grid * 4), (room_Y_size_grid * 4), CPcolor, nil)
+gui.drawRectangle(theroomX + 10, theroomY + 5 - offs, 4, 4, 0xFFFF6600, CPcolor)
+gui.drawRectangle((room_X_min_grid * 4) + 10, (room_Y_max_grid * 4)-16+1 - offs, (room_X_size_grid * 4), (room_Y_size_grid * 4), CPcolor, nil)
 gui.drawImage('.\\NitM\\hud\\button_color_orange.png', 5, 57, 8, 8, true)
 
 
@@ -81,76 +87,76 @@ elseif cursor_player_speed == 1 then
 CPcolor = Zcolor[19] 
 gui.drawImage('.\\NitM\\hud\\button_speed_1.png', 5, 69, 8, 8, true)
 if wait >= 0 and wait <= 30 or wait >= 40 and wait <= 60 then
-gui.drawImage('.\\NitM\\hud\\cursor_right_cyan.png',(room_X_min_grid * 4)+3 , ((room_Y_max_grid*4)-16)+((room_Y_size_grid * 4)/2)-2, 6, 6, true)
-gui.drawImage('.\\NitM\\hud\\cursor_left_cyan.png',(room_X_min_grid * 4)+10+(room_X_size_grid * 4)+2 , ((room_Y_max_grid*4)-16)+((room_Y_size_grid * 4)/2) - 2, 6, 6, true)
-gui.drawImage('.\\NitM\\hud\\cursor_down_cyan.png', 10 + (room_X_min_grid * 4) + ((room_X_size_grid * 4)/2) - 3 , ((room_Y_max_grid*4)-16)-6, 6, 6, true)
-gui.drawImage('.\\NitM\\hud\\cursor_up_cyan.png', 10 + (room_X_min_grid * 4) + ((room_X_size_grid * 4)/2) - 3 , ((room_Y_max_grid*4)-16)+(room_Y_size_grid * 4)+2, 6, 6, true)
+gui.drawImage('.\\NitM\\hud\\cursor_right_cyan.png',(room_X_min_grid * 4)+3 , ((room_Y_max_grid*4)-16)+((room_Y_size_grid * 4)/2)-2 - offs, 6, 6, true)
+gui.drawImage('.\\NitM\\hud\\cursor_left_cyan.png',(room_X_min_grid * 4)+10+(room_X_size_grid * 4)+2 , ((room_Y_max_grid*4)-16)+((room_Y_size_grid * 4)/2) - 2 - offs, 6, 6, true)
+gui.drawImage('.\\NitM\\hud\\cursor_down_cyan.png', 10 + (room_X_min_grid * 4) + ((room_X_size_grid * 4)/2) - 3 , ((room_Y_max_grid*4)-16)-6 - offs, 6, 6, true)
+gui.drawImage('.\\NitM\\hud\\cursor_up_cyan.png', 10 + (room_X_min_grid * 4) + ((room_X_size_grid * 4)/2) - 3 , ((room_Y_max_grid*4)-16)+(room_Y_size_grid * 4)+2 - offs, 6, 6, true)
 else
-gui.drawImage('.\\NitM\\hud\\cursor_right_cyan.png',(room_X_min_grid * 4)-2 , ((room_Y_max_grid*4)-16)+((room_Y_size_grid * 4)/2)-2, 6, 6, true)
-gui.drawImage('.\\NitM\\hud\\cursor_left_cyan.png',(room_X_min_grid * 4)+10+(room_X_size_grid * 4)+7 , ((room_Y_max_grid*4)-16)+((room_Y_size_grid * 4)/2) - 2, 6, 6, true)
-gui.drawImage('.\\NitM\\hud\\cursor_down_cyan.png', 10 + (room_X_min_grid * 4) + ((room_X_size_grid * 4)/2) - 3 , ((room_Y_max_grid*4)-16)-11, 6, 6, true)
-gui.drawImage('.\\NitM\\hud\\cursor_up_cyan.png', 10 + (room_X_min_grid * 4) + ((room_X_size_grid * 4)/2) - 3 , ((room_Y_max_grid*4)-16)+(room_Y_size_grid * 4)+7, 6, 6, true)
+gui.drawImage('.\\NitM\\hud\\cursor_right_cyan.png',(room_X_min_grid * 4)-2 , ((room_Y_max_grid*4)-16)+((room_Y_size_grid * 4)/2)-2 - offs, 6, 6, true)
+gui.drawImage('.\\NitM\\hud\\cursor_left_cyan.png',(room_X_min_grid * 4)+10+(room_X_size_grid * 4)+7 , ((room_Y_max_grid*4)-16)+((room_Y_size_grid * 4)/2) - 2 - offs, 6, 6, true)
+gui.drawImage('.\\NitM\\hud\\cursor_down_cyan.png', 10 + (room_X_min_grid * 4) + ((room_X_size_grid * 4)/2) - 3 , ((room_Y_max_grid*4)-16)-11 - offs, 6, 6, true)
+gui.drawImage('.\\NitM\\hud\\cursor_up_cyan.png', 10 + (room_X_min_grid * 4) + ((room_X_size_grid * 4)/2) - 3 , ((room_Y_max_grid*4)-16)+(room_Y_size_grid * 4)+7 - offs, 6, 6, true)
 end
 elseif cursor_player_speed == 2 then
 CPcolor = Zcolor[18] 
 gui.drawImage('.\\NitM\\hud\\button_speed_2.png', 5, 69, 8, 8, true)
 if wait >= 10 and wait <= 30 or wait >= 40 and wait <= 60 then
-gui.drawImage('.\\NitM\\hud\\cursor_right_cyan.png',(room_X_min_grid * 4)+3 , ((room_Y_max_grid*4)-16)+((room_Y_size_grid * 4)/2)-2, 6, 6, true)
-gui.drawImage('.\\NitM\\hud\\cursor_left_cyan.png',(room_X_min_grid * 4)+10+(room_X_size_grid * 4)+2 , ((room_Y_max_grid*4)-16)+((room_Y_size_grid * 4)/2) - 2, 6, 6, true)
-gui.drawImage('.\\NitM\\hud\\cursor_down_cyan.png', 10 + (room_X_min_grid * 4) + ((room_X_size_grid * 4)/2) - 3 , ((room_Y_max_grid*4)-16)-6, 6, 6, true)
-gui.drawImage('.\\NitM\\hud\\cursor_up_cyan.png', 10 + (room_X_min_grid * 4) + ((room_X_size_grid * 4)/2) - 3 , ((room_Y_max_grid*4)-16)+(room_Y_size_grid * 4)+2, 6, 6, true)
+gui.drawImage('.\\NitM\\hud\\cursor_right_cyan.png',(room_X_min_grid * 4)+3 , ((room_Y_max_grid*4)-16)+((room_Y_size_grid * 4)/2)-2 - offs, 6, 6, true)
+gui.drawImage('.\\NitM\\hud\\cursor_left_cyan.png',(room_X_min_grid * 4)+10+(room_X_size_grid * 4)+2 , ((room_Y_max_grid*4)-16)+((room_Y_size_grid * 4)/2) - 2 - offs, 6, 6, true)
+gui.drawImage('.\\NitM\\hud\\cursor_down_cyan.png', 10 + (room_X_min_grid * 4) + ((room_X_size_grid * 4)/2) - 3 , ((room_Y_max_grid*4)-16)-6 - offs, 6, 6, true)
+gui.drawImage('.\\NitM\\hud\\cursor_up_cyan.png', 10 + (room_X_min_grid * 4) + ((room_X_size_grid * 4)/2) - 3 , ((room_Y_max_grid*4)-16)+(room_Y_size_grid * 4)+2 - offs, 6, 6, true)
 else
-gui.drawImage('.\\NitM\\hud\\cursor_right_cyan.png',(room_X_min_grid * 4)-2 , ((room_Y_max_grid*4)-16)+((room_Y_size_grid * 4)/2)-2, 6, 6, true)
-gui.drawImage('.\\NitM\\hud\\cursor_left_cyan.png',(room_X_min_grid * 4)+10+(room_X_size_grid * 4)+7 , ((room_Y_max_grid*4)-16)+((room_Y_size_grid * 4)/2) - 2, 6, 6, true)
-gui.drawImage('.\\NitM\\hud\\cursor_down_cyan.png', 10 + (room_X_min_grid * 4) + ((room_X_size_grid * 4)/2) - 3 , ((room_Y_max_grid*4)-16)-11, 6, 6, true)
-gui.drawImage('.\\NitM\\hud\\cursor_up_cyan.png', 10 + (room_X_min_grid * 4) + ((room_X_size_grid * 4)/2) - 3 , ((room_Y_max_grid*4)-16)+(room_Y_size_grid * 4)+7, 6, 6, true)
+gui.drawImage('.\\NitM\\hud\\cursor_right_cyan.png',(room_X_min_grid * 4)-2 , ((room_Y_max_grid*4)-16)+((room_Y_size_grid * 4)/2)-2 - offs, 6, 6, true)
+gui.drawImage('.\\NitM\\hud\\cursor_left_cyan.png',(room_X_min_grid * 4)+10+(room_X_size_grid * 4)+7 , ((room_Y_max_grid*4)-16)+((room_Y_size_grid * 4)/2) - 2 - offs, 6, 6, true)
+gui.drawImage('.\\NitM\\hud\\cursor_down_cyan.png', 10 + (room_X_min_grid * 4) + ((room_X_size_grid * 4)/2) - 3 , ((room_Y_max_grid*4)-16)-11 - offs, 6, 6, true)
+gui.drawImage('.\\NitM\\hud\\cursor_up_cyan.png', 10 + (room_X_min_grid * 4) + ((room_X_size_grid * 4)/2) - 3 , ((room_Y_max_grid*4)-16)+(room_Y_size_grid * 4)+7 - offs, 6, 6, true)
 end
 elseif cursor_player_speed == 3 then
 CPcolor = Zcolor[17] 
 gui.drawImage('.\\NitM\\hud\\button_speed_3.png', 5, 69, 8, 8, true)
 if wait >= 15 and wait <= 30 or wait >= 40 and wait <= 55 then
-gui.drawImage('.\\NitM\\hud\\cursor_right_cyan.png',(room_X_min_grid * 4)+3 , ((room_Y_max_grid*4)-16)+((room_Y_size_grid * 4)/2)-2, 6, 6, true)
-gui.drawImage('.\\NitM\\hud\\cursor_left_cyan.png',(room_X_min_grid * 4)+10+(room_X_size_grid * 4)+2 , ((room_Y_max_grid*4)-16)+((room_Y_size_grid * 4)/2) - 2, 6, 6, true)
-gui.drawImage('.\\NitM\\hud\\cursor_down_cyan.png', 10 + (room_X_min_grid * 4) + ((room_X_size_grid * 4)/2) - 3 , ((room_Y_max_grid*4)-16)-6, 6, 6, true)
-gui.drawImage('.\\NitM\\hud\\cursor_up_cyan.png', 10 + (room_X_min_grid * 4) + ((room_X_size_grid * 4)/2) - 3 , ((room_Y_max_grid*4)-16)+(room_Y_size_grid * 4)+2, 6, 6, true)
+gui.drawImage('.\\NitM\\hud\\cursor_right_cyan.png',(room_X_min_grid * 4)+3 , ((room_Y_max_grid*4)-16)+((room_Y_size_grid * 4)/2)-2 - offs, 6, 6, true)
+gui.drawImage('.\\NitM\\hud\\cursor_left_cyan.png',(room_X_min_grid * 4)+10+(room_X_size_grid * 4)+2 , ((room_Y_max_grid*4)-16)+((room_Y_size_grid * 4)/2) - 2 - offs, 6, 6, true)
+gui.drawImage('.\\NitM\\hud\\cursor_down_cyan.png', 10 + (room_X_min_grid * 4) + ((room_X_size_grid * 4)/2) - 3 , ((room_Y_max_grid*4)-16)-6 - offs, 6, 6, true)
+gui.drawImage('.\\NitM\\hud\\cursor_up_cyan.png', 10 + (room_X_min_grid * 4) + ((room_X_size_grid * 4)/2) - 3 , ((room_Y_max_grid*4)-16)+(room_Y_size_grid * 4)+2 - offs, 6, 6, true)
 else
-gui.drawImage('.\\NitM\\hud\\cursor_right_cyan.png',(room_X_min_grid * 4)-2 , ((room_Y_max_grid*4)-16)+((room_Y_size_grid * 4)/2)-2, 6, 6, true)
-gui.drawImage('.\\NitM\\hud\\cursor_left_cyan.png',(room_X_min_grid * 4)+10+(room_X_size_grid * 4)+7 , ((room_Y_max_grid*4)-16)+((room_Y_size_grid * 4)/2) - 2, 6, 6, true)
-gui.drawImage('.\\NitM\\hud\\cursor_down_cyan.png', 10 + (room_X_min_grid * 4) + ((room_X_size_grid * 4)/2) - 3 , ((room_Y_max_grid*4)-16)-11, 6, 6, true)
-gui.drawImage('.\\NitM\\hud\\cursor_up_cyan.png', 10 + (room_X_min_grid * 4) + ((room_X_size_grid * 4)/2) - 3 , ((room_Y_max_grid*4)-16)+(room_Y_size_grid * 4)+7, 6, 6, true)
+gui.drawImage('.\\NitM\\hud\\cursor_right_cyan.png',(room_X_min_grid * 4)-2 , ((room_Y_max_grid*4)-16)+((room_Y_size_grid * 4)/2)-2 - offs, 6, 6, true)
+gui.drawImage('.\\NitM\\hud\\cursor_left_cyan.png',(room_X_min_grid * 4)+10+(room_X_size_grid * 4)+7 , ((room_Y_max_grid*4)-16)+((room_Y_size_grid * 4)/2) - 2 - offs, 6, 6, true)
+gui.drawImage('.\\NitM\\hud\\cursor_down_cyan.png', 10 + (room_X_min_grid * 4) + ((room_X_size_grid * 4)/2) - 3 , ((room_Y_max_grid*4)-16)-11 - offs, 6, 6, true)
+gui.drawImage('.\\NitM\\hud\\cursor_up_cyan.png', 10 + (room_X_min_grid * 4) + ((room_X_size_grid * 4)/2) - 3 , ((room_Y_max_grid*4)-16)+(room_Y_size_grid * 4)+7 - offs, 6, 6, true)
 end
 end
-gui.drawRectangle(theroomX + 10 , theroomY + 5, 4, 4, 0xFF00FFFF, CPcolor)
-gui.drawRectangle((room_X_min_grid * 4) + 10, (room_Y_max_grid * 4)-16+1, (room_X_size_grid * 4), (room_Y_size_grid * 4), CPcolor, nil)
+gui.drawRectangle(theroomX + 10 , theroomY + 5 - offs, 4, 4, 0xFF00FFFF, CPcolor)
+gui.drawRectangle((room_X_min_grid * 4) + 10, (room_Y_max_grid * 4)-16+1 - offs, (room_X_size_grid * 4), (room_Y_size_grid * 4), CPcolor, nil)
 gui.drawImage('.\\NitM\\hud\\button_color_cyan.png', 5, 57, 8, 8, true)
 
 elseif cursor_player == false then
 
 end
 
-end
+
 
 --trail, maybe I should check player cursor is on... or not...im not sure if its a seperate feature or not... guess it is for now
 if cursor_trail == true then
 --cursor_player = false
 	for i = 1, (#trail_data-1)/5, 1 do
 		if trail_data[(i*5)+1] then
-			gui.drawRectangle( 10+trail_data[(i*5)+2]*4, 5+trail_data[(i*5)+3]*4-20, 4, 4, Zcolor[wait+i], Zcolor[wait-i])
+			gui.drawRectangle( 10+trail_data[(i*5)+2]*4, 5+trail_data[(i*5)+3]*4-20 - offs, 4, 4, Zcolor[wait+i], Zcolor[wait-i])
 		end
 	end
 	for i = 1, #trail_data/5, 2 do
 		if trail_data[(i*5)+1] then
-			gui.drawRectangle( 10+trail_data[(i*5)+2]*4, 5+trail_data[(i*5)+3]*4-20, 4, 4, Zcolor[i+2], Zcolor[i-1])
+			gui.drawRectangle( 10+trail_data[(i*5)+2]*4, 5+trail_data[(i*5)+3]*4-20 - offs, 4, 4, Zcolor[i+2], Zcolor[i-1])
 		end
 	end
 	for i = 1, #trail_data/5, 4 do
 		if trail_data[(i*5)+1] then
-			gui.drawRectangle( 10+trail_data[(i*5)+2]*4, 5+trail_data[(i*5)+3]*4-20, 4, 4, Zcolor[wait+i], Zcolor[wait-3])
+			gui.drawRectangle( 10+trail_data[(i*5)+2]*4, 5+trail_data[(i*5)+3]*4-20 - offs, 4, 4, Zcolor[wait+i], Zcolor[wait-3])
 		end
 	end
 	for i = 1, #trail_data/5, 8 do
 		if trail_data[(i*5)+1] then
-			gui.drawRectangle( 10+trail_data[(i*5)+2]*4, 5+trail_data[(i*5)+3]*4-20, 4, 4, Zcolor[wait+3], Zcolor[wait*i])
+			gui.drawRectangle( 10+trail_data[(i*5)+2]*4, 5+trail_data[(i*5)+3]*4-20 - offs, 4, 4, Zcolor[wait+3], Zcolor[wait*i])
 		end
 	end
 	gui.drawImage('.\\NitM\\hud\\button_trail_on.png', 5, 81, 8, 8, true)
@@ -219,19 +225,19 @@ if cursor_boss == true then
 	for i = 1,28,1 do --do first square of the boss
 		if castleB then
 		if time_attack_data[(4*i)-1] == 0 and time_attack_data[(4*i)-2] == 0 and time_attack_data[(4*i)-4] == 0 and boss_roomB_data1[(i*3)-1] > 0 then
-			gui.drawRectangle( 10+boss_roomB_data1[(i*3)-1]*4, 5+boss_roomB_data1[(i*3)]*4-20, 4, 4, CBcolorA, CBcolorA)
-			gui.drawRectangle( 10+boss_roomB_data2[(i*3)-1]*4, 5+boss_roomB_data2[(i*3)]*4-20, 4, 4, CBcolorA, CBcolorA)
+			gui.drawRectangle( 10+boss_roomB_data1[(i*3)-1]*4, 5+boss_roomB_data1[(i*3)]*4-20 - offs, 4, 4, CBcolorA, CBcolorA)
+			gui.drawRectangle( 10+boss_roomB_data2[(i*3)-1]*4, 5+boss_roomB_data2[(i*3)]*4-20 - offs, 4, 4, CBcolorA, CBcolorA)
 		else
-			gui.drawRectangle( 10+boss_roomB_data1[(i*3)-1]*4, 5+boss_roomB_data1[(i*3)]*4-20, 4, 4, CBcolorB, CBcolorB)
-			gui.drawRectangle( 10+boss_roomB_data2[(i*3)-1]*4, 5+boss_roomB_data2[(i*3)]*4-20, 4, 4, CBcolorB, CBcolorB)
+			gui.drawRectangle( 10+boss_roomB_data1[(i*3)-1]*4, 5+boss_roomB_data1[(i*3)]*4-20 - offs, 4, 4, CBcolorB, CBcolorB)
+			gui.drawRectangle( 10+boss_roomB_data2[(i*3)-1]*4, 5+boss_roomB_data2[(i*3)]*4-20 - offs, 4, 4, CBcolorB, CBcolorB)
 		end		
 		else
 		if time_attack_data[(4*i)-1] == 0 and time_attack_data[(4*i)-2] == 0 and time_attack_data[(4*i)-4] == 0 and boss_roomA_data1[(i*3)-1] > 0 then
-			gui.drawRectangle( 10+boss_roomA_data1[(i*3)-1]*4, 5+boss_roomA_data1[(i*3)]*4-20, 4, 4, CBcolorA, CBcolorA)
-			gui.drawRectangle( 10+boss_roomA_data2[(i*3)-1]*4, 5+boss_roomA_data2[(i*3)]*4-20, 4, 4, CBcolorA, CBcolorA)
+			gui.drawRectangle( 10+boss_roomA_data1[(i*3)-1]*4, 5+boss_roomA_data1[(i*3)]*4-20 - offs, 4, 4, CBcolorA, CBcolorA)
+			gui.drawRectangle( 10+boss_roomA_data2[(i*3)-1]*4, 5+boss_roomA_data2[(i*3)]*4-20 - offs, 4, 4, CBcolorA, CBcolorA)
 		else
-			gui.drawRectangle( 10+boss_roomA_data1[(i*3)-1]*4, 5+boss_roomA_data1[(i*3)]*4-20, 4, 4, CBcolorB, CBcolorB)
-			gui.drawRectangle( 10+boss_roomA_data2[(i*3)-1]*4, 5+boss_roomA_data2[(i*3)]*4-20, 4, 4, CBcolorB, CBcolorB)
+			gui.drawRectangle( 10+boss_roomA_data1[(i*3)-1]*4, 5+boss_roomA_data1[(i*3)]*4-20 - offs, 4, 4, CBcolorB, CBcolorB)
+			gui.drawRectangle( 10+boss_roomA_data2[(i*3)-1]*4, 5+boss_roomA_data2[(i*3)]*4-20 - offs, 4, 4, CBcolorB, CBcolorB)
 		end
 		end
 	end
@@ -301,15 +307,15 @@ if cursor_relic == true then
 	for i = 1,32,1 do --do relic square false true
 		if castleB then
 		if relic_data[(i)-1] == 0 then
-			gui.drawRectangle( 10+relic_roomB_data[(i*3)-1]*4, 5+relic_roomB_data[(i*3)]*4-20, 4, 4, CRcolorA, CRcolorA)
+			gui.drawRectangle( 10+relic_roomB_data[(i*3)-1]*4, 5+relic_roomB_data[(i*3)]*4-20 - offs, 4, 4, CRcolorA, CRcolorA)
 		else
-			gui.drawRectangle( 10+relic_roomB_data[(i*3)-1]*4, 5+relic_roomB_data[(i*3)]*4-20, 4, 4, CRcolorB, CRcolorB)
+			gui.drawRectangle( 10+relic_roomB_data[(i*3)-1]*4, 5+relic_roomB_data[(i*3)]*4-20 - offs, 4, 4, CRcolorB, CRcolorB)
 		end		
 		else
 		if relic_data[(i)-1] == 0 then
-			gui.drawRectangle( 10+relic_roomA_data[(i*3)-1]*4, 5+relic_roomA_data[(i*3)]*4-20, 4, 4, CRcolorA, CRcolorA)
+			gui.drawRectangle( 10+relic_roomA_data[(i*3)-1]*4, 5+relic_roomA_data[(i*3)]*4-20 - offs, 4, 4, CRcolorA, CRcolorA)
 		else
-			gui.drawRectangle( 10+relic_roomA_data[(i*3)-1]*4, 5+relic_roomA_data[(i*3)]*4-20, 4, 4, CRcolorB, CRcolorB)
+			gui.drawRectangle( 10+relic_roomA_data[(i*3)-1]*4, 5+relic_roomA_data[(i*3)]*4-20 - offs, 4, 4, CRcolorB, CRcolorB)
 		end
 		end
 	end
@@ -386,7 +392,11 @@ cursor_user_idle = cursor_user_idle + 1
 		cursor_querry_X = (mouse_pos_snapped[1]-1-10)/4
 		cursor_querry_Y = (mouse_pos_snapped[2]+1+75+15)/4
 		cursor_querry_X = math.floor(cursor_querry_X+ 0.5*1)
-		cursor_querry_Y = math.floor(cursor_querry_Y+ 0.5*1)-19
+		if castleB then
+			cursor_querry_Y = math.floor(cursor_querry_Y+ 0.5*1)-19+7
+		else
+			cursor_querry_Y = math.floor(cursor_querry_Y+ 0.5*1)-19
+		end
 		querry_1D = cursor_querry_X + cursor_querry_Y * 64 --like always, x + (y*64)
 		if castleB then
 		if boss_roomB[querry_1D] then room_boss = boss_roomB[querry_1D] else room_boss = "- - -" end 
@@ -394,7 +404,7 @@ cursor_user_idle = cursor_user_idle + 1
 		if lifeup_roomA[querry_1D] then room_lifeup = lifeup_roomA[querry_1D] else room_lifeup = "- - -" end 
 		if heartup_roomA[querry_1D] then room_heartup = heartup_roomA[querry_1D] else room_heartup = "- - -" end 
 		if pickup_roomA[querry_1D] then room_pickup = pickup_roomA[querry_1D] else room_pickup = "- - -" end 
-		if special_roomB[querry_1D] then room_special = special_roomA[querry_1D] else room_special = "- - -" end 
+		if special_roomB[querry_1D] then room_special = special_roomB[querry_1D] else room_special = "- - -" end 
 		if text_roomB[querry_1D] then room_text = "X "..cursor_querry_X.." Y"..cursor_querry_Y.." "..text_roomB[querry_1D] else room_text = "- - -" end 
 		else
 		if boss_roomA[querry_1D] then room_boss = boss_roomA[querry_1D] else room_boss = "- - -" end 
@@ -454,10 +464,10 @@ if cursor_switch then
 	for i = 1, #data_switch/3, 1 do
 		if data_switch[((i-1)*3)+3] == true then
 			if cursor_joker_speed == 5 then col = Zcolor[wait] else col = Zcolor[9] end --rgb mode
-			gui.drawRectangle( 10+data_switch[((i-1)*3)+1]*4, 5+data_switch[((i-1)*3)+2]*4-20, 4, 4, 0x00000000, col)
+			gui.drawRectangle( 10+data_switch[((i-1)*3)+1]*4, 5+data_switch[((i-1)*3)+2]*4-20 - offs, 4, 4, 0x00000000, col)
 		else
 			if cursor_joker_speed == 5 then col = Zcolor[wait] else col = Zcolor[1] end --rgb mode
-			gui.drawRectangle( 10+data_switch[((i-1)*3)+1]*4, 5+data_switch[((i-1)*3)+2]*4-20, 4, 4, 0x00000000, col)
+			gui.drawRectangle( 10+data_switch[((i-1)*3)+1]*4, 5+data_switch[((i-1)*3)+2]*4-20 - offs, 4, 4, 0x00000000, col)
 		end
 	end
 	col = nil
@@ -471,10 +481,10 @@ if cursor_wall then
 	for i = 1, #data_wall/3, 1 do
 		if data_wall[((i-1)*3)+3] == true then
 			if cursor_joker_speed == 5 then col = Zcolor[wait] else col = Zcolor[9] end --rgb mode
-			gui.drawRectangle( 10+data_wall[((i-1)*3)+1]*4, 5+data_wall[((i-1)*3)+2]*4-20, 4, 4, 0x00000000, col)
+			gui.drawRectangle( 10+data_wall[((i-1)*3)+1]*4, 5+data_wall[((i-1)*3)+2]*4-20 - offs, 4, 4, 0x00000000, col)
 		else
 			if cursor_joker_speed == 5 then col = Zcolor[wait] else col = Zcolor[1] end --rgb mode
-			gui.drawRectangle( 10+data_wall[((i-1)*3)+1]*4, 5+data_wall[((i-1)*3)+2]*4-20, 4, 4, 0x00000000, col)
+			gui.drawRectangle( 10+data_wall[((i-1)*3)+1]*4, 5+data_wall[((i-1)*3)+2]*4-20 - offs, 4, 4, 0x00000000, col)
 		end
 	end
 	col = nil
@@ -488,19 +498,19 @@ if cursor_cutscene then
 	for i = 1, #data_cutscene/3, 1 do
 		if data_cutscene[((i-1)*3)+3] == true then
 			if cursor_joker_speed == 5 then col = Zcolor[wait] else col = Zcolor[9] end --rgb mode
-			gui.drawRectangle( 10+data_cutscene[((i-1)*3)+1]*4, 5+data_cutscene[((i-1)*3)+2]*4-20, 4, 4, 0x00000000, col)
+			gui.drawRectangle( 10+data_cutscene[((i-1)*3)+1]*4, 5+data_cutscene[((i-1)*3)+2]*4-20 - offs, 4, 4, 0x00000000, col)
 		else
 			if cursor_joker_speed == 5 then col = Zcolor[wait] else col = Zcolor[1] end --rgb mode
-			gui.drawRectangle( 10+data_cutscene[((i-1)*3)+1]*4, 5+data_cutscene[((i-1)*3)+2]*4-20, 4, 4, 0x00000000, col)
+			gui.drawRectangle( 10+data_cutscene[((i-1)*3)+1]*4, 5+data_cutscene[((i-1)*3)+2]*4-20 - offs, 4, 4, 0x00000000, col)
 		end
 	end
 	for i = 1, #data_title/3, 1 do
 		if data_title[((i-1)*3)+3] == true then
 			if cursor_joker_speed == 5 then col = Zcolor[wait] else col = Zcolor[9] end --rgb mode
-			gui.drawRectangle( 10+data_title[((i-1)*3)+1]*4, 5+data_title[((i-1)*3)+2]*4-20, 4, 4, 0x00000000, col)
+			gui.drawRectangle( 10+data_title[((i-1)*3)+1]*4, 5+data_title[((i-1)*3)+2]*4-20 - offs, 4, 4, 0x00000000, col)
 		else
 			if cursor_joker_speed == 5 then col = Zcolor[wait] else col = Zcolor[1] end --rgb mode
-			gui.drawRectangle( 10+data_title[((i-1)*3)+1]*4, 5+data_title[((i-1)*3)+2]*4-20, 4, 4, 0x00000000, col)
+			gui.drawRectangle( 10+data_title[((i-1)*3)+1]*4, 5+data_title[((i-1)*3)+2]*4-20 - offs, 4, 4, 0x00000000, col)
 		end
 	end
 	col = nil
@@ -514,10 +524,10 @@ if cursor_break then
 	for i = 1, #data_break/3, 1 do
 		if data_break[((i-1)*3)+3] == true then
 			if cursor_joker_speed == 5 then col = Zcolor[wait] else col = Zcolor[9] end --rgb mode
-			gui.drawRectangle( 10+data_break[((i-1)*3)+1]*4, 5+data_break[((i-1)*3)+2]*4-20, 4, 4, 0x00000000, col)
+			gui.drawRectangle( 10+data_break[((i-1)*3)+1]*4, 5+data_break[((i-1)*3)+2]*4-20 - offs, 4, 4, 0x00000000, col)
 		else
 			if cursor_joker_speed == 5 then col = Zcolor[wait] else col = Zcolor[1] end --rgb mode
-			gui.drawRectangle( 10+data_break[((i-1)*3)+1]*4, 5+data_break[((i-1)*3)+2]*4-20, 4, 4, 0x00000000, col)
+			gui.drawRectangle( 10+data_break[((i-1)*3)+1]*4, 5+data_break[((i-1)*3)+2]*4-20 - offs, 4, 4, 0x00000000, col)
 		end
 	end
 	col = nil
@@ -531,10 +541,10 @@ if cursor_heartup then
 	for i = 1, #data_heartup/3, 1 do
 		if data_heartup[((i-1)*3)+3] == true then
 			if cursor_joker_speed == 5 then col = Zcolor[wait] else col = Zcolor[9] end --rgb mode
-			gui.drawRectangle( 10+data_heartup[((i-1)*3)+1]*4, 5+data_heartup[((i-1)*3)+2]*4-20, 4, 4, 0x00000000, col)
+			gui.drawRectangle( 10+data_heartup[((i-1)*3)+1]*4, 5+data_heartup[((i-1)*3)+2]*4-20 - offs, 4, 4, 0x00000000, col)
 		else
 			if cursor_joker_speed == 5 then col = Zcolor[wait] else col = Zcolor[1] end --rgb mode
-			gui.drawRectangle( 10+data_heartup[((i-1)*3)+1]*4, 5+data_heartup[((i-1)*3)+2]*4-20, 4, 4, 0x00000000, col)
+			gui.drawRectangle( 10+data_heartup[((i-1)*3)+1]*4, 5+data_heartup[((i-1)*3)+2]*4-20 - offs, 4, 4, 0x00000000, col)
 		end
 	end
 	col = nil
@@ -548,10 +558,10 @@ if cursor_lifeup then
 	for i = 1, #data_lifeup/3, 1 do
 		if data_lifeup[((i-1)*3)+3] == true then
 			if cursor_joker_speed == 5 then col = Zcolor[wait] else col = Zcolor[9] end --rgb mode
-			gui.drawRectangle( 10+data_lifeup[((i-1)*3)+1]*4, 5+data_lifeup[((i-1)*3)+2]*4-20, 4, 4, 0x00000000, col)
+			gui.drawRectangle( 10+data_lifeup[((i-1)*3)+1]*4, 5+data_lifeup[((i-1)*3)+2]*4-20 - offs, 4, 4, 0x00000000, col)
 		else
 			if cursor_joker_speed == 5 then col = Zcolor[wait] else col = Zcolor[1] end --rgb mode
-			gui.drawRectangle( 10+data_lifeup[((i-1)*3)+1]*4, 5+data_lifeup[((i-1)*3)+2]*4-20, 4, 4, 0x00000000, col)
+			gui.drawRectangle( 10+data_lifeup[((i-1)*3)+1]*4, 5+data_lifeup[((i-1)*3)+2]*4-20 - offs, 4, 4, 0x00000000, col)
 		end
 	end
 	col = nil
@@ -565,10 +575,10 @@ if cursor_pickup then
 	for i = 1, #data_pickup/3, 1 do
 		if data_pickup[((i-1)*3)+3] == true then
 			if cursor_joker_speed == 5 then col = Zcolor[wait] else col = Zcolor[9] end --rgb mode
-			gui.drawRectangle( 10+data_pickup[((i-1)*3)+1]*4, 5+data_pickup[((i-1)*3)+2]*4-20, 4, 4, 0x00000000, col)
+			gui.drawRectangle( 10+data_pickup[((i-1)*3)+1]*4, 5+data_pickup[((i-1)*3)+2]*4-20 - offs, 4, 4, 0x00000000, col)
 		else
 			if cursor_joker_speed == 5 then col = Zcolor[wait] else col = Zcolor[1] end --rgb mode
-			gui.drawRectangle( 10+data_pickup[((i-1)*3)+1]*4, 5+data_pickup[((i-1)*3)+2]*4-20, 4, 4, 0x00000000, col)
+			gui.drawRectangle( 10+data_pickup[((i-1)*3)+1]*4, 5+data_pickup[((i-1)*3)+2]*4-20 - offs, 4, 4, 0x00000000, col)
 		end
 	end
 	col = nil
@@ -576,7 +586,6 @@ if cursor_pickup then
 else
 	gui.drawImage('.\\NitM\\hud\\pickup_off.png', 259, 165, 14, 14, true)
 end
-
 
 end
 -------

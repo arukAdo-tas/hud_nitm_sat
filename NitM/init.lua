@@ -37,20 +37,26 @@ script_super_debug = true --set to false for release, discret switch to control 
 
 game_is_boot = false
 
-game_is_prologue = false
-prologue_is_dracula = false
 cursor_was_trail = false
 cursor_was_player = false
 
 alucard = false
+richter = false 
+maria = false
 
 game_is_entranceB = false
 
+game_is_ending = false
 game_is_dracula = false
 
+prologue_was_refresh = false
+prologue_up = false
+prologue = false
 
 game_was_cdroom = false
 
+castle_check = true
+check_done = false
 
 game_is_menu = false
 game_is_alt_rez = false
@@ -75,12 +81,13 @@ extra_refresh = false
 
 first_castle = true
 
-debug_data = ""
+debug_data = "debug: "
+debug_dataB = "debug: "
 
 script_gamebox = true
 
 script_map = true
-script_map_mode = "ZZ"
+script_map_mode = "RG"
 script_map_mode_delta = 2
 mapData = {}
 
@@ -107,7 +114,7 @@ data_heartup = {}
 data_pickup = {}
 
 
-script_hitbox = false
+script_hitbox = true
 
 script_player_hitbox = true
 

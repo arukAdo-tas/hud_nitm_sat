@@ -399,6 +399,9 @@ accID = {
 Map Data
 ]]
 
+
+
+
 --data to define a "area ID" of mine
 area_roomA ={}
 for atx = 16, 26 do for aty = 50, 51 do table.insert(area_roomA, atx + aty * 64, "cata") end end
@@ -488,8 +491,8 @@ table.insert(area_roomA, 27 + ( 34 * 64 ), "marble")
 for atx = 21, 26 do for aty = 34, 36 do table.insert(area_roomA, atx + aty * 64, "marble") end end
 table.insert(area_roomA, 31 + ( 27 * 64 ), "marble")
 --central room
-table.insert(area_roomA, 32 + ( 28 * 64 ), "marble")--central room
-table.insert(area_roomA, 32 + ( 29 * 64 ), "marble")--central room
+table.insert(area_roomA, 32 + ( 28 * 64 ), "central")--central room
+table.insert(area_roomA, 32 + ( 29 * 64 ), "central")--central room
 for atx = 31, 33 do for aty = 30, 32 do table.insert(area_roomA, atx + aty * 64, "marble") end end--central room
 ---
 for atx = 60, 61 do for aty = 13, 29 do table.insert(area_roomA, atx + aty * 64, "wall") end end
@@ -589,25 +592,19 @@ table.insert(area_roomA, 7 + ( 30 * 64 ), "lab")
 table.insert(area_roomA, 29 + ( 27 * 64 ), "lab")
 --cdroom arent show at all on the png
 table.insert(area_roomA, 3 + ( 44 * 64 ), "cd")
-table.insert(area_roomA, 3 + ( 45 * 64 ), "cd")
 table.insert(area_roomA, 15 + ( 41 * 64 ), "cd")
 table.insert(area_roomA, 20 + ( 36 * 64 ), "cd")
 table.insert(area_roomA, 17 + ( 36 * 64 ), "cd")
-table.insert(area_roomA, 16 + ( 38 * 64 ), "cd")
 table.insert(area_roomA, 28 + ( 38 * 64 ), "cd")
 table.insert(area_roomA, 36 + ( 34 * 64 ), "cd")
 table.insert(area_roomA, 40 + ( 26 * 64 ), "cd")
 table.insert(area_roomA, 27 + ( 36 * 64 ), "cd")
-table.insert(area_roomA, 34 + ( 44 * 64 ), "cd")
 table.insert(area_roomA, 32 + ( 49 * 64 ), "cd")
 table.insert(area_roomA, 60 + ( 14 * 64 ), "cd")
 table.insert(area_roomA, 59 + ( 21 * 64 ), "cd")
-table.insert(area_roomA, 60 + ( 17 * 64 ), "cd")
 table.insert(area_roomA, 60 + ( 25 * 64 ), "cd")
 table.insert(area_roomA, 39 + ( 10 * 64 ), "cd")
-table.insert(area_roomA, 39 + ( 12 * 64 ), "cd")
 table.insert(area_roomA, 29 + ( 12 * 64 ), "cd")
-table.insert(area_roomA, 36 + ( 21 * 64 ), "cd")
 table.insert(area_roomA, 13 + ( 22 * 64 ), "cd")
 table.insert(area_roomA, 26 + ( 22 * 64 ), "cd")
 table.insert(area_roomA, 30 + ( 25 * 64 ), "cd")
@@ -615,224 +612,13 @@ table.insert(area_roomA, 4 + ( 28 * 64 ), "cd")
 table.insert(area_roomA, 21 + ( 26 * 64 ), "cd")
 table.insert(area_roomA, 13 + ( 22 * 64 ), "cd")
 table.insert(area_roomA, 17 + ( 19 * 64 ), "cd")
-
-area_roomB ={}
-for atx = 16, 26 do for aty = 50, 51 do table.insert(area_roomB, atx + aty * 64, "cata") end end
-for atx = 27, 37 do for aty = 51, 51 do table.insert(area_roomB, atx + aty * 64, "cata") end end
-for atx = 28, 36 do for aty = 50, 51 do table.insert(area_roomB, atx + aty * 64, "cata") end end
-for atx = 38, 48 do for aty = 50, 51 do table.insert(area_roomB, atx + aty * 64, "cata") end end
-for atx = 31, 31 do for aty = 49, 50 do table.insert(area_roomB, atx + aty * 64, "cata") end end
------
-for atx = 33, 33 do for aty = 48, 49 do table.insert(area_roomB, atx + aty * 64, "mine") end end
-for atx = 32, 32 do for aty = 40, 48 do table.insert(area_roomB, atx + aty * 64, "mine") end end
-table.insert(area_roomB, 31 + ( 48 * 64 ), "mine")
-for atx = 29, 35 do for aty = 44, 44 do table.insert(area_roomB, atx + aty * 64, "mine") end end
-for atx = 27, 37 do for aty = 40, 40 do table.insert(area_roomB, atx + aty * 64, "mine") end end
-for atx = 36, 37 do for aty = 40, 41 do table.insert(area_roomB, atx + aty * 64, "mine") end end
-for atx = 27, 28 do for aty = 40, 41 do table.insert(area_roomB, atx + aty * 64, "mine") end end
-for atx = 27, 27 do for aty = 38, 41 do table.insert(area_roomB, atx + aty * 64, "mine") end end
------
-for atx = 14, 21 do for aty = 44, 44 do table.insert(area_roomB, atx + aty * 64, "garden") end end
-for atx = 14, 21 do for aty = 44, 44 do table.insert(area_roomB, atx + aty * 64, "garden") end end
-for atx = 3, 13 do for aty = 44, 45 do table.insert(area_roomB, atx + aty * 64, "garden") end end
-table.insert(area_roomB, 2 + ( 45 * 64 ), "garden")
------
-for atx = 2, 2 do for aty = 41, 44 do table.insert(area_roomB, atx + aty * 64, "gate") end end
-for atx = 2, 3 do for aty = 38, 40 do table.insert(area_roomB, atx + aty * 64, "gate") end end
-for atx = 4, 21 do for aty = 40, 40 do table.insert(area_roomB, atx + aty * 64, "gate") end end
-for atx = 5, 6 do for aty = 38, 39 do table.insert(area_roomB, atx + aty * 64, "gate") end end
-for atx = 7, 11 do for aty = 39, 39 do table.insert(area_roomB, atx + aty * 64, "gate") end end
-for atx = 10, 15 do for aty = 40, 41 do table.insert(area_roomB, atx + aty * 64, "gate") end end
-for atx = 19, 21 do for aty = 38, 40 do table.insert(area_roomB, atx + aty * 64, "gate") end end
-for atx = 17, 20 do for aty = 36, 38 do table.insert(area_roomB, atx + aty * 64, "gate") end end
-table.insert(area_roomB, 15 + ( 38 * 64 ), "gate")
-table.insert(area_roomB, 16 + ( 38 * 64 ), "gate")
------
-table.insert(area_roomB, 8 + ( 42 * 64 ), "cave")
-table.insert(area_roomB, 16 + ( 41 * 64 ), "cave")
-table.insert(area_roomB, 17 + ( 41 * 64 ), "cave")
-for atx = 9, 13 do for aty = 42, 43 do table.insert(area_roomB, atx + aty * 64, "cave") end end
-for atx = 14, 25 do for aty = 42, 42 do table.insert(area_roomB, atx + aty * 64, "cave") end end
-for atx = 22, 26 do for aty = 37, 37 do table.insert(area_roomB, atx + aty * 64, "cave") end end
-for atx = 27, 31 do for aty = 37, 37 do table.insert(area_roomB, atx + aty * 64, "cave") end end
-for atx = 28, 31 do for aty = 38, 38 do table.insert(area_roomB, atx + aty * 64, "cave") end end
-for atx = 23, 24 do for aty = 38, 41 do table.insert(area_roomB, atx + aty * 64, "cave") end end
-table.insert(area_roomB, 32 + ( 37 * 64 ), "cave")
-for atx = 33, 40 do for aty = 37, 38 do table.insert(area_roomB, atx + aty * 64, "cave") end end
-for atx = 39, 45 do for aty = 38, 39 do table.insert(area_roomB, atx + aty * 64, "cave") end end
-table.insert(area_roomB, 39 + ( 40 * 64 ), "cave")
-for atx = 39, 55 do for aty = 41, 41 do table.insert(area_roomB, atx + aty * 64, "cave") end end
-for atx = 40, 42 do for aty = 41, 42 do table.insert(area_roomB, atx + aty * 64, "cave") end end
-for atx = 46, 47 do for aty = 41, 42 do table.insert(area_roomB, atx + aty * 64, "cave") end end
-for atx = 49, 52 do for aty = 41, 42 do table.insert(area_roomB, atx + aty * 64, "cave") end end
-for atx = 38, 39 do for aty = 27, 36 do table.insert(area_roomB, atx + aty * 64, "cave") end end
-for atx = 43, 39 do for aty = 29, 29 do table.insert(area_roomB, atx + aty * 64, "cave") end end
-for atx = 43, 43 do for aty = 29, 32 do table.insert(area_roomB, atx + aty * 64, "cave") end end
-for atx = 43, 44 do for aty = 32, 33 do table.insert(area_roomB, atx + aty * 64, "cave") end end
-table.insert(area_roomB, 45 + ( 33 * 64 ), "cave")
-table.insert(area_roomB, 39 + ( 26 * 64 ), "cave")
-table.insert(area_roomB, 40 + ( 26 * 64 ), "cave")
-for atx = 35, 37 do for aty = 27, 27 do table.insert(area_roomB, atx + aty * 64, "cave") end end
-table.insert(area_roomB, 37 + ( 28 * 64 ), "cave")
-for atx = 37, 37 do for aty = 32, 34 do table.insert(area_roomB, atx + aty * 64, "cave") end end
-table.insert(area_roomB, 36 + ( 34 * 64 ), "cave")
-for atx = 40, 42 do for aty = 29, 29 do table.insert(area_roomB, atx + aty * 64, "cave") end end
-table.insert(area_roomB, 40 + ( 27 * 64 ), "cave")
---
-table.insert(area_roomB, 32 + ( 34 * 64 ), "prison")
-for atx = 33, 35 do for aty = 34, 36 do table.insert(area_roomB, atx + aty * 64, "prison") end end
-for atx = 27, 32 do for aty = 36, 36 do table.insert(area_roomB, atx + aty * 64, "prison") end end
---
-for atx = 47, 59 do for aty = 25, 25 do table.insert(area_roomB, atx + aty * 64, "marble") end end
-for atx = 40, 46 do for aty = 24, 25 do table.insert(area_roomB, atx + aty * 64, "marble") end end
-table.insert(area_roomB, 41 + ( 26 * 64 ), "marble")
-table.insert(area_roomB, 44 + ( 26 * 64 ), "marble")
-table.insert(area_roomB, 39 + ( 24 * 64 ), "marble")
-for atx = 37, 38 do for aty = 24, 26 do table.insert(area_roomB, atx + aty * 64, "marble") end end
-for atx = 22, 36 do for aty = 26, 26 do table.insert(area_roomB, atx + aty * 64, "marble") end end
-for atx = 31, 33 do for aty = 25, 27 do table.insert(area_roomB, atx + aty * 64, "marble") end end
-table.insert(area_roomB, 34 + ( 25 * 64 ), "marble")
-table.insert(area_roomB, 32 + ( 24 * 64 ), "marble")
-for atx = 30, 34 do for aty = 23, 23 do table.insert(area_roomB, atx + aty * 64, "marble") end end
-table.insert(area_roomB, 27 + ( 27 * 64 ), "marble")
-table.insert(area_roomB, 28 + ( 27 * 64 ), "marble")
-table.insert(area_roomB, 27 + ( 28 * 64 ), "marble")
-for atx = 25, 26 do for aty = 28, 32 do table.insert(area_roomB, atx + aty * 64, "marble") end end
-table.insert(area_roomB, 27 + ( 32 * 64 ), "marble")
-table.insert(area_roomB, 27 + ( 33 * 64 ), "marble")
-table.insert(area_roomB, 27 + ( 34 * 64 ), "marble")
-for atx = 21, 26 do for aty = 34, 36 do table.insert(area_roomB, atx + aty * 64, "marble") end end
-table.insert(area_roomB, 31 + ( 27 * 64 ), "marble")
---central room
-table.insert(area_roomB, 32 + ( 28 * 64 ), "marble")--central room
-table.insert(area_roomB, 32 + ( 29 * 64 ), "marble")--central room
-for atx = 31, 33 do for aty = 30, 32 do table.insert(area_roomB, atx + aty * 64, "marble") end end--central room
----
-for atx = 60, 61 do for aty = 13, 29 do table.insert(area_roomB, atx + aty * 64, "wall") end end
-table.insert(area_roomB, 59 + ( 17 * 64 ), "wall")
-table.insert(area_roomB, 59 + ( 26 * 64 ), "wall")
-table.insert(area_roomB, 59 + ( 27 * 64 ), "wall")
-for atx = 56, 59 do for aty = 23, 24 do table.insert(area_roomB, atx + aty * 64, "wall") end end
-table.insert(area_roomB, 55 + ( 24 * 64 ), "wall")
----
-for atx = 52, 59 do for aty = 18, 21 do table.insert(area_roomB, atx + aty * 64, "lib") end end
-for atx = 45, 50 do for aty = 18, 21 do table.insert(area_roomB, atx + aty * 64, "lib") end end
-for atx = 51, 51 do for aty = 19, 21 do table.insert(area_roomB, atx + aty * 64, "lib") end end
-table.insert(area_roomB, 44 + ( 20 * 64 ), "lib")
-table.insert(area_roomB, 44 + ( 21 * 64 ), "lib")
----
-table.insert(area_roomB, 59 + ( 15 * 64 ), "clock")
-table.insert(area_roomB, 59 + ( 14 * 64 ), "clock")
-table.insert(area_roomB, 59 + ( 11 * 64 ), "clock")
-for atx = 53, 58 do for aty = 11, 15 do table.insert(area_roomB, atx + aty * 64, "clock") end end
-table.insert(area_roomB, 49 + ( 14 * 64 ), "clock")
-table.insert(area_roomB, 51 + ( 8 * 64 ), "clock")
-for atx = 50, 52 do for aty = 9, 14 do table.insert(area_roomB, atx + aty * 64, "clock") end end
-for atx = 42, 49 do for aty = 10, 11 do table.insert(area_roomB, atx + aty * 64, "clock") end end
-table.insert(area_roomB, 40 + ( 10 * 64 ), "clock")
-table.insert(area_roomB, 41 + ( 10 * 64 ), "clock")
----
-for atx = 38, 39 do for aty = 5, 12 do table.insert(area_roomB, atx + aty * 64, "keep") end end
-table.insert(area_roomB, 40 + ( 12 * 64 ), "keep")
-for atx = 31, 37 do for aty = 8, 12 do table.insert(area_roomB, atx + aty * 64, "keep") end end
-for atx = 34, 37 do for aty = 6, 8 do table.insert(area_roomB, atx + aty * 64, "keep") end end
-table.insert(area_roomB, 33 + ( 6 * 64 ), "keep")
-table.insert(area_roomB, 31 + ( 7 * 64 ), "keep")
-table.insert(area_roomB, 30 + ( 12 * 64 ), "keep")
----
-for atx = 27, 28 do for aty = 10, 13 do table.insert(area_roomB, atx + aty * 64, "chapel") end end
-for atx = 21, 26 do for aty = 13, 13 do table.insert(area_roomB, atx + aty * 64, "chapel") end end
-for atx = 19, 20 do for aty = 11, 14 do table.insert(area_roomB, atx + aty * 64, "chapel") end end
-for atx = 16, 18 do for aty = 14, 14 do table.insert(area_roomB, atx + aty * 64, "chapel") end end
-for atx = 8, 13 do for aty = 15, 15 do table.insert(area_roomB, atx + aty * 64, "chapel") end end
-for atx = 14, 15 do for aty = 12, 21 do table.insert(area_roomB, atx + aty * 64, "chapel") end end
-table.insert(area_roomB, 16 + ( 21 * 64 ), "chapel")
-table.insert(area_roomB, 16 + ( 19 * 64 ), "chapel")
-for atx = 8, 13 do for aty = 21, 22 do table.insert(area_roomB, atx + aty * 64, "chapel") end end
-table.insert(area_roomB, 10 + ( 20 * 64 ), "chapel")
-table.insert(area_roomB, 29 + ( 13 * 64 ), "chapel")
-for atx = 8, 9 do for aty = 21, 23 do table.insert(area_roomB, atx + aty * 64, "chapel") end end
-for atx = 7, 7 do for aty = 22, 24 do table.insert(area_roomB, atx + aty * 64, "chapel") end end
-for atx = 6, 6 do for aty = 23, 25 do table.insert(area_roomB, atx + aty * 64, "chapel") end end
-for atx = 5, 5 do for aty = 24, 26 do table.insert(area_roomB, atx + aty * 64, "chapel") end end
-for atx = 4, 4 do for aty = 25, 27 do table.insert(area_roomB, atx + aty * 64, "chapel") end end
-table.insert(area_roomB, 3 + ( 26 * 64 ), "chapel")
-for atx = 2, 4 do for aty = 27, 28 do table.insert(area_roomB, atx + aty * 64, "chapel") end end
----
-for atx = 14, 25 do for aty = 22, 24 do table.insert(area_roomB, atx + aty * 64, "colos") end end
-table.insert(area_roomB, 26 + ( 24 * 64 ), "colos")
-table.insert(area_roomB, 13 + ( 24 * 64 ), "colos")
-for atx = 17, 22 do for aty = 21, 21 do table.insert(area_roomB, atx + aty * 64, "colos") end end
-table.insert(area_roomB, 19 + ( 20 * 64 ), "colos")
-table.insert(area_roomB, 20 + ( 20 * 64 ), "colos")
----
-for atx = 18, 30 do for aty = 19, 19 do table.insert(area_roomB, atx + aty * 64, "olrox") end end
-for atx = 16, 30 do for aty = 16, 16 do table.insert(area_roomB, atx + aty * 64, "olrox") end end
-for atx = 19, 20 do for aty = 17, 18 do table.insert(area_roomB, atx + aty * 64, "olrox") end end
-for atx = 25, 30 do for aty = 17, 18 do table.insert(area_roomB, atx + aty * 64, "olrox") end end
-for atx = 31, 33 do for aty = 18, 18 do table.insert(area_roomB, atx + aty * 64, "olrox") end end
-for atx = 30, 35 do for aty = 15, 15 do table.insert(area_roomB, atx + aty * 64, "olrox") end end
-for atx = 35, 35 do for aty = 15, 21 do table.insert(area_roomB, atx + aty * 64, "olrox") end end
-table.insert(area_roomB, 34 + ( 21 * 64 ), "olrox")
-table.insert(area_roomB, 33 + ( 21 * 64 ), "olrox")
-for atx = 27, 32 do for aty = 21, 22 do table.insert(area_roomB, atx + aty * 64, "olrox") end end
-table.insert(area_roomB, 28 + ( 23 * 64 ), "olrox")
-for atx = 29, 29 do for aty = 23, 25 do table.insert(area_roomB, atx + aty * 64, "olrox") end end
-table.insert(area_roomB, 37 + ( 21 * 64 ), "olrox")
-table.insert(area_roomB, 31 + ( 17 * 64 ), "olrox")
----
-for atx = 19, 20 do for aty = 25, 27 do table.insert(area_roomB, atx + aty * 64, "lab") end end
-for atx = 16, 18 do for aty = 26, 26 do table.insert(area_roomB, atx + aty * 64, "lab") end end
-for atx = 14, 15 do for aty = 26, 28 do table.insert(area_roomB, atx + aty * 64, "lab") end end
-table.insert(area_roomB, 16 + ( 28 * 64 ), "lab")
-table.insert(area_roomB, 16 + ( 31 * 64 ), "lab")
-for atx = 17, 17 do for aty = 28, 34 do table.insert(area_roomB, atx + aty * 64, "lab") end end
-for atx = 8, 13 do for aty = 27, 28 do table.insert(area_roomB, atx + aty * 64, "lab") end end
-for atx = 5, 7 do for aty = 28, 28 do table.insert(area_roomB, atx + aty * 64, "lab") end end
-table.insert(area_roomB, 8 + ( 29 * 64 ), "lab")
-table.insert(area_roomB, 10 + ( 29 * 64 ), "lab")
-table.insert(area_roomB, 11 + ( 29 * 64 ), "lab")
-for atx = 8, 11 do for aty = 30, 31 do table.insert(area_roomB, atx + aty * 64, "lab") end end
-table.insert(area_roomB, 11 + ( 32 * 64 ), "lab")
-table.insert(area_roomB, 12 + ( 32 * 64 ), "lab")
-table.insert(area_roomB, 11 + ( 34 * 64 ), "lab")
-table.insert(area_roomB, 12 + ( 36 * 64 ), "lab")
-for atx = 12, 15 do for aty = 33, 35 do table.insert(area_roomB, atx + aty * 64, "lab") end end
-table.insert(area_roomB, 16 + ( 34 * 64 ), "lab")
-for atx = 14, 16 do for aty = 36, 36 do table.insert(area_roomB, atx + aty * 64, "lab") end end
-table.insert(area_roomB, 16 + ( 35 * 64 ), "lab")
-table.insert(area_roomB, 7 + ( 30 * 64 ), "lab")
-table.insert(area_roomB, 29 + ( 27 * 64 ), "lab")
---cdroom arent show at all on the png
-table.insert(area_roomB, 3 + ( 44 * 64 ), "cd")
-table.insert(area_roomB, 3 + ( 45 * 64 ), "cd")
-table.insert(area_roomB, 15 + ( 41 * 64 ), "cd")
-table.insert(area_roomB, 20 + ( 36 * 64 ), "cd")
-table.insert(area_roomB, 17 + ( 36 * 64 ), "cd")
-table.insert(area_roomB, 16 + ( 38 * 64 ), "cd")
-table.insert(area_roomB, 28 + ( 38 * 64 ), "cd")
-table.insert(area_roomB, 36 + ( 34 * 64 ), "cd")
-table.insert(area_roomB, 40 + ( 26 * 64 ), "cd")
-table.insert(area_roomB, 27 + ( 36 * 64 ), "cd")
-table.insert(area_roomB, 34 + ( 44 * 64 ), "cd")
-table.insert(area_roomB, 32 + ( 49 * 64 ), "cd")
-table.insert(area_roomB, 60 + ( 14 * 64 ), "cd")
-table.insert(area_roomB, 59 + ( 21 * 64 ), "cd")
-table.insert(area_roomB, 60 + ( 17 * 64 ), "cd")
-table.insert(area_roomB, 60 + ( 25 * 64 ), "cd")
-table.insert(area_roomB, 39 + ( 10 * 64 ), "cd")
-table.insert(area_roomB, 39 + ( 12 * 64 ), "cd")
-table.insert(area_roomB, 29 + ( 12 * 64 ), "cd")
-table.insert(area_roomB, 36 + ( 21 * 64 ), "cd")
-table.insert(area_roomB, 13 + ( 22 * 64 ), "cd")
-table.insert(area_roomB, 26 + ( 22 * 64 ), "cd")
-table.insert(area_roomB, 30 + ( 25 * 64 ), "cd")
-table.insert(area_roomB, 4 + ( 28 * 64 ), "cd")
-table.insert(area_roomB, 21 + ( 26 * 64 ), "cd")
-table.insert(area_roomB, 13 + ( 22 * 64 ), "cd")
-table.insert(area_roomB, 17 + ( 19 * 64 ), "cd")
-table.insert(area_roomB, 45 + ( 42 * 64 ), "cave")
-table.insert(area_roomB, 48 + ( 42 * 64 ), "cave")
+--cdroom but from teleporters, they actually are never in a different area, and the music from previous level will stay
+table.insert(area_roomA, 34 + ( 44 * 64 ), "mine")
+table.insert(area_roomA, 16 + ( 38 * 64 ), "entrance")
+table.insert(area_roomA, 36 + ( 21 * 64 ), "olrox")
+table.insert(area_roomA, 60 + ( 17 * 64 ), "wall")
+table.insert(area_roomA, 39 + ( 12 * 64 ), "keep")
+table.insert(area_roomA, 3 + ( 45 * 64 ), "garden")
 
 
 
@@ -1023,37 +809,37 @@ for atx = 14, 16 do for aty = 36, 36 do table.insert(text_roomA, atx + aty * 64,
 table.insert(text_roomA, 16 + ( 35 * 64 ), "Alchemy Laboratory")
 table.insert(text_roomA, 7 + ( 30 * 64 ), "Alchemy Laboratory")
 table.insert(text_roomA, 29 + ( 27 * 64 ), "Alchemy Laboratory")
---cdroom arent show at all on the png
-table.insert(text_roomA, 3 + ( 44 * 64 ), "CD Room")
-table.insert(text_roomA, 3 + ( 45 * 64 ), "CD Room")
-table.insert(text_roomA, 15 + ( 41 * 64 ), "CD Room")
-table.insert(text_roomA, 20 + ( 36 * 64 ), "CD Room")
-table.insert(text_roomA, 17 + ( 36 * 64 ), "CD Room")
-table.insert(text_roomA, 16 + ( 38 * 64 ), "CD Room")
-table.insert(text_roomA, 28 + ( 38 * 64 ), "CD Room")
-table.insert(text_roomA, 36 + ( 34 * 64 ), "CD Room")
-table.insert(text_roomA, 40 + ( 26 * 64 ), "CD Room")
-table.insert(text_roomA, 27 + ( 36 * 64 ), "CD Room")
-table.insert(text_roomA, 34 + ( 44 * 64 ), "CD Room")
-table.insert(text_roomA, 32 + ( 49 * 64 ), "CD Room")
-table.insert(text_roomA, 60 + ( 14 * 64 ), "CD Room")
-table.insert(text_roomA, 59 + ( 21 * 64 ), "CD Room")
-table.insert(text_roomA, 60 + ( 17 * 64 ), "CD Room")
-table.insert(text_roomA, 60 + ( 25 * 64 ), "CD Room")
-table.insert(text_roomA, 39 + ( 10 * 64 ), "CD Room")
-table.insert(text_roomA, 39 + ( 12 * 64 ), "CD Room")
-table.insert(text_roomA, 29 + ( 12 * 64 ), "CD Room")
-table.insert(text_roomA, 36 + ( 21 * 64 ), "CD Room")
-table.insert(text_roomA, 13 + ( 22 * 64 ), "CD Room")
-table.insert(text_roomA, 26 + ( 22 * 64 ), "CD Room")
-table.insert(text_roomA, 30 + ( 25 * 64 ), "CD Room")
-table.insert(text_roomA, 4 + ( 28 * 64 ), "CD Room")
-table.insert(text_roomA, 21 + ( 26 * 64 ), "CD Room")
-table.insert(text_roomA, 13 + ( 22 * 64 ), "CD Room")
-table.insert(text_roomA, 17 + ( 19 * 64 ), "CD Room")
 
 --special rooms, on the png the saveroom are red, teleporters are orange,
 special_roomA = {}
+--cdroom arent show at all on the png
+table.insert(special_roomA, 3 + ( 44 * 64 ), "CD Room")
+table.insert(special_roomA, 3 + ( 45 * 64 ), "CD Room")
+table.insert(special_roomA, 15 + ( 41 * 64 ), "CD Room")
+table.insert(special_roomA, 20 + ( 36 * 64 ), "CD Room")
+table.insert(special_roomA, 17 + ( 36 * 64 ), "CD Room")
+table.insert(special_roomA, 16 + ( 38 * 64 ), "CD Room")
+table.insert(special_roomA, 28 + ( 38 * 64 ), "CD Room")
+table.insert(special_roomA, 36 + ( 34 * 64 ), "CD Room")
+table.insert(special_roomA, 40 + ( 26 * 64 ), "CD Room")
+table.insert(special_roomA, 27 + ( 36 * 64 ), "CD Room")
+table.insert(special_roomA, 34 + ( 44 * 64 ), "CD Room")
+table.insert(special_roomA, 32 + ( 49 * 64 ), "CD Room")
+table.insert(special_roomA, 60 + ( 14 * 64 ), "CD Room")
+table.insert(special_roomA, 59 + ( 21 * 64 ), "CD Room")
+table.insert(special_roomA, 60 + ( 17 * 64 ), "CD Room")
+table.insert(special_roomA, 60 + ( 25 * 64 ), "CD Room")
+table.insert(special_roomA, 39 + ( 10 * 64 ), "CD Room")
+table.insert(special_roomA, 39 + ( 12 * 64 ), "CD Room")
+table.insert(special_roomA, 29 + ( 12 * 64 ), "CD Room")
+table.insert(special_roomA, 36 + ( 21 * 64 ), "CD Room")
+table.insert(special_roomA, 13 + ( 22 * 64 ), "CD Room")
+table.insert(special_roomA, 26 + ( 22 * 64 ), "CD Room")
+table.insert(special_roomA, 30 + ( 25 * 64 ), "CD Room")
+table.insert(special_roomA, 4 + ( 28 * 64 ), "CD Room")
+table.insert(special_roomA, 21 + ( 26 * 64 ), "CD Room")
+table.insert(special_roomA, 13 + ( 22 * 64 ), "CD Room")
+table.insert(special_roomA, 17 + ( 19 * 64 ), "CD Room")
 --teleport
 table.insert(special_roomA, 2 + ( 45 * 64 ), "Bear Teleporter")
 table.insert(special_roomA, 15 + ( 38 * 64 ), "Horse Teleporter")
@@ -1195,259 +981,462 @@ table.insert(special_roomA, 22 + ( 37 * 64 ), "Switch To Abandonned Mines")
 table.insert(special_roomA, 33 + ( 36 * 64 ), "Gate Switch")
 
 
-text_roomB ={}
-for atx = 16, 26 do for aty = 50, 51 do table.insert(text_roomB, atx + aty * 64, "Floating Catacombs") end end
-for atx = 27, 37 do for aty = 51, 51 do table.insert(text_roomB, atx + aty * 64, "Floating Catacombs") end end
-for atx = 28, 36 do for aty = 50, 51 do table.insert(text_roomB, atx + aty * 64, "Floating Catacombs") end end
-for atx = 38, 48 do for aty = 50, 51 do table.insert(text_roomB, atx + aty * 64, "Floating Catacombs") end end
-for atx = 31, 31 do for aty = 49, 50 do table.insert(text_roomB, atx + aty * 64, "Floating Catacombs") end end
----
-for atx = 33, 33 do for aty = 48, 49 do table.insert(text_roomB, atx + aty * 64, "Cave") end end
-for atx = 32, 32 do for aty = 40, 48 do table.insert(text_roomB, atx + aty * 64, "Cave") end end
-table.insert(text_roomB, 31 + ( 48 * 64 ), "Cave")
-for atx = 29, 35 do for aty = 44, 44 do table.insert(text_roomB, atx + aty * 64, "Cave") end end
-for atx = 27, 37 do for aty = 40, 40 do table.insert(text_roomB, atx + aty * 64, "Cave") end end
-for atx = 36, 37 do for aty = 40, 41 do table.insert(text_roomB, atx + aty * 64, "Cave") end end
-for atx = 27, 28 do for aty = 40, 41 do table.insert(text_roomB, atx + aty * 64, "Cave") end end
-for atx = 27, 27 do for aty = 38, 41 do table.insert(text_roomB, atx + aty * 64, "Cave") end end
----
-for atx = 14, 21 do for aty = 44, 44 do table.insert(text_roomB, atx + aty * 64, "Hell Gardens") end end
-for atx = 14, 21 do for aty = 44, 44 do table.insert(text_roomB, atx + aty * 64, "Hell Gardens") end end
-for atx = 3, 13 do for aty = 44, 45 do table.insert(text_roomB, atx + aty * 64, "Hell Garden") end end
-table.insert(text_roomB, 2 + ( 45 * 64 ), "Hell Gardens")
----
-for atx = 2, 2 do for aty = 41, 44 do table.insert(text_roomB, atx + aty * 64, "Reverse Entrance") end end
-for atx = 2, 3 do for aty = 38, 40 do table.insert(text_roomB, atx + aty * 64, "Reverse Entrance") end end
-for atx = 4, 21 do for aty = 40, 40 do table.insert(text_roomB, atx + aty * 64, "Reverse Entrance") end end
-for atx = 5, 6 do for aty = 38, 39 do table.insert(text_roomB, atx + aty * 64, "Reverse Entrance") end end
-for atx = 7, 11 do for aty = 39, 39 do table.insert(text_roomB, atx + aty * 64, "Reverse Entrance") end end
-for atx = 10, 15 do for aty = 40, 41 do table.insert(text_roomB, atx + aty * 64, "Reverse Entrance") end end
-for atx = 19, 21 do for aty = 38, 40 do table.insert(text_roomB, atx + aty * 64, "Reverse Entrance") end end
-for atx = 17, 20 do for aty = 36, 38 do table.insert(text_roomB, atx + aty * 64, "Reverse Entrance") end end
-table.insert(text_roomB, 15 + ( 38 * 64 ), "Reverse Entrance")
-table.insert(text_roomB, 16 + ( 38 * 64 ), "Reverse Entrance")
----
-table.insert(text_roomB, 8 + ( 42 * 64 ), "Reverse Caverns")
-table.insert(text_roomB, 16 + ( 41 * 64 ), "Reverse Caverns")
-table.insert(text_roomB, 17 + ( 41 * 64 ), "Reverse Caverns")
-for atx = 9, 13 do for aty = 42, 43 do table.insert(text_roomB, atx + aty * 64, "Reverse Caverns") end end
-for atx = 14, 25 do for aty = 42, 42 do table.insert(text_roomB, atx + aty * 64, "Reverse Caverns") end end
-for atx = 22, 26 do for aty = 37, 37 do table.insert(text_roomB, atx + aty * 64, "Reverse Caverns") end end
-for atx = 27, 31 do for aty = 37, 37 do table.insert(text_roomB, atx + aty * 64, "Reverse Caverns") end end
-for atx = 28, 31 do for aty = 38, 38 do table.insert(text_roomB, atx + aty * 64, "Reverse Caverns") end end
-for atx = 23, 24 do for aty = 38, 41 do table.insert(text_roomB, atx + aty * 64, "Reverse Caverns") end end
-table.insert(text_roomB, 32 + ( 37 * 64 ), "Reverse Caverns")
-for atx = 33, 40 do for aty = 37, 38 do table.insert(text_roomB, atx + aty * 64, "Reverse Caverns") end end
-for atx = 39, 45 do for aty = 38, 39 do table.insert(text_roomB, atx + aty * 64, "Reverse Caverns") end end
-table.insert(text_roomB, 39 + ( 40 * 64 ), "Reverse Caverns")
-for atx = 39, 55 do for aty = 41, 41 do table.insert(text_roomB, atx + aty * 64, "Reverse Caverns") end end
-for atx = 40, 42 do for aty = 41, 42 do table.insert(text_roomB, atx + aty * 64, "Reverse Caverns") end end
-for atx = 46, 47 do for aty = 41, 42 do table.insert(text_roomB, atx + aty * 64, "Reverse Caverns") end end
-for atx = 49, 52 do for aty = 41, 42 do table.insert(text_roomB, atx + aty * 64, "Reverse Caverns") end end
-for atx = 38, 39 do for aty = 27, 36 do table.insert(text_roomB, atx + aty * 64, "Reverse Caverns") end end
-for atx = 43, 39 do for aty = 29, 29 do table.insert(text_roomB, atx + aty * 64, "Reverse Caverns") end end
-for atx = 43, 43 do for aty = 29, 32 do table.insert(text_roomB, atx + aty * 64, "Reverse Caverns") end end
-for atx = 43, 44 do for aty = 32, 33 do table.insert(text_roomB, atx + aty * 64, "Reverse Caverns") end end
-table.insert(text_roomB, 45 + ( 33 * 64 ), "Reverse Caverns")
-table.insert(text_roomB, 39 + ( 26 * 64 ), "Reverse Caverns")
-table.insert(text_roomB, 40 + ( 26 * 64 ), "Reverse Caverns")
-for atx = 35, 37 do for aty = 27, 27 do table.insert(text_roomB, atx + aty * 64, "Reverse Caverns") end end
-table.insert(text_roomB, 37 + ( 28 * 64 ), "Reverse Caverns")
-for atx = 37, 37 do for aty = 32, 34 do table.insert(text_roomB, atx + aty * 64, "Reverse Caverns") end end
-table.insert(text_roomB, 36 + ( 34 * 64 ), "Reverse Caverns")
-for atx = 40, 42 do for aty = 29, 29 do table.insert(text_roomB, atx + aty * 64, "Reverse Caverns") end end
-table.insert(text_roomB, 40 + ( 27 * 64 ), "Reverse Caverns")
---
-table.insert(text_roomB, 32 + ( 34 * 64 ), "Reverse Cursed Prison")
-for atx = 33, 35 do for aty = 34, 36 do table.insert(text_roomB, atx + aty * 64, "Reverse Cursed Prison") end end
-for atx = 27, 32 do for aty = 36, 36 do table.insert(text_roomB, atx + aty * 64, "Reverse Cursed Prison") end end
---
-for atx = 47, 59 do for aty = 25, 25 do table.insert(text_roomB, atx + aty * 64, "Black Marble Gallery") end end
-for atx = 40, 46 do for aty = 24, 25 do table.insert(text_roomB, atx + aty * 64, "Black Marble Gallery") end end
-table.insert(text_roomB, 41 + ( 26 * 64 ), "Black Marble Gallery")
-table.insert(text_roomB, 44 + ( 26 * 64 ), "Black Marble Gallery")
-table.insert(text_roomB, 39 + ( 24 * 64 ), "Black Marble Gallery")
-for atx = 37, 38 do for aty = 24, 26 do table.insert(text_roomB, atx + aty * 64, "Black Marble Gallery") end end
-for atx = 22, 36 do for aty = 26, 26 do table.insert(text_roomB, atx + aty * 64, "Black Marble Gallery") end end
-for atx = 31, 33 do for aty = 25, 27 do table.insert(text_roomB, atx + aty * 64, "Black Marble Gallery") end end
-table.insert(text_roomB, 34 + ( 25 * 64 ), "Black Marble Gallery")
-table.insert(text_roomB, 32 + ( 24 * 64 ), "Black Marble Gallery")
-for atx = 30, 34 do for aty = 23, 23 do table.insert(text_roomB, atx + aty * 64, "Black Marble Gallery") end end
-table.insert(text_roomB, 27 + ( 27 * 64 ), "Black Marble Gallery")
-table.insert(text_roomB, 28 + ( 27 * 64 ), "Black Marble Gallery")
-table.insert(text_roomB, 27 + ( 28 * 64 ), "Black Marble Gallery")
-for atx = 25, 26 do for aty = 28, 32 do table.insert(text_roomB, atx + aty * 64, "Black Marble Gallery") end end
-table.insert(text_roomB, 27 + ( 32 * 64 ), "Black Marble Gallery")
-table.insert(text_roomB, 27 + ( 33 * 64 ), "Black Marble Gallery")
-table.insert(text_roomB, 27 + ( 34 * 64 ), "Black Marble Gallery")
-for atx = 21, 26 do for aty = 34, 36 do table.insert(text_roomB, atx + aty * 64, "Black Marble Gallery") end end
-table.insert(text_roomB, 31 + ( 27 * 64 ), "Black Marble Gallery")
----central room
-table.insert(text_roomB, 32 + ( 28 * 64 ), "Black Marble Gallery")---central room
-table.insert(text_roomB, 32 + ( 29 * 64 ), "Black Marble Gallery")---central room
-for atx = 31, 33 do for aty = 30, 32 do table.insert(text_roomB, atx + aty * 64, "Black Marble Gallery") end end---central room
----
-for atx = 60, 61 do for aty = 13, 29 do table.insert(text_roomB, atx + aty * 64, "Reverse Outer Wall") end end
-table.insert(text_roomB, 59 + ( 17 * 64 ), "Reverse Outer Wall")
-table.insert(text_roomB, 59 + ( 26 * 64 ), "Reverse Outer Wall")
-table.insert(text_roomB, 59 + ( 27 * 64 ), "Reverse Outer Wall")
-for atx = 56, 59 do for aty = 23, 24 do table.insert(text_roomB, atx + aty * 64, "Reverse Outer Wall") end end
-table.insert(text_roomB, 55 + ( 24 * 64 ), "Reverse Outer Wall")
----
-for atx = 52, 59 do for aty = 18, 21 do table.insert(text_roomB, atx + aty * 64, "Forbidden Library") end end
-for atx = 45, 50 do for aty = 18, 21 do table.insert(text_roomB, atx + aty * 64, "Forbidden Library") end end
-for atx = 51, 51 do for aty = 19, 21 do table.insert(text_roomB, atx + aty * 64, "Forbidden Library") end end
-table.insert(text_roomB, 44 + ( 20 * 64 ), "Forbidden Library")
-table.insert(text_roomB, 44 + ( 21 * 64 ), "Forbidden Library")
----
-table.insert(text_roomB, 59 + ( 15 * 64 ), "Reverse Clock Tower")
-table.insert(text_roomB, 59 + ( 14 * 64 ), "Reverse Clock Tower")
-table.insert(text_roomB, 59 + ( 11 * 64 ), "Reverse Clock Tower")
-for atx = 53, 58 do for aty = 11, 15 do table.insert(text_roomB, atx + aty * 64, "Reverse Clock Tower") end end
-table.insert(text_roomB, 49 + ( 14 * 64 ), "Reverse Clock Tower")
-table.insert(text_roomB, 51 + ( 8 * 64 ), "Reverse Clock Tower")
-for atx = 50, 52 do for aty = 9, 14 do table.insert(text_roomB, atx + aty * 64, "Reverse Clock Tower") end end
-for atx = 42, 49 do for aty = 10, 11 do table.insert(text_roomB, atx + aty * 64, "Reverse Clock Tower") end end
-table.insert(text_roomB, 40 + ( 10 * 64 ), "Reverse Clock Tower")
-table.insert(text_roomB, 41 + ( 10 * 64 ), "Reverse Clock Tower")
----
-for atx = 38, 39 do for aty = 5, 12 do table.insert(text_roomB, atx + aty * 64, "Reverse Keep") end end
-table.insert(text_roomB, 40 + ( 12 * 64 ), "Reverse Keep")
-for atx = 31, 37 do for aty = 8, 12 do table.insert(text_roomB, atx + aty * 64, "Reverse Keep") end end
-for atx = 34, 37 do for aty = 6, 8 do table.insert(text_roomB, atx + aty * 64, "Reverse Keep") end end
-table.insert(text_roomB, 33 + ( 6 * 64 ), "Reverse Keep")
-table.insert(text_roomB, 31 + ( 7 * 64 ), "Reverse Keep")
-table.insert(text_roomB, 30 + ( 12 * 64 ), "Reverse Keep")
----
-for atx = 27, 28 do for aty = 10, 13 do table.insert(text_roomB, atx + aty * 64, "Anti-Chapel") end end
-for atx = 21, 26 do for aty = 13, 13 do table.insert(text_roomB, atx + aty * 64, "Anti-Chapel") end end
-for atx = 19, 20 do for aty = 11, 14 do table.insert(text_roomB, atx + aty * 64, "Anti-Chapel") end end
-for atx = 16, 18 do for aty = 14, 14 do table.insert(text_roomB, atx + aty * 64, "Anti-Chapel") end end
-for atx = 8, 13 do for aty = 15, 15 do table.insert(text_roomB, atx + aty * 64, "Anti-Chapel") end end
-for atx = 14, 15 do for aty = 12, 21 do table.insert(text_roomB, atx + aty * 64, "Anti-Chapel") end end
-table.insert(text_roomB, 16 + ( 21 * 64 ), "Anti-Chapel")
-table.insert(text_roomB, 16 + ( 19 * 64 ), "Anti-Chapel")
-for atx = 8, 13 do for aty = 21, 22 do table.insert(text_roomB, atx + aty * 64, "Anti-Chapel") end end
-table.insert(text_roomB, 10 + ( 20 * 64 ), "Anti-Chapel")
-for atx = 8, 9 do for aty = 21, 23 do table.insert(text_roomB, atx + aty * 64, "Anti-Chapel") end end
-for atx = 7, 7 do for aty = 22, 24 do table.insert(text_roomB, atx + aty * 64, "Anti-Chapel") end end
-for atx = 6, 6 do for aty = 23, 25 do table.insert(text_roomB, atx + aty * 64, "Anti-Chapel") end end
-for atx = 5, 5 do for aty = 24, 26 do table.insert(text_roomB, atx + aty * 64, "Anti-Chapel") end end
-for atx = 4, 4 do for aty = 25, 27 do table.insert(text_roomB, atx + aty * 64, "Anti-Chapel") end end
-table.insert(text_roomB, 3 + ( 26 * 64 ), "Anti-Chapel")
-for atx = 2, 4 do for aty = 27, 28 do table.insert(text_roomB, atx + aty * 64, "Anti-Chapel") end end
-table.insert(text_roomB, 29 + ( 13 * 64 ), "Anti-Chapel")
----
-for atx = 14, 25 do for aty = 22, 24 do table.insert(text_roomB, atx + aty * 64, "Reverse Colosseum") end end
-table.insert(text_roomB, 26 + ( 24 * 64 ), "Reverse Colosseum")
-table.insert(text_roomB, 13 + ( 24 * 64 ), "Reverse Colosseum")
-for atx = 17, 22 do for aty = 21, 21 do table.insert(text_roomB, atx + aty * 64, "Reverse Colosseum") end end
-table.insert(text_roomB, 19 + ( 20 * 64 ), "Reverse Colosseum")
-table.insert(text_roomB, 20 + ( 20 * 64 ), "Reverse Colosseum")
----
-for atx = 18, 30 do for aty = 19, 19 do table.insert(text_roomB, atx + aty * 64, "Death Wing's Lair") end end
-for atx = 16, 30 do for aty = 16, 16 do table.insert(text_roomB, atx + aty * 64, "Death Wing's Lair") end end
-for atx = 19, 20 do for aty = 17, 18 do table.insert(text_roomB, atx + aty * 64, "Death Wing's Lair") end end
-for atx = 25, 30 do for aty = 17, 18 do table.insert(text_roomB, atx + aty * 64, "Death Wing's Lair") end end
-for atx = 31, 33 do for aty = 18, 18 do table.insert(text_roomB, atx + aty * 64, "Death Wing's Lair") end end
-for atx = 30, 35 do for aty = 15, 15 do table.insert(text_roomB, atx + aty * 64, "Death Wing's Lair") end end
-for atx = 35, 35 do for aty = 15, 21 do table.insert(text_roomB, atx + aty * 64, "Death Wing's Lair") end end
-table.insert(text_roomB, 34 + ( 21 * 64 ), "Death Wing's Lair")
-table.insert(text_roomB, 33 + ( 21 * 64 ), "Death Wing's Lair")
-for atx = 27, 32 do for aty = 21, 22 do table.insert(text_roomB, atx + aty * 64, "Death Wing's Lair") end end
-table.insert(text_roomB, 28 + ( 23 * 64 ), "Death Wing's Lair")
-for atx = 29, 29 do for aty = 23, 25 do table.insert(text_roomB, atx + aty * 64, "Death Wing's Lair") end end
-table.insert(text_roomB, 37 + ( 21 * 64 ), "Death Wing's Lair")
-table.insert(text_roomB, 31 + ( 17 * 64 ), "Death Wing's Lair")
----
-for atx = 19, 20 do for aty = 25, 27 do table.insert(text_roomB, atx + aty * 64, "Necromancy Laboratory") end end
-for atx = 16, 18 do for aty = 26, 26 do table.insert(text_roomB, atx + aty * 64, "Necromancy Laboratory") end end
-for atx = 14, 15 do for aty = 26, 28 do table.insert(text_roomB, atx + aty * 64, "Necromancy Laboratory") end end
-table.insert(text_roomB, 16 + ( 28 * 64 ), "Necromancy Laboratory")
-table.insert(text_roomB, 16 + ( 31 * 64 ), "Necromancy Laboratory")
-for atx = 17, 17 do for aty = 28, 34 do table.insert(text_roomB, atx + aty * 64, "Necromancy Laboratory") end end
-for atx = 8, 13 do for aty = 27, 28 do table.insert(text_roomB, atx + aty * 64, "Necromancy Laboratory") end end
-for atx = 5, 7 do for aty = 28, 28 do table.insert(text_roomB, atx + aty * 64, "Necromancy Laboratory") end end
-table.insert(text_roomB, 8 + ( 29 * 64 ), "Necromancy Laboratory")
-table.insert(text_roomB, 10 + ( 29 * 64 ), "Necromancy Laboratory")
-table.insert(text_roomB, 11 + ( 29 * 64 ), "Necromancy Laboratory")
-for atx = 8, 11 do for aty = 30, 31 do table.insert(text_roomB, atx + aty * 64, "Necromancy Laboratory") end end
-table.insert(text_roomB, 11 + ( 32 * 64 ), "Necromancy Laboratory")
-table.insert(text_roomB, 12 + ( 32 * 64 ), "Necromancy Laboratory")
-table.insert(text_roomB, 11 + ( 34 * 64 ), "Necromancy Laboratory")
-table.insert(text_roomB, 12 + ( 36 * 64 ), "Necromancy Laboratory")
-for atx = 12, 15 do for aty = 33, 35 do table.insert(text_roomB, atx + aty * 64, "Necromancy Laboratory") end end
-table.insert(text_roomB, 16 + ( 34 * 64 ), "Necromancy Laboratory")
-for atx = 14, 16 do for aty = 36, 36 do table.insert(text_roomB, atx + aty * 64, "Necromancy Laboratory") end end
-table.insert(text_roomB, 16 + ( 35 * 64 ), "Necromancy Laboratory")
-table.insert(text_roomB, 7 + ( 30 * 64 ), "Necromancy Laboratory")
-table.insert(text_roomB, 29 + ( 27 * 64 ), "Necromancy Laboratory")
+
+
+
+
+area_roomB ={}
+for atx = 16, 26 do for aty = 50, 51 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "cata") end end
+for atx = 27, 37 do for aty = 51, 51 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "cata") end end
+for atx = 28, 36 do for aty = 50, 51 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "cata") end end
+for atx = 38, 48 do for aty = 50, 51 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "cata") end end
+for atx = 31, 31 do for aty = 49, 50 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "cata") end end
+for atx = 33, 33 do for aty = 48, 49 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "mine") end end
+for atx = 32, 32 do for aty = 40, 48 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "mine") end end
+for atx = 29, 35 do for aty = 44, 44 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "mine") end end
+for atx = 27, 37 do for aty = 40, 40 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "mine") end end
+for atx = 36, 37 do for aty = 40, 41 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "mine") end end
+for atx = 27, 28 do for aty = 40, 41 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "mine") end end
+for atx = 27, 27 do for aty = 38, 41 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "mine") end end
+for atx = 14, 21 do for aty = 44, 44 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "garden") end end
+for atx = 14, 21 do for aty = 44, 44 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "garden") end end
+for atx = 3, 13 do for aty = 44, 45 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "garden") end end
+for atx = 2, 2 do for aty = 41, 44 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "gate") end end
+for atx = 2, 3 do for aty = 38, 40 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "gate") end end
+for atx = 4, 21 do for aty = 40, 40 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "gate") end end
+for atx = 5, 6 do for aty = 38, 39 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "gate") end end
+for atx = 7, 11 do for aty = 39, 39 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "gate") end end
+for atx = 10, 15 do for aty = 40, 41 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "gate") end end
+for atx = 19, 21 do for aty = 38, 40 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "gate") end end
+for atx = 17, 20 do for aty = 36, 38 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "gate") end end
+for atx = 9, 13 do for aty = 42, 43 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "cave") end end
+for atx = 14, 25 do for aty = 42, 42 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "cave") end end
+for atx = 22, 26 do for aty = 37, 37 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "cave") end end
+for atx = 27, 31 do for aty = 37, 37 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "cave") end end
+for atx = 28, 31 do for aty = 38, 38 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "cave") end end
+for atx = 23, 24 do for aty = 38, 41 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "cave") end end
+for atx = 33, 40 do for aty = 37, 38 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "cave") end end
+for atx = 39, 45 do for aty = 38, 39 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "cave") end end
+for atx = 39, 55 do for aty = 41, 41 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "cave") end end
+for atx = 40, 42 do for aty = 41, 42 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "cave") end end
+for atx = 46, 47 do for aty = 41, 42 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "cave") end end
+for atx = 49, 52 do for aty = 41, 42 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "cave") end end
+for atx = 38, 39 do for aty = 27, 36 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "cave") end end
+for atx = 43, 39 do for aty = 29, 29 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "cave") end end
+for atx = 43, 43 do for aty = 29, 32 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "cave") end end
+for atx = 43, 44 do for aty = 32, 33 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "cave") end end
+for atx = 35, 37 do for aty = 27, 27 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "cave") end end
+for atx = 37, 37 do for aty = 32, 34 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "cave") end end
+for atx = 40, 42 do for aty = 29, 29 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "cave") end end
+for atx = 33, 35 do for aty = 34, 36 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "prison") end end
+for atx = 27, 32 do for aty = 36, 36 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "prison") end end
+for atx = 47, 59 do for aty = 25, 25 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "marble") end end
+for atx = 40, 46 do for aty = 24, 25 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "marble") end end
+for atx = 37, 38 do for aty = 24, 26 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "marble") end end
+for atx = 22, 36 do for aty = 26, 26 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "marble") end end
+for atx = 31, 33 do for aty = 25, 27 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "marble") end end
+for atx = 30, 34 do for aty = 23, 23 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "marble") end end
+for atx = 25, 26 do for aty = 28, 32 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "marble") end end
+for atx = 21, 26 do for aty = 34, 36 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "marble") end end
+for atx = 31, 33 do for aty = 30, 32 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "marble") end end--central room
+for atx = 60, 61 do for aty = 13, 29 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "wall") end end
+for atx = 56, 59 do for aty = 23, 24 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "wall") end end
+for atx = 52, 59 do for aty = 18, 21 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "lib") end end
+for atx = 45, 50 do for aty = 18, 21 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "lib") end end
+for atx = 51, 51 do for aty = 19, 21 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "lib") end end
+for atx = 53, 58 do for aty = 11, 15 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "clock") end end
+for atx = 50, 52 do for aty = 9, 14 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "clock") end end
+for atx = 42, 49 do for aty = 10, 11 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "clock") end end
+for atx = 38, 39 do for aty = 5, 12 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "keep") end end
+for atx = 31, 37 do for aty = 8, 12 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "keep") end end
+for atx = 34, 37 do for aty = 6, 8 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "keep") end end
+for atx = 27, 28 do for aty = 10, 13 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "chapel") end end
+for atx = 21, 26 do for aty = 13, 13 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "chapel") end end
+for atx = 19, 20 do for aty = 11, 14 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "chapel") end end
+for atx = 16, 18 do for aty = 14, 14 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "chapel") end end
+for atx = 8, 13 do for aty = 15, 15 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "chapel") end end
+for atx = 14, 15 do for aty = 12, 21 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "chapel") end end
+for atx = 8, 13 do for aty = 21, 22 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "chapel") end end
+for atx = 8, 9 do for aty = 21, 23 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "chapel") end end
+for atx = 7, 7 do for aty = 22, 24 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "chapel") end end
+for atx = 6, 6 do for aty = 23, 25 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "chapel") end end
+for atx = 5, 5 do for aty = 24, 26 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "chapel") end end
+for atx = 4, 4 do for aty = 25, 27 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "chapel") end end
+for atx = 2, 4 do for aty = 27, 28 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "chapel") end end
+for atx = 14, 25 do for aty = 22, 24 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "colos") end end
+for atx = 17, 22 do for aty = 21, 21 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "colos") end end
+for atx = 18, 30 do for aty = 19, 19 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "olrox") end end
+for atx = 16, 30 do for aty = 16, 16 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "olrox") end end
+for atx = 19, 20 do for aty = 17, 18 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "olrox") end end
+for atx = 25, 30 do for aty = 17, 18 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "olrox") end end
+for atx = 31, 33 do for aty = 18, 18 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "olrox") end end
+for atx = 30, 35 do for aty = 15, 15 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "olrox") end end
+for atx = 35, 35 do for aty = 15, 21 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "olrox") end end
+for atx = 27, 32 do for aty = 21, 22 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "olrox") end end
+for atx = 29, 29 do for aty = 23, 25 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "olrox") end end
+for atx = 19, 20 do for aty = 25, 27 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "lab") end end
+for atx = 16, 18 do for aty = 26, 26 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "lab") end end
+for atx = 14, 15 do for aty = 26, 28 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "lab") end end
+for atx = 17, 17 do for aty = 28, 34 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "lab") end end
+for atx = 8, 13 do for aty = 27, 28 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "lab") end end
+for atx = 5, 7 do for aty = 28, 28 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "lab") end end
+for atx = 8, 11 do for aty = 30, 31 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "lab") end end
+for atx = 12, 15 do for aty = 33, 35 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "lab") end end
+for atx = 14, 16 do for aty = 36, 36 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "lab") end end
+table.insert(area_roomB, 63 - 31 + ((63 * 64) - (48 * 64 )), "mine")
+table.insert(area_roomB, 63 - 2 + ((63 * 64) - (45 * 64 )), "garden")
+table.insert(area_roomB, 63 - 15 + ((63 * 64) - (38 * 64 )), "gate")
+table.insert(area_roomB, 63 - 16 + ((63 * 64) - (38 * 64 )), "gate")
+table.insert(area_roomB, 63 - 32 + ((63 * 64) - (37 * 64 )), "cave")
+table.insert(area_roomB, 63 - 39 + ((63 * 64) - (40 * 64 )), "cave")
+table.insert(area_roomB, 63 - 8 + ((63 * 64) - (42 * 64 )), "cave")
+table.insert(area_roomB, 63 - 16 + ((63 * 64) - (41 * 64 )), "cave")
+table.insert(area_roomB, 63 - 17 + ((63 * 64) - (41 * 64 )), "cave")
+table.insert(area_roomB, 63 - 37 + ((63 * 64) - (28 * 64 )), "cave")
+table.insert(area_roomB, 63 - 45 + ((63 * 64) - (33 * 64 )), "cave")
+table.insert(area_roomB, 63 - 39 + ((63 * 64) - (26 * 64 )), "cave")
+table.insert(area_roomB, 63 - 40 + ((63 * 64) - (26 * 64 )), "cave")
+table.insert(area_roomB, 63 - 36 + ((63 * 64) - (34 * 64 )), "cave")
+table.insert(area_roomB, 63 - 40 + ((63 * 64) - (27 * 64 )), "cave")
+table.insert(area_roomB, 63 - 32 + ((63 * 64) - (34 * 64 )), "prison")
+table.insert(area_roomB, 63 - 41 + ((63 * 64) - (26 * 64 )), "marble")
+table.insert(area_roomB, 63 - 44 + ((63 * 64) - (26 * 64 )), "marble")
+table.insert(area_roomB, 63 - 39 + ((63 * 64) - (24 * 64 )), "marble")
+table.insert(area_roomB, 63 - 34 + ((63 * 64) - (25 * 64 )), "marble")
+table.insert(area_roomB, 63 - 32 + ((63 * 64) - (24 * 64 )), "marble")
+table.insert(area_roomB, 63 - 27 + ((63 * 64) - (27 * 64 )), "marble")
+table.insert(area_roomB, 63 - 28 + ((63 * 64) - (27 * 64 )), "marble")
+table.insert(area_roomB, 63 - 27 + ((63 * 64) - (28 * 64 )), "marble")
+table.insert(area_roomB, 63 - 27 + ((63 * 64) - (32 * 64 )), "marble")
+table.insert(area_roomB, 63 - 27 + ((63 * 64) - (33 * 64 )), "marble")
+table.insert(area_roomB, 63 - 27 + ((63 * 64) - (34 * 64 )), "marble")
+table.insert(area_roomB, 63 - 31 + ((63 * 64) - (27 * 64 )), "marble")
+table.insert(area_roomB, 63 - 32 + ((63 * 64) - (28 * 64 )), "central")--central room
+table.insert(area_roomB, 63 - 32 + ((63 * 64) - (29 * 64 )), "central")--central room
+table.insert(area_roomB, 63 - 59 + ((63 * 64) - (17 * 64 )), "wall")
+table.insert(area_roomB, 63 - 59 + ((63 * 64) - (26 * 64 )), "wall")
+table.insert(area_roomB, 63 - 59 + ((63 * 64) - (27 * 64 )), "wall")
+table.insert(area_roomB, 63 - 55 + ((63 * 64) - (24 * 64 )), "wall")
+table.insert(area_roomB, 63 - 44 + ((63 * 64) - (20 * 64 )), "lib")
+table.insert(area_roomB, 63 - 44 + ((63 * 64) - (21 * 64 )), "lib")
+table.insert(area_roomB, 63 - 59 + ((63 * 64) - (15 * 64 )), "clock")
+table.insert(area_roomB, 63 - 59 + ((63 * 64) - (14 * 64 )), "clock")
+table.insert(area_roomB, 63 - 59 + ((63 * 64) - (11 * 64 )), "clock")
+table.insert(area_roomB, 63 - 49 + ((63 * 64) - (14 * 64 )), "clock")
+table.insert(area_roomB, 63 - 51 + ((63 * 64) - (8 * 64 )), "clock")
+table.insert(area_roomB, 63 - 40 + ((63 * 64) - (10 * 64 )), "clock")
+table.insert(area_roomB, 63 - 41 + ((63 * 64) - (10 * 64 )), "clock")
+table.insert(area_roomB, 63 - 40 + ((63 * 64) - (12 * 64 )), "keep")
+table.insert(area_roomB, 63 - 33 + ((63 * 64) - (6 * 64 )), "keep")
+table.insert(area_roomB, 63 - 31 + ((63 * 64) - (7 * 64 )), "keep")
+table.insert(area_roomB, 63 - 30 + ((63 * 64) - (12 * 64 )), "keep")
+table.insert(area_roomB, 63 - 16 + ((63 * 64) - (21 * 64 )), "chapel")
+table.insert(area_roomB, 63 - 16 + ((63 * 64) - (19 * 64 )), "chapel")
+table.insert(area_roomB, 63 - 10 + ((63 * 64) - (20 * 64 )), "chapel")
+table.insert(area_roomB, 63 - 29 + ((63 * 64) - (13 * 64 )), "chapel")
+table.insert(area_roomB, 63 - 3 + ((63 * 64) - (26 * 64 )), "chapel")
+table.insert(area_roomB, 63 - 26 + ((63 * 64) - (24 * 64 )), "colos")
+table.insert(area_roomB, 63 - 13 + ((63 * 64) - (24 * 64 )), "colos")
+table.insert(area_roomB, 63 - 19 + ((63 * 64) - (20 * 64 )), "colos")
+table.insert(area_roomB, 63 - 20 + ((63 * 64) - (20 * 64 )), "colos")
+table.insert(area_roomB, 63 - 34 + ((63 * 64) - (21 * 64 )), "olrox")
+table.insert(area_roomB, 63 - 33 + ((63 * 64) - (21 * 64 )), "olrox")
+table.insert(area_roomB, 63 - 28 + ((63 * 64) - (23 * 64 )), "olrox")
+table.insert(area_roomB, 63 - 37 + ((63 * 64) - (21 * 64 )), "olrox")
+table.insert(area_roomB, 63 - 31 + ((63 * 64) - (17 * 64 )), "olrox")
+table.insert(area_roomB, 63 - 16 + ((63 * 64) - (28 * 64 )), "lab")
+table.insert(area_roomB, 63 - 16 + ((63 * 64) - (31 * 64 )), "lab")
+table.insert(area_roomB, 63 - 8 + ((63 * 64) - (29 * 64 )), "lab")
+table.insert(area_roomB, 63 - 10 + ((63 * 64) - (29 * 64 )), "lab")
+table.insert(area_roomB, 63 - 11 + ((63 * 64) - (29 * 64 )), "lab")
+table.insert(area_roomB, 63 - 11 + ((63 * 64) - (32 * 64 )), "lab")
+table.insert(area_roomB, 63 - 12 + ((63 * 64) - (32 * 64 )), "lab")
+table.insert(area_roomB, 63 - 11 + ((63 * 64) - (34 * 64 )), "lab")
+table.insert(area_roomB, 63 - 12 + ((63 * 64) - (36 * 64 )), "lab")
+table.insert(area_roomB, 63 - 16 + ((63 * 64) - (34 * 64 )), "lab")
+table.insert(area_roomB, 63 - 16 + ((63 * 64) - (35 * 64 )), "lab")
+table.insert(area_roomB, 63 - 7 + ((63 * 64) - (30 * 64 )), "lab")
+table.insert(area_roomB, 63 - 29 + ((63 * 64) - (27 * 64 )), "lab")
 --cdroom arent show at all on the png
-table.insert(text_roomB, 3 + ( 44 * 64 ), "CD Room")
-table.insert(text_roomB, 3 + ( 45 * 64 ), "CD Room")
-table.insert(text_roomB, 15 + ( 41 * 64 ), "CD Room")
-table.insert(text_roomB, 20 + ( 36 * 64 ), "CD Room")
-table.insert(text_roomB, 17 + ( 36 * 64 ), "CD Room")
-table.insert(text_roomB, 16 + ( 38 * 64 ), "CD Room")
-table.insert(text_roomB, 28 + ( 38 * 64 ), "CD Room")
-table.insert(text_roomB, 36 + ( 34 * 64 ), "CD Room")
-table.insert(text_roomB, 40 + ( 26 * 64 ), "CD Room")
-table.insert(text_roomB, 27 + ( 36 * 64 ), "CD Room")
-table.insert(text_roomB, 34 + ( 44 * 64 ), "CD Room")
-table.insert(text_roomB, 32 + ( 49 * 64 ), "CD Room")
-table.insert(text_roomB, 60 + ( 14 * 64 ), "CD Room")
-table.insert(text_roomB, 59 + ( 21 * 64 ), "CD Room")
-table.insert(text_roomB, 60 + ( 17 * 64 ), "CD Room")
-table.insert(text_roomB, 60 + ( 25 * 64 ), "CD Room")
-table.insert(text_roomB, 39 + ( 10 * 64 ), "CD Room")
-table.insert(text_roomB, 39 + ( 12 * 64 ), "CD Room")
-table.insert(text_roomB, 29 + ( 12 * 64 ), "CD Room")
-table.insert(text_roomB, 36 + ( 21 * 64 ), "CD Room")
-table.insert(text_roomB, 13 + ( 22 * 64 ), "CD Room")
-table.insert(text_roomB, 26 + ( 22 * 64 ), "CD Room")
-table.insert(text_roomB, 30 + ( 25 * 64 ), "CD Room")
-table.insert(text_roomB, 4 + ( 28 * 64 ), "CD Room")
-table.insert(text_roomB, 21 + ( 26 * 64 ), "CD Room")
-table.insert(text_roomB, 13 + ( 22 * 64 ), "CD Room")
-table.insert(text_roomB, 17 + ( 19 * 64 ), "CD Room")
---
-table.insert(text_roomB, 45 + ( 42 * 64 ), "Reverse Caverns")
-table.insert(text_roomB, 48 + ( 42 * 64 ), "Reverse Caverns")
+table.insert(area_roomB, 63 - 3 + ((63 * 64) - (44 * 64 )), "cd")
+table.insert(area_roomB, 63 - 15 + ((63 * 64) - (41 * 64 )), "cd")
+table.insert(area_roomB, 63 - 20 + ((63 * 64) - (36 * 64 )), "cd")
+table.insert(area_roomB, 63 - 17 + ((63 * 64) - (36 * 64 )), "cd")
+table.insert(area_roomB, 63 - 28 + ((63 * 64) - (38 * 64 )), "cd")
+table.insert(area_roomB, 63 - 36 + ((63 * 64) - (34 * 64 )), "cd")
+table.insert(area_roomB, 63 - 40 + ((63 * 64) - (26 * 64 )), "cd")
+table.insert(area_roomB, 63 - 27 + ((63 * 64) - (36 * 64 )), "cd")
+table.insert(area_roomB, 63 - 32 + ((63 * 64) - (49 * 64 )), "cd")
+table.insert(area_roomB, 63 - 60 + ((63 * 64) - (14 * 64 )), "cd")
+table.insert(area_roomB, 63 - 59 + ((63 * 64) - (21 * 64 )), "cd")
+table.insert(area_roomB, 63 - 60 + ((63 * 64) - (25 * 64 )), "cd")
+table.insert(area_roomB, 63 - 39 + ((63 * 64) - (10 * 64 )), "cd")
+table.insert(area_roomB, 63 - 29 + ((63 * 64) - (12 * 64 )), "cd")
+table.insert(area_roomB, 63 - 13 + ((63 * 64) - (22 * 64 )), "cd")
+table.insert(area_roomB, 63 - 26 + ((63 * 64) - (22 * 64 )), "cd")
+table.insert(area_roomB, 63 - 30 + ((63 * 64) - (25 * 64 )), "cd")
+table.insert(area_roomB, 63 - 4 + ((63 * 64) - (28 * 64 )), "cd")
+table.insert(area_roomB, 63 - 21 + ((63 * 64) - (26 * 64 )), "cd")
+table.insert(area_roomB, 63 - 13 + ((63 * 64) - (22 * 64 )), "cd")
+table.insert(area_roomB, 63 - 17 + ((63 * 64) - (19 * 64 )), "cd")
+--cdroom but from teleporters, they actually are never in a different area, and the music from previous level will stay
+table.insert(area_roomB, 63 - 34 + ((63 * 64) - (44 * 64 )), "mine")
+table.insert(area_roomB, 63 - 16 + ((63 * 64) - (38 * 64 )), "gate")
+table.insert(area_roomB, 63 - 36 + ((63 * 64) - (21 * 64 )), "olrox")
+table.insert(area_roomB, 63 - 60 + ((63 * 64) - (17 * 64 )), "wall")
+table.insert(area_roomB, 63 - 39 + ((63 * 64) - (12 * 64 )), "keep")
+table.insert(area_roomB, 63 - 3 + ((63 * 64) - (45 * 64 )), "garden")
+--the 2 extra square in reverse lake
+table.insert(area_roomB, 63 - 45 + ((63 * 64) - (42 * 64 )), "cave")
+table.insert(area_roomB, 63 - 48 + ((63 * 64) - (42 * 64 )), "cave")
+
+
+
+
+text_roomB ={}
+for atx = 16, 26 do for aty = 50, 51 do table.insert(text_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Floating Catacombs") end end
+for atx = 27, 37 do for aty = 51, 51 do table.insert(text_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Floating Catacombs") end end
+for atx = 28, 36 do for aty = 50, 51 do table.insert(text_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Floating Catacombs") end end
+for atx = 38, 48 do for aty = 50, 51 do table.insert(text_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Floating Catacombs") end end
+for atx = 31, 31 do for aty = 49, 50 do table.insert(text_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Floating Catacombs") end end
+for atx = 33, 33 do for aty = 48, 49 do table.insert(text_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Cave") end end
+for atx = 32, 32 do for aty = 40, 48 do table.insert(text_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Cave") end end
+for atx = 29, 35 do for aty = 44, 44 do table.insert(text_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Cave") end end
+for atx = 27, 37 do for aty = 40, 40 do table.insert(text_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Cave") end end
+for atx = 36, 37 do for aty = 40, 41 do table.insert(text_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Cave") end end
+for atx = 27, 28 do for aty = 40, 41 do table.insert(text_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Cave") end end
+for atx = 27, 27 do for aty = 38, 41 do table.insert(text_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Cave") end end
+for atx = 14, 21 do for aty = 44, 44 do table.insert(text_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Hell Gardens") end end
+for atx = 14, 21 do for aty = 44, 44 do table.insert(text_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Hell Gardens") end end
+for atx = 3, 13 do for aty = 44, 45 do table.insert(text_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Hell Garden") end end
+for atx = 2, 2 do for aty = 41, 44 do table.insert(text_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Reverse Entrance") end end
+for atx = 2, 3 do for aty = 38, 40 do table.insert(text_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Reverse Entrance") end end
+for atx = 4, 21 do for aty = 40, 40 do table.insert(text_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Reverse Entrance") end end
+for atx = 5, 6 do for aty = 38, 39 do table.insert(text_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Reverse Entrance") end end
+for atx = 7, 11 do for aty = 39, 39 do table.insert(text_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Reverse Entrance") end end
+for atx = 10, 15 do for aty = 40, 41 do table.insert(text_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Reverse Entrance") end end
+for atx = 19, 21 do for aty = 38, 40 do table.insert(text_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Reverse Entrance") end end
+for atx = 17, 20 do for aty = 36, 38 do table.insert(text_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Reverse Entrance") end end
+for atx = 9, 13 do for aty = 42, 43 do table.insert(text_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Reverse Caverns") end end
+for atx = 14, 25 do for aty = 42, 42 do table.insert(text_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Reverse Caverns") end end
+for atx = 22, 26 do for aty = 37, 37 do table.insert(text_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Reverse Caverns") end end
+for atx = 27, 31 do for aty = 37, 37 do table.insert(text_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Reverse Caverns") end end
+for atx = 28, 31 do for aty = 38, 38 do table.insert(text_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Reverse Caverns") end end
+for atx = 23, 24 do for aty = 38, 41 do table.insert(text_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Reverse Caverns") end end
+for atx = 33, 40 do for aty = 37, 38 do table.insert(text_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Reverse Caverns") end end
+for atx = 39, 45 do for aty = 38, 39 do table.insert(text_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Reverse Caverns") end end
+for atx = 39, 55 do for aty = 41, 41 do table.insert(text_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Reverse Caverns") end end
+for atx = 40, 42 do for aty = 41, 42 do table.insert(text_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Reverse Caverns") end end
+for atx = 46, 47 do for aty = 41, 42 do table.insert(text_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Reverse Caverns") end end
+for atx = 49, 52 do for aty = 41, 42 do table.insert(text_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Reverse Caverns") end end
+for atx = 38, 39 do for aty = 27, 36 do table.insert(text_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Reverse Caverns") end end
+for atx = 43, 39 do for aty = 29, 29 do table.insert(text_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Reverse Caverns") end end
+for atx = 43, 43 do for aty = 29, 32 do table.insert(text_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Reverse Caverns") end end
+for atx = 43, 44 do for aty = 32, 33 do table.insert(text_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Reverse Caverns") end end
+for atx = 35, 37 do for aty = 27, 27 do table.insert(text_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Reverse Caverns") end end
+for atx = 37, 37 do for aty = 32, 34 do table.insert(text_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Reverse Caverns") end end
+for atx = 40, 42 do for aty = 29, 29 do table.insert(text_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Reverse Caverns") end end
+for atx = 33, 35 do for aty = 34, 36 do table.insert(text_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Reverse Cursed Prison") end end
+for atx = 27, 32 do for aty = 36, 36 do table.insert(text_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Reverse Cursed Prison") end end
+for atx = 47, 59 do for aty = 25, 25 do table.insert(text_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Black Marble Gallery") end end
+for atx = 40, 46 do for aty = 24, 25 do table.insert(text_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Black Marble Gallery") end end
+for atx = 30, 34 do for aty = 23, 23 do table.insert(text_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Black Marble Gallery") end end
+for atx = 37, 38 do for aty = 24, 26 do table.insert(text_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Black Marble Gallery") end end
+for atx = 22, 36 do for aty = 26, 26 do table.insert(text_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Black Marble Gallery") end end
+for atx = 31, 33 do for aty = 25, 27 do table.insert(text_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Black Marble Gallery") end end
+for atx = 25, 26 do for aty = 28, 32 do table.insert(text_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Black Marble Gallery") end end
+for atx = 21, 26 do for aty = 34, 36 do table.insert(text_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Black Marble Gallery") end end
+for atx = 31, 33 do for aty = 30, 32 do table.insert(text_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Black Marble Gallery") end end---central room
+for atx = 60, 61 do for aty = 13, 29 do table.insert(text_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Reverse Outer Wall") end end
+for atx = 56, 59 do for aty = 23, 24 do table.insert(text_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Reverse Outer Wall") end end
+for atx = 52, 59 do for aty = 18, 21 do table.insert(text_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Forbidden Library") end end
+for atx = 45, 50 do for aty = 18, 21 do table.insert(text_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Forbidden Library") end end
+for atx = 51, 51 do for aty = 19, 21 do table.insert(text_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Forbidden Library") end end
+for atx = 53, 58 do for aty = 11, 15 do table.insert(text_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Reverse Clock Tower") end end
+for atx = 50, 52 do for aty = 9, 14 do table.insert(text_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Reverse Clock Tower") end end
+for atx = 42, 49 do for aty = 10, 11 do table.insert(text_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Reverse Clock Tower") end end
+for atx = 38, 39 do for aty = 5, 12 do table.insert(text_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Reverse Keep") end end
+for atx = 31, 37 do for aty = 8, 12 do table.insert(text_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Reverse Keep") end end
+for atx = 34, 37 do for aty = 6, 8 do table.insert(text_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Reverse Keep") end end
+for atx = 27, 28 do for aty = 10, 13 do table.insert(text_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Anti-Chapel") end end
+for atx = 21, 26 do for aty = 13, 13 do table.insert(text_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Anti-Chapel") end end
+for atx = 19, 20 do for aty = 11, 14 do table.insert(text_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Anti-Chapel") end end
+for atx = 16, 18 do for aty = 14, 14 do table.insert(text_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Anti-Chapel") end end
+for atx = 8, 13 do for aty = 15, 15 do table.insert(text_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Anti-Chapel") end end
+for atx = 14, 15 do for aty = 12, 21 do table.insert(text_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Anti-Chapel") end end
+for atx = 8, 13 do for aty = 21, 22 do table.insert(text_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Anti-Chapel") end end
+for atx = 2, 4 do for aty = 27, 28 do table.insert(text_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Anti-Chapel") end end
+for atx = 14, 25 do for aty = 22, 24 do table.insert(text_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Reverse Colosseum") end end
+for atx = 17, 22 do for aty = 21, 21 do table.insert(text_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Reverse Colosseum") end end
+for atx = 8, 9 do for aty = 21, 23 do table.insert(text_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Anti-Chapel") end end
+for atx = 7, 7 do for aty = 22, 24 do table.insert(text_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Anti-Chapel") end end
+for atx = 6, 6 do for aty = 23, 25 do table.insert(text_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Anti-Chapel") end end
+for atx = 5, 5 do for aty = 24, 26 do table.insert(text_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Anti-Chapel") end end
+for atx = 4, 4 do for aty = 25, 27 do table.insert(text_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Anti-Chapel") end end
+for atx = 18, 30 do for aty = 19, 19 do table.insert(text_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Death Wing's Lair") end end
+for atx = 16, 30 do for aty = 16, 16 do table.insert(text_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Death Wing's Lair") end end
+for atx = 19, 20 do for aty = 17, 18 do table.insert(text_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Death Wing's Lair") end end
+for atx = 25, 30 do for aty = 17, 18 do table.insert(text_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Death Wing's Lair") end end
+for atx = 31, 33 do for aty = 18, 18 do table.insert(text_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Death Wing's Lair") end end
+for atx = 30, 35 do for aty = 15, 15 do table.insert(text_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Death Wing's Lair") end end
+for atx = 35, 35 do for aty = 15, 21 do table.insert(text_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Death Wing's Lair") end end
+for atx = 19, 20 do for aty = 25, 27 do table.insert(text_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Necromancy Laboratory") end end
+for atx = 16, 18 do for aty = 26, 26 do table.insert(text_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Necromancy Laboratory") end end
+for atx = 14, 15 do for aty = 26, 28 do table.insert(text_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Necromancy Laboratory") end end
+for atx = 17, 17 do for aty = 28, 34 do table.insert(text_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Necromancy Laboratory") end end
+for atx = 8, 13 do for aty = 27, 28 do table.insert(text_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Necromancy Laboratory") end end
+for atx = 5, 7 do for aty = 28, 28 do table.insert(text_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Necromancy Laboratory") end end
+for atx = 27, 32 do for aty = 21, 22 do table.insert(text_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Death Wing's Lair") end end
+for atx = 29, 29 do for aty = 23, 25 do table.insert(text_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Death Wing's Lair") end end
+for atx = 8, 11 do for aty = 30, 31 do table.insert(text_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Necromancy Laboratory") end end
+for atx = 12, 15 do for aty = 33, 35 do table.insert(text_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Necromancy Laboratory") end end
+for atx = 14, 16 do for aty = 36, 36 do table.insert(text_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Necromancy Laboratory") end end
+table.insert(text_roomB, 63 - 34 + ((63 * 64) - (21 * 64 )), "Death Wing's Lair")
+table.insert(text_roomB, 63 - 33 + ((63 * 64) - (21 * 64 )), "Death Wing's Lair")
+table.insert(text_roomB, 63 - 28 + ((63 * 64) - (23 * 64 )), "Death Wing's Lair")
+table.insert(text_roomB, 63 - 37 + ((63 * 64) - (21 * 64 )), "Death Wing's Lair")
+table.insert(text_roomB, 63 - 31 + ((63 * 64) - (17 * 64 )), "Death Wing's Lair")
+table.insert(text_roomB, 63 - 31 + ((63 * 64) - (48 * 64 )), "Cave")
+table.insert(text_roomB, 63 - 2 + ((63 * 64) - (45 * 64 )), "Hell Gardens")
+table.insert(text_roomB, 63 - 15 + ((63 * 64) - (38 * 64 )), "Reverse Entrance")
+table.insert(text_roomB, 63 - 16 + ((63 * 64) - (38 * 64 )), "Reverse Entrance")
+table.insert(text_roomB, 63 - 8 + ((63 * 64) - (42 * 64 )), "Reverse Caverns")
+table.insert(text_roomB, 63 - 16 + ((63 * 64) - (41 * 64 )), "Reverse Caverns")
+table.insert(text_roomB, 63 - 17 + ((63 * 64) - (41 * 64 )), "Reverse Caverns")
+table.insert(text_roomB, 63 - 32 + ((63 * 64) - (37 * 64 )), "Reverse Caverns")
+table.insert(text_roomB, 63 - 39 + ((63 * 64) - (40 * 64 )), "Reverse Caverns")
+table.insert(text_roomB, 63 - 45 + ((63 * 64) - (33 * 64 )), "Reverse Caverns")
+table.insert(text_roomB, 63 - 39 + ((63 * 64) - (26 * 64 )), "Reverse Caverns")
+table.insert(text_roomB, 63 - 40 + ((63 * 64) - (26 * 64 )), "Reverse Caverns")
+table.insert(text_roomB, 63 - 36 + ((63 * 64) - (34 * 64 )), "Reverse Caverns")
+table.insert(text_roomB, 63 - 37 + ((63 * 64) - (28 * 64 )), "Reverse Caverns")
+table.insert(text_roomB, 63 - 40 + ((63 * 64) - (27 * 64 )), "Reverse Caverns")
+table.insert(text_roomB, 63 - 32 + ((63 * 64) - (34 * 64 )), "Reverse Cursed Prison")
+table.insert(text_roomB, 63 - 41 + ((63 * 64) - (26 * 64 )), "Black Marble Gallery")
+table.insert(text_roomB, 63 - 44 + ((63 * 64) - (26 * 64 )), "Black Marble Gallery")
+table.insert(text_roomB, 63 - 39 + ((63 * 64) - (24 * 64 )), "Black Marble Gallery")
+table.insert(text_roomB, 63 - 34 + ((63 * 64) - (25 * 64 )), "Black Marble Gallery")
+table.insert(text_roomB, 63 - 32 + ((63 * 64) - (24 * 64 )), "Black Marble Gallery")
+table.insert(text_roomB, 63 - 27 + ((63 * 64) - (27 * 64 )), "Black Marble Gallery")
+table.insert(text_roomB, 63 - 28 + ((63 * 64) - (27 * 64 )), "Black Marble Gallery")
+table.insert(text_roomB, 63 - 27 + ((63 * 64) - (28 * 64 )), "Black Marble Gallery")
+table.insert(text_roomB, 63 - 27 + ((63 * 64) - (32 * 64 )), "Black Marble Gallery")
+table.insert(text_roomB, 63 - 27 + ((63 * 64) - (33 * 64 )), "Black Marble Gallery")
+table.insert(text_roomB, 63 - 27 + ((63 * 64) - (34 * 64 )), "Black Marble Gallery")
+table.insert(text_roomB, 63 - 31 + ((63 * 64) - (27 * 64 )), "Black Marble Gallery")
+table.insert(text_roomB, 63 - 32 + ((63 * 64) - (28 * 64 )), "Black Marble Gallery")---central room
+table.insert(text_roomB, 63 - 32 + ((63 * 64) - (29 * 64 )), "Black Marble Gallery")---central room
+table.insert(text_roomB, 63 - 59 + ((63 * 64) - (17 * 64 )), "Reverse Outer Wall")
+table.insert(text_roomB, 63 - 59 + ((63 * 64) - (26 * 64 )), "Reverse Outer Wall")
+table.insert(text_roomB, 63 - 59 + ((63 * 64) - (27 * 64 )), "Reverse Outer Wall")
+table.insert(text_roomB, 63 - 55 + ((63 * 64) - (24 * 64 )), "Reverse Outer Wall")
+table.insert(text_roomB, 63 - 44 + ((63 * 64) - (20 * 64 )), "Forbidden Library")
+table.insert(text_roomB, 63 - 44 + ((63 * 64) - (21 * 64 )), "Forbidden Library")
+table.insert(text_roomB, 63 - 59 + ((63 * 64) - (15 * 64 )), "Reverse Clock Tower")
+table.insert(text_roomB, 63 - 59 + ((63 * 64) - (14 * 64 )), "Reverse Clock Tower")
+table.insert(text_roomB, 63 - 59 + ((63 * 64) - (11 * 64 )), "Reverse Clock Tower")
+table.insert(text_roomB, 63 - 49 + ((63 * 64) - (14 * 64 )), "Reverse Clock Tower")
+table.insert(text_roomB, 63 - 51 + ((63 * 64) - (8 * 64 )), "Reverse Clock Tower")
+table.insert(text_roomB, 63 - 40 + ((63 * 64) - (10 * 64 )), "Reverse Clock Tower")
+table.insert(text_roomB, 63 - 41 + ((63 * 64) - (10 * 64 )), "Reverse Clock Tower")
+table.insert(text_roomB, 63 - 40 + ((63 * 64) - (12 * 64 )), "Reverse Keep")
+table.insert(text_roomB, 63 - 33 + ((63 * 64) - (6 * 64 )), "Reverse Keep")
+table.insert(text_roomB, 63 - 31 + ((63 * 64) - (7 * 64 )), "Reverse Keep")
+table.insert(text_roomB, 63 - 30 + ((63 * 64) - (12 * 64 )), "Reverse Keep")
+table.insert(text_roomB, 63 - 16 + ((63 * 64) - (21 * 64 )), "Anti-Chapel")
+table.insert(text_roomB, 63 - 16 + ((63 * 64) - (19 * 64 )), "Anti-Chapel")
+table.insert(text_roomB, 63 - 10 + ((63 * 64) - (20 * 64 )), "Anti-Chapel")
+table.insert(text_roomB, 63 - 3 + ((63 * 64) - (26 * 64 )), "Anti-Chapel")
+table.insert(text_roomB, 63 - 29 + ((63 * 64) - (13 * 64 )), "Anti-Chapel")
+table.insert(text_roomB, 63 - 26 + ((63 * 64) - (24 * 64 )), "Reverse Colosseum")
+table.insert(text_roomB, 63 - 13 + ((63 * 64) - (24 * 64 )), "Reverse Colosseum")
+table.insert(text_roomB, 63 - 19 + ((63 * 64) - (20 * 64 )), "Reverse Colosseum")
+table.insert(text_roomB, 63 - 20 + ((63 * 64) - (20 * 64 )), "Reverse Colosseum")
+table.insert(text_roomB, 63 - 16 + ((63 * 64) - (28 * 64 )), "Necromancy Laboratory")
+table.insert(text_roomB, 63 - 16 + ((63 * 64) - (31 * 64 )), "Necromancy Laboratory")
+table.insert(text_roomB, 63 - 8 + ((63 * 64) - (29 * 64 )), "Necromancy Laboratory")
+table.insert(text_roomB, 63 - 10 + ((63 * 64) - (29 * 64 )), "Necromancy Laboratory")
+table.insert(text_roomB, 63 - 11 + ((63 * 64) - (29 * 64 )), "Necromancy Laboratory")
+table.insert(text_roomB, 63 - 11 + ((63 * 64) - (32 * 64 )), "Necromancy Laboratory")
+table.insert(text_roomB, 63 - 12 + ((63 * 64) - (32 * 64 )), "Necromancy Laboratory")
+table.insert(text_roomB, 63 - 11 + ((63 * 64) - (34 * 64 )), "Necromancy Laboratory")
+table.insert(text_roomB, 63 - 12 + ((63 * 64) - (36 * 64 )), "Necromancy Laboratory")
+table.insert(text_roomB, 63 - 16 + ((63 * 64) - (34 * 64 )), "Necromancy Laboratory")
+table.insert(text_roomB, 63 - 16 + ((63 * 64) - (35 * 64 )), "Necromancy Laboratory")
+table.insert(text_roomB, 63 - 7 + ((63 * 64) - (30 * 64 )), "Necromancy Laboratory")
+table.insert(text_roomB, 63 - 29 + ((63 * 64) - (27 * 64 )), "Necromancy Laboratory")
+table.insert(text_roomB, 63 - 45 + ((63 * 64) - (42 * 64 )), "Reverse Caverns")
+table.insert(text_roomB, 63 - 48 + ((63 * 64) - (42 * 64 )), "Reverse Caverns")
+
+
+
+
+
+
+
 
 
 special_roomB = {}
+--cdroom arent show at all on the png
+table.insert(special_roomB, 63 - 3 + ((63 * 64) - (44 * 64 )), "CD Room")
+table.insert(special_roomB, 63 - 3 + ((63 * 64) - (45 * 64 )), "CD Room")
+table.insert(special_roomB, 63 - 15 + ((63 * 64) - (41 * 64 )), "CD Room")
+table.insert(special_roomB, 63 - 20 + ((63 * 64) - (36 * 64 )), "CD Room")
+table.insert(special_roomB, 63 - 17 + ((63 * 64) - (36 * 64 )), "CD Room")
+table.insert(special_roomB, 63 - 16 + ((63 * 64) - (38 * 64 )), "CD Room")
+table.insert(special_roomB, 63 - 28 + ((63 * 64) - (38 * 64 )), "CD Room")
+table.insert(special_roomB, 63 - 36 + ((63 * 64) - (34 * 64 )), "CD Room")
+table.insert(special_roomB, 63 - 40 + ((63 * 64) - (26 * 64 )), "CD Room")
+table.insert(special_roomB, 63 - 27 + ((63 * 64) - (36 * 64 )), "CD Room")
+table.insert(special_roomB, 63 - 34 + ((63 * 64) - (44 * 64 )), "CD Room")
+table.insert(special_roomB, 63 - 32 + ((63 * 64) - (49 * 64 )), "CD Room")
+table.insert(special_roomB, 63 - 60 + ((63 * 64) - (14 * 64 )), "CD Room")
+table.insert(special_roomB, 63 - 59 + ((63 * 64) - (21 * 64 )), "CD Room")
+table.insert(special_roomB, 63 - 60 + ((63 * 64) - (17 * 64 )), "CD Room")
+table.insert(special_roomB, 63 - 60 + ((63 * 64) - (25 * 64 )), "CD Room")
+table.insert(special_roomB, 63 - 39 + ((63 * 64) - (10 * 64 )), "CD Room")
+table.insert(special_roomB, 63 - 39 + ((63 * 64) - (12 * 64 )), "CD Room")
+table.insert(special_roomB, 63 - 29 + ((63 * 64) - (12 * 64 )), "CD Room")
+table.insert(special_roomB, 63 - 36 + ((63 * 64) - (21 * 64 )), "CD Room")
+table.insert(special_roomB, 63 - 13 + ((63 * 64) - (22 * 64 )), "CD Room")
+table.insert(special_roomB, 63 - 26 + ((63 * 64) - (22 * 64 )), "CD Room")
+table.insert(special_roomB, 63 - 30 + ((63 * 64) - (25 * 64 )), "CD Room")
+table.insert(special_roomB, 63 - 4 + ((63 * 64) - (28 * 64 )), "CD Room")
+table.insert(special_roomB, 63 - 21 + ((63 * 64) - (26 * 64 )), "CD Room")
+table.insert(special_roomB, 63 - 13 + ((63 * 64) - (22 * 64 )), "CD Room")
+table.insert(special_roomB, 63 - 17 + ((63 * 64) - (19 * 64 )), "CD Room")
 --teleport
-table.insert(special_roomB, 2 + ( 45 * 64 ), "Bear Teleporter")
-table.insert(special_roomB, 15 + ( 38 * 64 ), "Horse Teleporter")
-table.insert(special_roomB, 35 + ( 44 * 64 ), "Viper Teleporter")
-table.insert(special_roomB, 59 + ( 17 * 64 ), "Crab Teleporter")
-table.insert(special_roomB, 40 + ( 12 * 64 ), "Lion Teleporter")
-table.insert(special_roomB, 37 + ( 21 * 64 ), "Ram Teleporter")
+table.insert(special_roomB, 63 - 2 + ((63 * 64) - (45 * 64 )), "Bear Teleporter")
+table.insert(special_roomB, 63 - 15 + ((63 * 64) - (38 * 64 )), "Horse Teleporter")
+table.insert(special_roomB, 63 - 35 + ((63 * 64) - (44 * 64 )), "Viper Teleporter")
+table.insert(special_roomB, 63 - 59 + ((63 * 64) - (17 * 64 )), "Crab Teleporter")
+table.insert(special_roomB, 63 - 40 + ((63 * 64) - (12 * 64 )), "Lion Teleporter")
+table.insert(special_roomB, 63 - 37 + ((63 * 64) - (21 * 64 )), "Ram Teleporter")
 --save rooms
-table.insert(special_roomB, 17 + ( 37 * 64 ), "Save Room")
-table.insert(special_roomB, 13 + ( 45 * 64 ), "Save Room")
-table.insert(special_roomB, 5 + ( 39 * 64 ), "Save Room")
-table.insert(special_roomB, 40 + ( 37 * 64 ), "Save Room")
-table.insert(special_roomB, 40 + ( 27 * 64 ), "Save Room")
-table.insert(special_roomB, 43 + ( 33 * 64 ), "Save Room")
-table.insert(special_roomB, 32 + ( 34 * 64 ), "Save Room")
-table.insert(special_roomB, 28 + ( 41 * 64 ), "Save Room")
-table.insert(special_roomB, 30 + ( 50 * 64 ), "Save Room")
-table.insert(special_roomB, 22 + ( 50 * 64 ), "Save Room")
-table.insert(special_roomB, 55 + ( 24 * 64 ), "Save Room")
-table.insert(special_roomB, 60 + ( 13 * 64 ), "Save Room")
-table.insert(special_roomB, 51 + ( 19 * 64 ), "Save Room")
-table.insert(special_roomB, 39 + ( 9 * 64 ), "Save Room")
-table.insert(special_roomB, 29 + ( 13 * 64 ), "Save Room")
-table.insert(special_roomB, 31 + ( 17 * 64 ), "Save Room")
-table.insert(special_roomB, 31 + ( 27 * 64 ), "Save Room")
-table.insert(special_roomB, 29 + ( 27 * 64 ), "Save Room")
-table.insert(special_roomB, 25 + ( 23 * 64 ), "Save Room")
-table.insert(special_roomB, 14 + ( 23 * 64 ), "Save Room")
-table.insert(special_roomB, 2 + ( 28 * 64 ), "Save Room")
-table.insert(special_roomB, 7 + ( 30 * 64 ), "Save Room")
-table.insert(special_roomB, 15 + ( 27 * 64 ), "Save Room")
-table.insert(special_roomB, 16 + ( 35 * 64 ), "Save Room")
+table.insert(special_roomB, 63 - 17 + ((63 * 64) - (37 * 64 )), "Save Room")
+table.insert(special_roomB, 63 - 13 + ((63 * 64) - (45 * 64 )), "Save Room")
+table.insert(special_roomB, 63 - 5 + ((63 * 64) - (39 * 64 )), "Save Room")
+table.insert(special_roomB, 63 - 40 + ((63 * 64) - (37 * 64 )), "Save Room")
+table.insert(special_roomB, 63 - 40 + ((63 * 64) - (27 * 64 )), "Save Room")
+table.insert(special_roomB, 63 - 43 + ((63 * 64) - (33 * 64 )), "Save Room")
+table.insert(special_roomB, 63 - 32 + ((63 * 64) - (34 * 64 )), "Save Room")
+table.insert(special_roomB, 63 - 28 + ((63 * 64) - (41 * 64 )), "Save Room")
+table.insert(special_roomB, 63 - 30 + ((63 * 64) - (50 * 64 )), "Save Room")
+table.insert(special_roomB, 63 - 22 + ((63 * 64) - (50 * 64 )), "Save Room")
+table.insert(special_roomB, 63 - 55 + ((63 * 64) - (24 * 64 )), "Save Room")
+table.insert(special_roomB, 63 - 60 + ((63 * 64) - (13 * 64 )), "Save Room")
+table.insert(special_roomB, 63 - 51 + ((63 * 64) - (19 * 64 )), "Save Room")
+table.insert(special_roomB, 63 - 39 + ((63 * 64) - (9 * 64 )), "Save Room")
+table.insert(special_roomB, 63 - 29 + ((63 * 64) - (13 * 64 )), "Save Room")
+table.insert(special_roomB, 63 - 31 + ((63 * 64) - (17 * 64 )), "Save Room")
+table.insert(special_roomB, 63 - 31 + ((63 * 64) - (27 * 64 )), "Save Room")
+table.insert(special_roomB, 63 - 29 + ((63 * 64) - (27 * 64 )), "Save Room")
+table.insert(special_roomB, 63 - 25 + ((63 * 64) - (23 * 64 )), "Save Room")
+table.insert(special_roomB, 63 - 14 + ((63 * 64) - (23 * 64 )), "Save Room")
+table.insert(special_roomB, 63 - 2 + ((63 * 64) - (28 * 64 )), "Save Room")
+table.insert(special_roomB, 63 - 7 + ((63 * 64) - (30 * 64 )), "Save Room")
+table.insert(special_roomB, 63 - 15 + ((63 * 64) - (27 * 64 )), "Save Room")
+table.insert(special_roomB, 63 - 16 + ((63 * 64) - (35 * 64 )), "Save Room")
 --
 
 
@@ -1720,33 +1709,33 @@ boss_roomA_data2 = {
 
 
 boss_roomB ={}
-table.insert(boss_roomB, 19 + ( 16 * 64 ), "Akmodan II")--access
-table.insert(boss_roomB, 20 + ( 16 * 64 ), "Akmodan II")--access
-table.insert(boss_roomB, 19 + ( 17 * 64 ), "Akmodan II")
-table.insert(boss_roomB, 20 + ( 17 * 64 ), "Akmodan II")
-table.insert(boss_roomB, 57 + ( 23 * 64 ), "The Creature")
-table.insert(boss_roomB, 58 + ( 23 * 64 ), "The Creature")
-table.insert(boss_roomB, 18 + ( 50 * 64 ), "Galamoth")
-table.insert(boss_roomB, 19 + ( 50 * 64 ), "Galamoth")--access
-table.insert(boss_roomB, 18 + ( 51 * 64 ), "Galamoth")--access
-table.insert(boss_roomB, 19 + ( 51 * 64 ), "Galamoth")
-table.insert(boss_roomB, 19 + ( 22 * 64 ), "Evil Trio")
-table.insert(boss_roomB, 20 + ( 22 * 64 ), "Evil Trio")
-table.insert(boss_roomB, 40 + ( 39 * 64 ), "Alucard lvl40")--access
-table.insert(boss_roomB, 9 + ( 27 * 64 ), "Beelzebub")--access
-table.insert(boss_roomB, 10 + ( 27 * 64 ), "Beelzebub")
-table.insert(boss_roomB, 11 + ( 27 * 64 ), "Beelzebub")
-table.insert(boss_roomB, 12 + ( 27 * 64 ), "Beelzebub")--access
-table.insert(boss_roomB, 9 + ( 28 * 64 ), "Beelzebub")
-table.insert(boss_roomB, 10 + ( 28 * 64 ), "Beelzebub")
-table.insert(boss_roomB, 11 + ( 28 * 64 ), "Beelzebub")
-table.insert(boss_roomB, 12 + ( 28 * 64 ), "Beelzebub")--access
-table.insert(boss_roomB, 23 + ( 13 * 64 ), "Medusa")
-table.insert(boss_roomB, 24 + ( 13 * 64 ), "Medusa")
-table.insert(boss_roomB, 40 + ( 10 * 64 ), "Darkwing Bat")
-table.insert(boss_roomB, 30 + ( 40 * 64 ), "Death")
-table.insert(boss_roomB, 31 + ( 40 * 64 ), "Death")
-table.insert(boss_roomB, 31 + ( 27 * 64 ), "Last Save Point")
+table.insert(boss_roomB, 63 - 19 + ((63 * 64) - ( 16 * 64 )), "Akmodan II")--access
+table.insert(boss_roomB, 63 - 20 + ((63 * 64) -  ( 16 * 64 )), "Akmodan II")--access
+table.insert(boss_roomB, 63 - 19 + ((63 * 64) -  ( 17 * 64 )), "Akmodan II")
+table.insert(boss_roomB, 63 - 20 + ((63 * 64) -  ( 17 * 64 )), "Akmodan II")
+table.insert(boss_roomB, 63 - 57 + ((63 * 64) -  ( 23 * 64 )), "The Creature")
+table.insert(boss_roomB, 63 - 58 + ((63 * 64) -  ( 23 * 64 )), "The Creature")
+table.insert(boss_roomB, 63 - 18 + ((63 * 64) -  ( 50 * 64 )), "Galamoth")
+table.insert(boss_roomB, 63 - 19 + ((63 * 64) -  ( 50 * 64 )), "Galamoth")--access
+table.insert(boss_roomB, 63 - 18 + ((63 * 64) -  ( 51 * 64 )), "Galamoth")--access
+table.insert(boss_roomB, 63 - 19 + ((63 * 64) -  ( 51 * 64 )), "Galamoth")
+table.insert(boss_roomB, 63 - 19 + ((63 * 64) -  ( 22 * 64 )), "Evil Trio")
+table.insert(boss_roomB, 63 - 20 + ((63 * 64) -  ( 22 * 64 )), "Evil Trio")
+table.insert(boss_roomB, 63 - 40 + ((63 * 64) -  ( 39 * 64 )), "Alucard lvl40")--access
+table.insert(boss_roomB, 63 - 9 + ((63 * 64) -  ( 27 * 64 )), "Beelzebub")--access
+table.insert(boss_roomB, 63 - 10 + ((63 * 64) -  ( 27 * 64 )), "Beelzebub")
+table.insert(boss_roomB, 63 - 11 + ((63 * 64) -  ( 27 * 64 )), "Beelzebub")
+table.insert(boss_roomB, 63 - 12 + ((63 * 64) -  ( 27 * 64 )), "Beelzebub")--access
+table.insert(boss_roomB, 63 - 9 + ((63 * 64) -  ( 28 * 64 )), "Beelzebub")
+table.insert(boss_roomB, 63 - 10 + ((63 * 64) -  ( 28 * 64 )), "Beelzebub")
+table.insert(boss_roomB, 63 - 11 + ((63 * 64) -  ( 28 * 64 )), "Beelzebub")
+table.insert(boss_roomB, 63 - 12 + ((63 * 64) -  ( 28 * 64 )), "Beelzebub")--access
+table.insert(boss_roomB, 63 - 23 + ((63 * 64) -  ( 13 * 64 )), "Medusa")
+table.insert(boss_roomB, 63 - 24 + ((63 * 64) -  ( 13 * 64 )), "Medusa")
+table.insert(boss_roomB, 63 - 40 + ((63 * 64) -  ( 10 * 64 )), "Darkwing Bat")
+table.insert(boss_roomB, 63 - 30 + ((63 * 64) -  ( 40 * 64 )), "Death")
+table.insert(boss_roomB, 63 - 31 + ((63 * 64) -  ( 40 * 64 )), "Death")
+table.insert(boss_roomB, 63 - 31 + ((63 * 64) -  ( 27 * 64 )), "Last Save Point")
 
 
 
@@ -2018,13 +2007,13 @@ relic_text = {
 }
 
 relic_roomB ={}
-table.insert(relic_roomB, 58 + ( 23 * 64 ), "Tooth of Vlad")
-table.insert(relic_roomB, 23 + ( 13 * 64 ), "Heart of Vlad")
-table.insert(relic_roomB, 30 + ( 40 * 64 ), "Eye of Vlad")
-table.insert(relic_roomB, 20 + ( 16 * 64 ), "Rib of Vlad")
-table.insert(relic_roomB, 40 + ( 10 * 64 ), "Ring of Vlad")
-table.insert(relic_roomB, 55 + ( 41 * 64 ), "Force of Echo")
-table.insert(relic_roomB, 17 + ( 50 * 64 ), "Poison Cloud")
+table.insert(relic_roomB, 63 - 58 + ((63 * 64) - (23 * 64 )), "Tooth of Vlad")
+table.insert(relic_roomB, 63 - 23 + ((63 * 64) - (13 * 64 )), "Heart of Vlad")
+table.insert(relic_roomB, 63 - 30 + ((63 * 64) - (40 * 64 )), "Eye of Vlad")
+table.insert(relic_roomB, 63 - 20 + ((63 * 64) - (16 * 64 )), "Rib of Vlad")
+table.insert(relic_roomB, 63 - 40 + ((63 * 64) - (10 * 64 )), "Ring of Vlad")
+table.insert(relic_roomB, 63 - 55 + ((63 * 64) - (41 * 64 )), "Force of Echo")
+table.insert(relic_roomB, 63 - 17 + ((63 * 64) - (50 * 64 )), "Poison Cloud")
 
 
 relic_roomB_data = {
@@ -2225,9 +2214,15 @@ table.insert(pickup_roomA, 30 + ( 38 * 64 ), "Uncurse")
 table.insert(pickup_roomA, 40 + ( 38 * 64 ), "Crystal Cloak")
 
 
+heartup_roomB ={}
+table.insert(heartup_roomA, 17 + ( 38 * 64 ), "Heart Max Up")
+
+lifeup_roomB ={}
+table.insert(lifeup_roomA, 3 + ( 38 * 64 ), "Life Max Up")
 
 
-
+pickup_roomB ={}
+table.insert(pickup_roomA, 18 + ( 22 * 64 ), "Library Card")
 
 
 
@@ -2500,11 +2495,24 @@ music_ID = {
 [21248] = "Konami Nagoya Logo",
 [3585] = "Main Menu (clean boot)",
 [3841] = "Transition (boot)",
-[3329] = "Transition (boot)"
+[3329] = "Transition (boot)",
+[48128] = "Ending??? plz confirm and edit me"
 }
+
+--13312,18688,13824,25856,25600,52736,52224,22528,52480 unknow before prologue
 
 
 --[[
+
+music_area_alucard = {
+6144,
+4352,
+11520,
+10752,
+4864,
+4608,
+5120
+}
 
 --pickup data
 
@@ -2636,7 +2644,7 @@ e = ????
 f = circlet 50,18
 g = antivenon 52,18
 h = potion 52,18
-byte13:unused
+byte13:UNUSUED
 a = ????
 b = ????
 c = ????
@@ -2825,7 +2833,7 @@ e = ????
 f = ????
 g = ????
 h = alucard autograph 6,44
-byte34:unused
+byte34:UNUSUED
 a = ????
 b = ????
 c = ????
@@ -2834,15 +2842,15 @@ e = ????
 f = ????
 g = ????
 h = ????
-byte35:unused
-a = ????
-b = ????
-c = ????
-d = ????
-e = ????
-f = ????
-g = ????
-h = ????
+byte35:gate IC
+a = fire boomrang 5,38
+b = beryl circlet 10,41
+c = opal 10,41
+d = zircon 10,41
+e = heart max up 19,36
+f = high potion 19,40
+g = uncurse 2,38
+h = magic hammer 3,38
 byte36:prison
 a = ????
 b = ????
@@ -2856,7 +2864,7 @@ h = karma coin 35,35
 ---------------------------------------
 ---------------------------------------
 ---------------------------------------
-byte37:
+byte37:UNUSUED
 a = ????
 b = ????
 c = ????
@@ -2868,15 +2876,15 @@ h = ????
 ---------------------------------------
 ---------------------------------------
 ---------------------------------------
-byte38:
+byte38:gate
 a = ????
 b = ????
 c = ????
 d = ????
 e = ????
 f = ????
-g = ????
-h = ????
+g = talisman 20,37
+h = life max up 19,39
 byte39:lab
 a = ????
 b = ????
@@ -2904,7 +2912,7 @@ e = life max up 30,23
 f = ????
 g = ????
 h = ????
-byte42:
+byte42:UNUSUED
 a = ????
 b = ????
 c = ????
@@ -2913,7 +2921,7 @@ e = ????
 f = ????
 g = ????
 h = ????
-byte43:
+byte43:UNUSUED
 a = ????
 b = ????
 c = ????
@@ -2931,7 +2939,7 @@ e = heart refresh 33,27
 f = iron ball 44,26
 g = lib card 46,24
 h = resist orange 33,25
-byte45:
+byte45:UNUSUED
 a = ????
 b = ????
 c = ????
@@ -2958,7 +2966,7 @@ e = resist orange 52,18
 f = library card 49,20
 g = gem orange 49,20
 h = gem red 49,20
-byte48:
+byte48:UNUSUED
 a = ????
 b = ????
 c = ????
@@ -2967,7 +2975,7 @@ e = ????
 f = ????
 g = ????
 h = ????
-byte49:
+byte49:UNUSUED
 a = ????
 b = ????
 c = ????
@@ -3057,15 +3065,15 @@ e = ????
 f = ????
 g = ????
 h = library card 39,8
-byte59:
-a = ????
-b = ????
-c = ????
-d = ????
-e = ????
-f = ????
-g = ????
-h = ????
+byte59:cave
+a = heart max up 38,38
+b = life max up 30,38
+c = bat pentagram 25,37
+d = garnet 22,37
+e = shiitake 23,40
+f = toadstool 23,41
+g = shiitake 17,41
+h = alucard shield 8,42
 byte60:clock
 a = ????
 b = ????
@@ -3075,24 +3083,24 @@ e = moonrod 42,11
 f = heart max up 50,9
 g = life max up 52,9
 h = sunstone 49,14
-byte61:
-a = ????
-b = ????
-c = ????
-d = ????
-e = ????
-f = ????
-g = ????
-h = ????
+byte61:cave
+a = dark blade 40,38
+b = pot roast 45,38
+c = zircoon 43,39
+d = meal ticket 44,33
+e = meal ticket 44,33
+f = meal ticket 44,32
+g = meal ticket 44,32
+h = meal ticket 44,32
 byte62:cave
-a = ????
+a = heart max up 43,29
 b = green gem 39,26
-c = ????
-d = ????
-e = ????
-f = ????
-g = ????
-h = ????
+c = diamond 35,27
+d = life max up 36,27
+e = opal 37,32
+f = shiitake 38,37
+g = shiitake 37,37
+h = potion 30,38
 byte63:olrox
 a = alucard mail 33,18
 b = blue gem 30,15
@@ -3102,15 +3110,15 @@ e = green pill 35,19
 f = big potion 32,22
 g = hunter sword 32,22
 h = gem orange 32,22
-byte64:
+byte64:cave
 a = ????
 b = ????
 c = ????
 d = ????
 e = ????
-f = ????
-g = ????
-h = ????
+f = osafune katana 25,42
+g = elixir 45,41
+h = mana prism 42,42
 byte65:colos
 a = heart max up 23,23
 b = life max up, 23,23
@@ -3129,9 +3137,105 @@ e = heart max up 16,16
 f = shuriken 22,16
 g = heart refresh 20,18
 h = life max up 21,19
-
-
-
+byte67:UNUSUED
+a = ????
+b = ????
+c = ????
+d = ????
+e = ????
+f = ????
+g = ????
+h = ????
+byte68:UNUSUED
+a = ????
+b = ????
+c = ????
+d = ????
+e = ????
+f = ????
+g = ????
+h = ????
+byte69:UNUSUED
+a = ????
+b = ????
+c = ????
+d = ????
+e = ????
+f = ????
+g = ????
+h = ????
+byte70:mine
+a = shiitake 32,46
+b = shiitake 32,47
+c = ????
+d = power of sire 31,48
+e = barley tea 37,41
+f = alucard sword 29,44
+g = golden apple 36,41
+h = power of sire 36,41
+byte71:cata
+a = elixir 41,51
+b = red bean bun 48,51
+c = karma coin 48,50
+d = karma coin 48,50
+e = resist fire 48,50
+f = resist thunder 48,50
+g = buffalo star 28,50
+h = magic missile 28,50
+byte72:UNUSUED
+a = ????
+b = ????
+c = ????
+d = ????
+e = ????
+f = ????
+g = ????
+h = ????
+byte73:cata
+a = ????
+b = ????
+c = ????
+d = ????
+e = ????
+f = ????
+g = ruby circlet 17,50
+h = life max up 17,51
+byte74:cata
+a = heart max up 17,51
+b = diamond 23,50
+c = necklace of J 24,50
+d = attack potion 26,50
+e = shield potion 26,50
+f = heart max up 32,51
+g = life max up 32,51
+h = library card 41,51
+byte75:UNUSUED
+a = ????
+b = ????
+c = ????
+d = ????
+e = ????
+f = ????
+g = ????
+h = ????
+byte76:UNUSUED
+a = ????
+b = ????
+c = ????
+d = ????
+e = ????
+f = ????
+g = ????
+h = ????
+byte77:prison
+a = ????
+b = ????
+c = ????
+d = ????
+e = ????
+f = delicious meal 35,35
+g = opal 33,35
+h = meal ticket 35,34
 byte78:garden
 a = ????
 b = ????
@@ -3160,8 +3264,166 @@ gateA/B, Dracula's Castle Vampire Killer (Remix 2) Bloody Tears Remix ?
 
 
 --id {name, castleA, castleB, both castle, area table{ ["alucard"] = {area_ID}, ["richter"] = {area_ID}, ["maria"] = {area_ID} } }
-music_data = {
-[1280] = {"Dance of Gold", true, false, false, {["alucard"] = {"lab"}, ["richter"] = {"lab"}, ["maria"] = {"lab"} },
+
+
+
+
+
+
+
+
+[7168] = { name = "Background Tempest Noise A", castleB = false } --entrance
+[7424] = { name = "Background Tempest Noise B", castleB = false } --entrance
+[2816] = { name = "Dracula's Castle", castleB = false }
+[1280] = { name = "Dance of Gold", castleB = false }
+[2560] = { name = "Marble Gallery", castleB = false }
+[3328] = { name = "Tower of Mist", castleB = false }
+[1792] = { name = "Wood Carving Partita", castleB = false }
+[9472] = { name = "Master Librarian", castleB = false }
+[768] = { name = "Dance of Pales", castleB = false }
+[512] = { name = "Requiem for the Gods", castleB = false }
+[3584] = { name = "Wandering Ghosts", castleB = false }
+[2048] = { name = "Crystal Teardrop", castleB = false }
+[10240] = { name = "Chaconne c.moll", castleB = false }
+[1536] = { name = "Rainbow Cemetery", castleB = false }
+[3072] = { name = "The Tragic Prince", castleB = false }
+[9728] = { name = "Vampire Killer (Remix 1)", castleB = true }
+[5888] = { name = "Blood Relations", castleB = false } --richter boss
+[9216] = { name = "Guardian", castleB = false } --maria boss
+
+
+
+
+[6144] = { name = "Finale Toccata", castleB = true } --gate,lab,marble,wall,olrox,clock
+[4352] = { name = "Lost Painting", castleB = true } --lib,chapel,cave
+[11520] = { name = "Vampire Killer (Remix 2)", castleB = true } --prison
+[10752] = { name = "Begining Remix 1", castleB = false } --garden
+[4864] = { name = "Curse Zone", castleB = true } --cata
+[4608] = { name = "Door of Holy Spirits", castleB = true } --colos
+[5120] = { name = "Black Banquet", castleB = true } --dracula end boss
+
+
+
+
+
+[3840] = { name = "The Door to the Abyss", castleB = false } --central
+[9216] = { name = "Guardian", castleB = false } --maria boss
+
+[3840] = { name = "The Door to the Abyss", castleB = true } --central
+[5376] = { name = "Death Ballad", castleB = true } --shaft
+
+[1024] = { name = "Abandoned Pit", castleB = false } --mine
+[4096] = { name = "Festival of Servants", castleB = false } --cerberus
+
+[1024] = { name = "Abandoned Pit", castleB = true } --mine
+[5376] = { name = "Death Ballad", castleB = true } --death
+
+
+[2304] = { name = "Heavenly Doorway", castleB = false } --keep
+[5888] = { name = "Blood Relations", castleB = false } --richter boss
+
+[2304] = { name = "Heavenly Doorway", castleB = true } --keep
+
+--shaft, galamoth, death, belzebub = death balad
+alucard lvl40, franky, bat, mummy, trio 4096 festival of servants 23,24
+medusa 6912
+alucard lvl10,karasuman 4096
+5376 hyppo, olrox
+
+franky 4096 alucard lvl10 4096
+bat 4096 karasuman 4096
+mummy 4096 olrox 5376 
+medusa 6912 hypo 5376
+trio 4096 minotaur 4096
+shaft 5376 maria 9216
+galamoth 5376 granfalon 5376
+death 5376 cerberus 4096
+belzebub 5376 gaibon 4096
+lvl40 4096 scylla head 4096
+
+nightmare 6912
+scylla boss 4096
+}
+
+
+
+[7936] = { name = "Silence", castleB = true }
+[10496] = { name = "Begining Remix 2", castleB = true }
+[11008] = { name = "Bloody Tears (Remix 1)", castleB = true }
+[11264] = { name = "Bloody Tears (Remix 2)", castleB = true }
+[12288] = { name = "Moonlight Nocturne", castleB = true }
+[8448] = { name = "Nocturne", castleB = true }
+[8192] = { name = "Land of Benediction", castleB = true }
+[6912] = { name = "Enchanted Banquet", castleB = true }
+[5376] = { name = "Death Ballad", castleB = true }
+
+--boss
+[6400] = { name = "Dance of Illusions", castleB = true }
+[4096] = { name = "Festival of Servants", castleB = true }
+
+[5632] = { name = "Prayer", castleB = true }
+
+[12032] = { name = "Metamorphosis", castleB = true }
+[12544] = { name = "Metamorphosis II", castleB = true }
+[12800] = { name = "Metamorphosis III", castleB = true }
+
+[1024] = { name = "Abandoned Pit", castleB = true }
+[3840] = { name = "The Door to the Abyss", castleB = true }
+[2304] = { name = "Heavenly Doorway", castleB = true }
+[6656] = { name = "Prologue", castleB = true }
+
+[11776] = { name = "Chaconne c.moll", castleB = true } --music hall value
+[7680] = { name = "I am the Wind", castleB = true }
+[0] = { name = "Nothing (boot)", castleB = true }
+[23808] = { name = "Konami Main Logo", castleB = true }
+[20224] = { name = "Transition (logo)", castleB = true }
+[19968] = { name = "Transition (logo)", castleB = true }
+[22784] = { name = "Transition (logo)", castleB = true }
+[21248] = { name = "Konami Nagoya Logo", castleB = true }
+[3585] = { name = "Main Menu (clean boot)", castleB = true }
+[3841] = { name = "Transition (boot)", castleB = true }
+[3329] = { name = "Transition (boot)" castleB = true }
+
+
+
+gate alucard, 2816
+lab, 1280
+marble, 2560
+wall, 3328
+lib, 1792
+chapel, 512
+keep, 2304
+olrox, 768
+colos, 3584
+cave, 2048
+prison, 10240
+garden, 9728
+mine, 1024
+cata, 1536
+clock, 3072
+---
+
+gate, 6144
+lab, 6144
+marble, 6144
+wall, 6144
+lib, 4352
+chapel, 4352
+olrox, 6144
+colos, 4608
+cave,  4352
+prison, 11520
+garden, 10752
+cata, 4864
+clock, 6144
+
+mine, 1024
+
+keep, 2304
+
+
+
+
 [6144] = {"Finale Toccata", false, true, false, {["alucard"] = {"gate,lab,marble,wall,olrox,clock"}, ["richter"] = {"gate,lab,marble,wall,olrox,clock"}, ["maria"] = {"gate,lab,marble,wall,olrox,clock"} },
 [7680] = {"I am the Wind", false, false, false, {["alucard"] = {"fmv"}, ["richter"] = {"fmv"}, ["maria"] = {"fmv"} },
 [11520] = {"Vampire Killer (Remix 2)", false, false, false, {["alucard"] = {"prison"}, ["richter"] = {"gate"}, ["maria"] = nil },

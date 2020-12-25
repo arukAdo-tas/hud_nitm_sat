@@ -18,9 +18,11 @@ function stop() --call when you exit the script (properly)
 end
 --------------------------------
 function loadstate() --we need to refresh the data when user load a state
+castle_check = true
 shot_refresh = true
 trail_data = { 0, 0, 0, 0, 0 }
 wait = 0
+wait_long = 0
 extra_refresh = true
 end
 --------------------------------
@@ -113,8 +115,8 @@ for i = 1 ,11 ,1 do
 	Zcolor[8+(i*8)-8] = base_color[i] + alpha8
 end
 if script_debug == true then
-	debug_data = debug_data.." Z-1:"..bizstring.hex(Zcolor[1]).." 2:"..bizstring.hex(Zcolor[2]).." 3:"..bizstring.hex(Zcolor[3]).." 4:"..bizstring.hex(Zcolor[4]).." 5:"..bizstring.hex(Zcolor[5]).." 6:"..bizstring.hex(Zcolor[6]).." 7:"..bizstring.hex(Zcolor[7]).." 8:"..bizstring.hex(Zcolor[8])
-	debug_data = debug_data.." Z-64:"..bizstring.hex(Zcolor[64]).." 63:"..bizstring.hex(Zcolor[63])
+	debug_dataB = " Z-1:"..bizstring.hex(Zcolor[1]).." 2:"..bizstring.hex(Zcolor[2]).." 3:"..bizstring.hex(Zcolor[3]).." 4:"..bizstring.hex(Zcolor[4]).." 5:"..bizstring.hex(Zcolor[5]).." 6:"..bizstring.hex(Zcolor[6]).." 7:"..bizstring.hex(Zcolor[7]).." 8:"..bizstring.hex(Zcolor[8])
+	debug_dataB = debug_dataB.." Z-64:"..bizstring.hex(Zcolor[64]).." 63:"..bizstring.hex(Zcolor[63])
 end
 -- for a 60 frames cycle: 64*cos(x*pi/30)+191
 -- for a 10 frames cycle: 64*cos(x*pi/5)+191

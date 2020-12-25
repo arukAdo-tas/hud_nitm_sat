@@ -328,6 +328,68 @@ local player_obj_id = {
 
 
 local pro_obj_id = {
+168194251, "dust",			--richter dust
+168217802, "player",		--richter dragon punch
+168169674, "player",		--richter air dash
+184949766, "player",		--richter whip
+168174792, "player",		--richter slide
+168167625, "player",		--richter flying kick
+185006221, "player",		--richter cross
+184942739, "trail",			--richter cross trail
+184989841, "particule",		--cross particule
+184983710, "player",		--holy water bottle
+184999075, "player",		--holy water effect
+184969366, "player",		--holy water initial flamme
+
+184963226, "cast",		--hydro storm
+184973465, "cast",		--hydro storm
+
+
+218526932, "cast",		--richter talking
+
+218519744, "cast",		--cutscene stuff
+
+
+168186085, "npc",		--maria
+168211681, "npc",		--animal spirits
+168176859, "cast",		--richter receive animals spirits
+184949899, "cast",		--richter invincible animation
+
+235337746, "scene",			--aftercast persistant effect
+
+
+168192231, "particule",		--fireball dmg particule
+168198359, "particule",		--fireball dmg particule
+168206543, "particule",		--fireball dmg particule
+
+235320447, "monster",		--dracula
+235330673, "monster",		--dracula face
+235313291, "monster",		--dracula 2nd form
+235307141, "scene",			--dracula glass
+
+235274369, "attack",		--dracula fireball
+235305090, "attack",		--dracula hellfire
+235316376, "attack",		--dracula 2nd form fireball
+
+235313284, "particule",		--hellfire particule
+
+168193220, "scene",			--persistant after effect (dmg?)
+218501359, "scene",			--staircase switch
+218523885, "scene",			--door
+218499314, "scene",			--staircase fixed point
+218517747, "scene",			--staircase mechanism
+218546411, "scene",			--outside bottom
+218512611, "scene",			--outside top
+235301898, "scene",			--the "final stage" overlay
+235318276, "scene",			--the fade out effect
+
+218520796, "candle",		--candle/vase
+
+235309097, "pick",			--drop
+235332657, "pick",			--drop
+
+218546397, "scene",			--candle debris
+235322457, "particule",		--candle flame
 
 }
 
@@ -520,6 +582,8 @@ if script_debug then if obj_type == "unknow" then objectHitboxLine = "white" obj
 if object_X_hitbox_radius == 0 or object_X_hitbox_radius == 1 then object_X_hitbox_radius = 2 end
 if object_Y_hitbox_radius == 0 or object_Y_hitbox_radius == 1 then object_Y_hitbox_radius = 2 end
 
+if obj_type == "npc" and object_X_hitbox_radius <= 3 then object_X_hitbox_radius = 10 end
+if obj_type == "npc" and object_Y_hitbox_radius <= 3 then object_Y_hitbox_radius = 20 end
 
 
 if cursor_joker_speed == 5 then objectHitboxLine = Zcolor[wait_long] objectHitboxFill = Zcolor[wait+9] end --rgb mode

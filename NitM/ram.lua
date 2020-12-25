@@ -47,6 +47,7 @@ stat_rooms = memory.read_u16_le(0x05C5B2) --used to check if the map changed
 player_Y_position_absolute = memory.read_u16_le(0x05C5B6)
 ------------------------------------------------------------------------------------------------------------------------------------
 player_character_ID = memory.readbyte(0x05C6D2)
+if player_character_ID == 0 then alucard = true else alucard = false end
 ------------------------------------------------------------------------------------------------------------------------------------
 --[[
 relic byte is set to 0 if you dont have it, 1 if you have it turned off, 3 if you have it turned on
@@ -323,6 +324,7 @@ note if the room is min/max of 1 both X and Y then the current room is always th
 -- room_Y_size_grid = (memory.readbyte(0x05CE62))
 -- room_X_origin_grid = memory.readbyte(0x05D75E)
 -- room_Y_origin_grid = memory.readbyte(0x05D762)
+
 ]]
 
 room_data = memory.readbyterange(0x05CE5E, 25, "Work Ram High")
@@ -347,7 +349,7 @@ the map data start is the correct address, but you can set 4 bytes before it, im
 the data are stored as bits, each square is a pair of bits, there is 4 squares per bytes (8bits), 
 there is 64 squares per row (16 bytes), for a total of 128 rows, that would be 16bytesx128 = 2048 bytes of data, or 8192 squares
 the end address correspond to 128 rows, the png doesnt show that much, wether the rows "exist" or not is irrelevant,
-the castle is 51 row size, 4 before it, and there is 16 rows between first and second castle data, 4+51+16+51=122
+the castle is 46 row size, 6 before it, and there is 7 rows between first and second castle data, 6+46+7+46=104
 the "second" castle is the same png shifted 90° toward right twice, the positions are the same except the axis are reverse
 you only have to interpret the grid data backward, theres a small exception in the inverted "lake", theres 2 extra blue square
 so theres actually 2 copy of the png
@@ -358,6 +360,16 @@ note that the actual 3 possible data for any given square(pair of bit) is either
 on psx the librarian map isnt transparent but instead its greyscale
 -- map_data_start = 0x05CEC0
 -- map_data_stop = 0x05D6BF
+
+
+-tldr
+theres only 1 "castle" in the player map data, duplicated
+but there is 2 grid data
+grid_dataA
+grid_dataB = 64-grid_dataA (and an offset of +7 on Y)
+
+
+
 ]]
 
 map_data_A = memory.readbyterange(0x05CF10, 752, "Work Ram High")

@@ -446,7 +446,7 @@ SystemID SAT
 05CA76	b	u	1	Work Ram High	
 05CA77	b	u	1	Work Ram High	
 05CA78	b	u	1	Work Ram High	wall 19,19 IC
-05CA79	b	u	1	Work Ram High	wall 29,22
+05CA79	b	b	1	Work Ram High	wall 29,22 IC
 05CA7A	b	u	1	Work Ram High	
 05CA7B	b	u	1	Work Ram High	
 05CA7C	b	u	1	Work Ram High	
@@ -463,10 +463,10 @@ SystemID SAT
 05CA87	b	u	1	Work Ram High	
 05CA88	b	u	1	Work Ram High	entrance gaibon/slogra defeated
 05CA89	b	u	1	Work Ram High	break in 19,40
-05CA8A	b	u	1	Work Ram High	????
+05CA8A	b	u	1	Work Ram High	big rock IC
 05CA8B	b	u	1	Work Ram High	wall to 12,41 (jewel sword)
-05CA8C	b	u	1	Work Ram High	????
-05CA8D	b	u	1	Work Ram High	
+05CA8C	b	u	1	Work Ram High	door to jewel sword IC 11,41
+05CA8D	b	u	1	Work Ram High	break 19,40 IC
 05CA8E	b	u	1	Work Ram High	
 05CA8F	b	u	1	Work Ram High	
 05CA90	b	u	1	Work Ram High	break 28,50 cata
@@ -477,9 +477,9 @@ SystemID SAT
 05CA95	b	u	1	Work Ram High	break 41,51 cata
 05CA96	b	u	1	Work Ram High	
 05CA97	b	u	1	Work Ram High	
-05CA98	b	u	1	Work Ram High	
-05CA99	b	u	1	Work Ram High	????
-05CA9A	b	u	1	Work Ram High	????
+05CA98	b	u	1	Work Ram High	break 28,50 IC
+05CA99	b	u	1	Work Ram High	wall 25,50 IC
+05CA9A	b	u	1	Work Ram High	break 41,51 IC
 05CA9B	b	u	1	Work Ram High	
 05CA9C	b	u	1	Work Ram High	
 05CA9D	b	u	1	Work Ram High	
@@ -493,8 +493,8 @@ SystemID SAT
 05CAA5	b	u	1	Work Ram High	Area Title mines 27,38
 05CAA6	b	u	1	Work Ram High	
 05CAA7	b	u	1	Work Ram High	
-05CAA8	b	u	1	Work Ram High	????
-05CAA9	b	u	1	Work Ram High	????
+05CAA8	b	u	1	Work Ram High	wall 37,41 IC
+05CAA9	b	u	1	Work Ram High	switch 32,40 IC
 05CAAA	b	u	1	Work Ram High	
 05CAAB	b	u	1	Work Ram High	
 05CAAC	b	u	1	Work Ram High	
@@ -607,8 +607,8 @@ SystemID SAT
 05CB17	b	u	1	Work Ram High	wall 36,27 caves
 05CB18	b	u	1	Work Ram High	cutscene ferry merman
 05CB19	b	u	1	Work Ram High	cutscene ferry symbol
-05CB1A	b	u	1	Work Ram High	????
-05CB1B	b	u	1	Work Ram High	????
+05CB1A	b	u	1	Work Ram High	wall 36,27 IC
+05CB1B	b	u	1	Work Ram High	wall 39,39 IC (lake)
 05CB1C	b	u	1	Work Ram High	
 05CB1D	b	u	1	Work Ram High	
 05CB1E	b	u	1	Work Ram High	
@@ -626,7 +626,7 @@ SystemID SAT
 05CB2A	b	u	1	Work Ram High	
 05CB2B	b	u	1	Work Ram High	
 05CB2C	b	u	1	Work Ram High	
-05CB2D	b	u	1	Work Ram High	
+05CB2D	b	u	1	Work Ram High	death boss cutscene
 05CB2E	b	u	1	Work Ram High	
 05CB2F	b	u	1	Work Ram High	
 05CB30	b	u	1	Work Ram High	beat dracula cutscene
@@ -1180,10 +1180,10 @@ SystemID SAT
 05CD51	b	u	1	Work Ram High	
 05CD52	b	u	1	Work Ram High	unlock_range_stop
 0	S	_	1		pickup
-05CB50	b	b	1	Work Ram High	byte1 - entrance A
-05CB51	b	b	1	Work Ram High	byte2 - entrance A
-05CB52	b	b	1	Work Ram High	byte3  - entrance B
-05CB53	b	b	1	Work Ram High	byte4 - entrance B
+05CB50	b	b	1	Work Ram High	byte1 - gateA
+05CB51	b	b	1	Work Ram High	byte2 - gateA
+05CB52	b	b	1	Work Ram High	byte3  - gateB
+05CB53	b	b	1	Work Ram High	byte4 - gateB
 05CB54	b	b	1	Work Ram High	byte5 - lab
 05CB55	b	b	1	Work Ram High	byte6 - lab
 05CB56	b	b	1	Work Ram High	byte7 - marble
@@ -1192,7 +1192,7 @@ SystemID SAT
 05CB59	b	b	1	Work Ram High	byte10 - outerwall
 05CB5A	b	b	1	Work Ram High	byte11 - chapel
 05CB5B	b	b	1	Work Ram High	byte12 - lib
-05CB5C	b	b	1	Work Ram High	byte13 - ????
+05CB5C	b	b	1	Work Ram High	byte13 - UNUSED
 05CB5D	b	b	1	Work Ram High	byte14 - chapel
 05CB5E	b	b	1	Work Ram High	byte15 - keep
 05CB5F	b	b	1	Work Ram High	byte16 - keep
@@ -1213,24 +1213,24 @@ SystemID SAT
 05CB6E	b	b	1	Work Ram High	byte31 - cata
 05CB6F	b	b	1	Work Ram High	byte32 - cata
 05CB70	b	b	1	Work Ram High	byte33 - garden
-05CB71	b	b	1	Work Ram High	byte34 - ????
-05CB72	b	b	1	Work Ram High	byte35 - ????
+05CB71	b	b	1	Work Ram High	byte34 - UNUSED
+05CB72	b	b	1	Work Ram High	byte35 - gate - IC !!!!
 05CB73	b	b	1	Work Ram High	byte36 - prison
 0	S	_	1		
-05CB74	b	b	1	Work Ram High	byte37 - ????
+05CB74	b	b	1	Work Ram High	byte37 - UNUSED
 0	S	_	1		
-05CB75	b	b	1	Work Ram High	byte38 - ????
+05CB75	b	b	1	Work Ram High	byte38 - gate
 05CB76	b	b	1	Work Ram High	byte39 - lab
 05CB77	b	b	1	Work Ram High	byte40 - lab
 05CB78	b	b	1	Work Ram High	byte41 - marble
-05CB79	b	b	1	Work Ram High	
-05CB7A	b	b	1	Work Ram High	
+05CB79	b	b	1	Work Ram High	byte42 - UNUSED
+05CB7A	b	b	1	Work Ram High	byte43 - UNUSED
 05CB7B	b	b	1	Work Ram High	byte44 - marble
-05CB7C	b	b	1	Work Ram High	
+05CB7C	b	b	1	Work Ram High	byte45 - UNUSED
 05CB7D	b	b	1	Work Ram High	byte46 - wall
 05CB7E	b	b	1	Work Ram High	byte47 - lib
-05CB7F	b	b	1	Work Ram High	
-05CB80	b	b	1	Work Ram High	
+05CB7F	b	b	1	Work Ram High	byte48 - UNUSED
+05CB80	b	b	1	Work Ram High	byte49 - UNUSED
 05CB81	b	b	1	Work Ram High	byte50 - lib
 05CB82	b	b	1	Work Ram High	byte 51 - chapel
 05CB83	b	b	1	Work Ram High	byte 52 - chapel
@@ -1240,26 +1240,26 @@ SystemID SAT
 05CB87	b	b	1	Work Ram High	byte56 - keep
 05CB88	b	b	1	Work Ram High	byte57 - clock
 05CB89	b	b	1	Work Ram High	byte58 - keep
-05CB8A	b	b	1	Work Ram High	
+05CB8A	b	b	1	Work Ram High	byte59 - cave
 05CB8B	b	b	1	Work Ram High	byte60 - clock
-05CB8C	b	b	1	Work Ram High	
+05CB8C	b	b	1	Work Ram High	byte61 - cave
 05CB8D	b	b	1	Work Ram High	byte62 - cave
 05CB8E	b	b	1	Work Ram High	byte63 - olrox
-05CB8F	b	b	1	Work Ram High	
+05CB8F	b	b	1	Work Ram High	byte64 - cave
 05CB90	b	b	1	Work Ram High	byte65 - colos
 05CB91	b	b	1	Work Ram High	byte66 - olrox
-05CB92	b	b	1	Work Ram High	
-05CB93	b	b	1	Work Ram High	
-05CB94	b	b	1	Work Ram High	
-05CB95	b	b	1	Work Ram High	
-05CB96	b	b	1	Work Ram High	
-05CB97	b	b	1	Work Ram High	
-05CB98	b	b	1	Work Ram High	
-05CB99	b	b	1	Work Ram High	
-05CB9A	b	b	1	Work Ram High	
-05CB9B	b	b	1	Work Ram High	
-05CB9C	b	b	1	Work Ram High	
-05CB9D	b	b	1	Work Ram High	gardenIC
+05CB92	b	b	1	Work Ram High	byte67 - UNUSED
+05CB93	b	b	1	Work Ram High	byte68 - UNUSED
+05CB94	b	b	1	Work Ram High	byte69 - UNUSED
+05CB95	b	b	1	Work Ram High	byte70 - mine
+05CB96	b	b	1	Work Ram High	byte71 - cata
+05CB97	b	b	1	Work Ram High	byte72 - UNUSED
+05CB98	b	b	1	Work Ram High	byte73 - cata
+05CB99	b	b	1	Work Ram High	byte74 - cata
+05CB9A	b	b	1	Work Ram High	byte75 - UNUSED
+05CB9B	b	b	1	Work Ram High	byte76 - UNUSED
+05CB9C	b	b	1	Work Ram High	byte77 - prison
+05CB9D	b	b	1	Work Ram High	byte78 - gardenIC
 05CB9E	b	b	1	Work Ram High	
 05CB9F	b	b	1	Work Ram High	
 

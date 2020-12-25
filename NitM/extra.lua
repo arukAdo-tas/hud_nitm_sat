@@ -9,11 +9,7 @@ function stop() --call when you exit the script (properly)
 	end
 	client.setwindowsize(biz_windowsize)
 	gui.clearImageCache()
-	os.remove('.\\NitM\map.png')
-	os.remove('.\\NitM\familiar.png')
-	os.remove('.\\NitM\relic.png')
-	os.remove('.\\NitM\timeattack.png')
-	os.remove('.\\NitM\gear.png')
+	os.remove('.\\NitM\shot.png')
 end
 --------------------------------
 function loadstate() --we need to refresh the data when user load a state

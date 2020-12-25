@@ -6,6 +6,7 @@
 -Gear Values Table
 first value is the ID from reading the ram address (hand, armor, head ect...), second is the text
 if we want png, then they will have to be call ID.png
+note that the inventory "id" are different
 ]]
 
 --all items are there
@@ -493,7 +494,7 @@ table.insert(area_roomA, 31 + ( 27 * 64 ), "marble")
 --central room
 table.insert(area_roomA, 32 + ( 28 * 64 ), "central")--central room
 table.insert(area_roomA, 32 + ( 29 * 64 ), "central")--central room
-for atx = 31, 33 do for aty = 30, 32 do table.insert(area_roomA, atx + aty * 64, "marble") end end--central room
+for atx = 31, 33 do for aty = 30, 32 do table.insert(area_roomA, atx + aty * 64, "central") end end--central room
 ---
 for atx = 60, 61 do for aty = 13, 29 do table.insert(area_roomA, atx + aty * 64, "wall") end end
 table.insert(area_roomA, 59 + ( 17 * 64 ), "wall")
@@ -986,177 +987,177 @@ table.insert(special_roomA, 33 + ( 36 * 64 ), "Gate Switch")
 
 
 area_roomB ={}
-for atx = 16, 26 do for aty = 50, 51 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "cata") end end
-for atx = 27, 37 do for aty = 51, 51 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "cata") end end
-for atx = 28, 36 do for aty = 50, 51 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "cata") end end
-for atx = 38, 48 do for aty = 50, 51 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "cata") end end
-for atx = 31, 31 do for aty = 49, 50 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "cata") end end
-for atx = 33, 33 do for aty = 48, 49 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "mine") end end
-for atx = 32, 32 do for aty = 40, 48 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "mine") end end
-for atx = 29, 35 do for aty = 44, 44 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "mine") end end
-for atx = 27, 37 do for aty = 40, 40 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "mine") end end
-for atx = 36, 37 do for aty = 40, 41 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "mine") end end
-for atx = 27, 28 do for aty = 40, 41 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "mine") end end
-for atx = 27, 27 do for aty = 38, 41 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "mine") end end
-for atx = 14, 21 do for aty = 44, 44 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "garden") end end
-for atx = 14, 21 do for aty = 44, 44 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "garden") end end
-for atx = 3, 13 do for aty = 44, 45 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "garden") end end
-for atx = 2, 2 do for aty = 41, 44 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "gate") end end
-for atx = 2, 3 do for aty = 38, 40 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "gate") end end
-for atx = 4, 21 do for aty = 40, 40 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "gate") end end
-for atx = 5, 6 do for aty = 38, 39 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "gate") end end
-for atx = 7, 11 do for aty = 39, 39 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "gate") end end
-for atx = 10, 15 do for aty = 40, 41 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "gate") end end
-for atx = 19, 21 do for aty = 38, 40 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "gate") end end
-for atx = 17, 20 do for aty = 36, 38 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "gate") end end
-for atx = 9, 13 do for aty = 42, 43 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "cave") end end
-for atx = 14, 25 do for aty = 42, 42 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "cave") end end
-for atx = 22, 26 do for aty = 37, 37 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "cave") end end
-for atx = 27, 31 do for aty = 37, 37 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "cave") end end
-for atx = 28, 31 do for aty = 38, 38 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "cave") end end
-for atx = 23, 24 do for aty = 38, 41 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "cave") end end
-for atx = 33, 40 do for aty = 37, 38 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "cave") end end
-for atx = 39, 45 do for aty = 38, 39 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "cave") end end
-for atx = 39, 55 do for aty = 41, 41 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "cave") end end
-for atx = 40, 42 do for aty = 41, 42 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "cave") end end
-for atx = 46, 47 do for aty = 41, 42 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "cave") end end
-for atx = 49, 52 do for aty = 41, 42 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "cave") end end
-for atx = 38, 39 do for aty = 27, 36 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "cave") end end
-for atx = 43, 39 do for aty = 29, 29 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "cave") end end
-for atx = 43, 43 do for aty = 29, 32 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "cave") end end
-for atx = 43, 44 do for aty = 32, 33 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "cave") end end
-for atx = 35, 37 do for aty = 27, 27 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "cave") end end
-for atx = 37, 37 do for aty = 32, 34 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "cave") end end
-for atx = 40, 42 do for aty = 29, 29 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "cave") end end
-for atx = 33, 35 do for aty = 34, 36 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "prison") end end
-for atx = 27, 32 do for aty = 36, 36 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "prison") end end
-for atx = 47, 59 do for aty = 25, 25 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "marble") end end
-for atx = 40, 46 do for aty = 24, 25 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "marble") end end
-for atx = 37, 38 do for aty = 24, 26 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "marble") end end
-for atx = 22, 36 do for aty = 26, 26 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "marble") end end
-for atx = 31, 33 do for aty = 25, 27 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "marble") end end
-for atx = 30, 34 do for aty = 23, 23 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "marble") end end
-for atx = 25, 26 do for aty = 28, 32 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "marble") end end
-for atx = 21, 26 do for aty = 34, 36 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "marble") end end
-for atx = 31, 33 do for aty = 30, 32 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "marble") end end--central room
-for atx = 60, 61 do for aty = 13, 29 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "wall") end end
-for atx = 56, 59 do for aty = 23, 24 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "wall") end end
-for atx = 52, 59 do for aty = 18, 21 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "lib") end end
-for atx = 45, 50 do for aty = 18, 21 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "lib") end end
-for atx = 51, 51 do for aty = 19, 21 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "lib") end end
-for atx = 53, 58 do for aty = 11, 15 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "clock") end end
-for atx = 50, 52 do for aty = 9, 14 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "clock") end end
-for atx = 42, 49 do for aty = 10, 11 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "clock") end end
-for atx = 38, 39 do for aty = 5, 12 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "keep") end end
-for atx = 31, 37 do for aty = 8, 12 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "keep") end end
-for atx = 34, 37 do for aty = 6, 8 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "keep") end end
-for atx = 27, 28 do for aty = 10, 13 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "chapel") end end
-for atx = 21, 26 do for aty = 13, 13 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "chapel") end end
-for atx = 19, 20 do for aty = 11, 14 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "chapel") end end
-for atx = 16, 18 do for aty = 14, 14 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "chapel") end end
-for atx = 8, 13 do for aty = 15, 15 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "chapel") end end
-for atx = 14, 15 do for aty = 12, 21 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "chapel") end end
-for atx = 8, 13 do for aty = 21, 22 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "chapel") end end
-for atx = 8, 9 do for aty = 21, 23 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "chapel") end end
-for atx = 7, 7 do for aty = 22, 24 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "chapel") end end
-for atx = 6, 6 do for aty = 23, 25 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "chapel") end end
-for atx = 5, 5 do for aty = 24, 26 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "chapel") end end
-for atx = 4, 4 do for aty = 25, 27 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "chapel") end end
-for atx = 2, 4 do for aty = 27, 28 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "chapel") end end
-for atx = 14, 25 do for aty = 22, 24 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "colos") end end
-for atx = 17, 22 do for aty = 21, 21 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "colos") end end
-for atx = 18, 30 do for aty = 19, 19 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "olrox") end end
-for atx = 16, 30 do for aty = 16, 16 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "olrox") end end
-for atx = 19, 20 do for aty = 17, 18 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "olrox") end end
-for atx = 25, 30 do for aty = 17, 18 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "olrox") end end
-for atx = 31, 33 do for aty = 18, 18 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "olrox") end end
-for atx = 30, 35 do for aty = 15, 15 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "olrox") end end
-for atx = 35, 35 do for aty = 15, 21 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "olrox") end end
-for atx = 27, 32 do for aty = 21, 22 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "olrox") end end
-for atx = 29, 29 do for aty = 23, 25 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "olrox") end end
-for atx = 19, 20 do for aty = 25, 27 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "lab") end end
-for atx = 16, 18 do for aty = 26, 26 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "lab") end end
-for atx = 14, 15 do for aty = 26, 28 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "lab") end end
-for atx = 17, 17 do for aty = 28, 34 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "lab") end end
-for atx = 8, 13 do for aty = 27, 28 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "lab") end end
-for atx = 5, 7 do for aty = 28, 28 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "lab") end end
-for atx = 8, 11 do for aty = 30, 31 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "lab") end end
-for atx = 12, 15 do for aty = 33, 35 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "lab") end end
-for atx = 14, 16 do for aty = 36, 36 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "lab") end end
-table.insert(area_roomB, 63 - 31 + ((63 * 64) - (48 * 64 )), "mine")
-table.insert(area_roomB, 63 - 2 + ((63 * 64) - (45 * 64 )), "garden")
-table.insert(area_roomB, 63 - 15 + ((63 * 64) - (38 * 64 )), "gate")
-table.insert(area_roomB, 63 - 16 + ((63 * 64) - (38 * 64 )), "gate")
-table.insert(area_roomB, 63 - 32 + ((63 * 64) - (37 * 64 )), "cave")
-table.insert(area_roomB, 63 - 39 + ((63 * 64) - (40 * 64 )), "cave")
-table.insert(area_roomB, 63 - 8 + ((63 * 64) - (42 * 64 )), "cave")
-table.insert(area_roomB, 63 - 16 + ((63 * 64) - (41 * 64 )), "cave")
-table.insert(area_roomB, 63 - 17 + ((63 * 64) - (41 * 64 )), "cave")
-table.insert(area_roomB, 63 - 37 + ((63 * 64) - (28 * 64 )), "cave")
-table.insert(area_roomB, 63 - 45 + ((63 * 64) - (33 * 64 )), "cave")
-table.insert(area_roomB, 63 - 39 + ((63 * 64) - (26 * 64 )), "cave")
-table.insert(area_roomB, 63 - 40 + ((63 * 64) - (26 * 64 )), "cave")
-table.insert(area_roomB, 63 - 36 + ((63 * 64) - (34 * 64 )), "cave")
-table.insert(area_roomB, 63 - 40 + ((63 * 64) - (27 * 64 )), "cave")
-table.insert(area_roomB, 63 - 32 + ((63 * 64) - (34 * 64 )), "prison")
-table.insert(area_roomB, 63 - 41 + ((63 * 64) - (26 * 64 )), "marble")
-table.insert(area_roomB, 63 - 44 + ((63 * 64) - (26 * 64 )), "marble")
-table.insert(area_roomB, 63 - 39 + ((63 * 64) - (24 * 64 )), "marble")
-table.insert(area_roomB, 63 - 34 + ((63 * 64) - (25 * 64 )), "marble")
-table.insert(area_roomB, 63 - 32 + ((63 * 64) - (24 * 64 )), "marble")
-table.insert(area_roomB, 63 - 27 + ((63 * 64) - (27 * 64 )), "marble")
-table.insert(area_roomB, 63 - 28 + ((63 * 64) - (27 * 64 )), "marble")
-table.insert(area_roomB, 63 - 27 + ((63 * 64) - (28 * 64 )), "marble")
-table.insert(area_roomB, 63 - 27 + ((63 * 64) - (32 * 64 )), "marble")
-table.insert(area_roomB, 63 - 27 + ((63 * 64) - (33 * 64 )), "marble")
-table.insert(area_roomB, 63 - 27 + ((63 * 64) - (34 * 64 )), "marble")
-table.insert(area_roomB, 63 - 31 + ((63 * 64) - (27 * 64 )), "marble")
-table.insert(area_roomB, 63 - 32 + ((63 * 64) - (28 * 64 )), "central")--central room
-table.insert(area_roomB, 63 - 32 + ((63 * 64) - (29 * 64 )), "central")--central room
-table.insert(area_roomB, 63 - 59 + ((63 * 64) - (17 * 64 )), "wall")
-table.insert(area_roomB, 63 - 59 + ((63 * 64) - (26 * 64 )), "wall")
-table.insert(area_roomB, 63 - 59 + ((63 * 64) - (27 * 64 )), "wall")
-table.insert(area_roomB, 63 - 55 + ((63 * 64) - (24 * 64 )), "wall")
-table.insert(area_roomB, 63 - 44 + ((63 * 64) - (20 * 64 )), "lib")
-table.insert(area_roomB, 63 - 44 + ((63 * 64) - (21 * 64 )), "lib")
-table.insert(area_roomB, 63 - 59 + ((63 * 64) - (15 * 64 )), "clock")
-table.insert(area_roomB, 63 - 59 + ((63 * 64) - (14 * 64 )), "clock")
-table.insert(area_roomB, 63 - 59 + ((63 * 64) - (11 * 64 )), "clock")
-table.insert(area_roomB, 63 - 49 + ((63 * 64) - (14 * 64 )), "clock")
-table.insert(area_roomB, 63 - 51 + ((63 * 64) - (8 * 64 )), "clock")
-table.insert(area_roomB, 63 - 40 + ((63 * 64) - (10 * 64 )), "clock")
-table.insert(area_roomB, 63 - 41 + ((63 * 64) - (10 * 64 )), "clock")
-table.insert(area_roomB, 63 - 40 + ((63 * 64) - (12 * 64 )), "keep")
-table.insert(area_roomB, 63 - 33 + ((63 * 64) - (6 * 64 )), "keep")
-table.insert(area_roomB, 63 - 31 + ((63 * 64) - (7 * 64 )), "keep")
-table.insert(area_roomB, 63 - 30 + ((63 * 64) - (12 * 64 )), "keep")
-table.insert(area_roomB, 63 - 16 + ((63 * 64) - (21 * 64 )), "chapel")
-table.insert(area_roomB, 63 - 16 + ((63 * 64) - (19 * 64 )), "chapel")
-table.insert(area_roomB, 63 - 10 + ((63 * 64) - (20 * 64 )), "chapel")
-table.insert(area_roomB, 63 - 29 + ((63 * 64) - (13 * 64 )), "chapel")
-table.insert(area_roomB, 63 - 3 + ((63 * 64) - (26 * 64 )), "chapel")
-table.insert(area_roomB, 63 - 26 + ((63 * 64) - (24 * 64 )), "colos")
-table.insert(area_roomB, 63 - 13 + ((63 * 64) - (24 * 64 )), "colos")
-table.insert(area_roomB, 63 - 19 + ((63 * 64) - (20 * 64 )), "colos")
-table.insert(area_roomB, 63 - 20 + ((63 * 64) - (20 * 64 )), "colos")
-table.insert(area_roomB, 63 - 34 + ((63 * 64) - (21 * 64 )), "olrox")
-table.insert(area_roomB, 63 - 33 + ((63 * 64) - (21 * 64 )), "olrox")
-table.insert(area_roomB, 63 - 28 + ((63 * 64) - (23 * 64 )), "olrox")
-table.insert(area_roomB, 63 - 37 + ((63 * 64) - (21 * 64 )), "olrox")
-table.insert(area_roomB, 63 - 31 + ((63 * 64) - (17 * 64 )), "olrox")
-table.insert(area_roomB, 63 - 16 + ((63 * 64) - (28 * 64 )), "lab")
-table.insert(area_roomB, 63 - 16 + ((63 * 64) - (31 * 64 )), "lab")
-table.insert(area_roomB, 63 - 8 + ((63 * 64) - (29 * 64 )), "lab")
-table.insert(area_roomB, 63 - 10 + ((63 * 64) - (29 * 64 )), "lab")
-table.insert(area_roomB, 63 - 11 + ((63 * 64) - (29 * 64 )), "lab")
-table.insert(area_roomB, 63 - 11 + ((63 * 64) - (32 * 64 )), "lab")
-table.insert(area_roomB, 63 - 12 + ((63 * 64) - (32 * 64 )), "lab")
-table.insert(area_roomB, 63 - 11 + ((63 * 64) - (34 * 64 )), "lab")
-table.insert(area_roomB, 63 - 12 + ((63 * 64) - (36 * 64 )), "lab")
-table.insert(area_roomB, 63 - 16 + ((63 * 64) - (34 * 64 )), "lab")
-table.insert(area_roomB, 63 - 16 + ((63 * 64) - (35 * 64 )), "lab")
-table.insert(area_roomB, 63 - 7 + ((63 * 64) - (30 * 64 )), "lab")
-table.insert(area_roomB, 63 - 29 + ((63 * 64) - (27 * 64 )), "lab")
+for atx = 16, 26 do for aty = 50, 51 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Rcata") end end
+for atx = 27, 37 do for aty = 51, 51 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Rcata") end end
+for atx = 28, 36 do for aty = 50, 51 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Rcata") end end
+for atx = 38, 48 do for aty = 50, 51 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Rcata") end end
+for atx = 31, 31 do for aty = 49, 50 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Rcata") end end
+for atx = 33, 33 do for aty = 48, 49 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Rmine") end end
+for atx = 32, 32 do for aty = 40, 48 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Rmine") end end
+for atx = 29, 35 do for aty = 44, 44 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Rmine") end end
+for atx = 27, 37 do for aty = 40, 40 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Rmine") end end
+for atx = 36, 37 do for aty = 40, 41 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Rmine") end end
+for atx = 27, 28 do for aty = 40, 41 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Rmine") end end
+for atx = 27, 27 do for aty = 38, 41 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Rmine") end end
+for atx = 14, 21 do for aty = 44, 44 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Rgarden") end end
+for atx = 14, 21 do for aty = 44, 44 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Rgarden") end end
+for atx = 3, 13 do for aty = 44, 45 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Rgarden") end end
+for atx = 2, 2 do for aty = 41, 44 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Rgate") end end
+for atx = 2, 3 do for aty = 38, 40 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Rgate") end end
+for atx = 4, 21 do for aty = 40, 40 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Rgate") end end
+for atx = 5, 6 do for aty = 38, 39 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Rgate") end end
+for atx = 7, 11 do for aty = 39, 39 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Rgate") end end
+for atx = 10, 15 do for aty = 40, 41 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Rgate") end end
+for atx = 19, 21 do for aty = 38, 40 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Rgate") end end
+for atx = 17, 20 do for aty = 36, 38 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Rgate") end end
+for atx = 9, 13 do for aty = 42, 43 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Rcave") end end
+for atx = 14, 25 do for aty = 42, 42 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Rcave") end end
+for atx = 22, 26 do for aty = 37, 37 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Rcave") end end
+for atx = 27, 31 do for aty = 37, 37 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Rcave") end end
+for atx = 28, 31 do for aty = 38, 38 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Rcave") end end
+for atx = 23, 24 do for aty = 38, 41 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Rcave") end end
+for atx = 33, 40 do for aty = 37, 38 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Rcave") end end
+for atx = 39, 45 do for aty = 38, 39 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Rcave") end end
+for atx = 39, 55 do for aty = 41, 41 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Rcave") end end
+for atx = 40, 42 do for aty = 41, 42 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Rcave") end end
+for atx = 46, 47 do for aty = 41, 42 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Rcave") end end
+for atx = 49, 52 do for aty = 41, 42 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Rcave") end end
+for atx = 38, 39 do for aty = 27, 36 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Rcave") end end
+for atx = 43, 39 do for aty = 29, 29 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Rcave") end end
+for atx = 43, 43 do for aty = 29, 32 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Rcave") end end
+for atx = 43, 44 do for aty = 32, 33 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Rcave") end end
+for atx = 35, 37 do for aty = 27, 27 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Rcave") end end
+for atx = 37, 37 do for aty = 32, 34 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Rcave") end end
+for atx = 40, 42 do for aty = 29, 29 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Rcave") end end
+for atx = 33, 35 do for aty = 34, 36 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Rprison") end end
+for atx = 27, 32 do for aty = 36, 36 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Rprison") end end
+for atx = 47, 59 do for aty = 25, 25 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Rmarble") end end
+for atx = 40, 46 do for aty = 24, 25 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Rmarble") end end
+for atx = 37, 38 do for aty = 24, 26 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Rmarble") end end
+for atx = 22, 36 do for aty = 26, 26 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Rmarble") end end
+for atx = 31, 33 do for aty = 25, 27 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Rmarble") end end
+for atx = 30, 34 do for aty = 23, 23 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Rmarble") end end
+for atx = 25, 26 do for aty = 28, 32 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Rmarble") end end
+for atx = 21, 26 do for aty = 34, 36 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Rmarble") end end
+for atx = 31, 33 do for aty = 30, 32 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Rcentral") end end--central room
+for atx = 60, 61 do for aty = 13, 29 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Rwall") end end
+for atx = 56, 59 do for aty = 23, 24 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Rwall") end end
+for atx = 52, 59 do for aty = 18, 21 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Rlib") end end
+for atx = 45, 50 do for aty = 18, 21 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Rlib") end end
+for atx = 51, 51 do for aty = 19, 21 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Rlib") end end
+for atx = 53, 58 do for aty = 11, 15 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Rclock") end end
+for atx = 50, 52 do for aty = 9, 14 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Rclock") end end
+for atx = 42, 49 do for aty = 10, 11 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Rclock") end end
+for atx = 38, 39 do for aty = 5, 12 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Rkeep") end end
+for atx = 31, 37 do for aty = 8, 12 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Rkeep") end end
+for atx = 34, 37 do for aty = 6, 8 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Rkeep") end end
+for atx = 27, 28 do for aty = 10, 13 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Rchapel") end end
+for atx = 21, 26 do for aty = 13, 13 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Rchapel") end end
+for atx = 19, 20 do for aty = 11, 14 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Rchapel") end end
+for atx = 16, 18 do for aty = 14, 14 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Rchapel") end end
+for atx = 8, 13 do for aty = 15, 15 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Rchapel") end end
+for atx = 14, 15 do for aty = 12, 21 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Rchapel") end end
+for atx = 8, 13 do for aty = 21, 22 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Rchapel") end end
+for atx = 8, 9 do for aty = 21, 23 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Rchapel") end end
+for atx = 7, 7 do for aty = 22, 24 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Rchapel") end end
+for atx = 6, 6 do for aty = 23, 25 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Rchapel") end end
+for atx = 5, 5 do for aty = 24, 26 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Rchapel") end end
+for atx = 4, 4 do for aty = 25, 27 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Rchapel") end end
+for atx = 2, 4 do for aty = 27, 28 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Rchapel") end end
+for atx = 14, 25 do for aty = 22, 24 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Rcolos") end end
+for atx = 17, 22 do for aty = 21, 21 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Rcolos") end end
+for atx = 18, 30 do for aty = 19, 19 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Rolrox") end end
+for atx = 16, 30 do for aty = 16, 16 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Rolrox") end end
+for atx = 19, 20 do for aty = 17, 18 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Rolrox") end end
+for atx = 25, 30 do for aty = 17, 18 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Rolrox") end end
+for atx = 31, 33 do for aty = 18, 18 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Rolrox") end end
+for atx = 30, 35 do for aty = 15, 15 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Rolrox") end end
+for atx = 35, 35 do for aty = 15, 21 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Rolrox") end end
+for atx = 27, 32 do for aty = 21, 22 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Rolrox") end end
+for atx = 29, 29 do for aty = 23, 25 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Rolrox") end end
+for atx = 19, 20 do for aty = 25, 27 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Rlab") end end
+for atx = 16, 18 do for aty = 26, 26 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Rlab") end end
+for atx = 14, 15 do for aty = 26, 28 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Rlab") end end
+for atx = 17, 17 do for aty = 28, 34 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Rlab") end end
+for atx = 8, 13 do for aty = 27, 28 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Rlab") end end
+for atx = 5, 7 do for aty = 28, 28 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Rlab") end end
+for atx = 8, 11 do for aty = 30, 31 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Rlab") end end
+for atx = 12, 15 do for aty = 33, 35 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Rlab") end end
+for atx = 14, 16 do for aty = 36, 36 do table.insert(area_roomB, 63 - atx + ((63 * 64) - (aty * 64)), "Rlab") end end
+table.insert(area_roomB, 63 - 31 + ((63 * 64) - (48 * 64 )), "Rmine")
+table.insert(area_roomB, 63 - 2 + ((63 * 64) - (45 * 64 )), "Rgarden")
+table.insert(area_roomB, 63 - 15 + ((63 * 64) - (38 * 64 )), "Rgate")
+table.insert(area_roomB, 63 - 16 + ((63 * 64) - (38 * 64 )), "Rgate")
+table.insert(area_roomB, 63 - 32 + ((63 * 64) - (37 * 64 )), "Rcave")
+table.insert(area_roomB, 63 - 39 + ((63 * 64) - (40 * 64 )), "Rcave")
+table.insert(area_roomB, 63 - 8 + ((63 * 64) - (42 * 64 )), "Rcave")
+table.insert(area_roomB, 63 - 16 + ((63 * 64) - (41 * 64 )), "Rcave")
+table.insert(area_roomB, 63 - 17 + ((63 * 64) - (41 * 64 )), "Rcave")
+table.insert(area_roomB, 63 - 37 + ((63 * 64) - (28 * 64 )), "Rcave")
+table.insert(area_roomB, 63 - 45 + ((63 * 64) - (33 * 64 )), "Rcave")
+table.insert(area_roomB, 63 - 39 + ((63 * 64) - (26 * 64 )), "Rcave")
+table.insert(area_roomB, 63 - 40 + ((63 * 64) - (26 * 64 )), "Rcave")
+table.insert(area_roomB, 63 - 36 + ((63 * 64) - (34 * 64 )), "Rcave")
+table.insert(area_roomB, 63 - 40 + ((63 * 64) - (27 * 64 )), "Rcave")
+table.insert(area_roomB, 63 - 32 + ((63 * 64) - (34 * 64 )), "Rprison")
+table.insert(area_roomB, 63 - 41 + ((63 * 64) - (26 * 64 )), "Rmarble")
+table.insert(area_roomB, 63 - 44 + ((63 * 64) - (26 * 64 )), "Rmarble")
+table.insert(area_roomB, 63 - 39 + ((63 * 64) - (24 * 64 )), "Rmarble")
+table.insert(area_roomB, 63 - 34 + ((63 * 64) - (25 * 64 )), "Rmarble")
+table.insert(area_roomB, 63 - 32 + ((63 * 64) - (24 * 64 )), "Rmarble")
+table.insert(area_roomB, 63 - 27 + ((63 * 64) - (27 * 64 )), "Rmarble")
+table.insert(area_roomB, 63 - 28 + ((63 * 64) - (27 * 64 )), "Rmarble")
+table.insert(area_roomB, 63 - 27 + ((63 * 64) - (28 * 64 )), "Rmarble")
+table.insert(area_roomB, 63 - 27 + ((63 * 64) - (32 * 64 )), "Rmarble")
+table.insert(area_roomB, 63 - 27 + ((63 * 64) - (33 * 64 )), "Rmarble")
+table.insert(area_roomB, 63 - 27 + ((63 * 64) - (34 * 64 )), "Rmarble")
+table.insert(area_roomB, 63 - 31 + ((63 * 64) - (27 * 64 )), "Rmarble")
+table.insert(area_roomB, 63 - 32 + ((63 * 64) - (28 * 64 )), "Rcentral")--central room
+table.insert(area_roomB, 63 - 32 + ((63 * 64) - (29 * 64 )), "Rcentral")--central room
+table.insert(area_roomB, 63 - 59 + ((63 * 64) - (17 * 64 )), "Rwall")
+table.insert(area_roomB, 63 - 59 + ((63 * 64) - (26 * 64 )), "Rwall")
+table.insert(area_roomB, 63 - 59 + ((63 * 64) - (27 * 64 )), "Rwall")
+table.insert(area_roomB, 63 - 55 + ((63 * 64) - (24 * 64 )), "Rwall")
+table.insert(area_roomB, 63 - 44 + ((63 * 64) - (20 * 64 )), "Rlib")
+table.insert(area_roomB, 63 - 44 + ((63 * 64) - (21 * 64 )), "Rlib")
+table.insert(area_roomB, 63 - 59 + ((63 * 64) - (15 * 64 )), "Rclock")
+table.insert(area_roomB, 63 - 59 + ((63 * 64) - (14 * 64 )), "Rclock")
+table.insert(area_roomB, 63 - 59 + ((63 * 64) - (11 * 64 )), "Rclock")
+table.insert(area_roomB, 63 - 49 + ((63 * 64) - (14 * 64 )), "Rclock")
+table.insert(area_roomB, 63 - 51 + ((63 * 64) - (8 * 64 )), "Rclock")
+table.insert(area_roomB, 63 - 40 + ((63 * 64) - (10 * 64 )), "Rclock")
+table.insert(area_roomB, 63 - 41 + ((63 * 64) - (10 * 64 )), "Rclock")
+table.insert(area_roomB, 63 - 40 + ((63 * 64) - (12 * 64 )), "Rkeep")
+table.insert(area_roomB, 63 - 33 + ((63 * 64) - (6 * 64 )), "Rkeep")
+table.insert(area_roomB, 63 - 31 + ((63 * 64) - (7 * 64 )), "Rkeep")
+table.insert(area_roomB, 63 - 30 + ((63 * 64) - (12 * 64 )), "Rkeep")
+table.insert(area_roomB, 63 - 16 + ((63 * 64) - (21 * 64 )), "Rchapel")
+table.insert(area_roomB, 63 - 16 + ((63 * 64) - (19 * 64 )), "Rchapel")
+table.insert(area_roomB, 63 - 10 + ((63 * 64) - (20 * 64 )), "Rchapel")
+table.insert(area_roomB, 63 - 29 + ((63 * 64) - (13 * 64 )), "Rchapel")
+table.insert(area_roomB, 63 - 3 + ((63 * 64) - (26 * 64 )), "Rchapel")
+table.insert(area_roomB, 63 - 26 + ((63 * 64) - (24 * 64 )), "Rcolos")
+table.insert(area_roomB, 63 - 13 + ((63 * 64) - (24 * 64 )), "Rcolos")
+table.insert(area_roomB, 63 - 19 + ((63 * 64) - (20 * 64 )), "Rcolos")
+table.insert(area_roomB, 63 - 20 + ((63 * 64) - (20 * 64 )), "Rcolos")
+table.insert(area_roomB, 63 - 34 + ((63 * 64) - (21 * 64 )), "Rolrox")
+table.insert(area_roomB, 63 - 33 + ((63 * 64) - (21 * 64 )), "Rolrox")
+table.insert(area_roomB, 63 - 28 + ((63 * 64) - (23 * 64 )), "Rolrox")
+table.insert(area_roomB, 63 - 37 + ((63 * 64) - (21 * 64 )), "Rolrox")
+table.insert(area_roomB, 63 - 31 + ((63 * 64) - (17 * 64 )), "Rolrox")
+table.insert(area_roomB, 63 - 16 + ((63 * 64) - (28 * 64 )), "Rlab")
+table.insert(area_roomB, 63 - 16 + ((63 * 64) - (31 * 64 )), "Rlab")
+table.insert(area_roomB, 63 - 8 + ((63 * 64) - (29 * 64 )), "Rlab")
+table.insert(area_roomB, 63 - 10 + ((63 * 64) - (29 * 64 )), "Rlab")
+table.insert(area_roomB, 63 - 11 + ((63 * 64) - (29 * 64 )), "Rlab")
+table.insert(area_roomB, 63 - 11 + ((63 * 64) - (32 * 64 )), "Rlab")
+table.insert(area_roomB, 63 - 12 + ((63 * 64) - (32 * 64 )), "Rlab")
+table.insert(area_roomB, 63 - 11 + ((63 * 64) - (34 * 64 )), "Rlab")
+table.insert(area_roomB, 63 - 12 + ((63 * 64) - (36 * 64 )), "Rlab")
+table.insert(area_roomB, 63 - 16 + ((63 * 64) - (34 * 64 )), "Rlab")
+table.insert(area_roomB, 63 - 16 + ((63 * 64) - (35 * 64 )), "Rlab")
+table.insert(area_roomB, 63 - 7 + ((63 * 64) - (30 * 64 )), "Rlab")
+table.insert(area_roomB, 63 - 29 + ((63 * 64) - (27 * 64 )), "Rlab")
 --cdroom arent show at all on the png
 table.insert(area_roomB, 63 - 3 + ((63 * 64) - (44 * 64 )), "cd")
 table.insert(area_roomB, 63 - 15 + ((63 * 64) - (41 * 64 )), "cd")
@@ -1180,15 +1181,15 @@ table.insert(area_roomB, 63 - 21 + ((63 * 64) - (26 * 64 )), "cd")
 table.insert(area_roomB, 63 - 13 + ((63 * 64) - (22 * 64 )), "cd")
 table.insert(area_roomB, 63 - 17 + ((63 * 64) - (19 * 64 )), "cd")
 --cdroom but from teleporters, they actually are never in a different area, and the music from previous level will stay
-table.insert(area_roomB, 63 - 34 + ((63 * 64) - (44 * 64 )), "mine")
-table.insert(area_roomB, 63 - 16 + ((63 * 64) - (38 * 64 )), "gate")
-table.insert(area_roomB, 63 - 36 + ((63 * 64) - (21 * 64 )), "olrox")
-table.insert(area_roomB, 63 - 60 + ((63 * 64) - (17 * 64 )), "wall")
-table.insert(area_roomB, 63 - 39 + ((63 * 64) - (12 * 64 )), "keep")
-table.insert(area_roomB, 63 - 3 + ((63 * 64) - (45 * 64 )), "garden")
+table.insert(area_roomB, 63 - 34 + ((63 * 64) - (44 * 64 )), "Rmine")
+table.insert(area_roomB, 63 - 16 + ((63 * 64) - (38 * 64 )), "Rgate")
+table.insert(area_roomB, 63 - 36 + ((63 * 64) - (21 * 64 )), "Rolrox")
+table.insert(area_roomB, 63 - 60 + ((63 * 64) - (17 * 64 )), "Rwall")
+table.insert(area_roomB, 63 - 39 + ((63 * 64) - (12 * 64 )), "Rkeep")
+table.insert(area_roomB, 63 - 3 + ((63 * 64) - (45 * 64 )), "Rgarden")
 --the 2 extra square in reverse lake
-table.insert(area_roomB, 63 - 45 + ((63 * 64) - (42 * 64 )), "cave")
-table.insert(area_roomB, 63 - 48 + ((63 * 64) - (42 * 64 )), "cave")
+table.insert(area_roomB, 63 - 45 + ((63 * 64) - (42 * 64 )), "Rcave")
+table.insert(area_roomB, 63 - 48 + ((63 * 64) - (42 * 64 )), "Rcave")
 
 
 

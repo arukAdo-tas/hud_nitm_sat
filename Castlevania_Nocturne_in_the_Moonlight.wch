@@ -1,0 +1,1265 @@
+SystemID SAT
+0A3920	d	u	1	Work Ram High	
+0A4FFF	b	u	1	Work Ram High	last address object range
+05D79E	b	u	1	Work Ram High	position cursor in inventory
+0	S	_	1		
+0	S	_	1		Player Properties
+058C84	d	u	1	Work Ram High	music track
+05C166	b	u	1	Work Ram High	player_ground
+05C508	b	u	1	Work Ram High	player_status_poison_timer
+05C509	b	u	1	Work Ram High	player_status_poison_multipicator
+05C50A	b	u	1	Work Ram High	player_status_curse_timer
+05C50B	b	u	1	Work Ram High	player_status_curse_multipicator
+05C524	b	u	1	Work Ram High	player_invincible_timer
+05C524	b	u	1	Work Ram High	player_invincible_timer
+05C526	b	u	1	Work Ram High	player_status
+05C536	b	u	1	Work Ram High	player_status_stoneA
+05C537	b	u	0	Work Ram High	player_air
+05C53A	b	u	1	Work Ram High	player_status_stoneB
+05C5B6	w	u	0	Work Ram High	player_Y_position_absolute
+05C6D2	w	s	0	Work Ram High	player_character_ID
+05C99A	b	u	1	Work Ram High	player_morphed
+05C99E	b	u	1	Work Ram High	player_subweapon
+05CA62	b	u	1	Work Ram High	player_castle_flag_wrong
+05CD50	w	u	1	Work Ram High	player_properties_start?
+05CD5A	w	u	0	Work Ram High	player_X_position_absolute
+05CD5A	w	u	1	Work Ram High	player_X_another
+05CD70	b	u	1	Work Ram High	player_script
+05CD72	b	u	1	Work Ram High	player_script_controlA
+05CD74	b	u	1	Work Ram High	player_script_controlB
+05CE54	w	u	1	Work Ram High	player_Y_another
+05CE5E	b	u	1	Work Ram High	room_X_size_grid
+05CE62	b	u	1	Work Ram High	room_Y_size_grid
+05CE6A	b	u	1	Work Ram High	room_X_min_grid
+05CE6E	b	u	1	Work Ram High	room_Y_max_grid
+05CE72	b	u	1	Work Ram High	room_X_max_grid
+05CE76	b	u	1	Work Ram High	room_Y_min_grid
+05D75E	b	u	1	Work Ram High	room_X_origin_grid
+05D762	b	u	1	Work Ram High	room_Y_origin_grid
+05CEB2	b	u	1	Work Ram High	game_is_loaded
+0860B6	w	s	0	Work Ram High	player_X_scroll
+0860BA	w	s	0	Work Ram High	player_Y_scroll
+0997F7	b	u	1	Work Ram High	player_hitbox_start_address
+0997FC	w	u	0	Work Ram High	player_X_position_relative
+0997FF	b	u	1	Work Ram High	player_X_subpixel
+099800	w	u	0	Work Ram High	player_Y_position_relative
+099804	w	s	0	Work Ram High	player_X_speed
+099807	b	u	1	Work Ram High	player_motion_X
+099808	w	s	0	Work Ram High	player_Y_speed
+09980B	b	u	1	Work Ram High	player_motion_Y
+09980C	b	u	1	Work Ram High	player_X_hitbox_offset
+09980E	b	s	1	Work Ram High	player_Y_hitbox_offset
+099810	b	u	1	Work Ram High	player_orientation
+099824	b	u	1	Work Ram High	player_action
+09983C	b	u	1	Work Ram High	player_Y_hitbox_radius
+09983D	b	u	1	Work Ram High	player_X_hitbox_radius
+099ADC	w	u	0	Work Ram High	familiar_X
+099AE0	w	u	0	Work Ram High	familiar_Y
+0C850A	b	u	1	Work Ram High	player_morph_timer
+0860A2	b	u	1	Work Ram High	life max up counter
+0	S	_	1		player_stat
+05C5B2	w	u	0	Work Ram High	stat_rooms
+05C942	w	u	0	Work Ram High	stat_hp
+05C946	w	u	0	Work Ram High	stat_hp_max
+05C94A	w	u	0	Work Ram High	stat_heart
+05C94E	w	u	0	Work Ram High	stat_heart_max
+05C952	w	u	0	Work Ram High	stat_mana
+05C956	w	u	0	Work Ram High	stat_mana_max
+05C95A	w	u	0	Work Ram High	stat_str
+05C95E	w	u	0	Work Ram High	stat_con
+05C962	w	u	0	Work Ram High	stat_int
+05C966	w	s	0	Work Ram High	stat_lck
+05C96A	b	u	1	Work Ram High	stat_str_mod
+05C96E	b	u	1	Work Ram High	stat_con_mod
+05C972	b	u	1	Work Ram High	stat_int_mod
+05C976	b	u	1	Work Ram High	stat_lck_mod
+05C98A	b	u	1	Work Ram High	stat_level
+05C98E	w	u	0	Work Ram High	stat_exp
+05C992	w	u	0	Work Ram High	stat_gold
+05C996	w	u	0	Work Ram High	stat_beat
+05C9C2	w	u	0	Work Ram High	stat_att_first_hand
+05C9C6	w	u	0	Work Ram High	stat_att_second_hand
+05C9CA	w	u	0	Work Ram High	stat_def
+05C9D6	b	u	1	Work Ram High	stat_gametime_hours
+05C9DA	b	u	1	Work Ram High	stat_gametime_minutes
+05C9DE	b	u	1	Work Ram High	stat_gametime_seconds
+0	S	_	1		Gear Equiped, items ID's are in the script
+05C9A2	b	u	1	Work Ram High	gear_data_first_hand
+05C9A6	b	u	1	Work Ram High	gear_data_second_hand
+05C9AA	b	u	1	Work Ram High	gear_data_third_hand
+05C9AE	b	u	1	Work Ram High	gear_data_head
+05C9B2	b	u	1	Work Ram High	gear_data_armor
+05C9B6	b	u	1	Work Ram High	gear_data_cape
+05C9BA	b	u	1	Work Ram High	gear_data_first_accessory
+05C9BE	b	u	1	Work Ram High	gear_data_second_accessory
+05C71A	b	u	1	Work Ram High	inventory_range_start
+05C71C	b	u	1	Work Ram High	monster vial 3
+05C825	b	u	1	Work Ram High	inventory_range_stop
+0	S	_	1		Familiar data
+05C9EA	b	u	1	Work Ram High	familiar_range_start
+05C9EA	b	u	1	Work Ram High	familiar_bat_level
+05C9F6	b	u	1	Work Ram High	familiar_ghost_level
+05CA02	b	u	1	Work Ram High	familiar_fairy_level
+05CA0E	b	u	1	Work Ram High	familiar_demon_level
+05CA1A	b	u	1	Work Ram High	familiar_sword_level
+05CA26	b	u	1	Work Ram High	familiar_sprite_level
+05CA2A	b	u	1	Work Ram High	familiar_sprite_exp 1st byte
+05CA2B	b	u	1	Work Ram High	familiar_sprite_exp 2nd byte bullshit to increase expcap
+05CA32	b	u	1	Work Ram High	familiar_nose_level
+05CA36	b	u	1	Work Ram High	familiar_nose_exp
+05CA37	b	u	1	Work Ram High	familiar_range_stop
+0	S	_	1		Map data, 1 byte = 4 squares
+05CEBC	b	u	1	Work Ram High	map_range_start
+05CEE0	b	u	1	Work Ram High	map first visible square
+05D27E	b	u	1	Work Ram High	map last visible square
+05D6BF	b	u	1	Work Ram High	map_range_stop
+0	S	_	1		Relic data, 0 for NO, 1 for OFF, 3 for ON
+05C6F0	b	u	1	Work Ram High	relic_range_start
+05C6F0	b	u	1	Work Ram High	relic_bat_fire
+05C6F1	b	u	1	Work Ram High	relic_bat_soul
+05C6F2	b	u	1	Work Ram High	relic_bat_echo
+05C6F3	b	u	1	Work Ram High	relic_bat_power
+05C6F4	b	u	1	Work Ram High	relic_wolf_power
+05C6F5	b	u	1	Work Ram High	relic_wolf_soul
+05C6F6	b	u	1	Work Ram High	relic_mist_form
+05C6F7	b	u	1	Work Ram High	relic_wolf_skill
+05C6F8	b	u	1	Work Ram High	relic_mist_gaz
+05C6F9	b	u	1	Work Ram High	relic_mist_power
+05C6FA	b	u	1	Work Ram High	relic_orb
+05C6FB	b	u	1	Work Ram High	relic_zoe
+05C6FC	b	u	1	Work Ram High	relic_leap
+05C6FD	b	u	1	Work Ram High	relic_gravity
+05C6FE	b	u	1	Work Ram High	relic_scroll
+05C6FF	b	u	1	Work Ram High	relic_j
+05C700	b	u	1	Work Ram High	relic_mermaid
+05C701	b	u	1	Work Ram High	relic_open
+05C702	b	u	1	Work Ram High	relic_card_ghost
+05C703	b	u	1	Work Ram High	relic_card_bat
+05C704	b	u	1	Work Ram High	relic_card_demon
+05C705	b	u	1	Work Ram High	relic_card_fairy
+05C706	b	u	1	Work Ram High	relic_card_sprite
+05C707	b	u	1	Work Ram High	relic_card_sword
+05C708	b	u	1	Work Ram High	relic_heart
+05C709	b	u	1	Work Ram High	relic_card_aku
+05C70A	b	u	1	Work Ram High	relic_bone
+05C70B	b	u	1	Work Ram High	relic_nail
+05C70C	b	u	1	Work Ram High	relic_eye
+05C70D	b	u	1	Work Ram High	relic_ring
+05C70E	b	u	1	Work Ram High	relic_fake
+05C70F	b	u	1	Work Ram High	relic_speed
+0	S	_	1		Time Attack data A=hours B=0 C=minutes D=seconds
+05D830	w	u	1	Work Ram High	time_attack_range_start
+05D830	b	u	1	Work Ram High	Richter defeats Dracula -- hours
+05D831	b	u	1	Work Ram High	Richter defeats Dracula -- control
+05D832	b	u	1	Work Ram High	Richter defeats Dracula -- minutes
+05D833	b	u	1	Work Ram High	Richter defeats Dracula -- seconds
+05D834	b	u	1	Work Ram High	Defeat Olrox -- hours
+05D835	b	u	1	Work Ram High	Defeat Olrox -- control
+05D836	b	u	1	Work Ram High	Defeat Olrox -- minutes
+05D837	b	u	1	Work Ram High	Defeat Olrox -- seconds
+05D838	b	u	1	Work Ram High	Defeat Doppleganger 10 -- hours
+05D839	b	u	1	Work Ram High	Defeat Doppleganger 10 -- control
+05D83A	b	u	1	Work Ram High	Defeat Doppleganger 10 -- minutes
+05D83B	b	u	1	Work Ram High	Defeat Doppleganger 10 -- seconds
+05D83C	b	u	1	Work Ram High	Granfaloon -- hours
+05D83D	b	u	1	Work Ram High	Granfaloon -- control
+05D83E	b	u	1	Work Ram High	Granfaloon -- minutes
+05D83F	b	u	1	Work Ram High	Granfaloon -- seconds
+05D840	b	u	1	Work Ram High	Defeat Minotaur and Werewolf -- hours
+05D841	b	u	1	Work Ram High	Defeat Minotaur and Werewolf -- control
+05D842	b	u	1	Work Ram High	Defeat Minotaur and Werewolf -- minutes
+05D843	b	u	1	Work Ram High	Defeat Minotaur and Werewolf -- seconds
+05D844	b	u	1	Work Ram High	Defeat Scylla -- hours
+05D845	b	u	1	Work Ram High	Defeat Scylla -- control
+05D846	b	u	1	Work Ram High	Defeat Scylla -- minutes
+05D847	b	u	1	Work Ram High	Defeat Scylla -- seconds
+05D848	b	u	1	Work Ram High	Defeat Solgra and Gaibon -- hours
+05D849	b	u	1	Work Ram High	Defeat Solgra and Gaibon -- control
+05D84A	b	u	1	Work Ram High	Defeat Solgra and Gaibon -- minutes
+05D84B	b	u	1	Work Ram High	Defeat Solgra and Gaibon -- seconds
+05D84C	b	u	1	Work Ram High	Defeat Hippogryph -- hours
+05D84D	b	u	1	Work Ram High	Defeat Hippogryph -- control
+05D84E	b	u	1	Work Ram High	Defeat Hippogryph -- minutes
+05D84F	b	u	1	Work Ram High	Defeat Hippogryph -- seconds
+05D850	b	u	1	Work Ram High	Defeat Beelzebub -- hours
+05D851	b	u	1	Work Ram High	Defeat Beelzebub -- control
+05D852	b	u	1	Work Ram High	Defeat Beelzebub -- minutes
+05D853	b	u	1	Work Ram High	Defeat Beelzebub -- seconds
+05D854	b	u	1	Work Ram High	Defeat Succubus -- hours
+05D855	b	u	1	Work Ram High	Defeat Succubus -- control
+05D856	b	u	1	Work Ram High	Defeat Succubus -- minutes
+05D857	b	u	1	Work Ram High	Defeat Succubus -- seconds
+05D858	b	u	1	Work Ram High	Defeat Karasuman -- hours
+05D859	b	u	1	Work Ram High	Defeat Karasuman -- control
+05D85A	b	u	1	Work Ram High	Defeat Karasuman -- minutes
+05D85B	b	u	1	Work Ram High	Defeat Karasuman -- seconds
+05D85C	b	u	1	Work Ram High	Defeat Ralph, Grant & Sypha -- hours
+05D85D	b	u	1	Work Ram High	Defeat Ralph, Grant & Sypha -- control
+05D85E	b	u	1	Work Ram High	Defeat Ralph, Grant & Sypha -- minutes
+05D85F	b	u	1	Work Ram High	Defeat Ralph, Grant & Sypha -- seconds
+05D860	b	u	1	Work Ram High	Defeat Death -- hours
+05D861	b	u	1	Work Ram High	Defeat Death -- control
+05D862	b	u	1	Work Ram High	Defeat Death -- minutes
+05D863	b	u	1	Work Ram High	Defeat Death -- seconds
+05D864	b	u	1	Work Ram High	Defeat Cerberus -- hours
+05D865	b	u	1	Work Ram High	Defeat Cerberus -- control
+05D866	b	u	1	Work Ram High	Defeat Cerberus -- minutes
+05D867	b	u	1	Work Ram High	Defeat Cerberus -- seconds
+05D868	b	u	1	Work Ram High	Save Richter Belmont -- hours
+05D869	b	u	1	Work Ram High	Save Richter Belmont -- control
+05D86A	b	u	1	Work Ram High	Save Richter Belmont -- minutes
+05D86B	b	u	1	Work Ram High	Save Richter Belmont -- seconds
+05D86C	b	u	1	Work Ram High	Defeat Medusa -- hours
+05D86D	b	u	1	Work Ram High	Defeat Medusa -- control
+05D86E	b	u	1	Work Ram High	Defeat Medusa -- minutes
+05D86F	b	u	1	Work Ram High	Defeat Medusa -- seconds
+05D870	b	u	1	Work Ram High	Defeat The Creature -- hours
+05D871	b	u	1	Work Ram High	Defeat The Creature -- control
+05D872	b	u	1	Work Ram High	Defeat The Creature -- minutes
+05D873	b	u	1	Work Ram High	Defeat The Creature -- seconds
+05D874	b	u	1	Work Ram High	Defeat Lesser Demon -- hours
+05D875	b	u	1	Work Ram High	Defeat Lesser Demon -- control
+05D876	b	u	1	Work Ram High	Defeat Lesser Demon -- minutes
+05D877	b	u	1	Work Ram High	Defeat Lesser Demon -- seconds
+05D878	b	u	1	Work Ram High	Defeat Doppleganger 40 -- hours
+05D879	b	u	1	Work Ram High	Defeat Doppleganger 40 -- control
+05D87A	b	u	1	Work Ram High	Defeat Doppleganger 40 -- minutes
+05D87B	b	u	1	Work Ram High	Defeat Doppleganger 40 -- seconds
+05D87C	b	u	1	Work Ram High	Defeat Akmodan II -- hours
+05D87D	b	u	1	Work Ram High	Defeat Akmodan II -- control
+05D87E	b	u	1	Work Ram High	Defeat Akmodan II -- minutes
+05D87F	b	u	1	Work Ram High	Defeat Akmodan II -- seconds
+05D880	b	u	1	Work Ram High	Defeat Darkwing Bat -- hours
+05D881	b	u	1	Work Ram High	Defeat Darkwing Bat -- control
+05D882	b	u	1	Work Ram High	Defeat Darkwing Bat -- minutes
+05D883	b	u	1	Work Ram High	Defeat Darkwing Bat -- seconds
+05D884	b	u	1	Work Ram High	Defeat Galamoth -- hours
+05D885	b	u	1	Work Ram High	Defeat Galamoth -- control
+05D886	b	u	1	Work Ram High	Defeat Galamoth -- minutes
+05D887	b	u	1	Work Ram High	Defeat Galamoth -- seconds
+05D888	b	u	1	Work Ram High	Defeat Skeleton Leader -- hours
+05D889	b	u	1	Work Ram High	Defeat Skeleton Leader -- control
+05D88A	b	u	1	Work Ram High	Defeat Skeleton Leader -- minutes
+05D88B	b	u	1	Work Ram High	Defeat Skeleton Leader -- seconds
+05D88C	b	u	1	Work Ram High	Final Save point -- hours
+05D88D	b	u	1	Work Ram High	Final Save point -- control
+05D88E	b	u	1	Work Ram High	Final Save point -- minutes
+05D88F	b	u	1	Work Ram High	Final Save point -- seconds
+05D890	b	u	1	Work Ram High	Meeting with Death -- hours
+05D891	b	u	1	Work Ram High	Meeting with Death -- control
+05D892	b	u	1	Work Ram High	Meeting with Death -- minutes
+05D893	b	u	1	Work Ram High	Meeting with Death -- seconds
+05D894	b	u	1	Work Ram High	Get Holy Glasses from Maria -- hours
+05D895	b	u	1	Work Ram High	Get Holy Glasses from Maria -- control
+05D896	b	u	1	Work Ram High	Get Holy Glasses from Maria -- minutes
+05D897	b	u	1	Work Ram High	Get Holy Glasses from Maria -- seconds
+05D898	b	u	1	Work Ram High	Meeting with Master Librarian -- hours
+05D899	b	u	1	Work Ram High	Meeting with Master Librarian -- control
+05D89A	b	u	1	Work Ram High	Meeting with Master Librarian -- minutes
+05D89B	b	u	1	Work Ram High	Meeting with Master Librarian -- seconds
+05D89C	b	u	1	Work Ram High	First Maria meeting -- hours
+05D89D	b	u	1	Work Ram High	First Maria meeting -- control
+05D89E	b	u	1	Work Ram High	First Maria meeting -- minutes
+05D89F	b	u	1	Work Ram High	First Maria meeting -- seconds
+05D8A0	w	u	1	Work Ram High	time_attack_range_stop
+0	S	_	1		Others
+0482B8	d	h	1	Work Ram High	rng
+0476A6	b	u	1	Work Ram High	state_menu2
+048211	b	u	1	Work Ram High	state_menu
+050736	b	u	1	Work Ram High	state_menu3
+051230	b	u	1	Work Ram High	cursor inventory
+0	S	_	1		Trash zone
+063C4B	b	u	1	Work Ram High	area_ID
+05CD7A	b	u	1	Work Ram High	?stuff_is_loaded
+06EE86	b	u	1	Work Ram High	inventory hud stuff
+05CE76	b	u	1	Work Ram High	area_ID-wrong
+0505F4	w	u	1	Work Ram High	
+0505F4	d	u	0	Work Ram High	
+05C534	b	u	1	Work Ram High	
+05C537	b	u	1	Work Ram High	
+05C538	b	u	1	Work Ram High	
+05C53B	b	u	1	Work Ram High	
+05CAB0	b	u	1	Work Ram High	
+05CE6E	b	u	1	Work Ram High	area_ID
+05CF46	b	u	1	Work Ram High	teleporter RC
+05D336	b	u	1	Work Ram High	teleporter IC
+05D760	d	u	1	Work Ram High	
+065488	b	u	0	Work Ram High	castle
+086093	b	u	1	Work Ram High	
+086192	b	u	1	Work Ram High	roombyte?
+086193	b	u	1	Work Ram High	
+0E070B	w	u	1	Work Ram High	
+0	S	_	1		Unlockable
+05C9E3	b	u	1	Work Ram High	unlock_range_start
+05C9E4	b	u	1	Work Ram High	
+05C9E5	b	u	1	Work Ram High	
+05C9E6	b	u	1	Work Ram High	
+05C9E7	b	u	1	Work Ram High	
+05C9E8	b	u	1	Work Ram High	
+05C9E9	b	u	1	Work Ram High	
+05C9EA	b	u	1	Work Ram High	
+05C9EB	b	u	1	Work Ram High	
+05C9EC	b	u	1	Work Ram High	
+05C9ED	b	u	1	Work Ram High	
+05C9EE	b	u	1	Work Ram High	
+05C9EF	b	u	1	Work Ram High	
+05C9F0	b	u	1	Work Ram High	
+05C9F1	b	u	1	Work Ram High	
+05C9F2	b	u	1	Work Ram High	
+05C9F3	b	u	1	Work Ram High	
+05C9F4	b	u	1	Work Ram High	
+05C9F5	b	u	1	Work Ram High	
+05C9F6	b	u	1	Work Ram High	
+05C9F7	b	u	1	Work Ram High	
+05C9F8	b	u	1	Work Ram High	
+05C9F9	b	u	1	Work Ram High	
+05C9FA	b	u	1	Work Ram High	
+05C9FB	b	u	1	Work Ram High	
+05C9FC	b	u	1	Work Ram High	
+05C9FD	b	u	1	Work Ram High	
+05C9FE	b	u	1	Work Ram High	
+05C9FF	b	u	1	Work Ram High	
+05CA00	b	u	1	Work Ram High	
+05CA01	b	u	1	Work Ram High	
+05CA02	b	u	1	Work Ram High	
+05CA03	b	u	1	Work Ram High	
+05CA04	b	u	1	Work Ram High	
+05CA05	b	u	1	Work Ram High	
+05CA06	b	u	1	Work Ram High	
+05CA07	b	u	1	Work Ram High	
+05CA08	b	u	1	Work Ram High	
+05CA09	b	u	1	Work Ram High	
+05CA0A	b	u	1	Work Ram High	
+05CA0B	b	u	1	Work Ram High	
+05CA0C	b	u	1	Work Ram High	
+05CA0D	b	u	1	Work Ram High	
+05CA0E	b	u	1	Work Ram High	
+05CA0F	b	u	1	Work Ram High	
+05CA10	b	u	1	Work Ram High	
+05CA11	b	u	1	Work Ram High	
+05CA12	b	u	1	Work Ram High	
+05CA13	b	u	1	Work Ram High	
+05CA14	b	u	1	Work Ram High	
+05CA15	b	u	1	Work Ram High	
+05CA16	b	u	1	Work Ram High	
+05CA17	b	u	1	Work Ram High	
+05CA18	b	u	1	Work Ram High	
+05CA19	b	u	1	Work Ram High	
+05CA1A	b	u	1	Work Ram High	
+05CA1B	b	u	1	Work Ram High	
+05CA1C	b	u	1	Work Ram High	
+05CA1D	b	u	1	Work Ram High	
+05CA1E	b	u	1	Work Ram High	
+05CA1F	b	u	1	Work Ram High	
+05CA20	b	u	1	Work Ram High	
+05CA21	b	u	1	Work Ram High	
+05CA22	b	u	1	Work Ram High	
+05CA23	b	u	1	Work Ram High	
+05CA24	b	u	1	Work Ram High	
+05CA25	b	u	1	Work Ram High	
+05CA26	b	u	1	Work Ram High	
+05CA27	b	u	1	Work Ram High	
+05CA28	b	u	1	Work Ram High	
+05CA29	b	u	1	Work Ram High	
+05CA2A	b	u	1	Work Ram High	
+05CA2B	b	u	1	Work Ram High	
+05CA2C	b	u	1	Work Ram High	
+05CA2D	b	u	1	Work Ram High	
+05CA2E	b	u	1	Work Ram High	
+0	S	_	1		
+05CA2F	b	u	1	Work Ram High	
+0	S	_	1		
+05CA30	b	u	1	Work Ram High	
+05CA31	b	u	1	Work Ram High	
+05CA32	b	u	1	Work Ram High	
+05CA33	b	u	1	Work Ram High	
+05CA34	b	u	1	Work Ram High	
+05CA35	b	u	1	Work Ram High	
+05CA36	b	u	1	Work Ram High	
+05CA37	b	u	1	Work Ram High	
+0	S	_	1		
+05CA38	b	u	1	Work Ram High	
+05CA39	b	u	1	Work Ram High	
+05CA3A	b	u	1	Work Ram High	
+05CA3B	b	u	1	Work Ram High	
+05CA3C	b	u	1	Work Ram High	
+0	S	_	1		
+0	S	_	1		
+05CA3D	b	u	1	Work Ram High	
+0	S	_	1		unlock
+05CA3E	b	u	1	Work Ram High	maria/shaft/dracula boss switch(?)
+05CA3F	b	u	1	Work Ram High	
+05CA40	b	u	1	Work Ram High	
+05CA41	b	u	1	Work Ram High	
+05CA42	b	u	1	Work Ram High	
+05CA43	b	u	1	Work Ram High	
+05CA44	b	u	1	Work Ram High	
+05CA45	b	u	1	Work Ram High	
+05CA46	b	u	1	Work Ram High	
+05CA47	b	u	1	Work Ram High	
+05CA48	b	u	1	Work Ram High	
+05CA49	b	u	1	Work Ram High	
+05CA4A	b	u	1	Work Ram High	
+05CA4B	b	u	1	Work Ram High	
+05CA4C	b	u	1	Work Ram High	
+05CA4D	b	u	1	Work Ram High	
+05CA4E	b	u	1	Work Ram High	
+05CA4F	b	u	1	Work Ram High	
+05CA50	b	u	1	Work Ram High	switch 46,24 marble
+05CA51	b	u	1	Work Ram High	switch 32,26 marble central clock
+05CA52	b	u	1	Work Ram High	
+05CA53	b	u	1	Work Ram High	Area Title marble 22,26
+05CA54	b	u	1	Work Ram High	
+05CA55	b	u	1	Work Ram High	
+05CA56	b	u	1	Work Ram High	
+05CA57	b	u	1	Work Ram High	
+05CA58	b	u	1	Work Ram High	
+05CA59	b	u	1	Work Ram High	
+05CA5A	b	u	1	Work Ram High	
+05CA5B	b	u	1	Work Ram High	
+05CA5C	b	u	1	Work Ram High	
+05CA5D	b	u	1	Work Ram High	
+05CA5E	b	u	1	Work Ram High	
+05CA5F	b	u	1	Work Ram High	
+05CA60	b	u	1	Work Ram High	
+05CA61	b	u	1	Work Ram High	outerwall elevator door
+05CA62	b	b	1	Work Ram High	outerwall unknow prop
+05CA63	b	u	1	Work Ram High	break in 59,26
+05CA64	b	u	1	Work Ram High	Area Title outerwall 61,25
+05CA65	b	u	1	Work Ram High	
+05CA66	b	u	1	Work Ram High	
+05CA67	b	u	1	Work Ram High	
+05CA68	b	u	1	Work Ram High	
+05CA69	b	u	1	Work Ram High	outerwall break in 59,26 IC
+05CA6A	b	u	1	Work Ram High	
+05CA6B	b	u	1	Work Ram High	
+05CA6C	b	u	1	Work Ram High	
+05CA6D	b	u	1	Work Ram High	
+05CA6E	b	u	1	Work Ram High	
+05CA6F	b	u	1	Work Ram High	
+05CA70	b	u	1	Work Ram High	wall 19,19 - olrox
+05CA71	b	b	1	Work Ram High	wall 29,22 olrox
+05CA72	b	u	1	Work Ram High	
+05CA73	b	u	1	Work Ram High	Area Title olrox 29,45
+05CA74	b	u	1	Work Ram High	
+05CA75	b	u	1	Work Ram High	
+05CA76	b	u	1	Work Ram High	
+05CA77	b	u	1	Work Ram High	
+05CA78	b	u	1	Work Ram High	wall 19,19 IC
+05CA79	b	u	1	Work Ram High	wall 29,22
+05CA7A	b	u	1	Work Ram High	
+05CA7B	b	u	1	Work Ram High	
+05CA7C	b	u	1	Work Ram High	
+05CA7D	b	u	1	Work Ram High	
+05CA7E	b	u	1	Work Ram High	
+05CA7F	b	u	1	Work Ram High	
+05CA80	b	u	1	Work Ram High	entrance switch 19,36
+05CA81	b	u	1	Work Ram High	entrance switch 14,41
+05CA82	b	u	1	Work Ram High	entrance big rock 0 off 1 is left 2 is right 3 is both 255 open the passage
+05CA83	b	u	1	Work Ram High	entrance switch 17,38
+05CA84	b	u	1	Work Ram High	????
+05CA85	b	u	1	Work Ram High	entrance gate, 2,40
+05CA86	b	u	1	Work Ram High	meet death, 20,39 + 20,40
+05CA87	b	u	1	Work Ram High	
+05CA88	b	u	1	Work Ram High	entrance gaibon/slogra defeated
+05CA89	b	u	1	Work Ram High	break in 19,40
+05CA8A	b	u	1	Work Ram High	????
+05CA8B	b	u	1	Work Ram High	wall to 12,41 (jewel sword)
+05CA8C	b	u	1	Work Ram High	????
+05CA8D	b	u	1	Work Ram High	
+05CA8E	b	u	1	Work Ram High	
+05CA8F	b	u	1	Work Ram High	
+05CA90	b	u	1	Work Ram High	break 28,50 cata
+05CA91	b	u	1	Work Ram High	wall 25,50 cata
+05CA92	b	u	1	Work Ram High	Area Title catacombs 31,49
+05CA93	b	u	1	Work Ram High	switch 43,50 cata sonar room
+05CA94	b	u	1	Work Ram High	
+05CA95	b	u	1	Work Ram High	break 41,51 cata
+05CA96	b	u	1	Work Ram High	
+05CA97	b	u	1	Work Ram High	
+05CA98	b	u	1	Work Ram High	
+05CA99	b	u	1	Work Ram High	????
+05CA9A	b	u	1	Work Ram High	????
+05CA9B	b	u	1	Work Ram High	
+05CA9C	b	u	1	Work Ram High	
+05CA9D	b	u	1	Work Ram High	
+05CA9E	b	u	1	Work Ram High	
+05CA9F	b	u	1	Work Ram High	
+05CAA0	b	u	1	Work Ram High	wall 37,41 mines
+05CAA1	b	u	1	Work Ram High	switch 32,40 mines
+05CAA2	b	u	1	Work Ram High	break steps 32,47 mines
+05CAA3	b	u	1	Work Ram High	break slope 32,42 mines
+05CAA4	b	u	1	Work Ram High	
+05CAA5	b	u	1	Work Ram High	Area Title mines 27,38
+05CAA6	b	u	1	Work Ram High	
+05CAA7	b	u	1	Work Ram High	
+05CAA8	b	u	1	Work Ram High	????
+05CAA9	b	u	1	Work Ram High	????
+05CAAA	b	u	1	Work Ram High	
+05CAAB	b	u	1	Work Ram High	
+05CAAC	b	u	1	Work Ram High	
+05CAAD	b	u	1	Work Ram High	
+05CAAE	b	u	1	Work Ram High	
+05CAAF	b	u	1	Work Ram High	
+05CAB0	b	u	1	Work Ram High	Area Title - chapel 3,28
+05CAB1	b	u	1	Work Ram High	switch 16,19 - chapel
+05CAB2	b	u	1	Work Ram High	cutscene maria 9,15 - chapel
+05CAB3	b	u	1	Work Ram High	cutscene maria 24,13 - chapel boss
+05CAB4	b	u	1	Work Ram High	
+05CAB5	b	u	1	Work Ram High	
+05CAB6	b	u	1	Work Ram High	
+05CAB7	b	u	1	Work Ram High	
+05CAB8	b	u	1	Work Ram High	
+05CAB9	b	u	1	Work Ram High	
+05CABA	b	u	1	Work Ram High	
+05CABB	b	u	1	Work Ram High	
+05CABC	b	u	1	Work Ram High	
+05CABD	b	u	1	Work Ram High	
+05CABE	b	u	1	Work Ram High	
+05CABF	b	u	1	Work Ram High	
+05CAC0	b	u	1	Work Ram High	Title Area library 58,21
+05CAC1	b	u	1	Work Ram High	switch 49,18 (works IC too...)
+05CAC2	b	u	1	Work Ram High	????
+05CAC3	b	u	1	Work Ram High	cutscene librarian 49,20
+05CAC4	b	u	1	Work Ram High	
+05CAC5	b	b	1	Work Ram High	librarian seat
+05CAC6	b	u	1	Work Ram High	
+05CAC7	b	u	1	Work Ram High	
+05CAC8	b	u	1	Work Ram High	
+05CAC9	b	u	1	Work Ram High	
+05CACA	b	u	1	Work Ram High	
+05CACB	b	u	1	Work Ram High	
+05CACC	b	u	1	Work Ram High	
+05CACD	b	u	1	Work Ram High	
+05CACE	b	u	1	Work Ram High	
+05CACF	b	u	1	Work Ram High	
+05CAD0	b	u	1	Work Ram High	wall to 11,34 (lab)
+05CAD1	b	u	1	Work Ram High	Area Title - lab 16,36
+05CAD2	b	u	1	Work Ram High	switch 16,34 (lab canon)
+05CAD3	b	u	1	Work Ram High	wall to 12,35 (lab)
+05CAD4	b	u	1	Work Ram High	cutscene maria labs
+05CAD5	b	u	1	Work Ram High	????
+05CAD6	b	u	1	Work Ram High	
+05CAD7	b	u	1	Work Ram High	
+05CAD8	b	u	1	Work Ram High	wall to 11,34 (lab IC)
+05CAD9	b	u	1	Work Ram High	 wall to 12,35 (lab IC)
+05CADA	b	u	1	Work Ram High	
+05CADB	b	u	1	Work Ram High	
+05CADC	b	u	1	Work Ram High	
+05CADD	b	u	1	Work Ram High	
+05CADE	b	u	1	Work Ram High	
+05CADF	b	u	1	Work Ram High	
+05CAE0	b	u	1	Work Ram High	break in 31,9 keep
+05CAE1	b	u	1	Work Ram High	Area Title - keep 38,12
+05CAE2	b	u	1	Work Ram High	switch 38,2 keep - elevator increase value with candles lighting up
+05CAE3	b	u	1	Work Ram High	break in 37,11 keep
+05CAE4	b	u	1	Work Ram High	????
+05CAE5	b	u	1	Work Ram High	switch 36,8 -keep
+05CAE6	b	u	1	Work Ram High	
+05CAE7	b	u	1	Work Ram High	cutscene save richter keep
+05CAE8	b	u	1	Work Ram High	break 31,11 IC
+05CAE9	b	u	1	Work Ram High	break 31,9 IC
+05CAEA	b	u	1	Work Ram High	set after prologue ?
+05CAEB	b	u	1	Work Ram High	
+05CAEC	b	u	1	Work Ram High	
+05CAED	b	u	1	Work Ram High	
+05CAEE	b	u	1	Work Ram High	
+05CAEF	b	u	1	Work Ram High	
+05CAF0	b	u	1	Work Ram High	wall in 43,11 - clock
+05CAF1	b	u	1	Work Ram High	Area Title clock 59,14
+05CAF2	b	b	1	Work Ram High	break in 41,10 -clock- control all walls, 0000BLMR
+05CAF3	b	u	1	Work Ram High	wall in 50,11 - clock
+05CAF4	b	u	1	Work Ram High	
+05CAF5	b	u	1	Work Ram High	
+05CAF6	b	u	1	Work Ram High	
+05CAF7	b	u	1	Work Ram High	
+05CAF8	b	u	1	Work Ram High	wall 43,11 IC
+05CAF9	b	u	1	Work Ram High	
+05CAFA	b	b	1	Work Ram High	break 48,11 IC + 43,10 42,10 41,10
+05CAFB	b	u	1	Work Ram High	wall 50,11 IC
+05CAFC	b	u	1	Work Ram High	
+05CAFD	b	u	1	Work Ram High	
+05CAFE	b	u	1	Work Ram High	
+05CAFF	b	u	1	Work Ram High	
+05CB00	b	u	1	Work Ram High	switch 14,22 - colosseum
+05CB01	b	u	1	Work Ram High	Area Title colosseum 25,22
+05CB02	b	u	1	Work Ram High	wall 20,21 colos
+05CB03	b	u	1	Work Ram High	switch at 21,22 (elevator)
+05CB04	b	u	1	Work Ram High	
+05CB05	b	u	1	Work Ram High	
+05CB06	b	u	1	Work Ram High	
+05CB07	b	u	1	Work Ram High	
+05CB08	b	u	1	Work Ram High	set after prologue ?
+05CB09	b	u	1	Work Ram High	wall 20,21 IC
+05CB0A	b	u	1	Work Ram High	
+05CB0B	b	u	1	Work Ram High	
+05CB0C	b	u	1	Work Ram High	
+05CB0D	b	u	1	Work Ram High	
+05CB0E	b	u	1	Work Ram High	
+05CB0F	b	u	1	Work Ram High	
+05CB10	b	b	1	Work Ram High	switch 37,37 caves box to push
+05CB11	b	u	1	Work Ram High	Area Title caves 39,26
+05CB12	b	u	1	Work Ram High	????
+05CB13	b	u	1	Work Ram High	switch 51,41 caves (lake door)
+05CB14	b	u	1	Work Ram High	????
+05CB15	b	u	1	Work Ram High	wall 39,39 caves
+05CB16	b	b	1	Work Ram High	switch 22,37 + 29,37 caves access to mine
+05CB17	b	u	1	Work Ram High	wall 36,27 caves
+05CB18	b	u	1	Work Ram High	cutscene ferry merman
+05CB19	b	u	1	Work Ram High	cutscene ferry symbol
+05CB1A	b	u	1	Work Ram High	????
+05CB1B	b	u	1	Work Ram High	????
+05CB1C	b	u	1	Work Ram High	
+05CB1D	b	u	1	Work Ram High	
+05CB1E	b	u	1	Work Ram High	
+05CB1F	b	u	1	Work Ram High	
+05CB20	b	u	1	Work Ram High	teleporterS RC
+05CB21	b	u	1	Work Ram High	teleporterS IC
+05CB22	b	u	1	Work Ram High	
+05CB23	b	u	1	Work Ram High	
+05CB24	b	u	1	Work Ram High	
+05CB25	b	u	1	Work Ram High	
+05CB26	b	u	1	Work Ram High	
+05CB27	b	u	1	Work Ram High	
+05CB28	b	u	1	Work Ram High	
+05CB29	b	u	1	Work Ram High	maria boss cutscene
+05CB2A	b	u	1	Work Ram High	
+05CB2B	b	u	1	Work Ram High	
+05CB2C	b	u	1	Work Ram High	
+05CB2D	b	u	1	Work Ram High	
+05CB2E	b	u	1	Work Ram High	
+05CB2F	b	u	1	Work Ram High	
+05CB30	b	u	1	Work Ram High	beat dracula cutscene
+05CB31	b	u	1	Work Ram High	
+05CB32	b	u	1	Work Ram High	
+05CB33	b	u	1	Work Ram High	
+05CB34	b	u	1	Work Ram High	
+05CB35	b	u	1	Work Ram High	switch 32,26 marble central IC
+05CB36	b	u	1	Work Ram High	
+05CB37	b	u	1	Work Ram High	
+05CB38	b	u	1	Work Ram High	
+05CB39	b	u	1	Work Ram High	
+05CB3A	b	u	1	Work Ram High	
+05CB3B	b	u	1	Work Ram High	
+05CB3C	b	u	1	Work Ram High	
+05CB3D	b	u	1	Work Ram High	
+05CB3E	b	u	1	Work Ram High	
+05CB3F	b	u	1	Work Ram High	
+05CB40	b	u	1	Work Ram High	
+05CB41	b	u	1	Work Ram High	Area Title - garden  4,44
+05CB42	b	u	1	Work Ram High	
+05CB43	b	u	1	Work Ram High	
+05CB44	b	u	1	Work Ram High	
+05CB45	b	u	1	Work Ram High	
+05CB46	b	u	1	Work Ram High	
+05CB47	b	u	1	Work Ram High	
+05CB48	b	u	1	Work Ram High	switch 33,36 prison
+05CB49	b	u	1	Work Ram High	Area Title prison  35,34 AND 28,36 
+05CB4A	b	u	1	Work Ram High	
+05CB4B	b	u	1	Work Ram High	
+05CB4C	b	u	1	Work Ram High	
+05CB4D	b	u	1	Work Ram High	
+05CB4E	b	u	1	Work Ram High	
+05CB4F	b	u	1	Work Ram High	
+0	S	_	1		
+05CB50	b	u	1	Work Ram High	byte1 - pickup
+05CB51	b	u	1	Work Ram High	byte2 - pickup
+05CB52	b	u	1	Work Ram High	byte3  - pickup
+05CB53	b	u	1	Work Ram High	byte4 - pickup
+05CB54	b	u	1	Work Ram High	byte5 - pickup
+05CB55	b	u	1	Work Ram High	byte6 - pickup
+05CB56	b	u	1	Work Ram High	
+05CB57	b	u	1	Work Ram High	
+05CB58	b	u	1	Work Ram High	
+05CB59	b	u	1	Work Ram High	
+05CB5A	b	u	1	Work Ram High	
+05CB5B	b	u	1	Work Ram High	
+05CB5C	b	u	1	Work Ram High	
+05CB5D	b	u	1	Work Ram High	
+05CB5E	b	u	1	Work Ram High	
+05CB5F	b	u	1	Work Ram High	
+05CB60	b	u	1	Work Ram High	
+05CB61	b	u	1	Work Ram High	
+05CB62	b	u	1	Work Ram High	
+05CB63	b	u	1	Work Ram High	
+05CB64	b	u	1	Work Ram High	
+05CB65	b	u	1	Work Ram High	
+05CB66	b	u	1	Work Ram High	
+05CB67	b	u	1	Work Ram High	
+05CB68	b	u	1	Work Ram High	
+05CB69	b	u	1	Work Ram High	
+05CB6A	b	u	1	Work Ram High	
+05CB6B	b	u	1	Work Ram High	
+05CB6C	b	u	1	Work Ram High	
+05CB6D	b	u	1	Work Ram High	
+05CB6E	b	u	1	Work Ram High	
+05CB6F	b	u	1	Work Ram High	
+05CB70	b	u	1	Work Ram High	
+05CB71	b	u	1	Work Ram High	
+05CB72	b	u	1	Work Ram High	
+05CB73	b	u	1	Work Ram High	
+05CB74	b	u	1	Work Ram High	
+05CB75	b	u	1	Work Ram High	
+05CB76	b	u	1	Work Ram High	
+05CB77	b	u	1	Work Ram High	
+05CB78	b	u	1	Work Ram High	
+05CB79	b	u	1	Work Ram High	
+05CB7A	b	u	1	Work Ram High	
+05CB7B	b	u	1	Work Ram High	
+05CB7C	b	u	1	Work Ram High	
+05CB7D	b	u	1	Work Ram High	
+05CB7E	b	u	1	Work Ram High	
+05CB7F	b	u	1	Work Ram High	
+05CB80	b	u	1	Work Ram High	
+05CB81	b	u	1	Work Ram High	
+05CB82	b	u	1	Work Ram High	
+05CB83	b	u	1	Work Ram High	
+05CB84	b	u	1	Work Ram High	
+05CB85	b	u	1	Work Ram High	
+05CB86	b	u	1	Work Ram High	
+05CB87	b	u	1	Work Ram High	
+05CB88	b	u	1	Work Ram High	
+05CB89	b	u	1	Work Ram High	
+05CB8A	b	u	1	Work Ram High	
+05CB8B	b	u	1	Work Ram High	
+05CB8C	b	u	1	Work Ram High	
+05CB8D	b	u	1	Work Ram High	
+05CB8E	b	u	1	Work Ram High	
+05CB8F	b	u	1	Work Ram High	
+05CB90	b	u	1	Work Ram High	
+05CB91	b	u	1	Work Ram High	
+05CB92	b	u	1	Work Ram High	
+05CB93	b	u	1	Work Ram High	
+05CB94	b	u	1	Work Ram High	
+05CB95	b	u	1	Work Ram High	
+05CB96	b	u	1	Work Ram High	
+05CB97	b	u	1	Work Ram High	
+05CB98	b	u	1	Work Ram High	
+05CB99	b	u	1	Work Ram High	
+05CB9A	b	u	1	Work Ram High	
+05CB9B	b	u	1	Work Ram High	
+05CB9C	b	u	1	Work Ram High	
+05CB9D	b	u	1	Work Ram High	
+05CB9E	b	u	1	Work Ram High	
+05CB9F	b	u	1	Work Ram High	
+05CBA0	b	u	1	Work Ram High	
+05CBA1	b	u	1	Work Ram High	
+05CBA2	b	u	1	Work Ram High	
+05CBA3	b	u	1	Work Ram High	
+05CBA4	b	u	1	Work Ram High	
+05CBA5	b	u	1	Work Ram High	
+05CBA6	b	u	1	Work Ram High	
+05CBA7	b	u	1	Work Ram High	
+05CBA8	b	u	1	Work Ram High	
+05CBA9	b	u	1	Work Ram High	
+05CBAA	b	u	1	Work Ram High	
+05CBAB	b	u	1	Work Ram High	
+05CBAC	b	u	1	Work Ram High	
+05CBAD	b	u	1	Work Ram High	
+05CBAE	b	u	1	Work Ram High	
+05CBAF	b	u	1	Work Ram High	
+05CBB0	b	u	1	Work Ram High	
+05CBB1	b	u	1	Work Ram High	
+05CBB2	b	u	1	Work Ram High	
+05CBB3	b	u	1	Work Ram High	
+05CBB4	b	u	1	Work Ram High	
+05CBB5	b	u	1	Work Ram High	
+05CBB6	b	u	1	Work Ram High	
+05CBB7	b	u	1	Work Ram High	
+05CBB8	b	u	1	Work Ram High	
+05CBB9	b	u	1	Work Ram High	
+05CBBA	b	u	1	Work Ram High	
+05CBBB	b	u	1	Work Ram High	
+05CBBC	b	u	1	Work Ram High	
+05CBBD	b	u	1	Work Ram High	
+05CBBE	b	u	1	Work Ram High	
+05CBBF	b	u	1	Work Ram High	
+05CBC0	b	u	1	Work Ram High	
+05CBC1	b	u	1	Work Ram High	
+05CBC2	b	u	1	Work Ram High	
+05CBC3	b	u	1	Work Ram High	
+05CBC4	b	u	1	Work Ram High	
+05CBC5	b	u	1	Work Ram High	
+05CBC6	b	u	1	Work Ram High	
+05CBC7	b	u	1	Work Ram High	
+05CBC8	b	u	1	Work Ram High	
+05CBC9	b	u	1	Work Ram High	
+05CBCA	b	u	1	Work Ram High	
+05CBCB	b	u	1	Work Ram High	
+05CBCC	b	u	1	Work Ram High	
+05CBCD	b	u	1	Work Ram High	
+05CBCE	b	u	1	Work Ram High	
+05CBCF	b	u	1	Work Ram High	
+05CBD0	b	u	1	Work Ram High	
+05CBD1	b	u	1	Work Ram High	
+05CBD2	b	u	1	Work Ram High	
+05CBD3	b	u	1	Work Ram High	
+05CBD4	b	u	1	Work Ram High	
+05CBD5	b	u	1	Work Ram High	
+05CBD6	b	u	1	Work Ram High	
+05CBD7	b	u	1	Work Ram High	
+05CBD8	b	u	1	Work Ram High	
+05CBD9	b	u	1	Work Ram High	
+05CBDA	b	u	1	Work Ram High	
+05CBDB	b	u	1	Work Ram High	
+05CBDC	b	u	1	Work Ram High	
+05CBDD	b	u	1	Work Ram High	
+05CBDE	b	u	1	Work Ram High	
+05CBDF	b	u	1	Work Ram High	
+0	S	_	1		bestiary
+05CBE0	b	b	1	Work Ram High	bestiary-byte1
+05CBE1	b	b	1	Work Ram High	bestiary-byte2
+05CBE2	b	b	1	Work Ram High	bestiary-byte3
+05CBE3	b	b	1	Work Ram High	bestiary-byte4
+05CBE4	b	b	1	Work Ram High	bestiary-byte5
+05CBE5	b	b	1	Work Ram High	bestiary-byte6
+05CBE6	b	b	1	Work Ram High	bestiary-byte7
+05CBE7	b	b	1	Work Ram High	bestiary-byte8
+05CBE8	b	b	1	Work Ram High	bestiary-byte9
+05CBE9	b	b	1	Work Ram High	bestiary-byte10
+05CBEA	b	b	1	Work Ram High	bestiary-byte11
+05CBEB	b	b	1	Work Ram High	bestiary-byte12
+05CBEC	b	b	1	Work Ram High	bestiary-byte13
+05CBED	b	b	1	Work Ram High	bestiary-byte14
+05CBEE	b	b	1	Work Ram High	bestiary-byte15
+05CBEF	b	b	1	Work Ram High	bestiary-byte16
+05CBF0	b	b	1	Work Ram High	bestiary-byte17
+05CBF1	b	b	1	Work Ram High	bestiary-byte18
+05CBF2	b	b	1	Work Ram High	bestiary-byte19
+05CBF3	b	b	1	Work Ram High	bestiary-byte20
+05CBF4	b	b	1	Work Ram High	bestiary-byte21
+05CBF5	b	b	1	Work Ram High	bestiary-byte22
+0	S	_	1		
+05CBF6	b	u	1	Work Ram High	
+05CBF7	b	u	1	Work Ram High	
+05CBF8	b	u	1	Work Ram High	
+05CBF9	b	u	1	Work Ram High	
+05CBFA	b	u	1	Work Ram High	
+05CBFB	b	u	1	Work Ram High	
+05CBFC	b	u	1	Work Ram High	
+05CBFD	b	u	1	Work Ram High	
+05CBFE	b	u	1	Work Ram High	
+05CBFF	b	u	1	Work Ram High	
+05CC00	b	u	1	Work Ram High	????
+05CC01	b	u	1	Work Ram High	
+05CC02	b	u	1	Work Ram High	
+05CC03	b	u	1	Work Ram High	
+05CC04	b	u	1	Work Ram High	
+05CC05	b	u	1	Work Ram High	
+05CC06	b	u	1	Work Ram High	
+05CC07	b	u	1	Work Ram High	
+05CC08	b	u	1	Work Ram High	
+05CC09	b	u	1	Work Ram High	
+05CC0A	b	u	1	Work Ram High	
+05CC0B	b	u	1	Work Ram High	????
+05CC0C	b	u	1	Work Ram High	
+05CC0D	b	u	1	Work Ram High	
+05CC0E	b	u	1	Work Ram High	
+05CC0F	b	u	1	Work Ram High	????
+05CC10	b	u	1	Work Ram High	????
+05CC11	b	u	1	Work Ram High	
+05CC12	b	u	1	Work Ram High	
+05CC13	b	u	1	Work Ram High	????
+05CC14	b	u	1	Work Ram High	
+05CC15	b	u	1	Work Ram High	
+05CC16	b	u	1	Work Ram High	
+05CC17	b	u	1	Work Ram High	
+05CC18	b	u	1	Work Ram High	
+05CC19	b	u	1	Work Ram High	
+05CC1A	b	u	1	Work Ram High	
+05CC1B	b	u	1	Work Ram High	
+05CC1C	b	u	1	Work Ram High	
+05CC1D	b	u	1	Work Ram High	
+05CC1E	b	u	1	Work Ram High	
+05CC1F	b	u	1	Work Ram High	
+05CC20	b	u	1	Work Ram High	
+05CC21	b	u	1	Work Ram High	
+05CC22	b	u	1	Work Ram High	
+05CC23	b	u	1	Work Ram High	
+05CC24	b	u	1	Work Ram High	
+05CC25	b	u	1	Work Ram High	
+05CC26	b	u	1	Work Ram High	
+05CC27	b	u	1	Work Ram High	
+05CC28	b	u	1	Work Ram High	
+05CC29	b	u	1	Work Ram High	
+05CC2A	b	u	1	Work Ram High	
+05CC2B	b	u	1	Work Ram High	
+05CC2C	b	u	1	Work Ram High	
+05CC2D	b	u	1	Work Ram High	
+05CC2E	b	u	1	Work Ram High	
+05CC2F	b	u	1	Work Ram High	
+05CC30	b	u	1	Work Ram High	
+05CC31	b	u	1	Work Ram High	
+05CC32	b	u	1	Work Ram High	
+05CC33	b	u	1	Work Ram High	
+05CC34	b	u	1	Work Ram High	
+05CC35	b	u	1	Work Ram High	
+05CC36	b	u	1	Work Ram High	
+05CC37	b	u	1	Work Ram High	
+05CC38	b	u	1	Work Ram High	
+05CC39	b	u	1	Work Ram High	
+05CC3A	b	u	1	Work Ram High	
+05CC3B	b	u	1	Work Ram High	
+05CC3C	b	u	1	Work Ram High	
+05CC3D	b	u	1	Work Ram High	
+05CC3E	b	u	1	Work Ram High	
+05CC3F	b	u	1	Work Ram High	
+05CC40	b	u	1	Work Ram High	
+05CC41	b	u	1	Work Ram High	
+05CC42	b	u	1	Work Ram High	
+05CC43	b	u	1	Work Ram High	
+05CC44	b	u	1	Work Ram High	
+05CC45	b	u	1	Work Ram High	
+05CC46	b	u	1	Work Ram High	
+05CC47	b	u	1	Work Ram High	
+05CC48	b	u	1	Work Ram High	
+05CC49	b	u	1	Work Ram High	
+05CC4A	b	u	1	Work Ram High	
+05CC4B	b	u	1	Work Ram High	
+05CC4C	b	u	1	Work Ram High	
+05CC4D	b	u	1	Work Ram High	
+05CC4E	b	u	1	Work Ram High	
+05CC4F	b	u	1	Work Ram High	
+05CC50	b	u	1	Work Ram High	
+05CC51	b	u	1	Work Ram High	
+05CC52	b	u	1	Work Ram High	
+05CC53	b	u	1	Work Ram High	
+05CC54	b	u	1	Work Ram High	
+05CC55	b	u	1	Work Ram High	
+05CC56	b	u	1	Work Ram High	
+05CC57	b	u	1	Work Ram High	
+05CC58	b	u	1	Work Ram High	
+05CC59	b	u	1	Work Ram High	
+05CC5A	b	u	1	Work Ram High	
+05CC5B	b	u	1	Work Ram High	
+05CC5C	b	u	1	Work Ram High	
+05CC5D	b	u	1	Work Ram High	
+05CC5E	b	u	1	Work Ram High	
+05CC5F	b	u	1	Work Ram High	
+05CC60	b	u	1	Work Ram High	
+05CC61	b	u	1	Work Ram High	
+05CC62	b	u	1	Work Ram High	
+05CC63	b	u	1	Work Ram High	
+05CC64	b	u	1	Work Ram High	
+05CC65	b	u	1	Work Ram High	
+05CC66	b	u	1	Work Ram High	
+05CC67	b	u	1	Work Ram High	
+05CC68	b	u	1	Work Ram High	
+05CC69	b	u	1	Work Ram High	
+05CC6A	b	u	1	Work Ram High	
+05CC6B	b	u	1	Work Ram High	
+05CC6C	b	u	1	Work Ram High	
+05CC6D	b	u	1	Work Ram High	
+05CC6E	b	u	1	Work Ram High	
+05CC6F	b	u	1	Work Ram High	
+05CC70	b	u	1	Work Ram High	
+05CC71	b	u	1	Work Ram High	
+05CC72	b	u	1	Work Ram High	
+05CC73	b	u	1	Work Ram High	
+05CC74	b	u	1	Work Ram High	
+05CC75	b	u	1	Work Ram High	
+05CC76	b	u	1	Work Ram High	
+05CC77	b	u	1	Work Ram High	
+05CC78	b	u	1	Work Ram High	
+05CC79	b	u	1	Work Ram High	
+05CC7A	b	u	1	Work Ram High	
+05CC7B	b	u	1	Work Ram High	
+05CC7C	b	u	1	Work Ram High	
+05CC7D	b	u	1	Work Ram High	
+05CC7E	b	u	1	Work Ram High	
+05CC7F	b	u	1	Work Ram High	
+05CC80	b	u	1	Work Ram High	
+05CC81	b	u	1	Work Ram High	
+05CC82	b	u	1	Work Ram High	
+05CC83	b	u	1	Work Ram High	
+05CC84	b	u	1	Work Ram High	
+05CC85	b	u	1	Work Ram High	
+05CC86	b	u	1	Work Ram High	
+05CC87	b	u	1	Work Ram High	
+05CC88	b	u	1	Work Ram High	
+05CC89	b	u	1	Work Ram High	
+05CC8A	b	u	1	Work Ram High	
+05CC8B	b	u	1	Work Ram High	
+05CC8C	b	u	1	Work Ram High	
+05CC8D	b	u	1	Work Ram High	
+05CC8E	b	u	1	Work Ram High	
+05CC8F	b	u	1	Work Ram High	
+05CC90	b	u	1	Work Ram High	
+05CC91	b	u	1	Work Ram High	
+05CC92	b	u	1	Work Ram High	
+05CC93	b	u	1	Work Ram High	
+05CC94	b	u	1	Work Ram High	
+05CC95	b	u	1	Work Ram High	
+05CC96	b	u	1	Work Ram High	
+05CC97	b	u	1	Work Ram High	
+05CC98	b	u	1	Work Ram High	
+05CC99	b	u	1	Work Ram High	
+05CC9A	b	u	1	Work Ram High	
+05CC9B	b	u	1	Work Ram High	
+05CC9C	b	u	1	Work Ram High	
+05CC9D	b	u	1	Work Ram High	
+05CC9E	b	u	1	Work Ram High	
+05CC9F	b	u	1	Work Ram High	
+05CCA0	b	u	1	Work Ram High	
+05CCA1	b	u	1	Work Ram High	
+05CCA2	b	u	1	Work Ram High	
+05CCA3	b	u	1	Work Ram High	
+05CCA4	b	u	1	Work Ram High	
+05CCA5	b	u	1	Work Ram High	
+05CCA6	b	u	1	Work Ram High	
+05CCA7	b	u	1	Work Ram High	
+05CCA8	b	u	1	Work Ram High	
+05CCA9	b	u	1	Work Ram High	
+05CCAA	b	u	1	Work Ram High	
+05CCAB	b	u	1	Work Ram High	
+05CCAC	b	u	1	Work Ram High	
+05CCAD	b	u	1	Work Ram High	
+05CCAE	b	u	1	Work Ram High	
+05CCAF	b	u	1	Work Ram High	
+05CCB0	b	u	1	Work Ram High	
+05CCB1	b	u	1	Work Ram High	
+05CCB2	b	u	1	Work Ram High	
+05CCB3	b	u	1	Work Ram High	
+05CCB4	b	u	1	Work Ram High	
+05CCB5	b	u	1	Work Ram High	
+05CCB6	b	u	1	Work Ram High	
+05CCB7	b	u	1	Work Ram High	
+05CCB8	b	u	1	Work Ram High	
+05CCB9	b	u	1	Work Ram High	
+05CCBA	b	u	1	Work Ram High	
+05CCBB	b	u	1	Work Ram High	
+05CCBC	b	u	1	Work Ram High	
+05CCBD	b	u	1	Work Ram High	
+05CCBE	b	u	1	Work Ram High	
+05CCBF	b	u	1	Work Ram High	
+05CCC0	b	u	1	Work Ram High	
+05CCC1	b	u	1	Work Ram High	
+05CCC2	b	u	1	Work Ram High	
+05CCC3	b	u	1	Work Ram High	
+05CCC4	b	u	1	Work Ram High	
+05CCC5	b	u	1	Work Ram High	
+05CCC6	b	u	1	Work Ram High	
+05CCC7	b	u	1	Work Ram High	
+05CCC8	b	u	1	Work Ram High	
+05CCC9	b	u	1	Work Ram High	
+05CCCA	b	u	1	Work Ram High	
+05CCCB	b	u	1	Work Ram High	
+05CCCC	b	u	1	Work Ram High	
+05CCCD	b	u	1	Work Ram High	
+05CCCE	b	u	1	Work Ram High	
+05CCCF	b	u	1	Work Ram High	
+05CCD0	b	u	1	Work Ram High	
+05CCD1	b	u	1	Work Ram High	
+05CCD2	b	u	1	Work Ram High	
+05CCD3	b	u	1	Work Ram High	
+05CCD4	b	u	1	Work Ram High	
+05CCD5	b	u	1	Work Ram High	
+05CCD6	b	u	1	Work Ram High	
+05CCD7	b	u	1	Work Ram High	
+05CCD8	b	u	1	Work Ram High	
+05CCD9	b	u	1	Work Ram High	
+05CCDA	b	u	1	Work Ram High	
+05CCDB	b	u	1	Work Ram High	
+05CCDC	b	u	1	Work Ram High	
+05CCDD	b	u	1	Work Ram High	
+05CCDE	b	u	1	Work Ram High	
+05CCDF	b	u	1	Work Ram High	
+05CCE0	b	u	1	Work Ram High	
+05CCE1	b	u	1	Work Ram High	
+05CCE2	b	u	1	Work Ram High	
+05CCE3	b	u	1	Work Ram High	
+05CCE4	b	u	1	Work Ram High	
+05CCE5	b	u	1	Work Ram High	
+05CCE6	b	u	1	Work Ram High	
+05CCE7	b	u	1	Work Ram High	
+05CCE8	b	u	1	Work Ram High	
+05CCE9	b	u	1	Work Ram High	
+05CCEA	b	u	1	Work Ram High	
+05CCEB	b	u	1	Work Ram High	
+05CCEC	b	u	1	Work Ram High	
+05CCED	b	u	1	Work Ram High	
+05CCEE	b	u	1	Work Ram High	
+05CCEF	b	u	1	Work Ram High	
+05CCF0	b	u	1	Work Ram High	
+05CCF1	b	u	1	Work Ram High	
+05CCF2	b	u	1	Work Ram High	
+05CCF3	b	u	1	Work Ram High	
+05CCF4	b	u	1	Work Ram High	
+05CCF5	b	u	1	Work Ram High	
+05CCF6	b	u	1	Work Ram High	
+05CCF7	b	u	1	Work Ram High	
+05CCF8	b	u	1	Work Ram High	
+05CCF9	b	u	1	Work Ram High	
+05CCFA	b	u	1	Work Ram High	
+05CCFB	b	u	1	Work Ram High	
+05CCFC	b	u	1	Work Ram High	
+05CCFD	b	u	1	Work Ram High	
+05CCFE	b	u	1	Work Ram High	
+05CCFF	b	u	1	Work Ram High	
+05CD00	b	u	1	Work Ram High	
+05CD01	b	u	1	Work Ram High	
+05CD02	b	u	1	Work Ram High	
+05CD03	b	u	1	Work Ram High	
+05CD04	b	u	1	Work Ram High	
+05CD05	b	u	1	Work Ram High	
+05CD06	b	u	1	Work Ram High	
+05CD07	b	u	1	Work Ram High	
+05CD08	b	u	1	Work Ram High	
+05CD09	b	u	1	Work Ram High	
+05CD0A	b	u	1	Work Ram High	
+05CD0B	b	u	1	Work Ram High	
+05CD0C	b	u	1	Work Ram High	
+05CD0D	b	u	1	Work Ram High	
+05CD0E	b	u	1	Work Ram High	
+05CD0F	b	u	1	Work Ram High	
+05CD10	b	u	1	Work Ram High	
+05CD11	b	u	1	Work Ram High	
+05CD12	b	u	1	Work Ram High	
+05CD13	b	u	1	Work Ram High	
+05CD14	b	u	1	Work Ram High	
+05CD15	b	u	1	Work Ram High	
+05CD16	b	u	1	Work Ram High	
+05CD17	b	u	1	Work Ram High	
+05CD18	b	u	1	Work Ram High	
+05CD19	b	u	1	Work Ram High	
+05CD1A	b	u	1	Work Ram High	
+05CD1B	b	u	1	Work Ram High	
+05CD1C	b	u	1	Work Ram High	
+05CD1D	b	u	1	Work Ram High	
+05CD1E	b	u	1	Work Ram High	
+05CD1F	b	u	1	Work Ram High	
+05CD20	b	u	1	Work Ram High	
+05CD21	b	u	1	Work Ram High	
+05CD22	b	u	1	Work Ram High	
+05CD23	b	u	1	Work Ram High	
+05CD24	b	u	1	Work Ram High	
+05CD25	b	u	1	Work Ram High	
+05CD26	b	u	1	Work Ram High	
+05CD27	b	u	1	Work Ram High	
+05CD28	b	u	1	Work Ram High	
+05CD29	b	u	1	Work Ram High	
+05CD2A	b	u	1	Work Ram High	
+05CD2B	b	u	1	Work Ram High	
+05CD2C	b	u	1	Work Ram High	
+05CD2D	b	u	1	Work Ram High	
+05CD2E	b	u	1	Work Ram High	
+05CD2F	b	u	1	Work Ram High	
+05CD30	b	u	1	Work Ram High	
+05CD31	b	u	1	Work Ram High	
+05CD32	b	u	1	Work Ram High	
+05CD33	b	u	1	Work Ram High	
+05CD34	b	u	1	Work Ram High	
+05CD35	b	u	1	Work Ram High	
+05CD36	b	u	1	Work Ram High	
+05CD37	b	u	1	Work Ram High	
+05CD38	b	u	1	Work Ram High	
+05CD39	b	u	1	Work Ram High	
+05CD3A	b	u	1	Work Ram High	
+05CD3B	b	u	1	Work Ram High	
+05CD3C	b	u	1	Work Ram High	
+05CD3D	b	u	1	Work Ram High	
+05CD3E	b	u	1	Work Ram High	
+05CD3F	b	u	1	Work Ram High	
+05CD40	b	u	1	Work Ram High	
+05CD41	b	u	1	Work Ram High	
+05CD42	b	u	1	Work Ram High	
+05CD43	b	u	1	Work Ram High	
+05CD44	b	u	1	Work Ram High	
+05CD45	b	u	1	Work Ram High	
+05CD46	b	u	1	Work Ram High	
+05CD47	b	u	1	Work Ram High	
+05CD48	b	u	1	Work Ram High	
+05CD49	b	u	1	Work Ram High	
+05CD4A	b	u	1	Work Ram High	
+05CD4B	b	u	1	Work Ram High	
+05CD4C	b	u	1	Work Ram High	
+05CD4D	b	u	1	Work Ram High	
+05CD4E	b	u	1	Work Ram High	
+05CD4F	b	u	1	Work Ram High	
+05CD50	b	u	1	Work Ram High	?
+05CD51	b	u	1	Work Ram High	
+05CD52	b	u	1	Work Ram High	unlock_range_stop
+0	S	_	1		pickup
+05CB50	b	b	1	Work Ram High	byte1 - entrance A
+05CB51	b	b	1	Work Ram High	byte2 - entrance A
+05CB52	b	b	1	Work Ram High	byte3  - entrance B
+05CB53	b	b	1	Work Ram High	byte4 - entrance B
+05CB54	b	b	1	Work Ram High	byte5 - lab
+05CB55	b	b	1	Work Ram High	byte6 - lab
+05CB56	b	b	1	Work Ram High	byte7 - marble
+05CB57	b	b	1	Work Ram High	byte8 - marble
+05CB58	b	b	1	Work Ram High	byte9 - lib
+05CB59	b	b	1	Work Ram High	byte10 - outerwall
+05CB5A	b	b	1	Work Ram High	byte11 - chapel
+05CB5B	b	b	1	Work Ram High	byte12 - lib
+05CB5C	b	b	1	Work Ram High	byte13 - ????
+05CB5D	b	b	1	Work Ram High	byte14 - chapel
+05CB5E	b	b	1	Work Ram High	byte15 - keep
+05CB5F	b	b	1	Work Ram High	byte16 - keep
+05CB60	b	b	1	Work Ram High	byte17 - clock
+05CB61	b	b	1	Work Ram High	byte18 - keep
+05CB62	b	b	1	Work Ram High	byte19 - caves
+05CB63	b	b	1	Work Ram High	byte20 - clock
+05CB64	b	b	1	Work Ram High	byte21 - caves
+05CB65	b	b	1	Work Ram High	byte22 - caves
+05CB66	b	b	1	Work Ram High	byte23 - caves
+05CB67	b	b	1	Work Ram High	byte24 - caves
+05CB68	b	b	1	Work Ram High	byte25 - olrox
+05CB69	b	b	1	Work Ram High	byte26 - olrox
+05CB6A	b	b	1	Work Ram High	byte27 - mines
+05CB6B	b	b	1	Work Ram High	byte28 - colos
+05CB6C	b	b	1	Work Ram High	byte29 - cata
+05CB6D	b	b	1	Work Ram High	byte30 - mines
+05CB6E	b	b	1	Work Ram High	byte31 - cata
+05CB6F	b	b	1	Work Ram High	byte32 - cata
+05CB70	b	b	1	Work Ram High	byte33 - garden
+05CB71	b	b	1	Work Ram High	byte34 - ????
+05CB72	b	b	1	Work Ram High	byte35 - ????
+05CB73	b	b	1	Work Ram High	byte36 - prison
+0	S	_	1		
+05CB74	b	b	1	Work Ram High	byte37 - ????
+0	S	_	1		
+05CB75	b	b	1	Work Ram High	byte38 - ????
+05CB76	b	b	1	Work Ram High	byte39 - lab
+05CB77	b	b	1	Work Ram High	byte40 - lab
+05CB78	b	b	1	Work Ram High	byte41 - marble
+05CB79	b	b	1	Work Ram High	
+05CB7A	b	b	1	Work Ram High	
+05CB7B	b	b	1	Work Ram High	byte44 - marble
+05CB7C	b	b	1	Work Ram High	
+05CB7D	b	b	1	Work Ram High	byte46 - wall
+05CB7E	b	b	1	Work Ram High	byte47 - lib
+05CB7F	b	b	1	Work Ram High	
+05CB80	b	b	1	Work Ram High	
+05CB81	b	b	1	Work Ram High	byte50 - lib
+05CB82	b	b	1	Work Ram High	byte 51 - chapel
+05CB83	b	b	1	Work Ram High	byte 52 - chapel
+05CB84	b	b	1	Work Ram High	byte53 - keep
+05CB85	b	b	1	Work Ram High	byte 54 - chapel
+05CB86	b	b	1	Work Ram High	byte55 - keep
+05CB87	b	b	1	Work Ram High	byte56 - keep
+05CB88	b	b	1	Work Ram High	byte57 - clock
+05CB89	b	b	1	Work Ram High	byte58 - keep
+05CB8A	b	b	1	Work Ram High	
+05CB8B	b	b	1	Work Ram High	byte60 - clock
+05CB8C	b	b	1	Work Ram High	
+05CB8D	b	b	1	Work Ram High	byte62 - cave
+05CB8E	b	b	1	Work Ram High	byte63 - olrox
+05CB8F	b	b	1	Work Ram High	
+05CB90	b	b	1	Work Ram High	byte65 - colos
+05CB91	b	b	1	Work Ram High	byte66 - olrox
+05CB92	b	b	1	Work Ram High	
+05CB93	b	b	1	Work Ram High	
+05CB94	b	b	1	Work Ram High	
+05CB95	b	b	1	Work Ram High	
+05CB96	b	b	1	Work Ram High	
+05CB97	b	b	1	Work Ram High	
+05CB98	b	b	1	Work Ram High	
+05CB99	b	b	1	Work Ram High	
+05CB9A	b	b	1	Work Ram High	
+05CB9B	b	b	1	Work Ram High	
+05CB9C	b	b	1	Work Ram High	
+05CB9D	b	b	1	Work Ram High	gardenIC
+05CB9E	b	b	1	Work Ram High	
+05CB9F	b	b	1	Work Ram High	
+

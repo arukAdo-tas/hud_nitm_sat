@@ -11,6 +11,12 @@ ideally, it will be the same than fetchram() and ordered from lowest ram address
 ------------------------------------------------------------------------------------------------------------------------------------
 state_rng = memory.read_u32_be(0x0482b8)
 ------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------
+music = memory.read_u32_be(0x058C84)
+------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------	
+player_ground = mainmemory.readbyte(0x05C166)
+------------------------------------------------------------------------------------------------------------------------------------
 --[[
 the equation for poison/curse is mult * timer = frames (/60 if you want seconds)
 both stone address are most probably wrong, player_action_ID is what dictacte that you are stone
@@ -201,8 +207,58 @@ familiar_data = memory.readbyterange(0x05C9EA, 85, "Work Ram High")
 teleporters address, if set to zero you have none, at 63 you have all, it is binary data probly, not used (yet) in the script
 this data is likely in the middle of the data block for pickup breakable wall and all that shit, the wrong castleflag is there too
 ]]
-first_castle_teleporters = memory.readbyte(0x05CB20)
-second_castle_teleporters = memory.readbyte(0x05CB21)
+teleportA = memory.readbyte(0x05CB20)
+teleportB = memory.readbyte(0x05CB21)
+------------------------------------------------------------------------------------------------------------------------------------
+--[[
+]]
+unlock_data = memory.readbyterange(0x05CA3E, 273, "Work Ram High")
+------------------------------------------------------------------------------------------------------------------------------------
+--[[
+Pick up bytes
+"gateC", 	--byte1
+"gateC", 	--byte2
+"gate", 	--byte3
+"gate", 	--byte4
+"lab", 		--byte5
+"lab", 		--byte6
+"marble",	--byte7
+"marble",	--byte8
+"lib",		--byte9
+"wall",		--byte10
+"chapel",	--byte11
+"lib",		--byte12
+"unused",	--byte13
+"chapel",	--byte14
+"keep",		--byte15
+"keep",		--byte16
+"clock",	--byte17
+"keep",		--byte18
+"cave",		--byte19
+"clock",	--byte20
+"cave",		--byte21
+"cave",		--byte22
+"cave",		--byte23
+"cave",		--byte24
+"olrox",	--byte25
+"olrox",	--byte26
+"mine",		--byte27
+"colos",	--byte28
+"cata",		--byte29
+"mine",		--byte30
+"cata",		--byte31
+"cata",		--byte32
+"unused",	--byte33
+"unused",	--byte34
+"unused",	--byte35
+"prison",	--byte36
+]]
+pickupA_data = memory.readbyterange(0x05CB50, 36, "Work Ram High")
+------------------------------------------------------------------------------------------------------------------------------------
+--[[
+Bestiary bytes
+]]
+bestiary_data = memory.readbyterange(0x05CBE0, 22, "Work Ram High")
 ------------------------------------------------------------------------------------------------------------------------------------
 player_X_position_absolute = memory.read_u16_le(0x05CD5A) --why does this data is SO far away from the Y ? lol
 ------------------------------------------------------------------------------------------------------------------------------------
@@ -305,7 +361,7 @@ on psx the librarian map isnt transparent but instead its greyscale
 ]]
 
 map_data_A = memory.readbyterange(0x05CF10, 752, "Work Ram High")
-map_data_B = memory.readbyterange(0x05CF10+752+(16*64), 752, "Work Ram High")
+--map_data_B = memory.readbyterange(0x05CF10+752+(16*64), 752, "Work Ram High")
 --32 x 12 x 32 x 0  crop setting to take a screenshot and remove the scanlines
 ------------------------------------------------------------------------------------------------------------------------------------
 --[[
@@ -407,3 +463,5 @@ player_action_ID = (memory.readbyte(0x099824))
 ------------------------------------------------------------------------------------------------------------------------------------
 player_morph_timer = (memory.readbyte(0x0C850A))
 ------------------------------------------------------------------------------------------------------------------------------------
+familiar_X_position = memory.read_s16_le(0x099ADC)
+familiar_Y_position = memory.read_s16_le(0x099AE0)

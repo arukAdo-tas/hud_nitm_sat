@@ -1,26 +1,37 @@
-
-function exit_script()
+-------------------------------------
+function stop() --call when you exit the script (properly)
 	client.SetGameExtraPadding(0, 0, 0, 0)
-	if client_osd == true then
+	if biz_osd == true then
 	client.setscreenshotosd(true)
 	end
+	if biz_message == true then
+	client.displaymessages(true)
+	end
+	client.setwindowsize(biz_windowsize)
 	gui.clearImageCache()
 	os.remove('.\\NitM\map.png')
 	os.remove('.\\NitM\familiar.png')
 	os.remove('.\\NitM\relic.png')
 	os.remove('.\\NitM\timeattack.png')
 	os.remove('.\\NitM\gear.png')
+	collectgarbage('restart')
 end
-
-
-function snap_to_grid(x, y)
+--------------------------------
+function loadstate() --we need to refresh the data when user load a state
+shot_refresh = true
+trail_data = { 0, 0, 0, 0, 0 }
+wait = 0
+extra_refresh = true
+end
+--------------------------------
+function snap_to_grid(x, y) --super code to make the mouse stick to squares
     return {
         math.floor((x - (-289)) / 4) * 4 + (-289),
         math.floor((y - (-72)) / 4) * 4 + (-72)
     }
 end
-
-function byterange_decode(values, size, big_endian, signed)
+--------------------------------
+function byterange_decode(values, size, big_endian, signed) --let me decode the whole stat range in 2 bytes
 --special thanks to brunovallads
 --syntax: raw = memory.readbyterange(); data = raw:byterange_decode(4);
   -- Error handling
@@ -56,9 +67,10 @@ function byterange_decode(values, size, big_endian, signed)
 
   return output
 end
-
-function flashy_colors()
+--------------------------------
+function flashy_colors() --super colors feature 2021
 --special thanks to brunovalads
+-- Color format: OORRGGBB(Opacity, Red, Green, Blue)
 local base_color = {
 0x00FF0000,--red
 0x0000FF00,--green
@@ -77,14 +89,19 @@ local speed1 = (math.cos(the_frame*math.pi/10)+1)/2
 local speed2 = (math.cos(the_frame*math.pi/30)+1)/2
 local speed3 = (math.cos(the_frame*math.pi/60)+1)/2
 local speed4 = (math.cos(the_frame*math.pi/90)+1)/2
+local speed5 = (64*math.cos(the_frame*math.pi/5)+191)
+local speed6 = (64*math.cos(the_frame*math.pi/90)+191)
 local alpha1 = math.ceil(0xFF*speed1)*0x1000000
 local alpha2 = math.ceil(0xFF*speed2)*0x1000000
 local alpha3 = math.ceil(0xFF*speed3)*0x1000000
 local alpha4 = math.ceil(0xFF*speed4)*0x1000000
 local alpha5 = math.ceil(0x77*speed1)*0x1000000
 local alpha6 = math.ceil(0x77*speed3)*0x1000000
-local alpha7 = math.ceil(0x77*speed1)*0x1000000
-local alpha8 = math.ceil(0x77*speed3)*0x1000000
+local alpha7 = speed5*0x1000000
+local alpha8 = speed6*0x10000FF
+--string.sub(alpha7, 1,4)
+--alpha9 = string.sub(alpha8, 1,2)
+--print(alpha8)
 for i = 1 ,11 ,1 do
 	Zcolor[1+(i*8)-8] = base_color[i] + alpha1
 	Zcolor[2+(i*8)-8] = base_color[i] + alpha2
@@ -95,11 +112,50 @@ for i = 1 ,11 ,1 do
 	Zcolor[7+(i*8)-8] = base_color[i] + alpha7
 	Zcolor[8+(i*8)-8] = base_color[i] + alpha8
 end
-if debug_Zcolor == true then
-	print(Zcolor)
+if script_debug == true then
+	debug_data = debug_data.." Z-1:"..bizstring.hex(Zcolor[1]).." 2:"..bizstring.hex(Zcolor[2]).." 3:"..bizstring.hex(Zcolor[3]).." 4:"..bizstring.hex(Zcolor[4]).." 5:"..bizstring.hex(Zcolor[5]).." 6:"..bizstring.hex(Zcolor[6]).." 7:"..bizstring.hex(Zcolor[7]).." 8:"..bizstring.hex(Zcolor[8])
+	debug_data = debug_data.." Z-64:"..bizstring.hex(Zcolor[64]).." 63:"..bizstring.hex(Zcolor[63])
 end
 -- for a 60 frames cycle: 64*cos(x*pi/30)+191
 -- for a 10 frames cycle: 64*cos(x*pi/5)+191
 end
-
-
+--------------------------------
+function vpad()
+-- ripped from bizhawk lua, only 1P and saturn
+gui.drawBox(275, 20, 324, 40, 0xCF646464, 0xCF646464)
+local c
+if movie.mode() == 'PLAY' then c = movie.getinput(emu.framecount() - 1, 1) else c = joypad.get(1) end
+------------
+			gui.drawRectangle(277+ 2,20+ 4,41,12,0xC0FFFFFF,0xC0FFFFFF)
+			gui.drawRectangle(277+ 3,20+ 2,39, 1,0xC0FFFFFF,0xC0FFFFFF)
+			gui.drawLine(277+ 1,20+ 6,277+ 1,20+16,0xC0FFFFFF)
+			gui.drawLine(277+ 0,20+10,277+ 0,20+16,0xC0FFFFFF)
+			gui.drawLine(277+44,20+ 6,277+44,20+16,0xC0FFFFFF)
+			gui.drawLine(277+45,20+10,277+45,20+16,0xC0FFFFFF)
+			gui.drawLine(277+ 1,20+17,277+19,20+17,0xC0FFFFFF)
+			gui.drawLine(277+26,20+17,277+44,20+17,0xC0FFFFFF)
+			gui.drawLine(277+ 2,20+18,277+15,20+18,0xC0FFFFFF)
+			gui.drawLine(277+30,20+18,277+43,20+18,0xC0FFFFFF)
+			gui.drawLine(277+ 4,20+19,277+ 9,20+19,0xC0FFFFFF)
+			gui.drawLine(277+36,20+19,277+41,20+19,0xC0FFFFFF)
+			gui.drawLine(277+ 4,20+ 1,277+19,20+ 1,0xC0FFFFFF)
+			gui.drawLine(277+ 6,20+ 0,277+15,20+ 0,0xC0FFFFFF)
+			gui.drawLine(277+26,20+ 1,277+41,20+ 1,0xC0FFFFFF)
+			gui.drawLine(277+30,20+ 0,277+39,20+ 0,0xC0FFFFFF)
+------------
+			gui.drawRectangle(277+ 8,20+ 4, 3, 3,c['Up']    and 0xC0FF0000 or 0xC0000000,c['Up']    and 0xC0FF0000 or 0xC0000000)
+			gui.drawRectangle(277+ 8,20+12, 3, 3,c['Down']  and 0xC0FF0000 or 0xC0000000,c['Down']  and 0xC0FF0000 or 0xC0000000)
+			gui.drawRectangle(277+ 4,20+ 8, 3, 3,c['Left']  and 0xC0FF0000 or 0xC0000000,c['Left']  and 0xC0FF0000 or 0xC0000000)
+			gui.drawRectangle(277+12,20+ 8, 3, 3,c['Right'] and 0xC0FF0000 or 0xC0000000,c['Right'] and 0xC0FF0000 or 0xC0000000)
+			gui.drawRectangle(277+24,20+ 8, 1, 1,c['X']     and 0xC0FF0000 or 0xC0000000,c['X']     and 0xC0FF0000 or 0xC0000000)
+			gui.drawRectangle(277+31,20+ 6, 1, 1,c['Y']     and 0xC0FF0000 or 0xC0000000,c['Y']     and 0xC0FF0000 or 0xC0000000)
+			gui.drawRectangle(277+37,20+ 4, 1, 1,c['Z']     and 0xC0FF0000 or 0xC0000000,c['Z']     and 0xC0FF0000 or 0xC0000000)
+			gui.drawRectangle(277+19,20+12, 3, 1,c['Start'] and 0xC0FF0000 or 0xC0000000,c['Start'] and 0xC0FF0000 or 0xC0000000)
+			gui.drawRectangle(277+ 8,20+ 0, 3, 1,c['L']     and 0xC0FF0000 or 0xC0000000,c['L']     and 0xC0FF0000 or 0xC0000000)
+			gui.drawRectangle(277+34,20+ 0, 3, 1,c['R']     and 0xC0FF0000 or 0xC0000000,c['R']     and 0xC0FF0000 or 0xC0000000)
+------------
+			gui.drawEllipse(277+26,20+11, 3, 3,c['A'] and 0xC0FF0000 or 0xC0000000,c['A'] and 0xC0FF0000 or 0xC0000000)
+			gui.drawEllipse(277+32,20+ 9, 3, 3,c['B'] and 0xC0FF0000 or 0xC0000000,c['B'] and 0xC0FF0000 or 0xC0000000)
+			gui.drawEllipse(277+38,20+ 7, 3, 3,c['C'] and 0xC0FF0000 or 0xC0000000,c['C'] and 0xC0FF0000 or 0xC0000000)
+end
+--------------------------------

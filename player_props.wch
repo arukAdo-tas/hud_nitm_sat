@@ -1,0 +1,99 @@
+SystemID SAT
+0	S	_	1		Player Properties
+05CD5A	w	u	0	Work Ram High	player_X_position_absolute
+05C5B6	w	u	0	Work Ram High	player_Y_position_absolute
+05CE54	w	u	1	Work Ram High	player_Y_another
+0860B6	w	s	0	Work Ram High	player_X_scroll
+0860BA	w	s	0	Work Ram High	player_Y_scroll
+0997FF	b	u	1	Work Ram High	player_X_subpixel
+099803	b	u	1	Work Ram High	player_Y_subpixel
+0997FC	w	u	0	Work Ram High	player_X_position_relative
+099800	w	u	0	Work Ram High	player_Y_position_relative
+099804	w	s	0	Work Ram High	player_X_speed
+099808	w	s	0	Work Ram High	player_Y_speed
+099807	b	u	1	Work Ram High	player_motion_X
+09980B	b	u	1	Work Ram High	player_motion_Y
+0997F7	b	u	1	Work Ram High	player_object_start_address
+09983D	b	u	1	Work Ram High	player_X_hitbox_radius
+09983C	b	u	1	Work Ram High	player_Y_hitbox_radius
+09980C	b	u	1	Work Ram High	player_X_hitbox_offset
+09980E	b	s	1	Work Ram High	player_Y_hitbox_offset
+099810	b	u	1	Work Ram High	player_orientation
+099824	b	u	1	Work Ram High	player_action
+0C850A	b	u	1	Work Ram High	player_morph_timer
+058C84	d	u	1	Work Ram High	music track
+05C166	b	u	1	Work Ram High	player_ground
+05C508	b	u	1	Work Ram High	player_status_poison_timer
+05C509	b	u	1	Work Ram High	player_status_poison_multipicator
+05C50A	b	u	1	Work Ram High	player_status_curse_timer
+05C50B	b	u	1	Work Ram High	player_status_curse_multipicator
+05C524	b	u	1	Work Ram High	player_invincible_timer
+05C526	b	u	1	Work Ram High	player_status
+05C536	b	u	1	Work Ram High	player_status_stoneA
+05C537	b	u	0	Work Ram High	player_air
+05C53A	b	u	1	Work Ram High	player_status_stoneB
+05C6D2	w	s	0	Work Ram High	player_character_ID
+05C99A	b	u	1	Work Ram High	player_morphed
+05C99E	b	u	1	Work Ram High	player_subweapon
+05CA62	b	u	1	Work Ram High	player_castle_flag_wrong
+05CD50	w	u	1	Work Ram High	player_properties_start?
+05CD70	b	u	1	Work Ram High	player_script
+05CD72	b	u	1	Work Ram High	player_script_controlA
+05CD74	b	u	1	Work Ram High	player_script_controlB
+05CE5E	b	u	1	Work Ram High	room_X_size_grid
+05CE62	b	u	1	Work Ram High	room_Y_size_grid
+05CE6A	b	u	1	Work Ram High	room_X_min_grid
+05CE6E	b	u	1	Work Ram High	room_Y_max_grid
+05CE72	b	u	1	Work Ram High	room_X_max_grid
+05CE76	b	u	1	Work Ram High	room_Y_min_grid
+05D75E	b	u	1	Work Ram High	room_X_origin_grid
+05D762	b	u	1	Work Ram High	room_Y_origin_grid
+0860A2	b	u	1	Work Ram High	life max up counter
+05CEB2	b	u	1	Work Ram High	game_is_loaded
+099ADC	w	u	0	Work Ram High	familiar_X
+099AE0	w	u	0	Work Ram High	familiar_Y
+0	S	_	1		Gear Equiped, items ID's are in the script
+05C9A2	b	u	1	Work Ram High	gear_data_first_hand
+05C9A6	b	u	1	Work Ram High	gear_data_second_hand
+05C9AA	b	u	1	Work Ram High	gear_data_third_hand
+05C9AE	b	u	1	Work Ram High	gear_data_head
+05C9B2	b	u	1	Work Ram High	gear_data_armor
+05C9B6	b	u	1	Work Ram High	gear_data_cape
+05C9BA	b	u	1	Work Ram High	gear_data_first_accessory
+05C9BE	b	u	1	Work Ram High	gear_data_second_accessory
+05C71A	b	u	1	Work Ram High	inventory_range_start
+05C71C	b	u	1	Work Ram High	monster vial 3
+05C825	b	u	1	Work Ram High	inventory_range_stop
+0	S	_	1		Map data, 1 byte = 4 squares
+05CEBC	b	u	1	Work Ram High	map_range_start
+05CEE0	b	u	1	Work Ram High	map first visible square
+05D27E	b	u	1	Work Ram High	map last visible square
+05D6BF	b	u	1	Work Ram High	map_range_stop
+0	S	_	1		Others
+0482B8	d	h	1	Work Ram High	rng
+0476A6	b	u	1	Work Ram High	state_menu2
+048211	b	u	1	Work Ram High	state_menu
+050736	b	u	1	Work Ram High	state_menu3
+051230	b	u	1	Work Ram High	cursor inventory
+0	S	_	1		Trash zone
+063C4B	b	u	1	Work Ram High	area_ID
+05CD7A	b	u	1	Work Ram High	?stuff_is_loaded
+06EE86	b	u	1	Work Ram High	inventory hud stuff
+05CE76	b	u	1	Work Ram High	area_ID-wrong
+0505F4	w	u	1	Work Ram High	
+0505F4	d	u	0	Work Ram High	
+05C534	b	u	1	Work Ram High	
+05C537	b	u	1	Work Ram High	
+05C538	b	u	1	Work Ram High	
+05C53B	b	u	1	Work Ram High	
+05CAB0	b	u	1	Work Ram High	
+05CE6E	b	u	1	Work Ram High	area_ID
+05CF46	b	u	1	Work Ram High	teleporter RC
+05D336	b	u	1	Work Ram High	teleporter IC
+05D760	d	u	1	Work Ram High	
+065488	b	u	0	Work Ram High	castle
+086093	b	u	1	Work Ram High	
+086192	b	u	1	Work Ram High	roombyte?
+086193	b	u	1	Work Ram High	
+0E070B	w	u	1	Work Ram High	
+

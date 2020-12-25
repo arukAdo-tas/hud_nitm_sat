@@ -1,0 +1,291 @@
+SystemID SAT
+0	S	_	1		Unlockable
+05CA30	b	u	1	Work Ram High	unlock_range_start
+05CA31	b	u	1	Work Ram High	
+05CA32	b	u	1	Work Ram High	
+05CA33	b	u	1	Work Ram High	
+05CA34	b	u	1	Work Ram High	
+05CA35	b	u	1	Work Ram High	
+05CA36	b	u	1	Work Ram High	
+05CA37	b	u	1	Work Ram High	
+05CA38	b	u	1	Work Ram High	
+05CA39	b	u	1	Work Ram High	
+05CA3A	b	u	1	Work Ram High	
+05CA3B	b	u	1	Work Ram High	
+05CA3C	b	u	1	Work Ram High	
+05CA3D	b	u	1	Work Ram High	
+05CA3E	b	u	1	Work Ram High	boss switch - will change when cutscene proceed or boss is beaten
+05CA3F	b	u	1	Work Ram High	
+05CA40	b	u	1	Work Ram High	
+05CA41	b	u	1	Work Ram High	
+05CA42	b	u	1	Work Ram High	
+05CA43	b	u	1	Work Ram High	
+05CA44	b	u	1	Work Ram High	
+05CA45	b	u	1	Work Ram High	
+05CA46	b	u	1	Work Ram High	
+05CA47	b	u	1	Work Ram High	
+05CA48	b	u	1	Work Ram High	
+05CA49	b	u	1	Work Ram High	
+05CA4A	b	u	1	Work Ram High	
+05CA4B	b	u	1	Work Ram High	
+05CA4C	b	u	1	Work Ram High	
+05CA4D	b	u	1	Work Ram High	
+05CA4E	b	u	1	Work Ram High	
+05CA4F	b	u	1	Work Ram High	
+05CA50	b	u	1	Work Ram High	switch 46,24 marble
+05CA51	b	u	1	Work Ram High	switch 32,26 marble central clock
+05CA52	b	u	1	Work Ram High	
+05CA53	b	u	1	Work Ram High	Area Title marble 22,26
+05CA54	b	u	1	Work Ram High	
+05CA55	b	u	1	Work Ram High	
+05CA56	b	u	1	Work Ram High	
+05CA57	b	u	1	Work Ram High	
+05CA58	b	u	1	Work Ram High	
+05CA59	b	u	1	Work Ram High	
+05CA5A	b	u	1	Work Ram High	
+05CA5B	b	u	1	Work Ram High	
+05CA5C	b	u	1	Work Ram High	
+05CA5D	b	u	1	Work Ram High	
+05CA5E	b	u	1	Work Ram High	
+05CA5F	b	u	1	Work Ram High	
+05CA60	b	u	1	Work Ram High	
+05CA61	b	u	1	Work Ram High	outerwall elevator door
+05CA62	b	b	1	Work Ram High	outerwall unknow prop
+05CA63	b	u	1	Work Ram High	break in 59,26
+05CA64	b	u	1	Work Ram High	Area Title outerwall 61,25
+05CA65	b	u	1	Work Ram High	
+05CA66	b	u	1	Work Ram High	
+05CA67	b	u	1	Work Ram High	
+05CA68	b	u	1	Work Ram High	
+05CA69	b	u	1	Work Ram High	outerwall break in 59,26 IC
+05CA6A	b	u	1	Work Ram High	
+05CA6B	b	u	1	Work Ram High	
+05CA6C	b	u	1	Work Ram High	
+05CA6D	b	u	1	Work Ram High	
+05CA6E	b	u	1	Work Ram High	
+05CA6F	b	u	1	Work Ram High	
+05CA70	b	u	1	Work Ram High	wall 19,19 - olrox
+05CA71	b	b	1	Work Ram High	wall 29,22 olrox
+05CA72	b	u	1	Work Ram High	
+05CA73	b	u	1	Work Ram High	Area Title olrox 29,45
+05CA74	b	u	1	Work Ram High	
+05CA75	b	u	1	Work Ram High	
+05CA76	b	u	1	Work Ram High	
+05CA77	b	u	1	Work Ram High	
+05CA78	b	u	1	Work Ram High	wall 19,19 IC
+05CA79	b	b	1	Work Ram High	wall 29,22 IC
+05CA7A	b	u	1	Work Ram High	
+05CA7B	b	u	1	Work Ram High	
+05CA7C	b	u	1	Work Ram High	
+05CA7D	b	u	1	Work Ram High	
+05CA7E	b	u	1	Work Ram High	
+05CA7F	b	u	1	Work Ram High	
+05CA80	b	u	1	Work Ram High	entrance switch 19,36
+05CA81	b	u	1	Work Ram High	entrance switch 14,41
+05CA82	b	u	1	Work Ram High	entrance big rock 0 off 1 is left 2 is right 3 is both 255 open the passage
+05CA83	b	u	1	Work Ram High	entrance switch 17,38
+05CA84	b	u	1	Work Ram High	????
+05CA85	b	u	1	Work Ram High	entrance gate, 2,40
+05CA86	b	u	1	Work Ram High	meet death, 20,39 + 20,40
+05CA87	b	u	1	Work Ram High	
+05CA88	b	u	1	Work Ram High	entrance gaibon/slogra defeated
+05CA89	b	u	1	Work Ram High	break in 19,40
+05CA8A	b	u	1	Work Ram High	big rock IC
+05CA8B	b	u	1	Work Ram High	wall to 12,41 (jewel sword)
+05CA8C	b	u	1	Work Ram High	door to jewel sword IC 11,41
+05CA8D	b	u	1	Work Ram High	break 19,40 IC
+05CA8E	b	u	1	Work Ram High	
+05CA8F	b	u	1	Work Ram High	
+05CA90	b	u	1	Work Ram High	break 28,50 cata
+05CA91	b	u	1	Work Ram High	wall 25,50 cata
+05CA92	b	u	1	Work Ram High	Area Title catacombs 31,49
+05CA93	b	u	1	Work Ram High	switch 43,50 cata sonar room
+05CA94	b	u	1	Work Ram High	
+05CA95	b	u	1	Work Ram High	break 41,51 cata
+05CA96	b	u	1	Work Ram High	
+05CA97	b	u	1	Work Ram High	
+05CA98	b	u	1	Work Ram High	break 28,50 IC
+05CA99	b	u	1	Work Ram High	wall 25,50 IC
+05CA9A	b	u	1	Work Ram High	break 41,51 IC
+05CA9B	b	u	1	Work Ram High	
+05CA9C	b	u	1	Work Ram High	
+05CA9D	b	u	1	Work Ram High	
+05CA9E	b	u	1	Work Ram High	
+05CA9F	b	u	1	Work Ram High	
+05CAA0	b	u	1	Work Ram High	wall 37,41 mines
+05CAA1	b	u	1	Work Ram High	switch 32,40 mines
+05CAA2	b	u	1	Work Ram High	break steps 32,47 mines
+05CAA3	b	u	1	Work Ram High	break slope 32,42 mines
+05CAA4	b	u	1	Work Ram High	
+05CAA5	b	u	1	Work Ram High	Area Title mines 27,38
+05CAA6	b	u	1	Work Ram High	
+05CAA7	b	u	1	Work Ram High	
+05CAA8	b	u	1	Work Ram High	wall 37,41 IC
+05CAA9	b	u	1	Work Ram High	switch 32,40 IC
+05CAAA	b	u	1	Work Ram High	
+05CAAB	b	u	1	Work Ram High	
+05CAAC	b	u	1	Work Ram High	
+05CAAD	b	u	1	Work Ram High	
+05CAAE	b	u	1	Work Ram High	
+05CAAF	b	u	1	Work Ram High	
+05CAB0	b	u	1	Work Ram High	Area Title - chapel 3,28
+05CAB1	b	u	1	Work Ram High	switch 16,19 - chapel
+05CAB2	b	u	1	Work Ram High	cutscene maria 9,15 - chapel
+05CAB3	b	u	1	Work Ram High	cutscene maria 24,13 - chapel boss
+05CAB4	b	u	1	Work Ram High	
+05CAB5	b	u	1	Work Ram High	
+05CAB6	b	u	1	Work Ram High	
+05CAB7	b	u	1	Work Ram High	
+05CAB8	b	u	1	Work Ram High	
+05CAB9	b	u	1	Work Ram High	
+05CABA	b	u	1	Work Ram High	
+05CABB	b	u	1	Work Ram High	
+05CABC	b	u	1	Work Ram High	
+05CABD	b	u	1	Work Ram High	
+05CABE	b	u	1	Work Ram High	
+05CABF	b	u	1	Work Ram High	
+05CAC0	b	u	1	Work Ram High	Title Area library 58,21
+05CAC1	b	u	1	Work Ram High	switch 49,18 (works IC too...)
+05CAC2	b	u	1	Work Ram High	????
+05CAC3	b	u	1	Work Ram High	cutscene librarian 49,20
+05CAC4	b	u	1	Work Ram High	
+05CAC5	b	b	1	Work Ram High	librarian seat
+05CAC6	b	u	1	Work Ram High	
+05CAC7	b	u	1	Work Ram High	
+05CAC8	b	u	1	Work Ram High	
+05CAC9	b	u	1	Work Ram High	
+05CACA	b	u	1	Work Ram High	
+05CACB	b	u	1	Work Ram High	
+05CACC	b	u	1	Work Ram High	
+05CACD	b	u	1	Work Ram High	
+05CACE	b	u	1	Work Ram High	
+05CACF	b	u	1	Work Ram High	
+05CAD0	b	u	1	Work Ram High	wall to 11,34 (lab)
+05CAD1	b	u	1	Work Ram High	Area Title - lab 16,36
+05CAD2	b	u	1	Work Ram High	switch 16,34 (lab canon)
+05CAD3	b	u	1	Work Ram High	wall to 12,35 (lab)
+05CAD4	b	u	1	Work Ram High	cutscene maria labs
+05CAD5	b	u	1	Work Ram High	????
+05CAD6	b	u	1	Work Ram High	
+05CAD7	b	u	1	Work Ram High	
+05CAD8	b	u	1	Work Ram High	wall to 11,34 (lab IC)
+05CAD9	b	u	1	Work Ram High	 wall to 12,35 (lab IC)
+05CADA	b	u	1	Work Ram High	
+05CADB	b	u	1	Work Ram High	
+05CADC	b	u	1	Work Ram High	
+05CADD	b	u	1	Work Ram High	
+05CADE	b	u	1	Work Ram High	
+05CADF	b	u	1	Work Ram High	
+05CAE0	b	u	1	Work Ram High	break in 31,9 keep
+05CAE1	b	u	1	Work Ram High	Area Title - keep 38,12
+05CAE2	b	u	1	Work Ram High	switch 38,2 keep - elevator increase value with candles lighting up
+05CAE3	b	u	1	Work Ram High	break in 37,11 keep
+05CAE4	b	u	1	Work Ram High	????
+05CAE5	b	u	1	Work Ram High	switch 36,8 -keep
+05CAE6	b	u	1	Work Ram High	
+05CAE7	b	u	1	Work Ram High	cutscene save richter keep
+05CAE8	b	u	1	Work Ram High	break 31,11 IC
+05CAE9	b	u	1	Work Ram High	break 31,9 IC
+05CAEA	b	u	1	Work Ram High	set after prologue ?
+05CAEB	b	u	1	Work Ram High	
+05CAEC	b	u	1	Work Ram High	
+05CAED	b	u	1	Work Ram High	
+05CAEE	b	u	1	Work Ram High	
+05CAEF	b	u	1	Work Ram High	
+05CAF0	b	u	1	Work Ram High	wall in 43,11 - clock
+05CAF1	b	u	1	Work Ram High	Area Title clock 59,14
+05CAF2	b	b	1	Work Ram High	break in 41,10 -clock- control all walls, 0000BLMR
+05CAF3	b	u	1	Work Ram High	wall in 50,11 - clock
+05CAF4	b	u	1	Work Ram High	
+05CAF5	b	u	1	Work Ram High	
+05CAF6	b	u	1	Work Ram High	
+05CAF7	b	u	1	Work Ram High	
+05CAF8	b	u	1	Work Ram High	wall 43,11 IC
+05CAF9	b	u	1	Work Ram High	
+05CAFA	b	b	1	Work Ram High	break 48,11 IC + 43,10 42,10 41,10
+05CAFB	b	u	1	Work Ram High	wall 50,11 IC
+05CAFC	b	u	1	Work Ram High	
+05CAFD	b	u	1	Work Ram High	
+05CAFE	b	u	1	Work Ram High	
+05CAFF	b	u	1	Work Ram High	
+05CB00	b	u	1	Work Ram High	switch 14,22 - colosseum
+05CB01	b	u	1	Work Ram High	Area Title colosseum 25,22
+05CB02	b	u	1	Work Ram High	wall 20,21 colos
+05CB03	b	u	1	Work Ram High	switch at 21,22 (elevator)
+05CB04	b	u	1	Work Ram High	
+05CB05	b	u	1	Work Ram High	
+05CB06	b	u	1	Work Ram High	
+05CB07	b	u	1	Work Ram High	
+05CB08	b	u	1	Work Ram High	set after prologue ?
+05CB09	b	u	1	Work Ram High	wall 20,21 IC
+05CB0A	b	u	1	Work Ram High	
+05CB0B	b	u	1	Work Ram High	
+05CB0C	b	u	1	Work Ram High	
+05CB0D	b	u	1	Work Ram High	
+05CB0E	b	u	1	Work Ram High	
+05CB0F	b	u	1	Work Ram High	
+05CB10	b	b	1	Work Ram High	switch 37,37 caves box to push
+05CB11	b	u	1	Work Ram High	Area Title caves 39,26
+05CB12	b	u	1	Work Ram High	????
+05CB13	b	u	1	Work Ram High	switch 51,41 caves (lake door)
+05CB14	b	u	1	Work Ram High	????
+05CB15	b	u	1	Work Ram High	wall 39,39 caves
+05CB16	b	b	1	Work Ram High	switch 22,37 + 29,37 caves access to mine
+05CB17	b	u	1	Work Ram High	wall 36,27 caves
+05CB18	b	u	1	Work Ram High	cutscene ferry merman
+05CB19	b	u	1	Work Ram High	cutscene ferry symbol
+05CB1A	b	u	1	Work Ram High	wall 36,27 IC
+05CB1B	b	u	1	Work Ram High	wall 39,39 IC (lake)
+05CB1C	b	u	1	Work Ram High	
+05CB1D	b	u	1	Work Ram High	
+05CB1E	b	u	1	Work Ram High	
+05CB1F	b	u	1	Work Ram High	
+05CB20	b	u	1	Work Ram High	teleporterS RC
+05CB21	b	u	1	Work Ram High	teleporterS IC
+05CB22	b	u	1	Work Ram High	
+05CB23	b	u	1	Work Ram High	
+05CB24	b	u	1	Work Ram High	
+05CB25	b	u	1	Work Ram High	
+05CB26	b	u	1	Work Ram High	
+05CB27	b	u	1	Work Ram High	
+05CB28	b	u	1	Work Ram High	
+05CB29	b	u	1	Work Ram High	maria boss cutscene
+05CB2A	b	u	1	Work Ram High	
+05CB2B	b	u	1	Work Ram High	
+05CB2C	b	u	1	Work Ram High	
+05CB2D	b	u	1	Work Ram High	death boss cutscene
+05CB2E	b	u	1	Work Ram High	
+05CB2F	b	u	1	Work Ram High	
+05CB30	b	u	1	Work Ram High	beat dracula cutscene
+05CB31	b	u	1	Work Ram High	
+05CB32	b	u	1	Work Ram High	
+05CB33	b	u	1	Work Ram High	
+05CB34	b	u	1	Work Ram High	
+05CB35	b	u	1	Work Ram High	switch 32,26 marble central IC
+05CB36	b	u	1	Work Ram High	
+05CB37	b	u	1	Work Ram High	
+05CB38	b	u	1	Work Ram High	
+05CB39	b	u	1	Work Ram High	
+05CB3A	b	u	1	Work Ram High	
+05CB3B	b	u	1	Work Ram High	
+05CB3C	b	u	1	Work Ram High	
+05CB3D	b	u	1	Work Ram High	
+05CB3E	b	u	1	Work Ram High	
+05CB3F	b	u	1	Work Ram High	
+05CB40	b	u	1	Work Ram High	
+05CB41	b	u	1	Work Ram High	Area Title - garden  4,44
+05CB42	b	u	1	Work Ram High	
+05CB43	b	u	1	Work Ram High	
+05CB44	b	u	1	Work Ram High	
+05CB45	b	u	1	Work Ram High	
+05CB46	b	u	1	Work Ram High	
+05CB47	b	u	1	Work Ram High	
+05CB48	b	u	1	Work Ram High	switch 33,36 prison
+05CB49	b	u	1	Work Ram High	Area Title prison  35,34 AND 28,36 
+05CB4A	b	u	1	Work Ram High	
+05CB4B	b	u	1	Work Ram High	
+05CB4C	b	u	1	Work Ram High	
+05CB4D	b	u	1	Work Ram High	
+05CB4E	b	u	1	Work Ram High	
+05CB4F	b	u	1	Work Ram High	
+

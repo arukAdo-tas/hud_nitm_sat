@@ -1,0 +1,117 @@
+SystemID SAT
+0	S	_	1		Time Attack data A=hours B=0 C=minutes D=seconds
+05D830	w	u	1	Work Ram High	time_attack_range_start
+05D830	b	u	1	Work Ram High	Richter defeats Dracula -- hours
+05D831	b	u	1	Work Ram High	Richter defeats Dracula -- control
+05D832	b	u	1	Work Ram High	Richter defeats Dracula -- minutes
+05D833	b	u	1	Work Ram High	Richter defeats Dracula -- seconds
+05D834	b	u	1	Work Ram High	Defeat Olrox -- hours
+05D835	b	u	1	Work Ram High	Defeat Olrox -- control
+05D836	b	u	1	Work Ram High	Defeat Olrox -- minutes
+05D837	b	u	1	Work Ram High	Defeat Olrox -- seconds
+05D838	b	u	1	Work Ram High	Defeat Doppleganger 10 -- hours
+05D839	b	u	1	Work Ram High	Defeat Doppleganger 10 -- control
+05D83A	b	u	1	Work Ram High	Defeat Doppleganger 10 -- minutes
+05D83B	b	u	1	Work Ram High	Defeat Doppleganger 10 -- seconds
+05D83C	b	u	1	Work Ram High	Granfaloon -- hours
+05D83D	b	u	1	Work Ram High	Granfaloon -- control
+05D83E	b	u	1	Work Ram High	Granfaloon -- minutes
+05D83F	b	u	1	Work Ram High	Granfaloon -- seconds
+05D840	b	u	1	Work Ram High	Defeat Minotaur and Werewolf -- hours
+05D841	b	u	1	Work Ram High	Defeat Minotaur and Werewolf -- control
+05D842	b	u	1	Work Ram High	Defeat Minotaur and Werewolf -- minutes
+05D843	b	u	1	Work Ram High	Defeat Minotaur and Werewolf -- seconds
+05D844	b	u	1	Work Ram High	Defeat Scylla -- hours
+05D845	b	u	1	Work Ram High	Defeat Scylla -- control
+05D846	b	u	1	Work Ram High	Defeat Scylla -- minutes
+05D847	b	u	1	Work Ram High	Defeat Scylla -- seconds
+05D848	b	u	1	Work Ram High	Defeat Solgra and Gaibon -- hours
+05D849	b	u	1	Work Ram High	Defeat Solgra and Gaibon -- control
+05D84A	b	u	1	Work Ram High	Defeat Solgra and Gaibon -- minutes
+05D84B	b	u	1	Work Ram High	Defeat Solgra and Gaibon -- seconds
+05D84C	b	u	1	Work Ram High	Defeat Hippogryph -- hours
+05D84D	b	u	1	Work Ram High	Defeat Hippogryph -- control
+05D84E	b	u	1	Work Ram High	Defeat Hippogryph -- minutes
+05D84F	b	u	1	Work Ram High	Defeat Hippogryph -- seconds
+05D850	b	u	1	Work Ram High	Defeat Beelzebub -- hours
+05D851	b	u	1	Work Ram High	Defeat Beelzebub -- control
+05D852	b	u	1	Work Ram High	Defeat Beelzebub -- minutes
+05D853	b	u	1	Work Ram High	Defeat Beelzebub -- seconds
+05D854	b	u	1	Work Ram High	Defeat Succubus -- hours
+05D855	b	u	1	Work Ram High	Defeat Succubus -- control
+05D856	b	u	1	Work Ram High	Defeat Succubus -- minutes
+05D857	b	u	1	Work Ram High	Defeat Succubus -- seconds
+05D858	b	u	1	Work Ram High	Defeat Karasuman -- hours
+05D859	b	u	1	Work Ram High	Defeat Karasuman -- control
+05D85A	b	u	1	Work Ram High	Defeat Karasuman -- minutes
+05D85B	b	u	1	Work Ram High	Defeat Karasuman -- seconds
+05D85C	b	u	1	Work Ram High	Defeat Ralph, Grant & Sypha -- hours
+05D85D	b	u	1	Work Ram High	Defeat Ralph, Grant & Sypha -- control
+05D85E	b	u	1	Work Ram High	Defeat Ralph, Grant & Sypha -- minutes
+05D85F	b	u	1	Work Ram High	Defeat Ralph, Grant & Sypha -- seconds
+05D860	b	u	1	Work Ram High	Defeat Death -- hours
+05D861	b	u	1	Work Ram High	Defeat Death -- control
+05D862	b	u	1	Work Ram High	Defeat Death -- minutes
+05D863	b	u	1	Work Ram High	Defeat Death -- seconds
+05D864	b	u	1	Work Ram High	Defeat Cerberus -- hours
+05D865	b	u	1	Work Ram High	Defeat Cerberus -- control
+05D866	b	u	1	Work Ram High	Defeat Cerberus -- minutes
+05D867	b	u	1	Work Ram High	Defeat Cerberus -- seconds
+05D868	b	u	1	Work Ram High	Save Richter Belmont -- hours
+05D869	b	u	1	Work Ram High	Save Richter Belmont -- control
+05D86A	b	u	1	Work Ram High	Save Richter Belmont -- minutes
+05D86B	b	u	1	Work Ram High	Save Richter Belmont -- seconds
+05D86C	b	u	1	Work Ram High	Defeat Medusa -- hours
+05D86D	b	u	1	Work Ram High	Defeat Medusa -- control
+05D86E	b	u	1	Work Ram High	Defeat Medusa -- minutes
+05D86F	b	u	1	Work Ram High	Defeat Medusa -- seconds
+05D870	b	u	1	Work Ram High	Defeat The Creature -- hours
+05D871	b	u	1	Work Ram High	Defeat The Creature -- control
+05D872	b	u	1	Work Ram High	Defeat The Creature -- minutes
+05D873	b	u	1	Work Ram High	Defeat The Creature -- seconds
+05D874	b	u	1	Work Ram High	Defeat Lesser Demon -- hours
+05D875	b	u	1	Work Ram High	Defeat Lesser Demon -- control
+05D876	b	u	1	Work Ram High	Defeat Lesser Demon -- minutes
+05D877	b	u	1	Work Ram High	Defeat Lesser Demon -- seconds
+05D878	b	u	1	Work Ram High	Defeat Doppleganger 40 -- hours
+05D879	b	u	1	Work Ram High	Defeat Doppleganger 40 -- control
+05D87A	b	u	1	Work Ram High	Defeat Doppleganger 40 -- minutes
+05D87B	b	u	1	Work Ram High	Defeat Doppleganger 40 -- seconds
+05D87C	b	u	1	Work Ram High	Defeat Akmodan II -- hours
+05D87D	b	u	1	Work Ram High	Defeat Akmodan II -- control
+05D87E	b	u	1	Work Ram High	Defeat Akmodan II -- minutes
+05D87F	b	u	1	Work Ram High	Defeat Akmodan II -- seconds
+05D880	b	u	1	Work Ram High	Defeat Darkwing Bat -- hours
+05D881	b	u	1	Work Ram High	Defeat Darkwing Bat -- control
+05D882	b	u	1	Work Ram High	Defeat Darkwing Bat -- minutes
+05D883	b	u	1	Work Ram High	Defeat Darkwing Bat -- seconds
+05D884	b	u	1	Work Ram High	Defeat Galamoth -- hours
+05D885	b	u	1	Work Ram High	Defeat Galamoth -- control
+05D886	b	u	1	Work Ram High	Defeat Galamoth -- minutes
+05D887	b	u	1	Work Ram High	Defeat Galamoth -- seconds
+05D888	b	u	1	Work Ram High	Defeat Skeleton Leader -- hours
+05D889	b	u	1	Work Ram High	Defeat Skeleton Leader -- control
+05D88A	b	u	1	Work Ram High	Defeat Skeleton Leader -- minutes
+05D88B	b	u	1	Work Ram High	Defeat Skeleton Leader -- seconds
+05D88C	b	u	1	Work Ram High	Final Save point -- hours
+05D88D	b	u	1	Work Ram High	Final Save point -- control
+05D88E	b	u	1	Work Ram High	Final Save point -- minutes
+05D88F	b	u	1	Work Ram High	Final Save point -- seconds
+05D890	b	u	1	Work Ram High	Meeting with Death -- hours
+05D891	b	u	1	Work Ram High	Meeting with Death -- control
+05D892	b	u	1	Work Ram High	Meeting with Death -- minutes
+05D893	b	u	1	Work Ram High	Meeting with Death -- seconds
+05D894	b	u	1	Work Ram High	Get Holy Glasses from Maria -- hours
+05D895	b	u	1	Work Ram High	Get Holy Glasses from Maria -- control
+05D896	b	u	1	Work Ram High	Get Holy Glasses from Maria -- minutes
+05D897	b	u	1	Work Ram High	Get Holy Glasses from Maria -- seconds
+05D898	b	u	1	Work Ram High	Meeting with Master Librarian -- hours
+05D899	b	u	1	Work Ram High	Meeting with Master Librarian -- control
+05D89A	b	u	1	Work Ram High	Meeting with Master Librarian -- minutes
+05D89B	b	u	1	Work Ram High	Meeting with Master Librarian -- seconds
+05D89C	b	u	1	Work Ram High	First Maria meeting -- hours
+05D89D	b	u	1	Work Ram High	First Maria meeting -- control
+05D89E	b	u	1	Work Ram High	First Maria meeting -- minutes
+05D89F	b	u	1	Work Ram High	First Maria meeting -- seconds
+05D8A0	w	u	1	Work Ram High	time_attack_range_stop
+

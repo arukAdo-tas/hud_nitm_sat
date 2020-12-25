@@ -1,0 +1,36 @@
+SystemID SAT
+0	S	_	1		Relic data, 0 for NO, 1 for OFF, 3 for ON
+05C6F0	b	u	1	Work Ram High	relic_range_start
+05C6F0	b	u	1	Work Ram High	relic_bat_fire
+05C6F1	b	u	1	Work Ram High	relic_bat_soul
+05C6F2	b	u	1	Work Ram High	relic_bat_echo
+05C6F3	b	u	1	Work Ram High	relic_bat_power
+05C6F4	b	u	1	Work Ram High	relic_wolf_power
+05C6F5	b	u	1	Work Ram High	relic_wolf_soul
+05C6F6	b	u	1	Work Ram High	relic_mist_form
+05C6F7	b	u	1	Work Ram High	relic_wolf_skill
+05C6F8	b	u	1	Work Ram High	relic_mist_gaz
+05C6F9	b	u	1	Work Ram High	relic_mist_power
+05C6FA	b	u	1	Work Ram High	relic_orb
+05C6FB	b	u	1	Work Ram High	relic_zoe
+05C6FC	b	u	1	Work Ram High	relic_leap
+05C6FD	b	u	1	Work Ram High	relic_gravity
+05C6FE	b	u	1	Work Ram High	relic_scroll
+05C6FF	b	u	1	Work Ram High	relic_j
+05C700	b	u	1	Work Ram High	relic_mermaid
+05C701	b	u	1	Work Ram High	relic_open
+05C702	b	u	1	Work Ram High	relic_card_ghost
+05C703	b	u	1	Work Ram High	relic_card_bat
+05C704	b	u	1	Work Ram High	relic_card_demon
+05C705	b	u	1	Work Ram High	relic_card_fairy
+05C706	b	u	1	Work Ram High	relic_card_sprite
+05C707	b	u	1	Work Ram High	relic_card_sword
+05C708	b	u	1	Work Ram High	relic_heart
+05C709	b	u	1	Work Ram High	relic_card_aku
+05C70A	b	u	1	Work Ram High	relic_bone
+05C70B	b	u	1	Work Ram High	relic_nail
+05C70C	b	u	1	Work Ram High	relic_eye
+05C70D	b	u	1	Work Ram High	relic_ring
+05C70E	b	u	1	Work Ram High	relic_fake
+05C70F	b	u	1	Work Ram High	relic_speed
+

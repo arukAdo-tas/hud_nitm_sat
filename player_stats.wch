@@ -1,0 +1,40 @@
+SystemID SAT
+0	S	_	1		Player Stats
+05C5B2	w	u	0	Work Ram High	stat_rooms
+05C942	w	u	0	Work Ram High	stat_hp
+05C946	w	u	0	Work Ram High	stat_hp_max
+05C94A	w	u	0	Work Ram High	stat_heart
+05C94E	w	u	0	Work Ram High	stat_heart_max
+05C952	w	u	0	Work Ram High	stat_mana
+05C956	w	u	0	Work Ram High	stat_mana_max
+05C95A	w	u	0	Work Ram High	stat_str
+05C95E	w	u	0	Work Ram High	stat_con
+05C962	w	u	0	Work Ram High	stat_int
+05C966	w	s	0	Work Ram High	stat_lck
+05C96A	b	u	1	Work Ram High	stat_str_mod
+05C96E	b	u	1	Work Ram High	stat_con_mod
+05C972	b	u	1	Work Ram High	stat_int_mod
+05C976	b	u	1	Work Ram High	stat_lck_mod
+05C98A	b	u	1	Work Ram High	stat_level
+05C98E	w	u	0	Work Ram High	stat_exp
+05C992	w	u	0	Work Ram High	stat_gold
+05C996	w	u	0	Work Ram High	stat_beat
+05C9C2	w	u	0	Work Ram High	stat_att_first_hand
+05C9C6	w	u	0	Work Ram High	stat_att_second_hand
+05C9CA	w	u	0	Work Ram High	stat_def
+05C9D6	b	u	1	Work Ram High	stat_gametime_hours
+05C9DA	b	u	1	Work Ram High	stat_gametime_minutes
+05C9DE	b	u	1	Work Ram High	stat_gametime_seconds
+0	S	_	1		Familiar data
+05C9EA	b	u	1	Work Ram High	familiar_range_start
+05C9EA	b	u	1	Work Ram High	familiar_bat_level
+05C9F6	b	u	1	Work Ram High	familiar_ghost_level
+05CA02	b	u	1	Work Ram High	familiar_fairy_level
+05CA0E	b	u	1	Work Ram High	familiar_demon_level
+05CA1A	b	u	1	Work Ram High	familiar_sword_level
+05CA26	b	u	1	Work Ram High	familiar_sprite_level
+05CA2A	b	u	1	Work Ram High	familiar_sprite_exp 1st byte
+05CA2B	b	u	1	Work Ram High	familiar_sprite_exp 2nd byte bullshit to increase expcap
+05CA32	b	u	1	Work Ram High	familiar_nose_level
+05CA36	b	u	1	Work Ram High	familiar_nose_exp
+05CA37	b	u	1	Work Ram High	familiar_range_stop

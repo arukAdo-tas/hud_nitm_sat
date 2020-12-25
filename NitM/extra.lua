@@ -14,7 +14,6 @@ function stop() --call when you exit the script (properly)
 	os.remove('.\\NitM\relic.png')
 	os.remove('.\\NitM\timeattack.png')
 	os.remove('.\\NitM\gear.png')
-	collectgarbage('restart')
 end
 --------------------------------
 function loadstate() --we need to refresh the data when user load a state

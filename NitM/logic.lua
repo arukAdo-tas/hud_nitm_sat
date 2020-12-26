@@ -287,16 +287,16 @@ if stat_level == 0 then --we just started from bios and havent select anything y
 	castleB = false
 end
 
-if music == 3585 then --we (back?) at start menu
+if music == 3585 or music == 8192 then --we (back?) at start menu or we died
 	game_is_boot = false
 	castleB = false
 end
 
-if music == 5632 and game_is_boot == false and game_is_loaded == 1 then --its "prayers" file select
-			game_is_boot = true
-			castle_check = true
-			shot_refresh = true
-			trail_data = { 0, 0, 0, 0, 0}
+if music == 5632 and game_is_boot == false and game_is_loaded == 1 and stat_hp > 0 then --its "prayers" file select
+	game_is_boot = true
+	castle_check = true
+	shot_refresh = true
+	trail_data = { 0, 0, 0, 0, 0}
 end
 
 
@@ -557,11 +557,14 @@ theroomY = theroomY + 6*4
 area_ID = "pro"
 room_text = "Final Stage : Bloodlines"
 room_special = "Prologue"
-if shot_refresh == false and prologue_up == false and emu.framecount() % 60 == 0 then
-	shot_refresh = true
-	prologue_up = true
+	if shot_refresh == false and prologue_up == false and emu.framecount() % 60 == 0 then
+		shot_refresh = true
+		prologue_up = true
+	end
 end
 
+if area_ID == "no" and room_X_min_grid == 0 and room_X_max_grid == 17 and room_Y_min_grid == 46 and room_Y_max_grid == 46 then
+area_ID = "forest"
 end
 
 

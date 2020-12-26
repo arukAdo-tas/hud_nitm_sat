@@ -66,459 +66,45 @@ for i = 0, 244, 1 do
 	end
 end
 
-local weapon_obj_id = {
--- shuriken / cross shuriken / bwaka knife / Power of Sire / Bat Pentagram / Pentagram / Buffalo Star / Dynamite / Flame Star / Morning Star
--- shuriken / cross shuriken / bwaka knife / Power of Sire / Bat Pentagram / Pentagram / Buffalo Star / Dynamite / Flame Star / Morning Star
--- shield, rod, swords, many things
-218507361, "sword",		--first hand 
-218507409, "sword",		--second hand 
-218538082, "sword",		--2hand - first hand
-218538130, "sword",		--2hand - second hand
---
-218508385, "toss",			--toss Karma Coin - first hand
-218508433, "toss",			--toss Karma Coin - second hand
-218532971, "particule",		--Karma Coin feather
-218543202, "player",		--magic missile arrow - first hand
-218548370, "player",		--magic missile arrow - second hand
-218530915, "particule",		--power of sire stars - first hand
-218535059, "particule",		--power of sire stars - second hand
-218501229, "player",		--iron ball - first hand
-218507421, "player",		--iron ball - second hand
-218506344, "player",		--javelin - first hand
-218510488, "player",		--javelin - second hand
-218558562, "toss",			--toss monster vial2 - first hand
-218558610, "toss",			--toss monster vial2 - second hand
-218551396, "player",		--monster vial2 summon - first hand
-218557588, "player",		--monster vial2 summon - second hand
-218510433, "toss",			--toss monster vial1/3 - first hand
-218510481, "toss",			--toss monster vial1/3 - second hand
-218528867, "player",		--monster vial1 summon - first hand
-218534035, "player",		--monster vial1 summon - second hand
-218542181, "player",		--monster vial1 fireball - first hand
-218547349, "player",		--monster vial1 fireball - second hand
-218503271, "particule",		--despawn monster vial1 - first hand
-218508439, "particule",		--despawn monster vial1 - second hand
-218524771, "player",		--monster vial3 summon - first hand
-218528915, "player",		--monster vial3 summon - second hand
-218535013, "player",		--monster vial3 bone - first hand
-218539157, "player",		--monster vial3 bone - second hand
-218560615, "particule",		--despawn monster vial3 - first hand
-218499224, "particule",		--despawn monster vial3 - second hand
-218508389, "player",		--boomrang - first hand
-218510485, "player",		--boomrang - second hand
-218525798, "toss",			--toss tnt - first hand
-218529942, "toss",			--toss tnt - second hand
-218525804, "player",		--tnt boom - first hand
-218531996, "player",		--tnt boom - second hand
-218499172, "trail",			--trail - first hand / boomrang / bwaka knife /
-218501268, "trail",			--trail - second hand / boomrang / bwaka knife / 
-218550379, "particule",		--fire boomrang trail - first hand
-218556571, "particule",		--fire boomrang trail - second hand
-218505316, "trail",			--trail - first hand / Buffalo Star 
-218509460, "trail",			--trail - second hand / Buffalo Star
-218510437, "particule",		--Flame Star trail - first hand
-218514581, "particule",		--Flame Star trail - second hand
-218515558, "trail",			--Heaven Sword + iron shield cast ? trail - first hand
-218519702, "trail",			--Heaven Sword trail - second hand
-218553450, "trail",			--Shakram trail - first hand
-218555546, "trail",			--Shakram trail - second hand
-218521703, "particule",		--Dynamite boom flares - first hand
-218526871, "particule",		--Dynamite boom flares - second hand
-218524775, "player",		--Moon Rod special - first hand
-218552466, "player",		--Moon Rod special - second hand
-218545255, "cast",			--Astral Dagger cast - first hand
-218548375, "cast",			--Astral Dagger cast - second hand
-218550371, "player",		--Astral Dagger special - first hand
-218553491, "player",		--Astral Dagger special - second hand
-218548322, "player",		--Shotel special - first hand
-185007284, "player",		--Shotel special - second hand
-218520682, "toss",			--Jewel Sword coins - first hand
-218527898, "toss",			--Jewel Sword coins - second hand
-218518629, "particule",		--Jewel Sword particles - second hand
-218525845, "particule",		--Jewel Sword particles - second hand
-218497171, "player",		--Werebane special - first hand
-218497171, "player",		--Werebane special - second hand
-218520678, "player",		--Shakram - first hand
-218520726, "player",		--Shakram - second hand
-218551401, "player",		--Rune Sword trow - first hand
-218555545, "player",		--Rune Sword trow - second hand
-218498154, "player",		--Icebrand special - first hand
-218504346, "player",		--Icebrand special - second hand
-218504301, "particule",		--Icebrand particles - first hand
-218510493, "particule",		--Icebrand particles - second hand
-218522726, "cast",			--Icebrand cast - first hand
-218528918, "cast",			--Icebrand cast - second hand
-218513505, "player",		--Alucard/t Sword - first hand
-218513553, "player",		--Alucard/t Sword - second hand
-218532964, "particule",			--Thunderbrand particles - first hand
-218539156, "particule",			--Thunderbrand particles - second hand
-218512489, "cast",			--Thunderbrand cast - first hand
-218518681, "cast",			--Thunderbrand cast - second hand
-218536036, "cast",			--Firebrand cast - first hand
-218541204, "cast",			--Firebrand cast - second hand
-218546280, "particule",		--Firebrand/Marsil particles - first hand
-218551448, "particule",		--Firebrand/Marsil particles - second hand
-218527847, "trail",			--Claymore/Firebrand trail - first hand
-218533015, "trail",			--Firebrand trail - second hand
-218535063, "trail",			--Claymore trail - second hand
-218529893, "particule",		--Alucard Sword teleport - first hand
-218535061, "particule",		--Alucard Sword teleport - second hand
-218497128, "player",		--Alucard Sword teleport slash - first hand
-218502296, "player",		--Alucard Sword teleport slash - second hand
-218557538, "player",		--Holy Sword special - first hand
-218561682, "player",		--Holy Sword special - second hand
-218515563, "cast",			--Marsil cast - first hand
-218523803, "cast",			--Marsil cast - second hand
-218533997, "player",		--Marsil fireball / axelord shield summon - first hand
-218542237, "player",		--Marsil fireball / axelord shield summon - second hand
-218549351, "player",		--Ironfist / Fist of Tulkas special - first hand
-218549399, "player",		--Ironfist / Fist of Tulkas special - second hand
-218502251, "player",		--Fist of Tulkas special - first hand
-218502299, "player",		--Fist of Tulkas special - second hand
-218548326, "player",		--Blue Knuckles - first hand
-218548374, "player",		--Blue Knuckles - second hand
-218505317, "player",		--Claymore special - first hand
-218509461, "player",		--Claymore special - second hand
-218541154, "cast",			--Sword of Dawn cast - first hand
-218527888, "cast",			--Sword of Dawn cast - second hand
-218521744, "cast",			--Sword of Dawn cast - third
-218521707, "player",		--Sword of Dawn sumon
-218524826, "player",		--Sword of Dawn sumon - arrow
-218543262, "player",		--Sword of Dawn sumon - hellfire ball (particles from it too)
-218507363, "player",		--katana (and other katana) slice motion - first hand
-218512531, "player",		--katana (and other katana) slice motion - second hand
-218544229, "particule",		--Masamune (and other katana) teleport - first hand
-218549397, "particule",		--Masamune (and other katana) teleport - second hand
-218522724, "player",		--Alucard Spear special - first hand
-218531988, "player",		--Alucard Spear special - second hand
-218509414, "particule",		--Alucard Spear particules - first hand
-218523798, "particule",		--Alucard Spear particules - second hand
-218526824, "player",		--Osafune Katana - first hand
-218531992, "player",		--Osafune Katana - second hand
-218515557, "player",		--Muramasa - first hand
-218520725, "player",		--Muramasa - second hand
-218501267, "player",		--shieldrod special - first hand
-218561634, "player",		--shieldrod special - second hand
-218533014, "particule",		--shieldrod particule - first hand
-218527846, "particule",		--shieldrod particule - second hand
-218511509, "cast",		--shieldrod alucart cast - first hand
-218511461, "cast",		--shieldrod alucart cast - second hand
-218504341, "cast",		--shieldrod leather/goddess/axelord cast - first hand
-218504293, "cast",		--shieldrod leather/iron/axelord cast - second hand
-218507365, "cast",		--shieldrod shaman shield cast - first hand
-218507365, "cast",		--shieldrod shaman shield cast - second hand
-218517654, "cast",		--shieldrod alucard shield cast - first hand
-218507413, "cast",		--shieldrod alucard shield cast - second hand
-218497175, "cast",		--shieldrod fire shield cast - first hand
-218497127, "cast",		--shieldrod fire shield cast - second hand
-218553508, "player",		--fire shield body - first hand
-218549403, "player",		--fire shield heads - first hand
-218552436, "player",		--fire shield body - second hand
-218548331, "player",		--fire shield heads - second hand
-218549408, "particule",		--shaman shield effect (no hitbox?) - first hand
-218548336, "particule",		--shaman shield effect (no hitbox?) - second hand
-218515612, "particule",		--herald shield effect - first hand
-218514540, "particule",		--herald shield effect - second hand
-218535070, "particule",		--goddess shield effect - first hand
-218535022, "particule",		--goddess shield effect - second hand
-218537061, "cast",			--shieldrod iron/skull shield cast - first hand
-218515606, "cast",			--shieldrod iron shield cast - second hand
-218551452, "player",		--iron shield attack - first hand
-218551404, "player",		--iron shield attack - second hand
-218535069, "player",		--axe lord summon - first hand
-218499222, "cast",			--shieldrod dark shield cast - first hand
-218499174, "cast",			--shieldrod dark shield cast - second hand
-218497134, "player",		--dark shield attack - first hand
-218497182, "player",		--dark shield attack - second hand
-218522775, "cast",			--shieldrod woodland shield cast - first hand
-218522727, "cast",			--shieldrod woodland shield cast - second hand
-218527899, "player",		--woodland shield attack - first hand
-218526827, "player",		--woodland shield attack - second hand
-218513561, "player",		--medusa shield attack heads - first hand
-218502306, "player",		--medusa shield attack trail - first hand
-218513513, "player",		--medusa shield attack heads - second hand
-218501234, "player",		--medusa shield attack trail - second hand
-218537109, "cast",			--skull shield cast - first hand
-218550428, "player",		--skull shield attack - first hand
-218549356, "player",		--skull shield attack - second hand
-218526869, "cast",			--herald shield cast - first hand
 
---218515558, "player",		--shieldrod iron shield animation
---218526821, "cast",		--shieldrod herald shield animation
-
-}
-
-
-local player_obj_id = {
-
-201738254, "cast",			--lib card
-
-185005093, "toss",			--toss food
-
--- works for blood trail of the player too...
-184960218, "trail",			--gravity jump top
-184998102, "trail",			--gravity jump bottom
-
-184994980, "scene",			--particles contact with alucard shield
-
-235336738, "pick",			-- drop
-235294763, "pick",			-- drop
-235292724, "pick",			-- drop
-
-184971440, "scene",			--after effect persistant (can be the camera/scroll)
-
-184949952, "cast",			--alucard is casting
-
-184971508, "cast",			--an effect is applyed on the player
-184980728, "cast",			--an effect is applyed on the player
-184981709, "cast",			--an effect is applyed on the player
-
-184969401, "dust",			--alucard dust
-235279447, "dust",			--dust from flea armor
-
-
-184980630, "hud",			--alucard damage number hud
-184991901, "hud",			--special effect, poison, stat up ect... (it fly under the mana bar)
-
-184977640, "particule",			--alucard damage thunder effect
-
-184982739, "morph",			--bat morph
-201760774, "morph",			--mist
-
-184947826, "morph",		--wolf tail
-184969319, "morph",		--wolf top
-184980589, "morph",		--wolf head
-184980574, "morph",		--wolf extra prop1
-184984682, "morph",		--wolf extra prop2
-184949878, "morph",		--wolf extra prop3
-
-
-
-201781255, "player",		--mist
-184973494, "player",		--divekick
-
-
-201778273, "player",		--clock
-
-
-201738298, "player",		--fire bat
-201756724, "player",		--hellfire teleport
-201772088, "player",		--hellfire1
-201774139, "player",		--hellfire2
-201735257, "player",		--tetraspirit
-201757788, "player",		--spirit init
-235319387, "player",		--soulsteal
-235314270, "player",		--nose attack
-218556455, "player",		--familiar sword
-201762933, "player",		--bat sonar
-
-184960218, "particule",			--power of sire
-235296851, "particule",			--power of sire
-
-
-252060693, "particule",			--destroy monsters
-235308108, "particule",			--destroy monsters2
-235287739, "particule",			--destroy dhuron (head)
-235275465, "particule",			--ectoplasm bubles
-184982717, "particule",			--hellfire particles
-
-}
-
-
-
-
-local pro_obj_id = {
-168194251, "dust",			--richter dust
-168217802, "player",		--richter dragon punch
-168169674, "player",		--richter air dash
-184949766, "player",		--richter whip
-168174792, "player",		--richter slide
-168167625, "player",		--richter flying kick
-185006221, "player",		--richter cross
-184942739, "trail",			--richter cross trail
-184989841, "particule",		--cross particule
-184983710, "player",		--holy water bottle
-184999075, "player",		--holy water effect
-184969366, "player",		--holy water initial flamme
-184968326, "player",		--cross crash
-184977575, "player",		--cross crash -- the crosses
-
-184963226, "cast",		--hydro storm
-184973465, "cast",		--hydro storm
-168166636, "cast",		--no subweapon crash
-168217837, "cast",		--no subweapon crash
-184945812, "cast",		--cross crash
-
-168178906, "particule",	--flame whip
-184994834, "particule",	--flame whip after effect
-184965140, "particule",	--flame whip after effect
-
-218526932, "cast",		--richter talking
-
-218519744, "cast",		--cutscene stuff
-
-
-168186085, "npc",		--maria
-168211681, "npc",		--animal spirits
-168176859, "cast",		--richter receive animals spirits
-184949899, "cast",		--richter invincible animation
-
-168219871, "cast",		--richter invincible animation
-168176862, "cast",		--richter invincible animation
-
-235337746, "scene",			--aftercast persistant effect
-
-
-168192231, "particule",		--fireball dmg particule
-168198359, "particule",		--fireball dmg particule
-168206543, "particule",		--fireball dmg particule
-
-235320447, "monster",		--dracula
-235330673, "monster",		--dracula face
-235313291, "monster",		--dracula 2nd form
-235277340, "monster",		--dracula 2nd form
-235307141, "scene",			--dracula glass
-
-235274369, "attack",		--dracula fireball
-235305090, "attack",		--dracula hellfire
-235316376, "attack",		--dracula 2nd form fireball
-
-235313284, "particule",		--hellfire particule
-
-168193220, "scene",			--persistant after effect (dmg?)
-218501359, "scene",			--staircase switch
-218523885, "scene",			--door
-218499314, "scene",			--staircase fixed point
-218517747, "scene",			--staircase mechanism
-218546411, "scene",			--outside bottom
-218512611, "scene",			--outside top
-235301898, "scene",			--the "final stage" overlay
-235318276, "scene",			--the fade out effect at start
-218497271, "scene",			--the picture at end
-
-235308035, "particule",		--the picture burning effect
-
-218520796, "candle",		--candle/vase
-
-235309097, "pick",			--drop
-235332657, "pick",			--drop
-
-218546397, "scene",			--candle debris
-235322457, "particule",		--candle flame
-
-}
-
-local lib_obj_id = {
-
-218547443, "npc",			--librarian
-218524869, "scene",			--candle fixed position
-218502339, "candle",		--
-218543309, "candle",		--chair2/candle...
-
-
-
-
-218518726, "scene",			--unknow property
-218517718, "scene",			--unknow property
-218502361, "scene",			--unknow property left area
-218553567, "scene",			--unknow property left area
-218511590, "scene",			--unknow property left area near boss
-235281518, "scene",			--saveroom coffin
-17193104, "scene",			--saveroom top and bottom
-235304035, "scene",			--saveroom left and right
-218522828, "scene",			--chair1
-218528971, "scene",			--mist gate
-235306049, "scene",			--cdroom door
-218508515, "scene",			--books barrier for boss
-218551495, "scene",			--boss area load box
-218537171, "scene",			--right big area background prop
-218498257, "scene",			--right big area background prop
-218513655, "scene",			--librarian background prop
-218529019, "scene",			--librarian background prop
-218537199, "scene",			--librarian background prop
-235335827, "scene",			--librarian door background prop
-218551543, "scene",			--librarian doorway
-
-
-235314379, "monster",		--plant 53,19
-235294927, "monster",		--plant2 53,19
-235329749, "monster",		--plant3 53,19
-235280600, "monster",		--plant-head 53,19
-235329729, "monster",		--ectoplasm
-252060685, "monster",		--grey book
-235277492, "monster",		--dhuron
-252052485, "monster",		--book
-235306214, "monster",		--flea armor
-235301103, "monster",			--fleaman
-235333770, "monster",			--boss lesser demon
-
-
-235315418, "attack",		--plant-spit 53,19
-252059670, "cast",		--book attack (I think...)
-235292858, "attack",		--dhuron sword
-235301053, "cast",			--dhuron thunder
-235302078, "cast",			--dhuron thunder2
-235300077, "attack",		--flea armor
-235332769, "attack",		--lesser demon
-}
-
-
-
-
-local wall_obj_id = {
---235318372, "dust",			-- dust
---235329629, "dust",			-- dust
-
-235316238, "scene",			--camera
-235320327, "scene",			--camera2
-235327570, "scene",			--cdlr door
-235320364, "scene",			--mist gate
-218506440, "scene",			--mist gate2
-235322445, "scene",			--mist gate text
-218545383, "scene",			-- chairs
-218535162, "scene",			-- longview
-218537198, "scene",			-- birdnest
-218500329, "scene",			-- birdnest2
-218549481, "npc",			-- bird
-235285544, "scene",			-- hidden elevator below
-235284509, "scene",			-- hidden elevator above
---
-
-218531011, "candle",		--
-
---
-
-
---
-235336922, "monster",		--guardian
-252088325, "monster",		--medusa head
---
-
-235334885, "attack",		--guardian wave
-235290851, "attack",		--guardian sword
-
-}
-
-local cata_obj_id = {
-
-
-}
-
-local clock_obj_id = {
-
-235306003, "scene",		--unknow clock tower prop 
-
-
-}
-
-
-
+local weapon_obj_id = {}
 local obj_id = {}
-if area_ID == "lib" then obj_id = lib_obj_id end
-if area_ID == "wall" then obj_id = wall_obj_id end
-if area_ID == "clock" then obj_id = clock_obj_id end
-if area_ID == "pro" then obj_id = pro_obj_id end
+if alucard then weapon_obj_id = alucardW_obj_id end
+if richter then weapon_obj_id = richterW_obj_id end
+if maria then weapon_obj_id = mariaW_obj_id end
+
+if area_ID == "pro" then obj_id = pro_obj_id weapon_obj_id = {} end --prologue
 if area_ID == "cata" then obj_id = cata_obj_id end
+if area_ID == "cave" then obj_id = cave_obj_id end
+if area_ID == "central" then obj_id = central_obj_id end
+if area_ID == "chapel" then obj_id = chapel_obj_id end
+if area_ID == "clock" then obj_id = clock_obj_id end
+if area_ID == "colos" then obj_id = colos_obj_id end
+if area_ID == "garden" then obj_id = garden_obj_id end
+if area_ID == "gate" then obj_id = gate_obj_id end
+if area_ID == "forest" then obj_id = gate_obj_id end
+if area_ID == "keep" then obj_id = keep_obj_id end
+if area_ID == "lab" then obj_id = lab_obj_id end
+if area_ID == "lib" then obj_id = lib_obj_id end
+if area_ID == "marble" then obj_id = marble_obj_id end
+if area_ID == "mine" then obj_id = mine_obj_id end
+if area_ID == "olrox" then obj_id = olrox_obj_id end
+if area_ID == "wall" then obj_id = wall_obj_id end
+if area_ID == "Rcata" then obj_id = Rcata_obj_id end
+if area_ID == "Rcave" then obj_id = Rcave_obj_id end
+if area_ID == "Rcentral" then obj_id = Rcentral_obj_id end
+if area_ID == "Rchapel" then obj_id = Rchapel_obj_id end
+if area_ID == "Rclock" then obj_id = Rclock_obj_id end
+if area_ID == "Rcolos" then obj_id = Rcolos_obj_id end
+if area_ID == "Rgarden" then obj_id = Rgarden_obj_id end
+if area_ID == "Rgate" then obj_id = Rgate_obj_id end
+if area_ID == "Rkeep" then obj_id = Rkeep_obj_id end
+if area_ID == "Rlab" then obj_id = Rlab_obj_id end
+if area_ID == "Rlib" then obj_id = Rlib_obj_id end
+if area_ID == "Rmarble" then obj_id = Rmarble_obj_id end
+if area_ID == "Rmine" then obj_id = Rmine_obj_id end
+if area_ID == "Rolrox" then obj_id = Rolrox_obj_id end
+if area_ID == "Rwall" then obj_id = Rwall_obj_id end
 
 if script_debug then debug_data = debug_data.." total objects:"..#objectList end
 
@@ -696,7 +282,7 @@ then
 end
 
 end
-
+obj_id = nil
 end
 --------------------------------
 

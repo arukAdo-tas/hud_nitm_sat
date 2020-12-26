@@ -1,4 +1,4 @@
---[[--------------------------------------------------------------
+--[[-----------------------------------------------------------------------------------------
 HuD lua script for Saturn Castlevania NitM  by arukAdo -- alpha5--
 extra.lua > extra functions--
 data.lua > all the hardcoded data--
@@ -8,7 +8,7 @@ logic.lua > will do all the ram fetching while the script run, buttons and resol
 shots.lua > the functions that are rendered only for one frame, then screenshot, and split for the overlay right after---
 hitbox.lua > will draw all the boxes for "objects" and the player---
 functions.lua > everything that is draw on every frame (text and "modules" boxes)-----
-cursors.lua > all the drawing on the minimap, to light up squares on it--
+cursors.lua > all the drawing on the minimap, to light up squares on it---------------------------------------
 loop.lua > the main loop----------------------------
 ]]-------------------------
 --if you didnt stop the script properly and closed the lua console, ill clean up your mess----------------

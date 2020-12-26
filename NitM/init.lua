@@ -55,6 +55,8 @@ prologue = false
 
 game_was_cdroom = false
 
+teleport_check = false
+
 castle_check = true
 check_done = false
 

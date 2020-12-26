@@ -97,7 +97,7 @@ end
 	stat_gametime_seconds = stat_gametime_data[8]
 	stat_gametime_data = nil
 --
-if shot_refresh then --regenerate data every xx frames
+if shot_refresh then --regenerate data
 	familiar_data = memory.readbyterange(0x05C9EA, 85, "Work Ram High")
 	familiar_data_level = {}
 	table.insert(familiar_data_level, 1, ""..familiar_data[0])--ghost
@@ -193,7 +193,13 @@ end
 --
 	player_action_ID = memory.readbyte(0x099824)
 	if player_action_ID == 18 and game_is_loaded == 0 then -- this ensure we will switch castle when the player use teleport or lib card
-	castle_check = true
+		if emu.framecount() % 60 == 0 then
+			castle_check = true
+			shot_refresh = true
+			extra_refresh = true
+--			teleport_check = true
+			print("yo")
+		end
 	end
 --
 	player_morph_timer = memory.readbyte(0x0C850A)
@@ -268,12 +274,31 @@ function where_is_player()
 	end
 
 
-if game_is_boot == false and stat_level > 0 and stat_gametime_seconds ~= 1 then
+
+if game_is_boot == false and stat_level > 0 and music ~= 5632 and music ~= 3585 then
 --then we are no longer in the bios or file select... I think... but if you soft reset you will still have player data in ram
 --if u started with alucard, the timer will start after the fmv
 --if u start with richter or maria, script will kick at "now loadind" (you become level1)
 	game_is_boot = true
 end
+
+if stat_level == 0 then --we just started from bios and havent select anything yet
+	game_is_boot = false
+	castleB = false
+end
+
+if music == 3585 then --we (back?) at start menu
+	game_is_boot = false
+	castleB = false
+end
+
+if music == 5632 and game_is_boot == false and game_is_loaded == 1 then --its "prayers" file select
+			game_is_boot = true
+			castle_check = true
+			shot_refresh = true
+			trail_data = { 0, 0, 0, 0, 0}
+end
+
 
 --not a good idea as sometime theres no sound
 -- if music == 5632 then
@@ -578,9 +603,9 @@ if alucard then --because other characters will differs in some areas, for now i
 	if music == 1024 then --its the mines
 	--room_Y_min_grid --38-50 max/min in RC --25-14 max/min in IC
 		if room_Y_origin_grid < 26 then
-			castleB = false
-		else
 			castleB = true
+		else
+			castleB = false
 		end
 	end
 	if music == 3840 then --its central area...
@@ -591,7 +616,8 @@ if alucard then --because other characters will differs in some areas, for now i
 			castleB = false
 		end
 	end
-	if room_Y_min_grid == 33 and room_Y_max_grid == 33 then --its dracula but we did set it from the music black banket anyway
+	
+	if room_Y_min_grid == 33 and room_Y_max_grid == 33 and room_X_min_grid == 31 and room_X_max_grid == 31 then --its dracula but we did set it from the music black banket anyway
 	game_is_dracula = true --useless for now
 	castleB = true
 	end
@@ -600,13 +626,19 @@ if alucard then --because other characters will differs in some areas, for now i
 end
 
 
+castle_check = false
 
+if music == 5632 then --save room after loading a game, very hackish, means you have to change room to update castle if you are in B
+castle_check = true
+else
+castle_check = false
+shot_refresh = true
+end
 
 	-- if music == 11520 and alucard == false then --its maria entrance
 	-- castleB = false
 	-- end
 
-castle_check = false
 end
 --------------------------------
 function resolution_switch()

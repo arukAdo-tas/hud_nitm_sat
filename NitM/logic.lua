@@ -254,7 +254,7 @@ function where_is_player()
 		game_is_dracula = false --useless for now
 	end
 	
-	if music == 6656 then prologue = true end
+	if music == 6656 or music == 6400 then prologue = true  end
 	
 	if prologue and script_map_mode ~= "ZZ" then
 		--this is not enought of course, we have to turn everything off except cursor_player, and turn them back on eventually after the prologue...
@@ -557,6 +557,11 @@ theroomY = theroomY + 6*4
 area_ID = "pro"
 room_text = "Final Stage : Bloodlines"
 room_special = "Prologue"
+if shot_refresh == false and prologue_up == false and emu.framecount() % 60 == 0 then
+	shot_refresh = true
+	prologue_up = true
+end
+
 end
 
 

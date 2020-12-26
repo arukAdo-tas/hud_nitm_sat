@@ -322,7 +322,8 @@ function displayMap(mapData)
 gui.drawBox(0, 0, 275, 195, 0xCF646464, nil)
 if castleB then
 gui.drawImage('.\\NitM\\hud\\map256x189B.png', 10, 5, 256, 189, true) 
-else
+end
+if castleB == false and prologue == false then
 gui.drawImage('.\\NitM\\hud\\map256x189.png', 10, 5, 256, 189, true) 
 end
 if prologue then --hack in a new map for prologue...

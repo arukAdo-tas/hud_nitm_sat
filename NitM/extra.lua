@@ -19,6 +19,7 @@ trail_data = { 0, 0, 0, 0, 0 }
 wait = 0
 wait_long = 0
 extra_refresh = true
+prologue_up = false
 end
 --------------------------------
 function snap_to_grid(x, y) --super code to make the mouse stick to squares

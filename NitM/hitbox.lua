@@ -340,10 +340,18 @@ local pro_obj_id = {
 184983710, "player",		--holy water bottle
 184999075, "player",		--holy water effect
 184969366, "player",		--holy water initial flamme
+184968326, "player",		--cross crash
+184977575, "player",		--cross crash -- the crosses
 
 184963226, "cast",		--hydro storm
 184973465, "cast",		--hydro storm
+168166636, "cast",		--no subweapon crash
+168217837, "cast",		--no subweapon crash
+184945812, "cast",		--cross crash
 
+168178906, "particule",	--flame whip
+184994834, "particule",	--flame whip after effect
+184965140, "particule",	--flame whip after effect
 
 218526932, "cast",		--richter talking
 
@@ -355,6 +363,9 @@ local pro_obj_id = {
 168176859, "cast",		--richter receive animals spirits
 184949899, "cast",		--richter invincible animation
 
+168219871, "cast",		--richter invincible animation
+168176862, "cast",		--richter invincible animation
+
 235337746, "scene",			--aftercast persistant effect
 
 
@@ -365,6 +376,7 @@ local pro_obj_id = {
 235320447, "monster",		--dracula
 235330673, "monster",		--dracula face
 235313291, "monster",		--dracula 2nd form
+235277340, "monster",		--dracula 2nd form
 235307141, "scene",			--dracula glass
 
 235274369, "attack",		--dracula fireball
@@ -381,7 +393,10 @@ local pro_obj_id = {
 218546411, "scene",			--outside bottom
 218512611, "scene",			--outside top
 235301898, "scene",			--the "final stage" overlay
-235318276, "scene",			--the fade out effect
+235318276, "scene",			--the fade out effect at start
+218497271, "scene",			--the picture at end
+
+235308035, "particule",		--the picture burning effect
 
 218520796, "candle",		--candle/vase
 

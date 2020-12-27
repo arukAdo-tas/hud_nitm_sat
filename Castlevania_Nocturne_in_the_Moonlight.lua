@@ -15,7 +15,7 @@ loop.lua > the main loop----------------------------
 collectgarbage('restart')---------------------------------------------------------------------------------
 gui.clearImageCache()-------------------------------------------------------------------------------------
 os.remove('.\\NitM\shot.png')-------------
---if u dont have osd off, its required, ill put it back to on IF you turn off the script properly---------
+--if u dont have osd off, its required, ill put it back to on IF you turn off the script properly-----------------------------------------------------------
 biz_message = client.getconfig().displaymessages--------------------------
 if biz_message then client.displaymessages(false) end----
 biz_osd = client.getconfig().ScreenshotCaptureOsd--------

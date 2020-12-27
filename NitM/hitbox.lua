@@ -69,9 +69,10 @@ end
 
 local weapon_obj_id = {}
 local obj_id = {}
-if alucard then weapon_obj_id = alucardW_obj_id end
-if richter then weapon_obj_id = richterW_obj_id end
-if maria then weapon_obj_id = mariaW_obj_id end
+local player_obj_id = {}
+if alucard then weapon_obj_id = alucardW_obj_id player_obj_id = alucard_obj_id end
+if richter then weapon_obj_id = richterW_obj_id player_obj_id = richter_obj_id end
+if maria then weapon_obj_id = mariaW_obj_id player_obj_id = maria_obj_id  end
 
 if area_ID == "pro" then obj_id = pro_obj_id weapon_obj_id = {} end --prologue
 if area_ID == "cata" then obj_id = cata_obj_id end
@@ -81,7 +82,7 @@ if area_ID == "chapel" then obj_id = chapel_obj_id end
 if area_ID == "clock" then obj_id = clock_obj_id end
 if area_ID == "colos" then obj_id = colos_obj_id end
 if area_ID == "garden" then obj_id = garden_obj_id end
-if area_ID == "gate" then obj_id = gate_obj_id end
+if area_ID == "gate" then obj_id = gateA_obj_id end
 if area_ID == "forest" then obj_id = gate_obj_id end
 if area_ID == "keep" then obj_id = keep_obj_id end
 if area_ID == "lab" then obj_id = lab_obj_id end

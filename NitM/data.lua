@@ -232,7 +232,9 @@ alucardW_obj_id = {
 }
 
 
-player_obj_id = {
+alucard_obj_id = {
+
+184954107, "cast",			--lvlup alucard
 
 201738254, "cast",			--lib card
 
@@ -305,15 +307,20 @@ player_obj_id = {
 184982717, "particule",			--hellfire particles
 
 
-168192231, "particule",		--dmg particule
+}
+
+richter_obj_id = {
 
 218552556, "trail",			--blood effect for richter
 168206543, "trail",			--blood effect for richter
 
+168192231, "particule",		--dmg particule
+
 }
 
+maria_obj_id = {
 
-
+}
 
 pro_obj_id = {
 168194251, "dust",			--richter dust
@@ -370,6 +377,7 @@ pro_obj_id = {
 235274369, "attack",		--dracula fireball
 235305090, "attack",		--dracula hellfire
 235316376, "attack",		--dracula 2nd form fireball
+235312282, "attack",		--dracula 2nd form drop poison
 
 235313284, "particule",		--hellfire particule
 
@@ -424,11 +432,14 @@ garden_obj_id = {
 
 }
 
-gate_obj_id = {
+gateA_obj_id = {
 235337840, "pick",			--pick
-235304073, "pick",			--pick relic
+235304073, "pick",			--pick relic skill wolf
+235295865, "pick",			--pick turkey
 
 218547427, "candle",		
+
+
 
 235307162, "trail",		--damage dealt to monsters
 
@@ -441,6 +452,9 @@ gate_obj_id = {
 218548435, "scene",		--forest background
 218523865, "scene",		--forest background
 218539226, "scene",		--forest background
+218549472, "scene",		--corridor background
+235285601, "scene",		--big rock left
+235279460, "scene",		--big rock left
 
 235320372, "scene",		--random thunder background effect 
 235316260, "scene",		--trap door
@@ -448,18 +462,83 @@ gate_obj_id = {
 235302961, "scene",		--gate
 168193220, "scene",		--background at gate
 218528968, "scene",		--camera
+235311347, "scene",		--background at bigrock
+235329638, "scene",		--jewel sword door
 
 218519784, "scene",		--background
 252107781, "scene",		--background
+235302921, "scene",		--background
+
+235303089, "scene",		--background saveroom
+235312306, "scene",		--coffin saveroom
+
+235327593, "scene",		--break slope (turkey)
+235334764, "particule",	--break
+235322530, "dust",		--break
+
+235300920, "scene",		--background death tornado
+235301964, "scene",		--background death
+218552556, "scene",		--background death
+235275360, "trail",		--death scyth trail
+235288662, "npc",		--death
+235303990, "cast",		--death talk
+235319390, "cast",		--death talk
+235310162, "cast",		--alucard gear flying away
+
+218503418, "scene",		--grate to caves
+235305103, "scene",		--door to caves
+218521846, "scene",		--grate mechanism
+218553591, "scene",		--grate mechanism
+235295788, "scene",		--grate mechanism
+235295748, "scene",		--grate teleport
+235290627, "scene",		--grate teleport button
+235317248, "scene",		--grate marble
+218501374, "scene",		--grate marble (rock)
+218561788, "scene",		--grate marble button 
+
 
 
 252090376, "monster",		--warg base
 252085268, "attack",		--warg head
 235278501, "dust",			--warg
 252063766, "particule",		--warg dies
+235313324, "particule",		--warg dies
+
+252054531, "monster",		--zombie
+218538225, "particule",		--zombie dies
+235328767, "monster",		--bat
+235295905, "particule",		--bat dies
+235322593, "monster",		--fish1
+235285712, "monster",		--fish2
+235274460, "trail",			--fish dies trail
+235325680, "attack",		--fish fireball
+235331806, "attack",		--fish fireball 2
+235304174, "trail",			--water
+235275578, "particule",		--water
+235274461, "particule",		--water
+235278578, "particule",		--water
+235320340, "particule",		--water
+235314211, "particule",		--water
+235314421, "monster",		--first skeleton(s)
+
+
+
+--235302921
 
 218550492, "npc",			--forest howl
 218544351, "particule",		--forest howl branchs
+
+}
+
+gateB_obj_id = {
+
+235283679, "monster",		--zombies
+235298022, "particule",		--zombie knife blood drop
+235289829, "particule",		--zombie dies
+218511555, "candle",		--
+
+235329610, "trail",		--orb dmg trail
+235327551, "scene",		--red door
 
 }
 
@@ -468,6 +547,27 @@ keep_obj_id = {
 }
 
 lab_obj_id = {
+
+235330610, "pick",				--monsters
+235307050, "pick",				--candle
+
+
+218513600, "candle",			--candle1
+218513630, "candle",			--globe candle
+
+235276361, "scene",			--red door
+235277420, "scene",			--cinematic title of the area
+218501317, "scene",			--button first room
+218543303, "attack",			--spike first room
+
+235278420, "trail",			--orb dmg
+
+235329682, "monster",			--red skeleton
+235334841, "monster",			--slinger
+235284632, "monster",			--skeleton
+235332698, "particule",			--skeleton dies
+235286720, "attack",			--skeleton bone
+235296928, "particule",			--skeleton dies
 
 }
 

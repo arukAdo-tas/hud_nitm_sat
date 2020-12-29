@@ -8,14 +8,14 @@ logic.lua > will do all the ram fetching while the script run, buttons and resol
 shots.lua > the functions that are rendered only for one frame, then screenshot, and split for the overlay right after---
 hitbox.lua > will draw all the boxes for "objects" and the player---
 functions.lua > everything that is draw on every frame (text and "modules" boxes)-----
-cursors.lua > all the drawing on the minimap, to light up squares on it----------------------------------------------------------------------------------------------------------
+cursors.lua > all the drawing on the minimap, to light up squares on it------------------------------------------------------------------------------
 loop.lua > the main loop----------------------------
 ]]-------------------------
 --if you didnt stop the script properly and closed the lua console, ill clean up your mess----------------
 collectgarbage('restart')---------------------------------------------------------------------------------
 gui.clearImageCache()-------------------------------------------------------------------------------------
 os.remove('.\\NitM\shot.png')-------------
---if u dont have osd off, its required, ill put it back to on IF you turn off the script properly-----------------------------------------------------------
+--if u dont have osd off, its required, ill put it back to on IF you turn off the script properly---------
 biz_message = client.getconfig().displaymessages--------------------------
 if biz_message then client.displaymessages(false) end----
 biz_osd = client.getconfig().ScreenshotCaptureOsd--------

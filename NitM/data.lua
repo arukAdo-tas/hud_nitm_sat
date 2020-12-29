@@ -226,6 +226,13 @@ alucardW_obj_id = {
 218549356, "player",		--skull shield attack - second hand
 218526869, "cast",			--herald shield cast - first hand
 
+201778238, "player",		--rebound stone
+201741425, "player",		--holy book
+201746543, "trail",		--holy book trail
+201744412, "player",			--axe
+201762840, "player",			--knife
+
+
 --218515558, "player",		--shieldrod iron shield animation
 --218526821, "cast",		--shieldrod herald shield animation
 
@@ -550,15 +557,49 @@ lab_obj_id = {
 
 235330610, "pick",				--monsters
 235307050, "pick",				--candle
+235338818, "pick",				--candle
 
+235282468, "npc",				--npc
 
 218513600, "candle",			--candle1
 218513630, "candle",			--globe candle
+218527969, "candle",			--candle2
+218521796, "scene",				--candle fixed pos
+218522847, "candle",			--candle relic
+235325453, "candle",			--candle
 
+218543303, "attack",		--spike first room
+218551500, "attack",		--spike near spit bone
 235276361, "scene",			--red door
 235277420, "scene",			--cinematic title of the area
 218501317, "scene",			--button first room
-218543303, "attack",			--spike first room
+218552536, "scene",			--button second room
+218530011, "scene",			--elevator second room
+218534103, "scene",			--barrier at canon
+218556627, "scene",			--canon
+218500306, "scene",			--lever
+218534102, "player",		--canon shoot
+218508533, "particule",		--containers particules
+218522870, "scene",			--containers content
+218505454, "scene",			--containers
+218544371, "particule",		--containers shatter
+218522866, "scene",			--containers brake parts
+235308038, "scene",			--break wall
+235289609, "scene",			--break wall
+235293788, "dust",			--break wall dust
+235305995, "scene",			--break wall parts
+17193104, "scene",			--camera
+218518730, "scene",			--third button
+218539215, "scene",			--box
+218555642, "scene",			--blue door
+235302927, "cast",			--cutscene with maria stuff
+235338786, "cast",			--cutscene with maria stuff
+218549478, "scene",			--button elevator
+218525929, "scene",			--elevator
+
+218531023, "scene",			--boss door(s)
+218541260, "scene",			--background
+
 
 235278420, "trail",			--orb dmg
 
@@ -568,6 +609,30 @@ lab_obj_id = {
 235332698, "particule",			--skeleton dies
 235286720, "attack",			--skeleton bone
 235296928, "particule",			--skeleton dies
+235300002, "monster",			--axe lord
+235323564, "attack",			--axe
+218515683, "particule",			--axe lord dies
+235305154, "monster",			--spit bone
+235309256, "attack",			--spit
+235286727, "trail",				--spit bone tractor
+235315294, "particule",			--spit bone attack particule
+235318447, "monster",			--zombie
+235332790, "particule",			--zombie blood drop
+235324597, "particule",			--zombie dies
+
+235321393, "monster",			--gaibon
+235307040, "monster",			--slogra
+235315245, "monster",			--gaibon box ?
+235321410, "attack",			--slogra spear
+235330627, "attack",			--gaibon fireball1
+235290693, "attack",			--gaibon fireball2
+235324428, "particule",			--slogra dies
+218540229, "particule",			--gaibon dies
+
+235335685, "trail",			--orb dmg boss
+
+218555600, "cast",			--life max up after boss
+218521820, "pick",			--life max up after boss
 
 }
 
